@@ -1,3 +1,5 @@
+Kanban Board: https://dramatic-clutch-d0e.notion.site/Group-8-Agile-Project-Management-bb06c2d090f543f9b2f2d0bc953f3d08
+
 # Idea 1: Tower Defence
 
 ## Design Options:
