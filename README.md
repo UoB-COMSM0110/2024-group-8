@@ -1,4 +1,7 @@
-Kanban Board: https://dramatic-clutch-d0e.notion.site/Group-8-Agile-Project-Management-bb06c2d090f543f9b2f2d0bc953f3d08
+# Group 8:
+![image](https://github.com/UoB-COMSM0110/2024-group-8/assets/117166891/c84a4952-3bef-4fa6-9d88-e8a353425535)
+
+# Kanban Board: https://dramatic-clutch-d0e.notion.site/Group-8-Agile-Project-Management-bb06c2d090f543f9b2f2d0bc953f3d08
 
 # Idea 1: Tower Defence
 
@@ -28,7 +31,6 @@ Kanban Board: https://dramatic-clutch-d0e.notion.site/Group-8-Agile-Project-Mana
 - Once you start letting enemies through, the temperature begins to rise, and the enemies become more intense/powerful?
 - Physics element of they gain new abilities defending on the temperature increase
 - E.g., You can have a defender tower which destroys enemies by freezing them to death, but once the temperature begins to rise, this effect becomes void
-
 
 # Idea 2: Arcade Side-scroller
 
