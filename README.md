@@ -45,7 +45,7 @@ The main idea of this suggestion is that there are defined ‘sites’ or ‘are
 
 2. **World Tour: Across different countries and cultures**
 - Opportunity to highlight areas of cultural significance - could relate to UNESCO World Heritage list.
-- Educational?
+- Educational - could implement something related to the history national curriculum.
 
 ## 3 Challenges:
 
