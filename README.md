@@ -98,7 +98,7 @@ Extended:
 - Player start the games
 - Player choose which map to play
 
-- In level #?
+ In level #?
 - System generates new level
 - User waits for ‘enemies’ to spawn and move throughout screen
 - User places units to protect towers. 
