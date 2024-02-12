@@ -65,5 +65,54 @@ introduces a behaviour that fundamentally alters the physics.
 
 
 # Requirement:
-//
+## Stakeholder:
+Developer
+Project Manager
+Player (child, teen, young adult, casual user…)
+Investor - institutional/ individual
+Teachers ( of user)
+Assessors/ Teaching staff
+
+Extended:
+Educational Authorities 
+Government (inc. EU for GD-PR etc.)
+Regulator
+Advertiser (if relevant)
+Publisher
+Distributor
+Retailer
+IP Holder (if using specific assets or images/themes)
+
+## User Stories:
+As the developer, I want to make an educational game that is popular among students, so that my game could have more exposure to the younger generation and I could earn more reputation in game industry.
+
+As the player, I want to play a tower defence game with another user, so that I can have a competition with my friends and have some fun.
+
+As the investor, I want to invest in the game development industry by developing an innovative game to attract more players, so that I can start earning money from that game.
+
+As the teachers, I want to influence my students to play an educational game, so that the student can learn more about the effect of germs on different organ on a human, 
+
+As the project manager, I want to ensure the game developed is meeting all the requirements, so that the project can be successful.
+
+## Use-case (player):
+Player start the games
+Player choose which map to play
+
+In level #?
+System generates new level
+User waits for ‘enemies’ to spawn and move throughout screen
+User places units to protect towers. 
+System uses enemy sprites to attack players towers. Randomised attacks within set limits dependant on progress through game. 
+System presents options of tower to user and highlights areas where the towers can be places
+User selects type of towers and locations to place in.
+System decrements (money??) total i.e. reduces amount of towers that can be placed.
+User limited by this feature.
+<Repeats until user lives are expended or no enemies left>
+
+Player reaches end of level and game ends
+System asks player for Name
+System checks database for existing name and if unique, stores score in database
+System presents high score to user.
+System exits
+
 
