@@ -107,7 +107,7 @@ Extended:
 - User selects type of towers and locations to place in.
 - System decrements (money??) total i.e. reduces amount of towers that can be placed.
 - User limited by this feature.
-- ..Repeats until user lives are expended or no enemies left..
+ ..Repeats until user lives are expended or no enemies left..
 
 - Player reaches end of level and game ends
 - System asks player for Name
