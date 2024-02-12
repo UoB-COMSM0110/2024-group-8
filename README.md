@@ -66,33 +66,33 @@ introduces a behaviour that fundamentally alters the physics.
 
 # Requirement:
 ## Stakeholder:
-Developer
-Project Manager
-Player (child, teen, young adult, casual user…)
-Investor - institutional/ individual
-Teachers ( of user)
-Assessors/ Teaching staff
+- Developer
+- Project Manager
+- Player (child, teen, young adult, casual user…)
+- Investor - institutional/ individual
+- Teachers ( of user)
+- Assessors/ Teaching staff
 
 Extended:
-Educational Authorities 
-Government (inc. EU for GD-PR etc.)
-Regulator
-Advertiser (if relevant)
-Publisher
-Distributor
-Retailer
-IP Holder (if using specific assets or images/themes)
+- Educational Authorities 
+- Government (inc. EU for GD-PR etc.)
+- Regulator
+- Advertiser (if relevant)
+- Publisher
+- Distributor
+- Retailer
+- IP Holder (if using specific assets or images/themes)
 
 ## User Stories:
-As the developer, I want to make an educational game that is popular among students, so that my game could have more exposure to the younger generation and I could earn more reputation in game industry.
+- As the developer, I want to make an educational game that is popular among students, so that my game could have more exposure to the younger generation and I could earn more reputation in game industry.
 
-As the player, I want to play a tower defence game with another user, so that I can have a competition with my friends and have some fun.
+- As the player, I want to play a tower defence game with another user, so that I can have a competition with my friends and have some fun.
 
-As the investor, I want to invest in the game development industry by developing an innovative game to attract more players, so that I can start earning money from that game.
+- As the investor, I want to invest in the game development industry by developing an innovative game to attract more players, so that I can start earning money from that game.
 
-As the teachers, I want to influence my students to play an educational game, so that the student can learn more about the effect of germs on different organ on a human, 
+- As the teachers, I want to influence my students to play an educational game, so that the student can learn more about the effect of germs on different organ on a human, 
 
-As the project manager, I want to ensure the game developed is meeting all the requirements, so that the project can be successful.
+- As the project manager, I want to ensure the game developed is meeting all the requirements, so that the project can be successful.
 
 ## Use-case (player):
 Player start the games
