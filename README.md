@@ -59,9 +59,10 @@ introduces a behaviour that fundamentally alters the physics.
 - Each round/area is generated within a certain set of parameters, so it is always pseudo-unique.
 - Lots of testing required to ensure generation creates levels that are both playable/fun and also complex enough to be challenging.
 
-
-## Requirement:
-
 3. **Combining sprites**
 - Potential for vehicles or other transportation method that the player can enter & then gain new features like speed or protection (horses, boats, cars, spaceships etc).
 - Relationship between those elements, how the additional physics items are implemented.
+
+
+## Requirement:
+
