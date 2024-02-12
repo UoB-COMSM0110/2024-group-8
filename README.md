@@ -95,24 +95,24 @@ Extended:
 - As the project manager, I want to ensure the game developed is meeting all the requirements, so that the project can be successful.
 
 ## Use-case (player):
-Player start the games
-Player choose which map to play
+- Player start the games
+- Player choose which map to play
 
-In level #?
-System generates new level
-User waits for ‘enemies’ to spawn and move throughout screen
-User places units to protect towers. 
-System uses enemy sprites to attack players towers. Randomised attacks within set limits dependant on progress through game. 
-System presents options of tower to user and highlights areas where the towers can be places
-User selects type of towers and locations to place in.
-System decrements (money??) total i.e. reduces amount of towers that can be placed.
-User limited by this feature.
-<Repeats until user lives are expended or no enemies left>
+- In level #?
+- System generates new level
+- User waits for ‘enemies’ to spawn and move throughout screen
+- User places units to protect towers. 
+- System uses enemy sprites to attack players towers. Randomised attacks within set limits dependant on progress through game. 
+- System presents options of tower to user and highlights areas where the towers can be places
+- User selects type of towers and locations to place in.
+- System decrements (money??) total i.e. reduces amount of towers that can be placed.
+- User limited by this feature.
+- <Repeats until user lives are expended or no enemies left>
 
-Player reaches end of level and game ends
-System asks player for Name
-System checks database for existing name and if unique, stores score in database
-System presents high score to user.
-System exits
+- Player reaches end of level and game ends
+- System asks player for Name
+- System checks database for existing name and if unique, stores score in database
+- System presents high score to user.
+- System exits
 
 
