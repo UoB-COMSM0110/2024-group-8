@@ -61,7 +61,7 @@ introduces a behaviour that fundamentally alters the physics.
 
 3. **Combining sprites**
 - Potential for vehicles or other transportation method that the player can enter & then gain new features like speed or protection (horses, boats, cars, spaceships etc).
-- Relationship between those elements, how the additional physics items are implemented.
+- Relationship between those elements, how the additional physics items are implemented and designed.
 
 
 # Requirement:
