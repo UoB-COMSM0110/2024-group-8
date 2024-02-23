@@ -95,6 +95,9 @@ Extended:
 - As the project manager, I want to ensure the game developed is meeting all the requirements, so that the project can be successful.
 
 ## Use-case (player):
+
+<img width="1200" alt="use-case" src="https://github.com/UoB-COMSM0110/2024-group-8/assets/150365540/e719a60f-7eb0-4bd0-b820-7cdfb5ced4c7">
+
 - Player start the games
 - Player choose which map to play
 
