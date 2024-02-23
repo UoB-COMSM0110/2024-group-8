@@ -96,7 +96,7 @@ Extended:
 
 ## Use-case (player):
 
-<img width="1200" alt="use-case" src="https://github.com/UoB-COMSM0110/2024-group-8/assets/150365540/e719a60f-7eb0-4bd0-b820-7cdfb5ced4c7">
+<img width="1199" alt="use-case" src="https://github.com/UoB-COMSM0110/2024-group-8/assets/150365540/20e3a851-e34f-4282-8676-5f56ff0f7fb1">
 
 - Player start the games
 - Player choose which map to play
