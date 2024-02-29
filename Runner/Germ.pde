@@ -2,6 +2,9 @@ class Germ {
   int posX, posY;
   int onLane = 0;
   Direction dir;
+ protected int health;
+
+  
   
   int speed = 1;
   
@@ -9,6 +12,15 @@ class Germ {
   int anim = 0;
   int animTimer = 0;
   int animDelay = 5;
+
+  protected int requiredProjectile;
+  int getRequiredProjectile(){
+    return this.requiredProjectile;
+  }
+  
+  void decreaseHealth(int amount){
+    this.health = this.health - amount;    
+  }
   
   void move(){
     PathStatus status = Level.checkPos(new Vector(posX, posY), onLane);
@@ -44,4 +56,16 @@ class Germ {
     dir = Level.getDire(0);
     
   }
+}
+
+class GermWbc extends Germ{
+
+  
+  GermWbc(){
+    super(0);
+    requiredProjectile = 1;
+    health=1;
+  
+  }
+ 
 }
