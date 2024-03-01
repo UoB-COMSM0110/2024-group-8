@@ -7,6 +7,7 @@ We are Group 8: Arielle, Julia, Isaac, Vincent and Alex.
 # Human Body Tower Defence.
 This game builds upon the widely popular Tower Defence style of game - where the aim is to protect a () from invaders. 
 Using the human body as a thematic device, the game aims to provide some educational value in reinforcing the understanding of the body's mechanism to fight infection - whilst being fun and engaging for all ages. 
+
 The novel aspects of this game are the ways in which interventions - either clinical or otherwise allow the user to influence in-game physics - from dieuretic tablets that increase the flow of invaders through the kidney, to smoke inhalation which weakens the health of enemies in the lungs.  
 
 
