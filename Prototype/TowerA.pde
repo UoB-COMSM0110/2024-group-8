@@ -44,14 +44,11 @@ protected class TowerA extends DefenceTower {
     for (int x = 0; x < AllGerms.size(); x++){ // Search through each germ, starting with the furthest along the path
         Germ current = AllGerms.get(x);
         
-        System.out.println("GermX = " +current.getGermX() +" GermY = "  +current.getGermY());
-        
         double ac = Math.abs(current.getGermY() - this.positionY);
         double cb = Math.abs(current.getGermX() - this.positionX);
         double distance = Math.sqrt((ac*ac) + (cb*cb)); // Find the distance between the Tower and current germ
         
         if (distance <= this.range){ // If the current germ is within range,
-          System.out.println("Distance to closest germ in range: " +distance);
           return current; // It is the tower's target
         }  
       }

@@ -112,7 +112,7 @@ void setup() { // Loads the different images needs for titleScreen & mapSelectio
 
 int roundCounter = 0; // Determines if you've completed the map on your set difficulty, needs to be moved into gameState class eventually
 
-void draw() {
+void draw(){
   
   // Draw the germ character
   image(germ, germX, germY);
@@ -193,22 +193,9 @@ void selectRound(){
   
   if (currentRound == null || roundCounter == 0){
      currentRound = new Round(180, 60, millis()); // The intial round 
-     System.out.println("Starting first round!");
   } else if (!(currentRound.inProgress())) {
      currentRound = new Round((currentRound.getDurationInSecs() * 0.2), (currentRound.getNumberOfEnemies() * 0.5), millis()); // Next round slightly harder than last
-     System.out.println("Starting round " +(roundCounter+1) + "!");
-     // Enable some boolean so that no towers can be created during this time
   }
-}
-
-void updateVisuals(){
-    for (int i = 0; i < AllTowers.size(); i++){  // Changed length to size()
-       AllTowers.get(i).drawme();  // Changed AllToweers to AllTowers
-    }
-     
-    for (int i = 0; i< AllGerms.size(); i++){ 
-        AllGerms.get(i).move(); 
-    }
 }
 
 void titleScreen(){ // Format for title screen
@@ -224,8 +211,8 @@ void titleScreen(){ // Format for title screen
     rect(WIDTH/2 - 100, HEIGHT/2 - 50, 200, 100);
     PressableButton startButton = new PressableButton(WIDTH/2 - 100, HEIGHT/2 - 50, 200, 100);
     fill(0);
-    textSize(40);
-    text("START", WIDTH/2 - 35, HEIGHT/2 + 10);
+    textSize(70);
+    text("START", WIDTH/2 - 90 , HEIGHT/2 + 20);
     
     if (mousePressed && startButton.onButton()){
       gameState = GameState.MAP;
@@ -284,17 +271,15 @@ void buildTowers(){
      Function to select and build towers
      May be better suited in GameMap class?
   */
-  
-  if (currentRound != null){
-    if(currentRound.inProgress()){
-      System.out.println("Cannot place towers whilst a round is in progress!");
-      return;
-    }
-  }
       
   if (mousePressed && towerAButton.onButton()){
-     System.out.println("Selected a tower");
-     towerSelected = true;
+    if (currentRound != null){
+      if(currentRound.inProgress()){
+        System.out.println("Cannot place towers whilst a round is in progress!");
+        return;
+      }
+    }
+    towerSelected = true;
   }
     
      // Animation of moving tower when choosing location
