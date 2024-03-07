@@ -7,6 +7,7 @@ class Round {
   int startTime;
   int lastShotTime;
   int lastEnemyDispatch;
+  int elapsedTime;
   
   Round(float duration, float enemyCount, int roundStartTime){
     this.durationInSecs = duration;
@@ -16,6 +17,7 @@ class Round {
     this.startTime = roundStartTime;
     this.lastShotTime = 0;
     this.lastEnemyDispatch = 0;
+    this.elapsedTime = 0;
     this.roundInProgress = true;
   }
   
@@ -39,18 +41,24 @@ class Round {
     this.roundInProgress = inProgress;
   }
   
+  int getTimeRemainingInSecs(){
+    float remainingTime = this.durationInSecs - (this.elapsedTime/1000);
+    return (int)(remainingTime);
+  }
+  
   void run(){
-     int elapsedTime =  millis() - this.startTime; // Initialize elapsed time
+     this.elapsedTime =  millis() - this.startTime; // Initialize elapsed time
      
-     if (elapsedTime < (this.durationInSecs * 1000)){ // While the round duration has not passed 
-        fireShots();
+     fireShots(); // Shots should be fired even if finished dispatching enemies
+     
+     if (this.elapsedTime < (this.durationInSecs * 1000)){ // While the round duration has not passed 
      
         if ((millis() - this.lastEnemyDispatch) >= this.dispatchInterval){ // If the time to dispatch is met, dispatch an enemy
           dispatchEnemies();
           this.lastEnemyDispatch = millis();
         }
-     } else {
-       this.roundInProgress = false;
+     } else if (AllGerms.size() <= 0){ // If all enemeies for the round dispatched, but not yet all killed, round should continue
+         this.roundInProgress = false;
      }  
   }
 

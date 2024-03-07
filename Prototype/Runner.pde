@@ -1,9 +1,6 @@
 int WIDTH = 1000;
 int HEIGHT = (int)(WIDTH * 0.8);
-//float playWindowHeight = WIDTH * 0.65;
 float cellSize = WIDTH / 20;
-//float menuPosY = playWindowHeight + 1;
-//float menuHeight = HEIGHT - menuPosY;;
 
 Cell[][] Grid = new Cell[20][13];        //depends on the map
 
@@ -20,6 +17,8 @@ PImage kidney;
 PImage lung;
 int imageSize = 200;
 
+PFont font;
+
 Brain brainMap;
 Lung lungMap;
 Heart heartMap;
@@ -28,10 +27,17 @@ Kidney kidneyMap;
 enum GameState { // Different phases of the game, so program knows what to draw
     TITLE,
     MAP,
+    WON,
+    // RULES, // Will be the "How to play" screen, can be navigated to at anytime before gameMap selected?
+    // DIFFICULTY, // Will be difficulty selction page when implemented
     BRAIN,
     LUNG,
     HEART,
-    KIDNEY
+    KIDNEY; 
+    
+    public boolean isGameMap(){ // Creates a distinct gamestate class for button animations
+      return this == BRAIN || this == LUNG || this == HEART || this == KIDNEY;
+    }
 }
 
 GameState gameState;
@@ -59,7 +65,18 @@ float selectedTowerY;
 ArrayList<DefenceTower> AllTowers  = new ArrayList<DefenceTower>();
 ArrayList<Germ> AllGerms = new ArrayList<Germ>();
 ArrayList<Projectile> AllProjectiles = new ArrayList<Projectile>();
+ArrayList<PressableButton> AllButtons = new ArrayList<PressableButton>();
 
+color[] confettiColours = {
+  #ff6961,
+  #ffb480,
+  #f8f38d,
+  #42d6a4,
+  #08cad1,
+  #59adf6,
+  #9d94ff,
+  #c780e8
+};
 
 void settings() {
   size(WIDTH, HEIGHT);
@@ -69,6 +86,8 @@ void setup() { // Loads the different images needs for titleScreen & mapSelectio
   // Also sets up the germ cursor for the entry screens
   fill(0);
   textSize(40);
+  
+  font = createFont("Papyrus", 30);
   
   gameState = GameState.TITLE;
   
@@ -111,11 +130,16 @@ void setup() { // Loads the different images needs for titleScreen & mapSelectio
 }
 
 int roundCounter = 0; // Determines if you've completed the map on your set difficulty, needs to be moved into gameState class eventually
+int lastColourChangeTime = 0;
 
 void draw(){
   
   // Draw the germ character
   image(germ, germX, germY);
+  
+  //for (PressableButton button : AllButtons){
+  //  button.drawButton();
+  //}
   
   /* 
      Draws the output based on the current gameState variable
@@ -124,6 +148,7 @@ void draw(){
       - Current lives
       - Current money
      Then we need to create another screen between mapSelection and GameMap, where you can select difficulty
+     Also need to create an optional screen for How to play/a tutorial?
   */
   
   if (gameState == GameState.TITLE) {
@@ -135,40 +160,39 @@ void draw(){
     mapSelection();
   }
   
-  if (gameState == GameState.BRAIN || gameState == GameState.LUNG || 
-      gameState == GameState.HEART || gameState == GameState.KIDNEY) {
-      background(255);
+  if (gameState.isGameMap()) {
+      background(153, 204, 255);
     
       if (gameState == GameState.BRAIN) {
         brainMap.setup();
         brainMap.draw();
-        buildTowers();
         mouseCheck();
       }
   
       if (gameState == GameState.LUNG) {
         lungMap.setup();
         lungMap.draw();
-        buildTowers();
         mouseCheck();
       }
   
       if (gameState == GameState.HEART) {
         heartMap.setup();
         heartMap.draw();
-        buildTowers();
         mouseCheck();
       }
     
       if (gameState == GameState.KIDNEY) {
         kidneyMap.setup();
         kidneyMap.draw();
-        buildTowers();
         mouseCheck();
       }
       
+      if (roundCounter == 5){ // roundCounter == 3 && !(currentRound.inProgress())){
+        gameState = GameState.WON;
+      }
+      
       // If you press start round, and no round is in progress it will start the round 
-      if (mousePressed && startRoundButton.onButton() && roundCounter <= 5){ // Change the roundCounter condition for Difficulty.getNumberOfRounds() later on
+      if (mousePressed && startRoundButton.onButton() && roundCounter < 5){ // Change the roundCounter condition for Difficulty.getNumberOfRounds() later on
         selectRound();
         currentRound.setInProgress(true);
         roundCounter++; 
@@ -179,8 +203,90 @@ void draw(){
         currentRound.run(); 
       }
    }
+   
+   if (gameState == GameState.WON){
+     winScreen();
+   } 
 }
 
+color[] currentColours; 
+
+void winScreen(){
+  background(153, 204, 255);
+  
+  int currentTime = millis();
+  
+  if (currentColours == null){ 
+     currentColours = new color[Grid.length * Grid[0].length]; 
+     changeColour();
+  }
+  
+  if (currentTime - lastColourChangeTime >= 1500 ){ // Change colours
+    changeColour();
+    lastColourChangeTime = millis();
+  }
+  
+  fillCellsColour();
+  
+  fill(255);
+  textSize(200);
+  text("YOU", 250, 300);
+  text("WIN!", 300, 500);
+  
+  strokeWeight(8);
+  strokeJoin(ROUND);
+  noFill();
+  stroke(currentColours[0]);
+  rect(25, HEIGHT*0.85 - 10, 825, 125);
+  
+  fill(255);
+  textSize(35);
+  text("[INSERT GAME STATS HERE]", 50, HEIGHT*0.9);
+  
+  // Play again button
+  
+  noFill();
+  rect(852, HEIGHT*0.85 - 10, 125, 125);
+    
+  text("Play", 875, HEIGHT*0.9);
+  text("again?", 865, HEIGHT*0.95);
+  
+  PressableButton playAgainButton = new PressableButton(852, (int)(HEIGHT*0.85 - 10), 125, 125);
+  if (mousePressed && playAgainButton.onButton()){
+    gameState = GameState.MAP;
+    draw();
+  } 
+}
+
+void fillCellsColour(){
+  int colourIndex = 0;
+  
+   for (int x = 0; x < Grid.length; x++){
+      for (int y = 0; y < Grid[0].length; y++){
+          int nextIndex = colourIndex + 1;
+          if (nextIndex == 260){ nextIndex = 0; }
+          Grid[x][y].confetti(currentColours[colourIndex], currentColours[nextIndex]); // Implement halt, so its less seziurey LOL
+          colourIndex++;
+      }
+   }
+}
+
+void changeColour(){
+  for (int i = 0; i < currentColours.length; i++) {
+     int colourIndex = (int)random(0, confettiColours.length);
+     currentColours[i] = confettiColours[colourIndex];
+  }
+  
+}
+
+GameState getCurrentGameState(){ // Function will be moved to GameState class eventually
+  return gameState;
+}
+
+// Below 2 functions will be moved into Round class eventually
+String getCurrentRoundCounterAsString(){
+  return String.valueOf(roundCounter);
+}
 
 void selectRound(){ 
   /* 
@@ -192,9 +298,9 @@ void selectRound(){
   */
   
   if (currentRound == null || roundCounter == 0){
-     currentRound = new Round(180, 60, millis()); // The intial round 
+     currentRound = new Round(30, 10, millis()); // The intial round just set as randomish values for now
   } else if (!(currentRound.inProgress())) {
-     currentRound = new Round((currentRound.getDurationInSecs() * 0.2), (currentRound.getNumberOfEnemies() * 0.5), millis()); // Next round slightly harder than last
+     currentRound = new Round((currentRound.getDurationInSecs() * 1.2), (currentRound.getNumberOfEnemies() * 1.5), millis()); // Next round slightly harder than last
   }
 }
 
@@ -202,17 +308,26 @@ void titleScreen(){ // Format for title screen
   try {
     background(startPageBackground);
     image(germ, germX, germY);
-    textSize(75);
-    fill(0);
-    text("Immune System Defence", WIDTH/7, HEIGHT/4);
-    
-    // Draw start button
+    textFont(font);
+    textSize(80);
     fill(255);
-    rect(WIDTH/2 - 100, HEIGHT/2 - 50, 200, 100);
-    PressableButton startButton = new PressableButton(WIDTH/2 - 100, HEIGHT/2 - 50, 200, 100);
-    fill(0);
-    textSize(70);
-    text("START", WIDTH/2 - 90 , HEIGHT/2 + 20);
+    text("Immune System Defence", WIDTH/8 - 50, HEIGHT/4);
+    
+    //Draw start button
+    strokeWeight(8);
+    strokeJoin(ROUND);
+    fill(153, 204, 255);
+    stroke(153, 204, 255);
+    rect(WIDTH/2 - 100, HEIGHT/2, 200, 60);
+    PressableButton startButton = new PressableButton(WIDTH/2 - 100, HEIGHT/2, 200, 60);
+    AllButtons.add(startButton);
+    
+    fill(255);
+    //textSize(30);
+    //text("Click to Start!", WIDTH/2 - 92 , HEIGHT/2 + 40);
+    
+    textSize(40);
+    text("START", WIDTH/2 - 62 , HEIGHT/2 + 42);
     
     if (mousePressed && startButton.onButton()){
       gameState = GameState.MAP;
@@ -226,23 +341,37 @@ void titleScreen(){ // Format for title screen
 void mapSelection(){ // Map selection page 
   image(germ, germX, germY);
   textSize(40);
-  fill(0);
-  text("Choose which organ to defend:", WIDTH/5, HEIGHT/4);
+  fill(255);
+  text("Choose which organ to defend:", WIDTH/5, HEIGHT/4 - 25);
   
   int imageSize = 200;
+  int outlineSize = imageSize +20;
+
+  strokeWeight(8);
+  strokeJoin(ROUND);
+  stroke(255);
+  noFill();
   
   // Display map images and make them pressable buttons
-  image(brain, WIDTH/6, HEIGHT/5 + 50);
+  image(brain, WIDTH/6, HEIGHT/5 + 50, imageSize, imageSize);
+  rect(WIDTH/6 - 10, HEIGHT/5 + 40, outlineSize, outlineSize);
   PressableButton brainButton = new PressableButton(WIDTH/6, HEIGHT/5 + 50, imageSize, imageSize);
+  AllButtons.add(brainButton);
   
-  image(lung, WIDTH/3+250, HEIGHT /5 +50);
+  image(lung, WIDTH/3+250, HEIGHT/5 + 50, imageSize, imageSize);
+  rect(WIDTH/3+240, HEIGHT/5 + 40, outlineSize, outlineSize);
   PressableButton lungButton = new PressableButton(WIDTH/3+250, HEIGHT /5 +50, imageSize, imageSize);
+  AllButtons.add(lungButton);
   
-  image(heart, WIDTH/6, HEIGHT/5 + 350);
+  image(heart, WIDTH/6, HEIGHT/5 + 350, imageSize, imageSize);
+  rect(WIDTH/6 - 10, HEIGHT/5 + 340, outlineSize, outlineSize);
   PressableButton heartButton = new PressableButton(WIDTH/6, HEIGHT/5 + 350, imageSize, imageSize);
+  AllButtons.add(heartButton);
   
-  image(kidney, WIDTH/3 +250, HEIGHT/5 + 350);
+  image(kidney, WIDTH/3 +250, HEIGHT/5 + 350, imageSize, imageSize);
+  rect(WIDTH/3 +240, HEIGHT/5 + 340, outlineSize, outlineSize);
   PressableButton kidneyButton = new PressableButton(WIDTH/3 +250, HEIGHT/5 + 350, imageSize, imageSize);
+  AllButtons.add(kidneyButton);
   
   if (mousePressed && brainButton.onButton()){
       gameState = GameState.BRAIN;
@@ -263,48 +392,7 @@ void mapSelection(){ // Map selection page
       gameState = GameState.KIDNEY;
       draw();
     }
-  
 } 
-
-void buildTowers(){ 
-  /* 
-     Function to select and build towers
-     May be better suited in GameMap class?
-  */
-      
-  if (mousePressed && towerAButton.onButton()){
-    if (currentRound != null){
-      if(currentRound.inProgress()){
-        System.out.println("Cannot place towers whilst a round is in progress!");
-        return;
-      }
-    }
-    towerSelected = true;
-  }
-    
-     // Animation of moving tower when choosing location
-  if (towerSelected){
-    selectedTower = TowerSprites[0];
-    selectedTower.resize(50,50);
-    image(selectedTower, mouseX, mouseY);
-       
-     int currentGridX = (int)(mouseX/cellSize);
-     int currentGridY = (int)(mouseY/cellSize);
-       
-     if (mousePressed && checkBuildable(currentGridX, currentGridY)){
-         Grid[currentGridX][currentGridY].buildOn(new TowerA(currentGridX, currentGridY, 0)); 
-         towerSelected = false;
-     }
-  }
-}
-
-boolean checkBuildable(int x, int y){ // Goes w/build towers function above
-  if(x < Grid.length && y < Grid[0].length){
-    return Grid[x][y].buildable();
-  }
-  return false;
-}
-
 
 void mouseMoved() {
   if (gameState == GameState.TITLE || gameState == GameState.MAP){

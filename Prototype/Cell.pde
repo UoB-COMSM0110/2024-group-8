@@ -32,9 +32,18 @@ class Cell{
   
   void outline(){
     noFill();
+    strokeWeight(4);
     if(buildable())stroke(#00FF00);
     else stroke(#FF0000);
     rect(x * cellSize, y * cellSize, cellSize, cellSize);  
+  }
+  
+  void confetti(color confetti, color outline){
+    fill(confetti);
+    strokeJoin(ROUND);
+    strokeWeight(4);
+    stroke(outline);
+    rect(x * cellSize, y * cellSize, cellSize, cellSize); 
   }
   
   void setUnbuildable(){

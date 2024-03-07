@@ -34,17 +34,17 @@ void setup() {
 void draw(){
 }
 
-/////////////select map////////////
-void keyPressed(){
- if (key =='1'){
-   lung.draw();
- } if (key =='2'){
-   kidney.draw();
- } if (key =='3'){
-   brain.draw();
- } if (key =='4'){
-   heart.draw();
- }
+///////////////select map////////////
+//void keyPressed(){
+// if (key =='1'){
+//   lung.draw();
+// } if (key =='2'){
+//   kidney.draw();
+// } if (key =='3'){
+//   brain.draw();
+// } if (key =='4'){
+//   heart.draw();
+// }
   
 }
 
