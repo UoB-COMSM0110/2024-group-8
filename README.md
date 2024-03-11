@@ -127,3 +127,8 @@ Extended:
 - System exits
 
 
+
+# Heuristic Evaluation
+<img width="583" alt="Screenshot 2024-03-11 at 10 33 24" src="https://github.com/UoB-COMSM0110/2024-group-8/assets/150365540/66edb8c0-d064-4447-a1e7-f6150c74d147">
+
+
