@@ -5,7 +5,7 @@ class RunningGame{
     int totalRounds;
     int roundCounter;
 
-    RunningGame(Difficulty difficulty){
+    RunningGame(Difficulty difficulty){ // Stores the game stats of current game
         gameDifficulty = difficulty;
 
         this.totalRounds = gameDifficulty.getNumberOfRounds();
@@ -50,7 +50,7 @@ class RunningGame{
         /* 
            Method to select the round
            Either set as initial round, or increases difficultly from previous round
-           Need to move into round class & potentially adapt formula for increasing difficulty
+           Need to adapt formula for increasing difficulty
            Once we've implemented different kinds of germs needs to be adapted 
            Different quantities of different enemies, etc.
         */

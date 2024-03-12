@@ -38,16 +38,18 @@ class Cell{
     rect(x * cellSize, y * cellSize, cellSize, cellSize);  
   }
   
-  void confetti(color confetti, color outline){
+  void confetti(color confetti, color outline){ // For the win screen, colours random changing bright colours on screen
     fill(confetti);
     strokeJoin(ROUND);
     strokeWeight(4);
     stroke(outline);
     rect(x * cellSize, y * cellSize, cellSize, cellSize); 
   }
+
+  // Will need a similar method to confetti() for the lose screen but filled w/random changing germ images
   
-  void setUnbuildable(){
-     this.buildable = false;
+  void setUnbuildable(){ // Called on path cells, or where a tower has been built
+     this.buildable = false; 
   }
 
 }

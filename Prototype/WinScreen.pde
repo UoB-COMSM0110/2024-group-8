@@ -24,12 +24,18 @@ class WinScreen extends Display {
      completedGameTotalLives = currentGame.getTotalLives();
      completedGameLives = currentGame.getCurrentLives(); // So that you can safely void the currentGame
      
+     // Reset all the global variables so that its possible to play again:
      currentGame = null;
      currentRound = null;
-     difficultySelected = false; // Reset all the global variables so that its possible to play again 
+     difficultySelected = false; 
+     
+     // Remove all the towers on the grid:
+     while (!AllTowers.isEmpty()) {
+        AllTowers.remove(0); // Remove the tower at index 0
+     }
   }
 
-  void draw(){
+  void draw(){   
     background(153, 204, 255);
   
     int currentTime = millis();
@@ -66,18 +72,19 @@ class WinScreen extends Display {
     String roundAndMode = "WOW! You protected the body from " +difficultyString;
     text(roundAndMode , 50, HEIGHT*0.9);
     
-    String livesString1;
+    String livesString;
     int livesLost = this.completedGameTotalLives - this.completedGameLives;
-    if ((livesLost/this.completedGameTotalLives) <= 0.25){ livesString1 = "You only lost " +String.valueOf(livesLost) + " lives! You absolute Germ Vanquisher!"; 
-    } else if (livesLost/this.completedGameTotalLives >= 0.75){ livesString1 = "You lost " +String.valueOf(livesLost) + " lives! Phew! That was close!";
-    } else { livesString1 = "You lost " +String.valueOf(livesLost) + " lives! You're one reliable defender!"; }
-    text(livesString1, 50, HEIGHT*0.95);
+    if (livesLost == 0){ livesString = "You didn't lose any lives! You absolute Germ Vanquisher!";
+    } else if ((livesLost/this.completedGameTotalLives) <= 0.25){ livesString = "You only lost " +String.valueOf(livesLost) + " lives! You're an Immune System Hero!"; 
+    } else if (livesLost/this.completedGameTotalLives >= 0.75){ livesString = "You lost " +String.valueOf(livesLost) + " lives! Phew! That was close!";
+    } else { livesString = "You lost " +String.valueOf(livesLost) + " lives! You're one reliable defender!"; }
+    text(livesString, 50, HEIGHT*0.95);
    
     // Play again button:
     noFill();
     rect(852, HEIGHT*0.85 - 10, 125, 125);
     text("Play", 875, HEIGHT*0.9);
-    text("again?", 865, HEIGHT*0.95);
+    text("again?", 880, HEIGHT*0.95);
     StateChangingButton playAgainButton = new StateChangingButton(852, (int)(HEIGHT*0.85 - 10), 125, 125, GameState.MAP);
     stateChangingButtons.add(playAgainButton);
   }

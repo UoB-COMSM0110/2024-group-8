@@ -4,7 +4,7 @@ class DifficultySelection extends Display {
     PImage mediumEmblem;
     PImage hardEmblem;
     
-    int entryTime = 0; // Implements a halt on button presses to stop auto choosing difficulty 
+    int entryTime = 0; // Implements a halt on button presses to stop auto clicking a difficulty based on where you just pressed a map button
 
     GameState currentMap;
 
@@ -15,9 +15,10 @@ class DifficultySelection extends Display {
     }
 
     void draw(){
-        if (this.entryTime == 0){
+        // sets the entry time for the first entrance to difficulty selection screen
+        if (this.entryTime == 0){ 
           entryTime = millis();
-        } // sets the entry time for the first entrance to difficulty selection screen
+        } 
       
       
         background(background);
@@ -56,7 +57,7 @@ class DifficultySelection extends Display {
         //noFill();
         //rect(160, 160, 680, 150);
         //rect(160, 350, 680, 150);     
-        //rect(160, 535, 680, 150); // uncomment if you want to visualise the buttons
+        //rect(160, 535, 680, 150); // uncomment if you want to visualise the buttons as 
         
         image(this.easyEmblem, 630, 120, imageSize - 10, imageSize - 10);
         PressableButton easyButton = new PressableButton(160, 160, 680, 150);
@@ -72,12 +73,13 @@ class DifficultySelection extends Display {
 
         if (timeOnScreen > 1000){ // Set the difficulty and start the game
            if (mousePressed){
+                // New game object is created based on difficulty
                 if (easyButton.onButton()){ currentGame = new RunningGame(Difficulty.EASY); }
                 if (mediumButton.onButton()){ currentGame = new RunningGame(Difficulty.MEDIUM); }
                 if (hardButton.onButton()){ currentGame = new RunningGame(Difficulty.HARD); }
 
                 difficultySelected = true;
-                currentGameState = this.currentMap;
+                currentGameState = this.currentMap; // Navigates to previously selected map
            }
         }
     }

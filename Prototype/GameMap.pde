@@ -7,20 +7,21 @@ class GameMap{
        - Implement twist for each map
   */
   
+  // Resizes the screen so that there is a play window and a menu bar below
   float playWindowHeight = WIDTH * 0.65;
   float cellSize = WIDTH / 20;
   float menuPosY = playWindowHeight + 1;
   float menuHeight = HEIGHT - menuPosY;
+
   PImage background;
   PImage path;
   PImage pathMask;
   PImage towerA;
   
-  PressableButton towerAButton; 
+  PressableButton towerAButton; // Will need to alter tower buying buttons to be more abstract when more towers implemented
   PressableButton startRoundButton;
-
-  GameState mapGameState;
-
+  
+  // Variables for tower buying animation
   boolean towerSelected = false;
   PImage selectedTower;
   int selectedTowerCost = 0;
@@ -65,12 +66,12 @@ class GameMap{
     image(towerA, 50, height*0.85, 50, 50);
     towerAButton = new PressableButton(50, (int)(height*0.85), 50, 50); 
     
-    String livesCounter = "Lives: " + String.valueOf(currentGame.getCurrentLives());
+    String livesCounter = "LIVES: " + String.valueOf(currentGame.getCurrentLives());
     fill(255);
     textSize(30);
     text(livesCounter, 815, 50);
     
-    String coinsCounter = "Coins: " + String.valueOf(currentGame.getCoins());
+    String coinsCounter = "COINS: " + String.valueOf(currentGame.getCoins());
     text(coinsCounter, 805, 80);
   
     if (currentRound == null || !currentRound.inProgress()){
@@ -170,8 +171,7 @@ class GameMap{
   void buildTowers(){ 
   /* 
      Functions to select and build towers
-     If Hovering over should display tower stats
-     If pressed select tower 
+     If pressed selects tower for placing
   */
   
     if (towerSelected){

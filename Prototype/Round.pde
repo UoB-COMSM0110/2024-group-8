@@ -77,7 +77,7 @@ class Round {
 
   void fireShots(){
    int currentTime = millis(); // Set current time so shoot() is called once every second
-   // This will need to be altered when we animate projetiles to something similar to dispatchInterval
+   // This will need to be altered when we animate projectiles to something similar to dispatchInterval
    // i.e. for each tower calculate the shotInterval, and fire at that rate
   
     if (currentTime - this.lastShotTime >= 1000){ // change to >= shootIntervalInMillisecs when projectiles implemented

@@ -1,8 +1,56 @@
+/*
+    I have finished most of the skeleton of the code, but there's still lots to do:
+      - GAME MAP:
+          - Create a stylised background image and unique path for each organ
+          - Implement twist logic for each map
+          - Clean up the Game Map class by moving methods/code to different classes, I'm thinking about having a 
+            TowerManager and RoundManager class to handle a lot of logic currently in GameMap
+          FINAL BOSS:
+             - Design and implement a final boss germ for each map
+
+      - LOSE SCREEN:
+          - Design and implement a lose screen
+          - Will have very similar implementation to win screen
+          - i.e. display game stats, have a play again button, clear all currentGame data
+          - I thinking instead of filling the grid with bright colours as on winn screen we can fill with changing germs,
+            so it's like they've taken over
+
+      - HOW TO PLAY SCREEN:
+          - Design and implement instructions screen
+          - Should have a button top left on all displays (except win/lose screens),
+            which you can press to bring up an instructions screen
+
+      - GERMS:
+          - Design and implement at least 3/4 more enemies
+          - When a higher level germ is killed, should create a lower level germ in its place 
+            (see existing tower defence game if you're unsure what this means)
+
+      - TOWERS: 
+          - Design and implement at least 3/4 more towers
+          GAME WINDOW: 
+          - Design and implement a game window which will display the stats of the last tower clicked, as well as a sell/delete button,
+            and an upgrade button which shows what the next possible upgrade is, i.e. UPGRADE: Faster Shots COST: 50 coins
+
+      - ROUNDS:
+          - Although I've implemented 'difficulty' its only currently increases number of rounds, and decresing lives and coins
+          - To make it truly more difficult we need to make the rounds have a set type of enemies etc.
+          - Currently the next round just builds on the last by making it slightly longer w/more enemies, but we need to make them actually harder
+
+      - PROJECTILES:
+          - Design and implement projectiles
+          - When doing so will need to alter the tower shots logic slightly so that it shots at correct intervals
+          
+      - BACK BUTTON:
+          - Either an onscreen button or just ESC to go back a screen, i.e. difficulty selection back to map selection
+          - Also for when you've clicked a tower but no longer want to place it
+*/
+
+
 int WIDTH = 1000;
 int HEIGHT = (int)(WIDTH * 0.8);
 
 Cell[][] Grid = new Cell[20][13]; 
-float cellSize = WIDTH / 20;      // Global variables
+float cellSize = WIDTH / 20;      // MUST BE global variables
 
 PImage[] TowerSprites;
 GermSprite[] GermSprites;    // Do these need to be global variables?
@@ -17,14 +65,14 @@ enum GameState { // Different phases of the game, so program knows what to draw
     TITLE,
     MAP,
     WON,
-    // RULES, // Will be the "How to play" screen, can be navigated to at anytime before gameMap selected?
-    DIFFICULTY, 
+    // LOST, // Will be lose screen when implemented
+    // RULES, // Will be the "How to play" screen, can be navigated to at anytime before win/lose screen
     BRAIN,
     LUNG,
     HEART,
     KIDNEY; 
     
-    public boolean isGameMap(){ // Creates a distinct gamestate class for button animations
+    public boolean isGameMap(){ 
       return this == BRAIN || this == LUNG || this == HEART || this == KIDNEY;
     }
 }
@@ -69,15 +117,16 @@ Lung lungMap;
 Heart heartMap;
 Kidney kidneyMap;
 
+// Not sure if there's a better way of doing this, but I create one instance per map so it knows which map to navigate to post difficulty selection
 DifficultySelection brainDifficulty;
 DifficultySelection lungDifficulty;
 DifficultySelection heartDifficulty;
 DifficultySelection kidneyDifficulty;
 
 GameState currentGameState; // Tracks which display to present
-RunningGame currentGame;
-Round currentRound;
-boolean difficultySelected;
+RunningGame currentGame; // Holds all game stats of current Game
+Round currentRound; // Holds all stats of current round
+boolean difficultySelected; // Defines whether to draw difficult selection screen or game map, necessary as otherwise it doesn't know which map to navigate to
 
 // Define variables for the germ cursor character
 PImage germ;
@@ -101,7 +150,7 @@ void settings(){
   size(WIDTH, HEIGHT);
 }
 
-void setup(){
+void setup(){ // Creates & setups all objects needed for the game, calls their relevant setup functions
   font = createFont("Papyrus", 30);
   currentGameState = GameState.TITLE;
 
@@ -139,14 +188,7 @@ void setup(){
 }
 
 void draw(){
-  /* 
-     Draws the output based on the current gameState variable
-     gameState variable eventually will be moved to a different class, which will also store:
-      - Current difficulty
-      - Current lives
-      - Current money
-     Also need to create an optional screen for How to play/a tutorial?
-  */
+  // Draws the output based on the current gameState variable
   
   if (currentGameState == GameState.TITLE){
     titleScreen.draw();
@@ -198,9 +240,9 @@ void draw(){
       }
    }
    
-   if (currentGameState == GameState.WON){
-     winScreen.draw();
-   } 
+    if (currentGameState == GameState.WON){
+      winScreen.draw();
+    } 
 }
 
 void mouseMoved() {
@@ -211,9 +253,12 @@ void mouseMoved() {
 }
 
 void mousePressed(){
-  for (StateChangingButton x : stateChangingButtons){
+  // Iterates through the array of buttons which change the displays and changes states if they are currently displayed & pressed
+  for (StateChangingButton x : stateChangingButtons){ 
     x.changeStates();
   }
+
+  // Will need to add similar logic for tower button?
 }
 
 void mouseCheck(){ // Highlights cell outlines green or red depending on if they're buildable
@@ -224,7 +269,6 @@ void mouseCheck(){ // Highlights cell outlines green or red depending on if they
     Grid[x][y].outline();
   }
 }
-
 
 void disappear(Projectile p){
   AllProjectiles.remove(p);

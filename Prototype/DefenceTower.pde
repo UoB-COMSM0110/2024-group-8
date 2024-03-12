@@ -1,16 +1,16 @@
 public abstract class DefenceTower {
-  public int spriteIndex;
-  public int projectileType;
-  public int damageCapability;
-  public int cost;
-  public int shotsPerSec;
-  public int range;
-  public int currentUpgradeLevel;
-  public int positionX;
+  public int spriteIndex; // Which image
+  public int projectileType; // What level if projectile it fires
+  public int damageCapability; // How much damage it deals
+  public int cost; // Initial cost
+  public int shotsPerSec; 
+  public int range; // Cell distance it can fire to over array
+  public int currentUpgradeLevel; 
+  public int positionX; // Position on the grid
   public int positionY;
-  public int[][] properties;
+  public int[][] properties; // Stores the tower stats at different upgrade levels
   
-  public boolean lastClicked;
+  public boolean lastClicked; // This boolean will be used to display tower stats in the game window when it is the las clicked
   
   public DefenceTower() {}
   
