@@ -58,16 +58,16 @@ class Path{
   spawnPos = new Vector((int)(v[0].x * cellSize), (int)(v[0].y * cellSize));
 
   for (int i = 0; i < v.length - 1; i++) {
-    Grid[v[i].x][v[i].y].isPath = true;
+    Grid[v[i].x][v[i].y].buildable = false;
 
     int difference = v[i].x - v[i + 1].x;
     if (difference  != 0) {//using x
       for (int z = 0; z < abs(difference); z++) {
         if (difference < 0) {
-          Grid[v[i].x + z][v[i].y].isPath = true;//path goes right
+          Grid[v[i].x + z][v[i].y].buildable = false;//path goes right
           directions[i]  = Direction.right;
         } else {
-          Grid[v[i].x - z][v[i].y].isPath = true;//path goes left
+          Grid[v[i].x - z][v[i].y].buildable = false;//path goes left
           directions[i]  = Direction.left;
         }
       }
@@ -77,17 +77,17 @@ class Path{
 
       for (int z = 0; z < abs(difference); z++) {
         if (difference < 0){
-          Grid[v[i].x][v[i].y + z].isPath = true; //path goes down
+          Grid[v[i].x][v[i].y + z].buildable = false; //path goes down
           directions[i]  = Direction.down;
         } else {
-          Grid[v[i].x][v[i].y - z].isPath = true;// path goes up
+          Grid[v[i].x][v[i].y - z].buildable = false;// path goes up
           directions[i]  = Direction.up;
         }
       }
     }
   }
 
-  if (v.length > 0)Grid[v[v.length - 1].x][v[v.length - 1].y].isPath = true;
+  if (v.length > 0)Grid[v[v.length - 1].x][v[v.length - 1].y].buildable = false;
   
   allLanes = new Lane[directions.length];
   for(int i = 0; i< allLanes.length; i++) {

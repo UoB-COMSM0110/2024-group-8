@@ -16,6 +16,15 @@ class GameMap{
   PImage pathMask;
   PImage towerA;
   
+  PressableButton towerAButton; 
+  PressableButton startRoundButton;
+
+  GameState mapGameState;
+
+  boolean towerSelected = false;
+  PImage selectedTower;
+  int selectedTowerCost = 0;
+  
   void setup(){
     // Initialize grid
     for (int x = 0; x < Grid.length; x++){
@@ -40,64 +49,97 @@ class GameMap{
     }
   }
 
-  void draw() {
+  void draw(){   
+    background(153, 204, 255);
     image(background, 0, 0, width, playWindowHeight);
     image(path, 0, 0, width, playWindowHeight);
+    
     
     strokeWeight(8);
     strokeJoin(ROUND);
     noFill();
     stroke(255);
-    rect(40, HEIGHT*0.85 - 10, 120, 120);
     
-    image(towerA, 50, height*0.85, 100, 100);
-    towerAButton = new PressableButton(50, (int)(height*0.85), 100, 100); // PAssing GameState.LUNG regardless of map, not really important as just for button animation
-    AllButtons.add(towerAButton);
+    // Tower Buttons:
+    rect(40, HEIGHT*0.85 - 10, 70, 70);
+    image(towerA, 50, height*0.85, 50, 50);
+    towerAButton = new PressableButton(50, (int)(height*0.85), 50, 50); 
     
+    String livesCounter = "Lives: " + String.valueOf(currentGame.getCurrentLives());
+    fill(255);
+    textSize(30);
+    text(livesCounter, 815, 50);
+    
+    String coinsCounter = "Coins: " + String.valueOf(currentGame.getCoins());
+    text(coinsCounter, 805, 80);
+  
     if (currentRound == null || !currentRound.inProgress()){
-      strokeWeight(8);
-      strokeJoin(ROUND);
-      stroke(255);
-      noFill();
-      rect(800, (int)(height*0.85), 165, 100);
-      startRoundButton = new PressableButton(800, (int)(height*0.85), 165, 100);
-      AllButtons.add(startRoundButton);
-      fill(255);
-      textSize(40);
-      text("START", 815, (int)(height*0.90));
-      text("ROUND", 805, (int)(height*0.95));
+        strokeWeight(8);
+        strokeJoin(ROUND);
+        stroke(255);
+        noFill();
+        rect(800, (int)(height*0.85), 165, 100);
+        startRoundButton = new PressableButton(800, (int)(height*0.85), 165, 100);
+        fill(255);
+        textSize(40);
+        text("START", 815, (int)(height*0.9));
+        text("ROUND", 805, (int)(height*0.95));
     } else {
-      fill(255);
-      textSize(40);
+        fill(255);
+        textSize(40);
+        text("ROUND", 800, (int)(height*0.85));
+        String currentRoundIndex = currentGame.getCurrentRoundCounterAsString() + " / " + String.valueOf(currentGame.getTotalRounds());
+        text(currentRoundIndex, 840, (int)(height*0.9));
       
-      String currentRoundIndex = "ROUND  " + String.valueOf(getCurrentRoundCounterAsString());
-      text(currentRoundIndex, 780, (int)(height*0.90));
-      
-      int timeLeft = currentRound.getTimeRemainingInSecs();
-      if (timeLeft > 0){
-        textSize(20);
-        text("Time Remaining:", 800, (int)(height*0.93));
-        String timeRemaining = String.valueOf(timeLeft);
-        text(timeRemaining, 815, (int)(height*0.96));
-        text(" Seconds!", 840, (int)(height*0.96));
-      } else {
-        textSize(20);
-        text("No more germs ...", 800, (int)(height*0.93));
-        text("... FOR NOW!", 825, (int)(height*0.96));
-      }
+        int timeLeft = currentRound.getTimeRemainingInSecs();
+        if (timeLeft > 0){
+            textSize(20);
+            text("Time Remaining:", 800, (int)(height*0.93));
+            String timeRemaining = String.valueOf(timeLeft);
+            text(timeRemaining, 815, (int)(height*0.96));
+            text(" Seconds!", 840, (int)(height*0.96));
+        } else if (timeLeft <= 0 && (AllGerms.size() > 0)){ // If no more enemies to dispense, but still enemies on the grid
+            textSize(20);
+            text("No more germs ...", 800, (int)(height*0.93));
+            text("... FOR NOW!", 825, (int)(height*0.96));
+        } 
     }
-      
-    for (int i = 0; i < AllTowers.size(); i++){  // Changed length to size()
-       AllTowers.get(i).drawme();  // Changed AllToweers to AllTowers
-    }
-     
-    for (int i = 0; i< AllGerms.size(); i++){ 
-        AllGerms.get(i).move(); 
-    } 
     
-    buildTowers();
+    if (currentRound != null && !currentRound.inProgress()){ // If the round has finished and the player hasn't received their winnings yet, give winnings
+       System.out.println("Player should earn: " + currentRound.getEarningsForCompletion());
+       System.out.println("PLayer has received earnings = " +currentRound.getReceivedEarnings());
+       
+        if (!currentRound.getReceivedEarnings()){
+            currentGame.earnCoins(currentRound.getEarningsForCompletion());
+            currentRound.setReceivedEarnings(true);
+         }
+    }
+      
+    for (DefenceTower tower : AllTowers){
+      tower.drawTower();
+    }
+
+    for (Germ germ : AllGerms){
+      germ.move();
+    }
    
+    buildTowers();
+
+    if (currentRound != null && currentRound.inProgress()){ 
+      currentRound.run(); 
+    }
+
+    if (currentGame.getRoundCounter() == currentGame.getTotalRounds() && !(currentRound.inProgress()) && AllGerms.size() <= 0){ // If the final round is fully completed
+      winScreen.setup();
+      currentGameState = GameState.WON;
+    }
+      
+    // If you press start round, and no round is in progress it will start the round 
+    if (mousePressed && startRoundButton.onButton() && currentGame.getRoundCounter() < currentGame.getTotalRounds()){ // Change the roundCounter condition for RunningGame.getNumberOfRounds() later on
+      currentGame.selectRound();
+    }
   }
+
   
   void path(){   
     Vector[] path = new Vector[]{
@@ -123,11 +165,6 @@ class GameMap{
     }; 
     
     mapPath = new Path(path);
-    Grid[0][0].setUnbuildable();
-    Grid[1][0].setUnbuildable();
-    Grid[0][2].setUnbuildable();
-    Grid[1][2].setUnbuildable();
-    Grid[0][3].setUnbuildable();
   }
   
   void buildTowers(){ 
@@ -136,26 +173,27 @@ class GameMap{
      If Hovering over should display tower stats
      If pressed select tower 
   */
+  
     if (towerSelected){
       placeTower();
     }
     
-    if (towerAButton.onButton()){
-      //fill(255);
-      //rect(100, (height*0.85) - 50, 100, 100);
-      //noFill();
-      //textSize(10);
-      //text("[INSERT DESCRIPTION]", 105, height*0.85); // think this should be replaced with if button = last button pressed, it's description is on side bar
-      
-       if (mousePressed){
+    TowerA selectedTower = new TowerA(0,0,0); // Just for now this all needs to be rewritten when we add more towers
+    
+    if (towerAButton.onButton()){  
+       this.selectedTowerCost = selectedTower.getCost(); 
+       if (this.selectedTowerCost <= currentGame.getCoins()){ fill(#00FF00); } else { fill(#FF0000); }
+       textSize(20);
+       text("Cost: " + String.valueOf(this.selectedTowerCost), 100, 710);
+       if (mousePressed && this.selectedTowerCost <= currentGame.getCoins()){
           if (currentRound != null){
              if(currentRound.inProgress()){ // Checks whether a round has started or not
                 System.out.println("Cannot place towers whilst a round is in progress!");
                 return;
              }
           }
-          towerSelected = true;
-       }
+          towerSelected = true;          
+       } 
     }
   }
   
@@ -168,16 +206,12 @@ class GameMap{
     int currentGridX = (int)(mouseX/cellSize);
     int currentGridY = (int)(mouseY/cellSize);
        
-    if (mousePressed && checkBuildable(currentGridX, currentGridY)){
+    if (mousePressed && Grid[currentGridX][currentGridY].buildable()){
         Grid[currentGridX][currentGridY].buildOn(new TowerA(currentGridX, currentGridY, 0)); 
+        currentGame.spendCoins(this.selectedTowerCost);
+        this.selectedTowerCost = 0;
         towerSelected = false;
     }
   } 
-  
-  boolean checkBuildable(int x, int y){ // Goes w/build towers function above
-    if(x < Grid.length && y < Grid[0].length){
-      return Grid[x][y].buildable();
-    }
-    return false;
-  }
+ 
 }

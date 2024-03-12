@@ -4,7 +4,7 @@ class Germ {
   Direction dir;
   protected int health;
 
-  int speed = 3;
+  int speed = 1;
   int spriteIndex;
   int anim = 0;
   int animTimer = 0;
@@ -48,6 +48,12 @@ class Germ {
       else anim = 0;
     }
   }
+
+  void leak(Germ g){
+    AllGerms.remove(g);
+    // println("A germ has leaked");
+    currentGame.subtractLife();
+  }
   
   int getGermX(){
     return (int)(this.posX / cellSize);
@@ -80,6 +86,6 @@ class GermWbc extends Germ{
     this.posY = p.y;
     dir = mapPath.getDire(0);
     this.requiredProjectile = 0;
-    this.health = 5;
+    this.health = 3;
   }
 }

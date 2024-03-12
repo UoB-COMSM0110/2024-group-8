@@ -1,7 +1,7 @@
 class Cell{
   int x;
   int y;
-  boolean isPath = false;
+  boolean buildable = true;;
   
    Cell(int x, int y){
     this.x = x;
@@ -14,7 +14,7 @@ class Cell{
     if (buildable()){
       occupant = t;
       AllTowers.add(occupant); 
-       System.out.println("Tower built!");
+      this.buildable = false;;
     }
   }
   
@@ -23,18 +23,18 @@ class Cell{
   }
   
   boolean buildable(){
-    if (occupant == null && !isPath){
-      return true;
-    } else {
-      return false;
-    }
+    return this.buildable;
   }
   
   void outline(){
     noFill();
     strokeWeight(4);
-    if(buildable())stroke(#00FF00);
-    else stroke(#FF0000);
+    
+    if (buildable()){
+       stroke(#00FF00); 
+    } else { 
+       stroke(#FF0000); 
+    }
     rect(x * cellSize, y * cellSize, cellSize, cellSize);  
   }
   
@@ -47,7 +47,7 @@ class Cell{
   }
   
   void setUnbuildable(){
-     this.isPath = true;
+     this.buildable = false;
   }
 
 }
