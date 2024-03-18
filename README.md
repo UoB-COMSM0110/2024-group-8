@@ -136,3 +136,26 @@ We received feedback from participants who took part in playing the game we had 
 1. Player should be able to place towers whilst a round is in progress;
 2. Interesting twist: random shortcuts will appear for germs to pass;
 3. Some suggests that we can use towers to block germs' path;
+
+
+# SUS Analysis
+
+| Person  | Level 1 | Level 2 | 
+| ------- | ------- | ------- |
+|    1    |    70   |   76    |
+|    2    |    85   |   81    |
+|    3    |   72.5  |   70    |
+|    4    |    85   |   81    |
+|    5    |    67   |   69    |
+|    6    |    85   |  85.5   |
+|    7    |    90   |  92.5   |
+|    8    |    75   |   72    |
+|    9    |    76   |   74    |
+|    10   |    71   |   71    |
+
+
+
+W test statistic = 5.5
+Number of non-tied pairs (n) = 7
+
+
