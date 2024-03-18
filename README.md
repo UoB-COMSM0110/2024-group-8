@@ -138,7 +138,7 @@ We received feedback from participants who took part in playing the game we had 
 3. Some suggests that we can use towers to block germs' path;
 
 
-# SUS Analysis
+# System Usability Scale (SUS) Analysis
 
 | Person  | Level 1 | Level 2 | 
 | ------- | ------- | ------- |
@@ -155,7 +155,7 @@ We received feedback from participants who took part in playing the game we had 
 
 
 
-W test statistic = 5.5
-Number of non-tied pairs (n) = 7
+W test statistic = 5.5;
+Number of non-tied pairs (n) = 7;
 
 
