@@ -49,7 +49,7 @@
 int WIDTH = 1000;
 int HEIGHT = (int)(WIDTH * 0.8);
 
-Cell[][] Grid = new Cell[20][13]; 
+Cell[][] Grid = new Cell[20][14]; 
 float cellSize = WIDTH / 20;      // MUST BE global variables
 
 PImage[] TowerSprites;
@@ -180,6 +180,7 @@ void setup(){ // Creates & setups all objects needed for the game, calls their r
   
   TowerSprites = new PImage[]{  // Corrected the array declaration
     loadImage("tower/antibody.png"),
+    
   };
   
   GermSprites = new GermSprite[]{

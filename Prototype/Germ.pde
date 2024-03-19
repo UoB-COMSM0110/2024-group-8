@@ -4,7 +4,7 @@ class Germ {
   Direction dir;
   protected int health;
 
-  int speed = 3;
+  int speed = 6;
   int spriteIndex;
   int anim = 0;
   int animTimer = 0;

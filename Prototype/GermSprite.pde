@@ -13,14 +13,14 @@ class GermSprite{
   
   GermSprite(String name){
     String path = "germ/" ;
-    up[0] = loadImage(path + "germ1.png");
-    up[1] = loadImage(path + "germ1.png");
-    down[0] = loadImage(path + "germ1.png");
-    down[1] = loadImage(path + "germ1.png");
-    left[0] = loadImage(path + "germ1.png");
-    left[1] = loadImage(path + "germ1.png");
-    right[0] = loadImage(path + "germ1.png");
-    right[1] = loadImage(path + "germ1.png");
+    up[0] = loadImage(path + "germ1L.png");
+    up[1] = loadImage(path + "germ1R.png");
+    down[0] = loadImage(path + "germ1L.png");
+    down[1] = loadImage(path + "germ1R.png");
+    left[0] = loadImage(path + "germ1L.png");
+    left[1] = loadImage(path + "germ1R.png");
+    right[0] = loadImage(path + "germ1L.png");
+    right[1] = loadImage(path + "germ1R.png");
     
   }
 }

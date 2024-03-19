@@ -3,7 +3,7 @@ class DifficultySelection extends Display {
     PImage easyEmblem;
     PImage mediumEmblem;
     PImage hardEmblem;
-    
+
     int entryTime = 0; // Implements a halt on button presses to stop auto clicking a difficulty based on where you just pressed a map button
 
     GameState currentMap;
@@ -59,20 +59,19 @@ class DifficultySelection extends Display {
         //rect(160, 350, 680, 150);     
         //rect(160, 535, 680, 150); // uncomment if you want to visualise the buttons as 
         
-        image(this.easyEmblem, 630, 120, imageSize - 10, imageSize - 10);
-        PressableButton easyButton = new PressableButton(160, 160, 680, 150);
-
-        image(this.mediumEmblem, 120, 300, imageSize, imageSize);
-        PressableButton mediumButton = new PressableButton(160, 350, 680, 150);
-
-        image(this.hardEmblem, 630, 480, imageSize, imageSize);
-        PressableButton hardButton = new PressableButton(160, 535, 680, 150);
-
+        // Draw and animate the buttons
+        handleButton(this.easyEmblem, 630, 120, imageSize, 680, 150);
+        handleButton(this.mediumEmblem, 120, 300, imageSize, 680, 150);
+        handleButton(this.hardEmblem, 630, 480, imageSize, 680, 150);
 
         int timeOnScreen = (millis() - this.entryTime);
 
         if (timeOnScreen > 1000){ // Set the difficulty and start the game
            if (mousePressed){
+                PressableButton easyButton = new PressableButton(160, 160, 680, 150);
+                PressableButton mediumButton = new PressableButton(160, 350, 680, 150);
+                PressableButton hardButton = new PressableButton(160, 535, 680, 150);
+                
                 // New game object is created based on difficulty
                 if (easyButton.onButton()){ currentGame = new RunningGame(Difficulty.EASY); }
                 if (mediumButton.onButton()){ currentGame = new RunningGame(Difficulty.MEDIUM); }
@@ -81,6 +80,24 @@ class DifficultySelection extends Display {
                 difficultySelected = true;
                 currentGameState = this.currentMap; // Navigates to previously selected map
            }
+        }
+    }
+
+    // Function to handle button animation
+    void handleButton(PImage emblem, int x, int y, int imageSize, int buttonWidth, int buttonHeight) {
+        boolean isButtonHovered = false; // Track if the button is being hovered over
+
+        // Check if mouse is over the button
+        if (mouseX >= x && mouseX <= x + buttonWidth && 
+            mouseY >= y && mouseY <= y + buttonHeight) {
+            isButtonHovered = true;
+        }
+
+        // Draw button with animation
+        if (isButtonHovered) {
+            image(emblem, x - 5, y - 5, imageSize + 10, imageSize + 10); // Scale up slightly
+        } else {
+            image(emblem, x, y, imageSize, imageSize); // Normal size if not hovered
         }
     }
 }
