@@ -59,7 +59,9 @@ PImage brain;
 PImage heart;
 PImage kidney;
 PImage lung;
+PImage backButton;
 PFont font;
+
 
 enum GameState { // Different phases of the game, so program knows what to draw
     TITLE,

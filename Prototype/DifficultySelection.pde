@@ -3,6 +3,8 @@ class DifficultySelection extends Display {
     PImage easyEmblem;
     PImage mediumEmblem;
     PImage hardEmblem;
+    
+
 
     int entryTime = 0; // Implements a halt on button presses to stop auto clicking a difficulty based on where you just pressed a map button
 
@@ -81,6 +83,8 @@ class DifficultySelection extends Display {
                 currentGameState = this.currentMap; // Navigates to previously selected map
            }
         }
+
+        //BackButton(backButton, WIDTH/50, HEIGHT/50, 100, GameState.MAP);
     }
 
     // Function to handle button animation
@@ -100,4 +104,20 @@ class DifficultySelection extends Display {
             image(emblem, x, y, imageSize, imageSize); // Normal size if not hovered
         }
     }
+    
+    /*
+    void BackButton(PImage mapImage, int x, int y, int outlineSize, GameState state){
+        // Check if mouse is over the map image
+        if (mouseX >= x - 10 && mouseX <= x + 70 && 
+            mouseY >= y - 10 && mouseY <= y + 70) {
+            image(mapImage, x-20 , y-20 , 110, 110); // Scale up slightly
+            if (mousePressed) {
+                currentGameState = state; // Change game state if the map is clicked
+            }
+        } else {
+            image(mapImage, x, y, 70, 70); // Normal size if not hovered
+        }
+    }
+    */ // Doesn't work at the moment//
+    
 }
