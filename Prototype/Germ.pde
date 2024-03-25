@@ -27,17 +27,16 @@ class Germ {
   void move(){
     PathStatus status = mapPath.checkPos(new Vector(posX, posY), onLane);
     if (status == PathStatus.finished){
-      leak(this);
-      return;
+      return; // Skip over germs which have finished moving
     } else if (status == PathStatus.next){
       onLane++;
       dir = mapPath.getDire(onLane);
     }
     
-    if (dir==Direction.up)posY-=speed;
-    else if (dir == Direction.down) posY+= speed;
-    else if (dir == Direction.left) posX -=speed;
-    else posX += speed;
+    if (dir==Direction.up){ posY-=speed; }
+    else if (dir == Direction.down){ posY+= speed; }
+    else if (dir == Direction.left){ posX -=speed; }
+    else { posX += speed; }
     image(GermSprites[0].getImage(dir, anim),posX, posY, cellSize, cellSize);
     
     animTimer++;
@@ -47,6 +46,11 @@ class Germ {
       if (anim == 0) anim =1;
       else anim = 0;
     }
+  }
+  
+  boolean isLeaked(){
+    PathStatus status = mapPath.checkPos(new Vector(posX, posY), onLane);
+    return (status == PathStatus.finished);
   }
 
   void leak(Germ g){

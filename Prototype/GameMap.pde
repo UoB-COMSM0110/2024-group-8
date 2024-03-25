@@ -34,7 +34,7 @@ class GameMap{
        }
     }
     
-    path();
+    initalisePath();
     
     try {
       this.background.resize(WIDTH, HEIGHT);
@@ -120,8 +120,18 @@ class GameMap{
       tower.drawTower();
     }
 
+    ArrayList<Germ> germsToLeak = new ArrayList<>();
+
     for (Germ germ : AllGerms){
       germ.move();
+      if (germ.isLeaked()){
+        germsToLeak.add(germ);
+        currentGame.subtractLife();
+      }
+    }
+    
+    for (Germ germToLeak : germsToLeak){
+      AllGerms.remove(germToLeak);
     }
    
     buildTowers();
@@ -142,30 +152,31 @@ class GameMap{
   }
 
   
-  void path(){   
+  void initalisePath(){   
     Vector[] path = new Vector[]{
-    new Vector( 0,  5),
-    new Vector( 3,  5),
-    new Vector( 3,  8),
-    new Vector( 1,  8),
-    new Vector( 1,  11),
-    new Vector( 9,  11),
-    new Vector( 9,  8),
-    new Vector( 6,  8),
-    new Vector( 6,  3),
-    new Vector( 10,  3),
-    new Vector( 10,  5),
-    new Vector( 11,  5),
-    new Vector( 11,  10),
-    new Vector( 14,  10),
-    new Vector( 14,  8),
-    new Vector( 17,  8),
-    new Vector( 17,  5),
-    new Vector( 13,  5),
-    new Vector( 13,  0),     
+    new Vector(0,  5),
+    new Vector(3,  5),
+    new Vector(3,  8),
+    new Vector(1,  8),
+    new Vector(1,  11),
+    new Vector(9,  11),
+    new Vector(9,  8),
+    new Vector(6,  8),
+    new Vector(6,  3),
+    new Vector(10,  3),
+    new Vector(10,  5),
+    new Vector(11,  5),
+    new Vector(11,  10),
+    new Vector(14,  10),
+    new Vector(14,  8),
+    new Vector(17,  8),
+    new Vector(17,  5),
+    new Vector(13,  5),
+    new Vector(13,  0),     
     }; 
-    
+  
     mapPath = new Path(path);
+
   }
   
   void buildTowers(){ 
@@ -206,12 +217,15 @@ class GameMap{
     int currentGridX = (int)(mouseX/cellSize);
     int currentGridY = (int)(mouseY/cellSize);
        
-    if (mousePressed && Grid[currentGridX][currentGridY].buildable()){
+    try {
+      if (mousePressed && Grid[currentGridX][currentGridY].buildable()){
         Grid[currentGridX][currentGridY].buildOn(new TowerA(currentGridX, currentGridY, 0)); 
         currentGame.spendCoins(this.selectedTowerCost);
         this.selectedTowerCost = 0;
         towerSelected = false;
-    }
-  } 
- 
+      }
+    } catch (ArrayIndexOutOfBoundsException e) {
+       System.out.println("Can't build there!");
+    } 
+  }
 }

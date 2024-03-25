@@ -1,7 +1,8 @@
 class Cell{
   int x;
   int y;
-  boolean buildable = true;;
+  boolean isPath = false;
+  boolean buildable = true;
   
    Cell(int x, int y){
     this.x = x;
@@ -14,7 +15,7 @@ class Cell{
     if (buildable()){
       occupant = t;
       AllTowers.add(occupant); 
-      this.buildable = false;;
+      this.buildable = false;
     }
   }
   
@@ -23,14 +24,14 @@ class Cell{
   }
   
   boolean buildable(){
-    return this.buildable;
+    return (this.buildable && !this.isPath);
   }
   
   void outline(){
     noFill();
     strokeWeight(4);
     
-    if (buildable()){
+    if (buildable()){ 
        stroke(#00FF00); 
     } else { 
        stroke(#FF0000); 
@@ -48,8 +49,12 @@ class Cell{
 
   // Will need a similar method to confetti() for the lose screen but filled w/random changing germ images
   
-  void setUnbuildable(){ // Called on path cells, or where a tower has been built
+  void setUnbuildable(){ // Called where a tower has been built
      this.buildable = false; 
+  }
+
+  void setPath(Vector v){ // Set the pathway at the start of the round
+    Grid[v.x][v.y].isPath = true;
   }
 
 }
