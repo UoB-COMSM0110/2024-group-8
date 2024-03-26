@@ -169,18 +169,34 @@ class GameMap{
       text("Shots/sec   ->    " + selectedTower.shotsPerSec, 310, (menuPosY+85));
       text("Protein         ->    " + selectedTower.getProjectileTypeAsString(), 310, (menuPosY+105));
       
-      // Buy button
-      fill(0, 128, 255);
-      stroke(0, 128, 255);
-      rect(620, (menuPosY+30), 170, 75);
-      PressableButton buyButton = new PressableButton(620, (int)(menuPosY+30), 170, 75);
-       
-      fill(255);
-      textSize(30);
-      text("BUY", 670, (menuPosY+60));
-      if (selectedTower.getCost() <= currentGame.getCoins()){ fill(#00FF00); } else { fill(#FF0000); }
-      text("Cost: " + selectedTower.getCost(), 650, (menuPosY+90));  
-      if (mousePressed && buyButton.onButton()){ placingTower = true; }
+      if (!placingTower){
+        // Buy button
+        fill(0, 128, 255);
+        stroke(0, 128, 255);
+        rect(620, (menuPosY+30), 170, 75);
+        PressableButton buyButton = new PressableButton(620, (int)(menuPosY+30), 170, 75);
+        fill(255);
+        textSize(30);
+        text("BUY", 670, (menuPosY+60));
+        if (selectedTower.getCost() <= currentGame.getCoins()){ fill(#00FF00); } else { fill(#FF0000); }
+        text("Cost: " + selectedTower.getCost(), 650, (menuPosY+90));  
+        if (mousePressed && buyButton.onButton()){ placingTower = true; }
+      } else {
+        // Cancel buy button
+        fill(0);
+        stroke(0);
+        rect(620, (menuPosY+30), 170, 75);
+        PressableButton cancelBuyButton = new PressableButton(620, (int)(menuPosY+30), 170, 75);
+        fill(255);
+        textSize(20);
+        text("PLACE HERE", 640, (menuPosY+50));
+        text("TO CANCEL", 645, (menuPosY+75));  
+        text("PURCHASE", 650, (menuPosY+100));
+        if (mousePressed && cancelBuyButton.onButton()){ 
+            placingTower = false; 
+            towerSelected = false;
+        } 
+      }
     
     // Current tower window:
     } else if (lastClickedTower == null){
