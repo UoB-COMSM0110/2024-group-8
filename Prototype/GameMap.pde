@@ -31,6 +31,7 @@ class GameMap{
   // Variables for tower buying animation
   DefenceTower selectedTower;
   boolean towerSelected = false;
+  boolean placingTower = false;
   PImage selectedTowerImage;
   int selectedTowerCost = 0;
   
@@ -94,11 +95,12 @@ class GameMap{
       AllGerms.remove(germToLeak);
     }
    
+    if (checkForSelectedTower()){ towerSelected = true; }
+    if (placingTower){ placeTower(); }
+    
+    
     // Handle towerPresses for Towerinfo/sale
-    checkForTowerPresses();
-   
-    // Handle Button Pressing for Tower Buying:
-    buildTowers();
+    checkForPlacedTowerPresses();
 
     // Run current round
     if (currentRound != null && currentRound.inProgress()){ 
@@ -150,14 +152,43 @@ class GameMap{
     String coinsCounter = "COINS: " + String.valueOf(currentGame.getCoins());
     text(coinsCounter, 805, 80);
     
+    if (towerSelected){
+      selectedTowerImage = TowerSprites[selectedTower.spriteIndex];
+      selectedTowerImage.resize(75,75);
+      image(selectedTowerImage, 170, (menuPosY+50)); 
+      textSize(30);
+      text(selectedTower.name, 160, (menuPosY+30));
+      
+      noFill();
+      stroke(255);
+      rect(300, (menuPosY+20), 250, 100);
+      //// Tower Stats
+      textSize(20);
+      text("Range           ->    " + selectedTower.range, 310, (menuPosY+45));
+      text("Damage       ->    " + selectedTower.damageCapability, 310, (menuPosY+65));
+      text("Shots/sec   ->    " + selectedTower.shotsPerSec, 310, (menuPosY+85));
+      text("Protein         ->    " + selectedTower.getProjectileTypeAsString(), 310, (menuPosY+105));
+      
+      // Buy button
+      fill(0, 128, 255);
+      stroke(0, 128, 255);
+      rect(620, (menuPosY+30), 170, 75);
+      PressableButton buyButton = new PressableButton(620, (int)(menuPosY+30), 170, 75);
+       
+      fill(255);
+      textSize(30);
+      text("BUY", 670, (menuPosY+60));
+      if (selectedTower.getCost() <= currentGame.getCoins()){ fill(#00FF00); } else { fill(#FF0000); }
+      text("Cost: " + selectedTower.getCost(), 650, (menuPosY+90));  
+      if (mousePressed && buyButton.onButton()){ placingTower = true; }
+    
     // Current tower window:
-    if (lastClickedTower == null){
+    } else if (lastClickedTower == null){
       textSize(30);
       text("Press a placed tower to see it's stats", 170, (menuPosY+40));
     } else {
        int towerX = (int)(lastClickedTower.getTowerX() * cellSize);
        int towerY = (int)(lastClickedTower.getTowerY() * cellSize);
-       System.out.println("Current tower position = " +towerX + " " +towerY);
        float towerRange = ((lastClickedTower.range * cellSize) * 2) + 1; // twice the cell range + 1 to account for the cell the tower lives in and then everything its range away
        noFill();
        stroke(255);
@@ -165,18 +196,16 @@ class GameMap{
        
        lastClickedTowerImage = TowerSprites[lastClickedTower.spriteIndex];
        lastClickedTowerImage.resize(75,75);
-       //noFill();
-       //rect(160, (menuPosY+40), 95, 95);
        image(lastClickedTowerImage, 170, (menuPosY+50)); 
        textSize(30);
        text(lastClickedTower.name, 160, (menuPosY+30));
        
-       
+       rect(300, (menuPosY+20), 250, 100);
        textSize(20);
-       text("Range           ->    " + lastClickedTower.range, 280, (menuPosY+30));
-       text("Damage       ->    " + lastClickedTower.damageCapability, 280, (menuPosY+50));
-       text("Shots/sec  ->    " + lastClickedTower.shotsPerSec, 280, (menuPosY+70));
-       text("Protein         ->    " + lastClickedTower.getProjectileTypeAsString(), 280, (menuPosY+90));
+       text("Range           ->    " + lastClickedTower.range, 310, (menuPosY+45));
+       text("Damage       ->    " + lastClickedTower.damageCapability, 310, (menuPosY+65));
+       text("Shots/sec  ->    " + lastClickedTower.shotsPerSec, 310, (menuPosY+85));
+       text("Protein         ->    " + lastClickedTower.getProjectileTypeAsString(), 310, (menuPosY+105));
        
        if (lastClickedTower.currentUpgradeLevel < 3){
           // Upgrade info & button
@@ -280,37 +309,10 @@ class GameMap{
     mapPath = new Path(path);
 
   }
-  
-  void buildTowers(){ 
-  /* 
-     Functions to select and build towers
-     If pressed selects tower for placing
-  */
-  
-    if (towerSelected){
-      placeTower();
-    }
-    
-    if (checkForSelectedTower()){  
-        this.selectedTowerCost = selectedTower.getCost(); 
-        // if (this.selectedTowerCost <= currentGame.getCoins()){ fill(#00FF00); } else { fill(#FF0000); }
-        // textSize(20);
-        // text("Cost: " + String.valueOf(this.selectedTowerCost), 100, 710);
-        if (mousePressed && this.selectedTowerCost <= currentGame.getCoins()){
-          if (currentRound != null){
-              if(currentRound.inProgress()){ // Checks whether a round has started or not
-                System.out.println("Cannot place towers whilst a round is in progress!");
-                return;
-              }
-          }
-          towerSelected = true;          
-       } 
-    }
-  }
 
   public boolean checkForSelectedTower(){
     if (mousePressed && towerAButton.onButton()){  
-        selectedTower = new TowerA(0,0,0); // Just for now this all needs to be rewritten when we add more towers
+        selectedTower = new TowerA(0,0,0);
         return true;
     }
 
@@ -319,13 +321,10 @@ class GameMap{
         return true;
     }
     return false;
-
   }
   
   void placeTower(){   
     // Animation of moving tower when choosing location
-    selectedTowerImage = TowerSprites[selectedTower.spriteIndex]; // Move to specific tower class eventually when more varieties of tower
-    selectedTowerImage.resize(50,50);
     float towerRange = ((selectedTower.range * cellSize) * 2) + 1; // twice the cell range + 1 to account for the cell the tower lives in and then everything its range away
     imageMode(CENTER);
     image(selectedTowerImage, mouseX, mouseY);
@@ -345,13 +344,14 @@ class GameMap{
         currentGame.spendCoins(this.selectedTowerCost);
         this.selectedTowerCost = 0;
         towerSelected = false;
+        placingTower = false;
       }
     } catch (ArrayIndexOutOfBoundsException e) { // Necessary to handle pressing off grid when tower selected
        System.out.println("Can't build there!");
     } 
   }
   
-  public void checkForTowerPresses(){
+  public void checkForPlacedTowerPresses(){
     if (mousePressed){
       int x = (int)(mouseX/cellSize);
       int y = (int)(mouseY/cellSize);
@@ -360,6 +360,7 @@ class GameMap{
              if (t.positionX == x && t.positionY == y){
                System.out.println("Found the lastClickedTower");
                lastClickedTower = t;
+               towerSelected = false;
              } 
          }
       }
