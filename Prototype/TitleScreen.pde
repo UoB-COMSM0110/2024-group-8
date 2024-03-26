@@ -22,8 +22,11 @@ class TitleScreen extends Display {
         fill(255);
         text("Immune System Defence", WIDTH/8 - 50, HEIGHT/4);
         
+        
+        StateChangingButton startButton = new StateChangingButton(WIDTH/2 - 100, HEIGHT/2, 200, 60, GameState.MAP);
+        stateChangingButtons.add(startButton);
         //Draw start button with animation
-        if (isStartButtonHovered) {
+        if (startButton.onButton()) {
             fill(173, 224, 255); // Lighter color when hovered over
         } else {
             fill(153, 204, 255);
@@ -32,19 +35,9 @@ class TitleScreen extends Display {
         strokeJoin(ROUND);
         stroke(153, 204, 255);
         rect(WIDTH/2 - 100, HEIGHT/2, 200, 60);
-        StateChangingButton startButton = new StateChangingButton(WIDTH/2 - 100, HEIGHT/2, 200, 60, GameState.MAP);
-        stateChangingButtons.add(startButton);
     
         fill(255);
         textSize(40);
         text("START", WIDTH/2 - 62 , HEIGHT/2 + 42);
-    
-        // Check if the mouse is over the start button
-        if (mouseX >= WIDTH/2 - 100 && mouseX <= WIDTH/2 + 100 &&
-            mouseY >= HEIGHT/2 && mouseY <= HEIGHT/2 + 60) {
-            isStartButtonHovered = true;
-        } else {
-            isStartButtonHovered = false;
-        }
     }
 }

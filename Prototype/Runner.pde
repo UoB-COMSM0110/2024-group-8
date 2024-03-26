@@ -129,6 +129,8 @@ GameState currentGameState; // Tracks which display to present
 RunningGame currentGame; // Holds all game stats of current Game
 Round currentRound; // Holds all stats of current round
 boolean difficultySelected; // Defines whether to draw difficult selection screen or game map, necessary as otherwise it doesn't know which map to navigate to
+// TowerManager towerManager;
+PressableButton gameWindow; // Stops the gameWindow from having cell outlines in mouseCheck()
 
 // Define variables for the germ cursor character
 PImage germ;
@@ -180,14 +182,21 @@ void setup(){ // Creates & setups all objects needed for the game, calls their r
   kidneyMap.setup();
   kidneyDifficulty = new DifficultySelection(GameState.KIDNEY);
   
-  TowerSprites = new PImage[]{  // Corrected the array declaration
+  TowerSprites = new PImage[]{ 
     loadImage("tower/antibody.png"),
-    
+    loadImage("tower/towerB.png")
   };
   
   GermSprites = new GermSprite[]{
     new GermSprite("germ")
   };
+  
+  
+  // float playWindowHeight = WIDTH * 0.65;
+  //float menuPosY = playWindowHeight + 1;
+  //float menuHeight = (HEIGHT - menuPosY) - 10;
+  
+  gameWindow = new PressableButton(0, 650, WIDTH, 350); // Psuedo button over gameWindow in map so that the cells don't get outlined
 }
 
 void draw(){
@@ -260,7 +269,6 @@ void mousePressed(){
   for (StateChangingButton x : stateChangingButtons){ 
     x.changeStates();
   }
-
   // Will need to add similar logic for tower button?
 }
 
@@ -268,11 +276,11 @@ void mouseCheck(){ // Highlights cell outlines green or red depending on if they
   int x = (int)(mouseX/cellSize);
   int y = (int)(mouseY/cellSize);
   
-  if(x < Grid.length && y < Grid[0].length){
+  if((x < Grid.length && y < Grid[0].length) && !gameWindow.onButton()){
     Grid[x][y].outline();
   }
 }
 
 void disappear(Projectile p){
-  AllProjectiles.remove(p);
+ AllProjectiles.remove(p);
 }

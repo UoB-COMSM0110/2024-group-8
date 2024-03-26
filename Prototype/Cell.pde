@@ -7,20 +7,17 @@ class Cell{
    Cell(int x, int y){
     this.x = x;
     this.y = y;
-  }
+   }
   
-  DefenceTower occupant = null;
+  DefenceTower occupant;
   
   void buildOn(DefenceTower t){
-    if (buildable()){
-      occupant = t;
+    if (buildable() && !gameWindow.onButton()){
+      this.occupant = t;
+      System.out.println("Adding an occupant to: Grid[" +x+ "][" +y+"]");
       AllTowers.add(occupant); 
       this.buildable = false;
     }
-  }
-  
-  DefenceTower getOccupant(){
-    return this.occupant;
   }
   
   boolean buildable(){

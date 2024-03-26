@@ -10,11 +10,6 @@ public class PressableButton {
     int startY;
     int endY;
     
-    //int width;
-    //int height;
-    
-    //boolean lastClicked;
-    
     protected PressableButton(int x, int y, int buttonWidth, int buttonHeight){
       this.startX = x;
       this.endX = x + buttonWidth;

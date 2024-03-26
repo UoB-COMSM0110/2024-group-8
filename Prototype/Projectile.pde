@@ -1,4 +1,36 @@
 class Projectile {
+//   DefenceTower parent;
+//   float parentX, parentY;
+//   Germ target;
+//   float targetX, targetY;
+
+//   float posX, posY;
+//   boolean beingFired;
+//   int speed = 10;
+//   Path projectilePath;
+
+//   public Projectile(DefenceTower parentTower, Germ targetGerm, int projectileSprite){
+//     sprite = projectileSprite;
+    
+//     parent = parentTower;
+//     parentX = parent.getTowerX();
+//     parentY = parent.getTowerY();
+
+//     posX = parentX;
+//     posY = parentY;
+    
+//     target = targetGerm;
+//   }
+
+//   public void draw(){
+//     if (beingFired){
+
+//     }
+//   }
+
+
+
+
   int posX, posY;
   int onLane = 0;
   Direction dir;

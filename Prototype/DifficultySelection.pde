@@ -22,7 +22,6 @@ class DifficultySelection extends Display {
           entryTime = millis();
         } 
       
-      
         background(background);
         
         this.easyEmblem = loadImage("easyEmblem.png");
@@ -80,6 +79,7 @@ class DifficultySelection extends Display {
                 if (hardButton.onButton()){ currentGame = new RunningGame(Difficulty.HARD); }
 
                 difficultySelected = true;
+                // towerManager = new TowerManager();
                 currentGameState = this.currentMap; // Navigates to previously selected map
            }
         }

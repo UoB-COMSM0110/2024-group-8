@@ -20,9 +20,9 @@ class Germ {
     this.health = this.health - amount;
   }
   
-   int getHealth(){
-      return this.health; 
-   }
+  int getHealth(){
+    return this.health; 
+  }
   
   void move(){
     PathStatus status = mapPath.checkPos(new Vector(posX, posY), onLane);
