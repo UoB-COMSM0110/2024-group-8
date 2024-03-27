@@ -107,7 +107,6 @@ class GameMap{
       currentRound.run(); 
     }
 
-
     // Navigate to win screen if necessary
     if (currentGame.getRoundCounter() == currentGame.getTotalRounds() && !(currentRound.inProgress()) && AllGerms.size() <= 0){ // If the final round is fully completed
       winScreen.setup();
@@ -117,6 +116,11 @@ class GameMap{
     // If you press start round, and no round is in progress it will start the round 
     if (mousePressed && startRoundButton.onButton() && currentGame.getRoundCounter() < currentGame.getTotalRounds()){ // Change the roundCounter condition for RunningGame.getNumberOfRounds() later on
       currentGame.selectRound();
+    }
+    
+    if (currentGame.getCurrentLives() <= 0){
+      loseScreen.setup();
+      currentGameState = GameState.LOST;
     }
   }
   

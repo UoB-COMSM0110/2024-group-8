@@ -18,7 +18,7 @@ class DifficultySelection extends Display {
 
     void draw(){
         // sets the entry time for the first entrance to difficulty selection screen
-        if (this.entryTime == 0){ 
+        if ((this.entryTime == 0) || (millis()-entryTime) > 1000000){  // If first entry, or entry to difficulty selection after a different game
           entryTime = millis();
         } 
       

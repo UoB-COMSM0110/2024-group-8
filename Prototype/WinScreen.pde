@@ -63,7 +63,7 @@ class WinScreen extends Display {
     strokeJoin(ROUND);
     noFill();
     stroke(currentColours[0]);
-    rect(25, HEIGHT*0.85 - 10, 825, 125);
+    rect(25, HEIGHT*0.85 - 15, 825, 125);
     textSize(30);
     
     String difficultyString;
@@ -71,7 +71,7 @@ class WinScreen extends Display {
     } else if (completedGameDifficulty == Difficulty.MEDIUM){ difficultyString = "Pathogen Assault";
     } else if (completedGameDifficulty == Difficulty.HARD){ difficultyString = "Biohazard Rampage"; } else { difficultyString = " "; } // Will never reach this else, but to silence compiler
     String roundAndMode = "WOW! You protected the body from " +difficultyString;
-    text(roundAndMode , 50, HEIGHT*0.9);
+    text(roundAndMode , 50, HEIGHT*0.9 - 5);
     
     String livesString;
     int livesLost = this.completedGameTotalLives - this.completedGameLives;
@@ -79,14 +79,14 @@ class WinScreen extends Display {
     } else if ((livesLost/this.completedGameTotalLives) <= 0.25){ livesString = "You only lost " +String.valueOf(livesLost) + " lives! You're an Immune System Hero!"; 
     } else if (livesLost/this.completedGameTotalLives >= 0.75){ livesString = "You lost " +String.valueOf(livesLost) + " lives! Phew! That was close!";
     } else { livesString = "You lost " +String.valueOf(livesLost) + " lives! You're one reliable defender!"; }
-    text(livesString, 50, HEIGHT*0.95);
+    text(livesString, 50, HEIGHT*0.95 - 5);
    
     // Play again button:
     noFill();
-    rect(852, HEIGHT*0.85 - 10, 125, 125);
-    text("Play", 875, HEIGHT*0.9);
-    text("again?", 880, HEIGHT*0.95);
-    StateChangingButton playAgainButton = new StateChangingButton(852, (int)(HEIGHT*0.85 - 10), 125, 125, GameState.MAP);
+    rect(852, HEIGHT*0.85 - 15, 125, 125);
+    text("Play", 875, HEIGHT*0.9 - 5);
+    text("again?", 880, HEIGHT*0.95 -5);
+    StateChangingButton playAgainButton = new StateChangingButton(852, (int)(HEIGHT*0.85 - 15), 125, 125, GameState.MAP);
     stateChangingButtons.add(playAgainButton);
   }
 
@@ -94,11 +94,11 @@ class WinScreen extends Display {
     int colourIndex = 0;
   
     for (int x = 0; x < Grid.length; x++){
-        for (int y = 0; y < Grid[0].length; y++){
+        for (int y = 0; y < (Grid[0].length -1); y++){
             int nextIndex = colourIndex + 1; // Makes the outline of cell a different colour
-            if (nextIndex == 260){ nextIndex = 0; } 
+            if (nextIndex == 280){ nextIndex = 0; } 
 
-            Grid[x][y].confetti(currentColours[colourIndex], currentColours[nextIndex]); // Implement halt, so its less seziurey LOL
+            Grid[x][y].confetti(currentColours[colourIndex], currentColours[nextIndex]); 
             colourIndex++;
         }
     }

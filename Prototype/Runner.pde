@@ -67,7 +67,7 @@ enum GameState { // Different phases of the game, so program knows what to draw
     TITLE,
     MAP,
     WON,
-    // LOST, // Will be lose screen when implemented
+    LOST, // Will be lose screen when implemented
     // RULES, // Will be the "How to play" screen, can be navigated to at anytime before win/lose screen
     BRAIN,
     LUNG,
@@ -113,6 +113,7 @@ TitleScreen titleScreen;
 MapSelection mapSelection;
 DifficultySelection difficultySelection;
 WinScreen winScreen;
+LoseScreen loseScreen;
 
 Brain brainMap;
 Lung lungMap;
@@ -161,6 +162,7 @@ void setup(){ // Creates & setups all objects needed for the game, calls their r
   titleScreen = new TitleScreen();
   mapSelection = new MapSelection();
   winScreen = new WinScreen();
+  loseScreen = new LoseScreen();
   
   titleScreen.setup();
   mapSelection.setup();
@@ -254,6 +256,10 @@ void draw(){
    
     if (currentGameState == GameState.WON){
       winScreen.draw();
+    } 
+    
+    if (currentGameState == GameState.LOST){
+      loseScreen.draw();
     } 
 }
 
