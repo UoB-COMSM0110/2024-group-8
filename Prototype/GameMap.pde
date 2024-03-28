@@ -49,9 +49,9 @@ class GameMap{
       this.background.resize(WIDTH, HEIGHT);
       path = loadImage("whiteBG.png");
       path.resize(WIDTH, HEIGHT);
-      pathMask = loadImage("route.png");
-      pathMask.resize(WIDTH, HEIGHT);
-      path.mask(pathMask);
+      //pathMask = loadImage("route.png");
+      //pathMask.resize(WIDTH, HEIGHT);
+      //path.mask(pathMask);
       
       towerA = TowerSprites[0];
       towerB = TowerSprites[1];
