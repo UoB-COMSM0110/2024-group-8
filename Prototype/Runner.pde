@@ -167,6 +167,15 @@ void setup(){ // Creates & setups all objects needed for the game, calls their r
   titleScreen.setup();
   mapSelection.setup();
 
+  TowerSprites = new PImage[]{ 
+    loadImage("tower/antibody.png"),
+    loadImage("tower/towerB.png")
+  };
+  
+  GermSprites = new GermSprite[]{
+    new GermSprite("germ")
+  };
+
   // Create maps
   brainMap = new Brain(brain);
   brainMap.setup();
@@ -183,16 +192,6 @@ void setup(){ // Creates & setups all objects needed for the game, calls their r
   kidneyMap = new Kidney(kidney);
   kidneyMap.setup();
   kidneyDifficulty = new DifficultySelection(GameState.KIDNEY);
-  
-  TowerSprites = new PImage[]{ 
-    loadImage("tower/antibody.png"),
-    loadImage("tower/towerB.png")
-  };
-  
-  GermSprites = new GermSprite[]{
-    new GermSprite("germ")
-  };
-  
   
   // float playWindowHeight = WIDTH * 0.65;
   //float menuPosY = playWindowHeight + 1;
