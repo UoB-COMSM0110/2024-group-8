@@ -145,9 +145,6 @@ Path mapPath; // Pathway followed by germs
 ArrayList<DefenceTower> AllTowers  = new ArrayList<DefenceTower>();
 ArrayList<Germ> AllGerms = new ArrayList<Germ>();
 
-// Array list for all on screen shots
-ArrayList<Projectile> AllProjectiles = new ArrayList<Projectile>();
-
 // Stores all buttons which change the display, e.g., Play again = WinScreen -> MapSelection
 ArrayList<StateChangingButton> stateChangingButtons = new ArrayList<StateChangingButton>();
 
@@ -284,8 +281,4 @@ void mouseCheck(){ // Highlights cell outlines green or red depending on if they
   if((x < Grid.length && y < Grid[0].length) && !gameWindow.onButton()){
     Grid[x][y].outline();
   }
-}
-
-void disappear(Projectile p){
- AllProjectiles.remove(p);
 }

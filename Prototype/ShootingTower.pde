@@ -10,7 +10,9 @@ public class ShootingTower extends DefenceTower {
 
         // If there is a germ in range and the tower has the right projectile type to deal damage to it
         if (target != null && this.projectileType >= target.getRequiredProjectile()){
-        
+            PVector from = new PVector((this.positionX+0.5)*cellSize, (this.positionY+0.5)*cellSize);
+            PVector to = new PVector(target.posX+0.5*cellSize, target.posY+0.5*cellSize);
+            drawShooting(from, to, 4);
             // When we introduce projectile visuals this will need to be changed
             // So that a shot is fired at the rate of shotsPerSec/1
             target.decreaseHealth(this.damageCapability * this.shotsPerSec); 
@@ -37,5 +39,18 @@ public class ShootingTower extends DefenceTower {
            }  
       }
       return target;
+    }
+
+    void drawShooting(PVector start, PVector end, int depth) {
+      strokeWeight(2);
+      stroke(253, 208, 35); // Purple color for lightning
+      line(start.x, start.y, end.x, end.y);
+  
+      if (depth > 0) {
+        PVector mid = PVector.lerp(start, end, 0.5); // Find midpoint
+        mid.add(random(-depth, depth), random(-depth, depth)); // Perturb midpoint
+        drawShooting(start, mid, depth - 1); // Recursively draw left segment
+        drawShooting(mid, end, depth - 1); // Recursively draw right segment
+      }
     }
 }
