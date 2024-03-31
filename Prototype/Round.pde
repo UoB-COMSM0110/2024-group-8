@@ -24,8 +24,6 @@ class Round {
     this.roundInProgress = true;
 
     this.earningsForCompletion = earnings;
-    
-    System.out.println(durationInSecs);
   }
   
   float getDurationInSecs(){
