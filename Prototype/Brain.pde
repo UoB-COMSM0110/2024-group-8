@@ -1,6 +1,3 @@
-
-             //////*****I know the new path doesn't look so great, it's just for testing, I will try to find other more interesting path for each map :)*****//////////
-
 class Brain extends GameMap {
     Brain(PImage brain) {
         this.background = brain;
