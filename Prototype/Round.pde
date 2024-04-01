@@ -34,7 +34,7 @@ class Round {
 
   void determineEnemiesArray(){    
     if (roundIndex == 1){ // For the first round add all basic germs
-        addGerm2((int)this.numberOfEnemies);
+        addGerm1((int)this.numberOfEnemies);
     } else if ((roundIndex/currentGame.getTotalRounds()) < 0.25){ // For the first quarter of rounds add some higher level germs
         addGerm1((int)(this.numberOfEnemies*0.7));
         addGerm2((int)(this.numberOfEnemies*0.3));
