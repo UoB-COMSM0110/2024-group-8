@@ -148,10 +148,18 @@ class GameMap{
        rect(80, (menuPosY+68), 70, 70);
        // Tower D button
     
-    // GameStats:
-    String livesCounter = "LIVES: " + String.valueOf(currentGame.getCurrentLives());
+    // Tower upgrade instruction message
+    fill(0, 128, 255);
+    stroke(0, 128, 255);
+    rect(0,0,370,40);
+        
     fill(255);
+    textSize(25);
+    text("Click placed towers to upgrade!", 10, 30);
+    
+    // GameStats:
     textSize(30);
+    String livesCounter = "LIVES: " + String.valueOf(currentGame.getCurrentLives());
     text(livesCounter, 815, 50);
     
     String coinsCounter = "COINS: " + String.valueOf(currentGame.getCoins());
@@ -209,7 +217,8 @@ class GameMap{
     // Current tower window:
     } else if (lastClickedTower == null){
       textSize(30);
-      text("Press a placed tower to see it's stats", 170, (menuPosY+40));
+      text("<--- Select a tower to buy", 170, (menuPosY+50));
+      text("Click to start the next round --->", 350, (menuPosY+100));
     } else {
        int towerX = (int)(lastClickedTower.getTowerX() * cellSize);
        int towerY = (int)(lastClickedTower.getTowerY() * cellSize);

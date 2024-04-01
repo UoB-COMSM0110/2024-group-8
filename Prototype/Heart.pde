@@ -17,6 +17,15 @@ class Heart extends GameMap {
         }
     }
     
+    //@Override
+    //void draw(){
+    //  super.draw();
+    //  try { // Please add implementation of map animation within this to avoid null pointer exception after game is won/lost:)
+        
+      
+    //  } catch (Exception e) { System.out.println("Game is already won/lost"); }    
+    //}
+      
     @Override                                      //load new vector for new path
     void initalisePath() {
       Vector[] path = new Vector[]{

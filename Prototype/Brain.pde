@@ -34,39 +34,41 @@ class Brain extends GameMap {
   void draw(){
     super.draw();
     
-    int previousLives = currentGame.getCurrentLives(); 
-    
-    super.draw(); 
-    image(brain2, 590, 560, brain2Size, brain2Size);
-    
-    if (currentGame.getCurrentLives() < previousLives) { 
-        brain2Size += 20; 
-        displayDeadBrain = true; // Set the flag to display deadBrain
-        deadBrainDisplayStartTime = millis(); 
-    }
-    
-    // Check if it's time to display the deadBrain image
-    if (displayDeadBrain && millis() - deadBrainDisplayStartTime < deadBrainDisplayTime) { 
-        image(deadBrain, 590, 560, brain2Size, brain2Size);
-    }
-  
-    if (currentRound != null && currentRound.inProgress() && currentRound.getTimeRemainingInSecs()>0){
-        germSize += 5; 
-        image(germ, -40 , 120 , germSize, germSize);
-    
-        if (frameCount % 2 == 0) {
-            germSize = 100;
+    try {
+      int previousLives = currentGame.getCurrentLives();
+      super.draw();
+      image(brain2, 590, 560, brain2Size, brain2Size);
+        if (currentGame.getCurrentLives() < previousLives) { 
+           brain2Size += 20; 
+           displayDeadBrain = true; // Set the flag to display deadBrain
+           deadBrainDisplayStartTime = millis(); 
         }
-    } else {
-        image(germ, -40 , 120 , 100, 100);
-    }
     
-    if (currentGame.getCurrentLives() < previousLives) {
-        brain2Size -= 20; 
-    }
+        // Check if it's time to display the deadBrain image
+        if (displayDeadBrain && millis() - deadBrainDisplayStartTime < deadBrainDisplayTime) { 
+           image(deadBrain, 590, 560, brain2Size, brain2Size);
+        }
+  
+        if (currentRound != null && currentRound.inProgress() && currentRound.getTimeRemainingInSecs()>0){
+           germSize += 5; 
+           image(germ, -40 , 120 , germSize, germSize);
     
-    if (displayDeadBrain && millis() - deadBrainDisplayStartTime >= deadBrainDisplayTime) { 
-        displayDeadBrain = false;
+           if (frameCount % 2 == 0) {
+               germSize = 100;
+           }
+        } else {
+           image(germ, -40 , 120 , 100, 100);
+        }
+    
+        if (currentGame.getCurrentLives() < previousLives) {
+           brain2Size -= 20; 
+        }
+    
+        if (displayDeadBrain && millis() - deadBrainDisplayStartTime >= deadBrainDisplayTime) { 
+            displayDeadBrain = false;
+        }
+    } catch (Exception e) {
+      System.out.println("Game already won/lost");
     }
   }
 
