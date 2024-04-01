@@ -7,7 +7,6 @@ class RunningGame{
 
     RunningGame(Difficulty difficulty){ // Stores the game stats of current game
         gameDifficulty = difficulty;
-
         this.totalRounds = gameDifficulty.getNumberOfRounds();
         this.currentLives = gameDifficulty.getNumberOfLives();
         this.currentCoins = gameDifficulty.getNumberOfCoins();
@@ -46,21 +45,13 @@ class RunningGame{
         this.currentCoins = this.currentCoins + earnings;
     }
 
-    void selectRound(){ 
-        /* 
-           Method to select the round
-           Either set as initial round, or increases difficultly from previous round
-           Need to adapt formula for increasing difficulty
-           Once we've implemented different kinds of germs needs to be adapted 
-           Different quantities of different enemies, etc.
-        */
-  
+    void selectRound(){  
         if (currentRound == null || this.roundCounter == 0){
-           currentRound = new Round(10, 10, millis(), 100); // The intial round just set as randomish values for now
+           currentRound = new Round(10, 10, millis(), 100, (roundCounter+1)); // The intial round just set as randomish values for now
            currentRound.setInProgress(true);
            this.roundCounter++;
         } else if (!(currentRound.inProgress())) {
-           currentRound = new Round(currentRound.getDurationInSecs(), (currentRound.getNumberOfEnemies() * 1.5), millis(), (currentRound.getEarningsForCompletion() * 1.25)); // Next round slightly harder than last
+           currentRound = new Round((currentRound.getDurationInSecs()+10), (currentRound.getNumberOfEnemies()*1.5), millis(), (currentRound.getEarningsForCompletion()+(roundCounter*30)), (roundCounter+1)); // Next round slightly harder than last
            currentRound.setInProgress(true);
            this.roundCounter++;
         }

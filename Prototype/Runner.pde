@@ -3,17 +3,8 @@
       - GAME MAP:
           - Create a stylised background image and unique path for each organ
           - Implement twist logic for each map
-          - Clean up the Game Map class by moving methods/code to different classes, I'm thinking about having a 
-            TowerManager and RoundManager class to handle a lot of logic currently in GameMap
           FINAL BOSS:
              - Design and implement a final boss germ for each map
-
-      - LOSE SCREEN:
-          - Design and implement a lose screen
-          - Will have very similar implementation to win screen
-          - i.e. display game stats, have a play again button, clear all currentGame data
-          - I thinking instead of filling the grid with bright colours as on winn screen we can fill with changing germs,
-            so it's like they've taken over
 
       - HOW TO PLAY SCREEN:
           - Design and implement instructions screen
@@ -170,7 +161,9 @@ void setup(){ // Creates & setups all objects needed for the game, calls their r
   };
   
   GermSprites = new GermSprite[]{
-    new GermSprite("germ")
+    new GermSprite("germ1"),
+    new GermSprite("germ6"),
+    new GermSprite("germ7")
   };
 
   // Create maps
@@ -189,10 +182,6 @@ void setup(){ // Creates & setups all objects needed for the game, calls their r
   kidneyMap = new Kidney(kidney);
   kidneyMap.setup();
   kidneyDifficulty = new DifficultySelection(GameState.KIDNEY);
-  
-  // float playWindowHeight = WIDTH * 0.65;
-  //float menuPosY = playWindowHeight + 1;
-  //float menuHeight = (HEIGHT - menuPosY) - 10;
   
   gameWindow = new PressableButton(0, 650, WIDTH, 350); // Psuedo button over gameWindow in map so that the cells don't get outlined
 }

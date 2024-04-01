@@ -118,7 +118,7 @@ class GameMap{
       currentGame.selectRound();
     }
     
-    if (currentGame.getCurrentLives() <= 0){
+    if (currentGame != null && currentGame.getCurrentLives() <= 0){
       loseScreen.setup();
       currentGameState = GameState.LOST;
     }
@@ -170,8 +170,8 @@ class GameMap{
       textSize(20);
       text("Range           ->    " + selectedTower.range, 310, (menuPosY+45));
       text("Damage       ->    " + selectedTower.damageCapability, 310, (menuPosY+65));
-      text("Shots/sec   ->    " + selectedTower.shotsPerSec, 310, (menuPosY+85));
-      text("Protein         ->    " + selectedTower.getProjectileTypeAsString(), 310, (menuPosY+105));
+      // text("Shots/sec   ->    " + selectedTower.shotsPerSec, 310, (menuPosY+85));
+      text("Protein         ->    " + selectedTower.getProjectileTypeAsString(), 310, (menuPosY+85));
       
       if (!placingTower){
         // Buy button
@@ -224,8 +224,8 @@ class GameMap{
        textSize(20);
        text("Range           ->    " + lastClickedTower.range, 310, (menuPosY+45));
        text("Damage       ->    " + lastClickedTower.damageCapability, 310, (menuPosY+65));
-       text("Shots/sec  ->    " + lastClickedTower.shotsPerSec, 310, (menuPosY+85));
-       text("Protein         ->    " + lastClickedTower.getProjectileTypeAsString(), 310, (menuPosY+105));
+       //text("Shots/sec  ->    " + lastClickedTower.shotsPerSec, 310, (menuPosY+85));
+       text("Protein         ->    " + lastClickedTower.getProjectileTypeAsString(), 310, (menuPosY+85));
        
        if (lastClickedTower.currentUpgradeLevel < 3){
           // Upgrade info & button
@@ -378,7 +378,6 @@ class GameMap{
       if (x < Grid.length && y < Grid[0].length){
          for (DefenceTower t : AllTowers){
              if (t.positionX == x && t.positionY == y){
-               System.out.println("Found the lastClickedTower");
                lastClickedTower = t;
                towerSelected = false;
              } 

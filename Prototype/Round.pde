@@ -11,19 +11,72 @@ class Round {
 
   boolean receivedEarnings = false;
   float earningsForCompletion;
+
+  int roundIndex;
+  int enemyIndex = 0;
+  ArrayList<Germ> enemiesToDispatch;
+  boolean moreEnemiesToDispatch = true;
   
-  Round(float duration, float enemyCount, int roundStartTime, float earnings){
+  Round(float duration, float enemyCount, int roundStartTime, float earnings, int index){
     this.durationInSecs = duration;
     this.numberOfEnemies = enemyCount;
     this.dispatchInterval = (duration * 1000) / enemyCount; // Calculate dispatch interval
-    
     this.startTime = roundStartTime;
     this.lastShotTime = 0;
     this.lastEnemyDispatch = 0;
     this.elapsedTime = 0;
     this.roundInProgress = true;
-
     this.earningsForCompletion = earnings;
+    this.roundIndex = index;
+    enemiesToDispatch = new ArrayList<>();
+    determineEnemiesArray();
+  }
+
+  void determineEnemiesArray(){
+    System.out.println("Current round index = " +roundIndex);
+    float fractionRound = (roundIndex/currentGame.getTotalRounds());
+    System.out.println("Current round as a fraction of all rounds = " +fractionRound);
+    
+    if (roundIndex == 1){ // For the first round add all basic germs
+        addGerm1((int)this.numberOfEnemies);
+    } else if ((roundIndex/currentGame.getTotalRounds()) < 0.25){ // For the first quarter of rounds add some higher level germs
+        addGerm1((int)(this.numberOfEnemies*0.7));
+        addGerm2((int)(this.numberOfEnemies*0.3));
+    } else if (((roundIndex/currentGame.getTotalRounds()) >= 0.25) && ((roundIndex/currentGame.getTotalRounds()) < 0.5)){ // For the second quarter of rounds add some higher level germs
+        addGerm1((int)(this.numberOfEnemies*0.5));
+        addGerm2((int)(this.numberOfEnemies*0.4));
+        addGerm3((int)(this.numberOfEnemies*0.1));
+    } else if (((roundIndex/currentGame.getTotalRounds()) >= 0.5) && ((roundIndex/currentGame.getTotalRounds()) < 0.75)){ // For the third quarter of rounds
+        addGerm1((int)(this.numberOfEnemies*0.5));
+        addGerm2((int)(this.numberOfEnemies*0.25));
+        addGerm3((int)(this.numberOfEnemies*0.25));
+    } else { // For the final quarter of rounds (NEED TO ADD if != final round WHEN WE IMPLEMENT FINAL BOSS)
+        addGerm1((int)(this.numberOfEnemies*0.5));
+        addGerm2((int)(this.numberOfEnemies*0.25));
+        addGerm3((int)(this.numberOfEnemies*0.25));
+    }
+    // else if == final round { add final boss }
+  }
+
+  void addGerm1(int count){
+    System.out.println("Adding " +count+ " Germ1s");
+    for (int i = 0; i <= count ; i++ ){
+      enemiesToDispatch.add(new Germ1());
+    }
+  }
+
+   void addGerm2(int count){
+     System.out.println("Adding " +count+ " Germ2s");
+    for (int i = 0; i <= count ; i++ ){
+      enemiesToDispatch.add(new Germ2());
+    }
+  }
+
+   void addGerm3(int count){
+     System.out.println("Adding " +count+ " Germ3s");
+    for (int i = 0; i <= count ; i++ ){
+      enemiesToDispatch.add(new Germ3());
+    }
   }
   
   float getDurationInSecs(){
@@ -64,8 +117,7 @@ class Round {
      
     fireShots(); // Shots should be fired even if finished dispatching enemies
      
-    if (this.elapsedTime < (this.durationInSecs * 1000)){ // While the round duration has not passed 
-     
+    if (this.moreEnemiesToDispatch){ // While the round duration has not passed 
         if ((millis() - this.lastEnemyDispatch) >= this.dispatchInterval){ // If the time to dispatch is met, dispatch an enemy
           dispatchEnemies();
           this.lastEnemyDispatch = millis();
@@ -77,18 +129,21 @@ class Round {
 
   void fireShots(){
    int currentTime = millis(); // Set current time so shoot() is called once every second
-   // This will need to be altered when we animate projectiles to something similar to dispatchInterval
-   // i.e. for each tower calculate the shotInterval, and fire at that rate
   
     if (currentTime - this.lastShotTime >= 1000){ // change to >= shootIntervalInMillisecs when projectiles implemented
-      for(int i = 0; i < AllTowers.size(); i++){
-        AllTowers.get(i).shoot();
+      for (DefenceTower t : AllTowers){
+        t.shoot();
       }
       this.lastShotTime = currentTime;
     }
   }
 
   void dispatchEnemies(){
-    AllGerms.add(new GermWbc(0));
-  }   
+    try { 
+      AllGerms.add(enemiesToDispatch.get(enemyIndex));
+      enemyIndex++;
+    } catch (Exception e) {
+      this.moreEnemiesToDispatch = false;
+    }
+  }
 }

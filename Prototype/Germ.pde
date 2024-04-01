@@ -4,7 +4,7 @@ class Germ {
   Direction dir;
   protected int health;
 
-  int speed = 6;
+  int speed;
   int spriteIndex;
   int anim = 0;
   int animTimer = 0;
@@ -37,7 +37,7 @@ class Germ {
     else if (dir == Direction.down){ posY+= speed; }
     else if (dir == Direction.left){ posX -=speed; }
     else { posX += speed; }
-    image(GermSprites[0].getImage(dir, anim),posX, posY, cellSize, cellSize);
+    image(GermSprites[spriteIndex].getImage(dir, anim),posX, posY, cellSize, cellSize);
     
     animTimer++;
     
@@ -67,29 +67,43 @@ class Germ {
     return (int)(this.posY / cellSize);
   }
 
+  void setGermPosition(int positionX, int positionY){
+    this.posX = positionX;
+    this.posY = positionY;
+  }
+
   Germ(int sprite){
     spriteIndex = sprite;
     Vector p = mapPath.getSpawn();
     posX = p.x;
     posY = p.y;
     dir = mapPath.getDire(0);
-    health = 1;
   }
 }
 
-
-// Needs to be moved into seperate class and have the correct image
-// Need to make more variations, i.e different speeds, health, necessary projectile type to kill etc.
-class GermWbc extends Germ{
-  
-  GermWbc(int sprite){
+class Germ1 extends Germ {
+  Germ1(){
     super(0);
-    this.spriteIndex = sprite;
-    Vector p = mapPath.getSpawn();
-    this.posX = p.x;
-    this.posY = p.y;
-    dir = mapPath.getDire(0);
     this.requiredProjectile = 0;
     this.health = 3;
+    this.speed = 6;
+  }
+}
+
+class Germ2 extends Germ {
+  Germ2(){
+    super(1);
+    this.requiredProjectile = 0;
+    this.health = 5;
+    this.speed = 9;
+  }
+}
+
+class Germ3 extends Germ {
+  Germ3(){
+    super(2);
+    this.requiredProjectile = 1;
+    this.health = 8;
+    this.speed = 12;
   }
 }

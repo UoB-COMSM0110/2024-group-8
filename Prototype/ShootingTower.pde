@@ -15,7 +15,7 @@ public class ShootingTower extends DefenceTower {
             drawShooting(from, to, 4);
             // When we introduce projectile visuals this will need to be changed
             // So that a shot is fired at the rate of shotsPerSec/1
-            target.decreaseHealth(this.damageCapability * this.shotsPerSec); 
+            target.decreaseHealth(this.damageCapability); 
         
             if (target.getHealth() <= 0){ // If the germ's health is fully deleted
                AllGerms.remove(target); // It is killed
@@ -42,8 +42,24 @@ public class ShootingTower extends DefenceTower {
     }
 
     void drawShooting(PVector start, PVector end, int depth) {
-      strokeWeight(2);
-      stroke(253, 208, 35); // Purple color for lightning
+      // Change the colour and stroke weight depending on the protein type
+      if (this.projectileType == 0){ // Light green for basic protein
+        strokeWeight(2);
+        stroke(#99FF99);
+      } else if (this.projectileType == 1){ // Grey for steel protein
+        strokeWeight(2);
+        stroke(#A0A0A0);
+      } else if (this.projectileType == 2){ // Red for flame protein
+        strokeWeight(2);
+        stroke(#FF0000);
+      } else if (this.projectileType == 3){  // Thick blue for diamond protein
+        strokeWeight(5);
+        stroke(#66FFFF);
+      } else {
+        strokeWeight(2);
+        stroke(253, 208, 35); // Purple color for lightning
+      }
+      
       line(start.x, start.y, end.x, end.y);
   
       if (depth > 0) {

@@ -14,7 +14,6 @@ class Cell{
   void buildOn(DefenceTower t){
     if (buildable() && !gameWindow.onButton()){
       this.occupant = t;
-      System.out.println("Adding an occupant to: Grid[" +x+ "][" +y+"]");
       AllTowers.add(occupant); 
       this.buildable = false;
     }
