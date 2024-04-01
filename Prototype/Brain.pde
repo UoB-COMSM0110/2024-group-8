@@ -14,7 +14,7 @@ class Brain extends GameMap {
     super.setup(); 
 
     try {
-      path = loadImage("route3.png");
+      path = loadImage("routeBrain.png");
       path.resize(WIDTH, HEIGHT);
     } catch (Exception e) {
       println("Error loading image: " + e.getMessage());
