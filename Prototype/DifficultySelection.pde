@@ -4,8 +4,6 @@ class DifficultySelection extends Display {
     PImage mediumEmblem;
     PImage hardEmblem;
     
-
-
     int entryTime = 0; // Implements a halt on button presses to stop auto clicking a difficulty based on where you just pressed a map button
 
     GameState currentMap;
@@ -79,7 +77,6 @@ class DifficultySelection extends Display {
                 if (hardButton.onButton()){ currentGame = new RunningGame(Difficulty.HARD); }
 
                 difficultySelected = true;
-                // towerManager = new TowerManager();
                 currentGameState = this.currentMap; // Navigates to previously selected map
            }
         }

@@ -364,7 +364,7 @@ class GameMap{
         selectedTower.setTowerX(currentGridX);
         selectedTower.setTowerY(currentGridY);
         Grid[currentGridX][currentGridY].buildOn(selectedTower); 
-        currentGame.spendCoins(this.selectedTowerCost);
+        currentGame.spendCoins(selectedTower.getCost());
         this.selectedTowerCost = 0;
         towerSelected = false;
         placingTower = false;

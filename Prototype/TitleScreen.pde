@@ -60,15 +60,31 @@ class TitleScreen extends Display {
         fill(153, 204, 255);
         //image(germL, WIDTH/2 - 350, HEIGHT/2);
     }
-    
     strokeWeight(8);
     strokeJoin(ROUND);
     stroke(153, 204, 255);
     rect(WIDTH/2 - 100, HEIGHT/2, 200, 60);
-
     fill(255);
     textSize(40);
     text("START", WIDTH/2 - 62 , HEIGHT/2 + 42);
+
+    // Draw how to play button 
+    PressableButton howToPlayButton = new PressableButton(WIDTH/2 - 100, HEIGHT/2 +100, 200, 100);
+    if (howToPlayButton.onButton()) {
+        fill(255, 153, 153); // Lighter color when hovered over
+    } else {
+        fill(255, 102, 102);
+    }
+
+    stroke(255, 102, 102);
+    rect(WIDTH/2 - 100, HEIGHT/2 +100, 200, 100);
+    fill(255);
+    text("HOW  TO", WIDTH/2 - 90 , HEIGHT/2 + 140);
+    text("PLAY", WIDTH/2 - 50 , HEIGHT/2 + 185);
+    if (mousePressed && howToPlayButton.onButton()){
+        howToPlayScreen.setup(currentGameState);
+        currentGameState = GameState.HOWTO;
+    }
 }
 
 }

@@ -29,13 +29,16 @@ public class ShootingTower extends DefenceTower {
 
     void killGerm(Germ target){
       int germIndex = AllGerms.indexOf(target);
+      int germLane = target.getLaneIndex();
       if (target instanceof Germ3){ // If its a Germ3 replace it with a Germ2
         Germ newGerm = new Germ2();
         newGerm.setGermPosition(target.getGermX(), target.getGermY());
+        newGerm.setDirection(germLane);
         AllGerms.set(germIndex, newGerm);
       } else if (target instanceof Germ2){ // If its a Germ2 replace it with a Germ1
         Germ newGerm = new Germ1();
         newGerm.setGermPosition(target.getGermX(), target.getGermY());
+        newGerm.setDirection(germLane);
         AllGerms.set(germIndex, newGerm);
       } else {
         AllGerms.remove(target); // If its a Germ1, it is killed

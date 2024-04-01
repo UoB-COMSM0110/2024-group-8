@@ -32,13 +32,9 @@ class Round {
     determineEnemiesArray();
   }
 
-  void determineEnemiesArray(){
-    System.out.println("Current round index = " +roundIndex);
-    float fractionRound = (roundIndex/currentGame.getTotalRounds());
-    System.out.println("Current round as a fraction of all rounds = " +fractionRound);
-    
+  void determineEnemiesArray(){    
     if (roundIndex == 1){ // For the first round add all basic germs
-        addGerm1((int)this.numberOfEnemies);
+        addGerm2((int)this.numberOfEnemies);
     } else if ((roundIndex/currentGame.getTotalRounds()) < 0.25){ // For the first quarter of rounds add some higher level germs
         addGerm1((int)(this.numberOfEnemies*0.7));
         addGerm2((int)(this.numberOfEnemies*0.3));
@@ -112,7 +108,7 @@ class Round {
   void run(){
     this.elapsedTime =  millis() - this.startTime; // Initialize elapsed time
      
-    fireShots(); // Shots should be fired even if finished dispatching enemies
+    for (DefenceTower t : AllTowers){ t.shoot(); }
      
     if (this.moreEnemiesToDispatch){ // While the round duration has not passed 
         if ((millis() - this.lastEnemyDispatch) >= this.dispatchInterval){ // If the time to dispatch is met, dispatch an enemy
@@ -122,17 +118,6 @@ class Round {
     } else if (AllGerms.size() <= 0){ // If all enemeies for the round dispatched, but not yet all killed, round should continue
          this.roundInProgress = false;
     }  
-  }
-
-  void fireShots(){
-   //int currentTime = millis(); // Set current time so shoot() is called once every second
-  
-    //if (currentTime - this.lastShotTime >= 1000){ // change to >= shootIntervalInMillisecs when projectiles implemented
-      for (DefenceTower t : AllTowers){
-        t.shoot();
-      }
-     // this.lastShotTime = currentTime;
-   // }
   }
 
   void dispatchEnemies(){

@@ -1,6 +1,4 @@
-class LoseScreen extends Display {
-   
-  
+class LoseScreen extends Display {  
   PImage[] germs;
   PImage[] currentGerms; 
   Difficulty completedGameDifficulty;

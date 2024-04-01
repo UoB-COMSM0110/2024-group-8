@@ -66,7 +66,16 @@ class Germ {
   int getGermY(){
     return this.posY;
   }
-
+  
+  int getLaneIndex(){
+    return this.onLane;
+  }
+  
+  void setDirection(int newLaneIndex){
+    this.onLane = newLaneIndex;
+    this.dir = mapPath.getDire(onLane);
+  }
+    
   void setGermPosition(int x, int y){
     this.posX = x;
     this.posY = y;
