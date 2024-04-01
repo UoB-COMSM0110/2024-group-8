@@ -9,9 +9,8 @@ class Lung extends GameMap {
         super.setup(); 
         
         try {
-            pathMask = loadImage("route.png");  // Load new path mask image
-            pathMask.resize(WIDTH, HEIGHT); 
-            path.mask(pathMask); 
+            path = loadImage("routeLung.png"); 
+            path.resize(WIDTH, HEIGHT); 
         } catch (Exception e) {
             println("Error loading image: " + e.getMessage());
         }

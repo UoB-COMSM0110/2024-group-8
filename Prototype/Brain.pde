@@ -1,6 +1,7 @@
 class Brain extends GameMap {
   PImage germ;
   PImage brain2;
+  PImage deadBrain;
   float germSize = 100;
   float brain2Size = 90;
   
@@ -13,7 +14,7 @@ class Brain extends GameMap {
     super.setup(); 
 
     try {
-      path = loadImage("route3.png");
+      path = loadImage("routeBrain.png");
       path.resize(WIDTH, HEIGHT);
     } catch (Exception e) {
       println("Error loading image: " + e.getMessage());
@@ -21,47 +22,52 @@ class Brain extends GameMap {
     
     germ = loadImage("germ/germ1R.png");
     brain2 = loadImage("brain2.png");
+    deadBrain = loadImage("deadBrain.png");
   }
   
+  
+  boolean displayDeadBrain = false;
+  int deadBrainDisplayTime = 1000; // 1000 milliseconds = 1 second
+  int deadBrainDisplayStartTime = 0;
+
   @Override
   void draw(){
     super.draw();
-  
-  
-    if (currentRound != null && currentRound.inProgress() && currentRound.getTimeRemainingInSecs()>0){
-      germSize += 5; 
-      image(germ, -40 , 120 , germSize, germSize);
     
-      if (frameCount % 2 == 0) {
-        germSize = 100;
-      }
-    } else {
-      image(germ, -40 , 120 , 100, 100);
-    }
+    int previousLives = currentGame.getCurrentLives(); 
     
-    
-    
+    super.draw(); 
     image(brain2, 590, 560, brain2Size, brain2Size);
     
-    //still working on it //
-    int i = currentGame.getCurrentLives();
-    if (currentRound != null && currentRound.inProgress()){
-      
-      if (currentGame.getCurrentLives() != i){
-        brain2Size += 5;
-        image(brain2, 590, 560, brain2Size, brain2Size);
-        if (frameCount % 2 == 0){
-        germSize = 100;
-        }
-       else {
-      image(brain2, 590, 560, brain2Size-5, brain2Size-5);
-      }
-      i = currentGame.getCurrentLives();
-      }
+    if (currentGame.getCurrentLives() < previousLives) { 
+        brain2Size += 20; 
+        displayDeadBrain = true; // Set the flag to display deadBrain
+        deadBrainDisplayStartTime = millis(); 
     }
     
+    // Check if it's time to display the deadBrain image
+    if (displayDeadBrain && millis() - deadBrainDisplayStartTime < deadBrainDisplayTime) { 
+        image(deadBrain, 590, 560, brain2Size, brain2Size);
+    }
+  
+    if (currentRound != null && currentRound.inProgress() && currentRound.getTimeRemainingInSecs()>0){
+        germSize += 5; 
+        image(germ, -40 , 120 , germSize, germSize);
     
-   
+        if (frameCount % 2 == 0) {
+            germSize = 100;
+        }
+    } else {
+        image(germ, -40 , 120 , 100, 100);
+    }
+    
+    if (currentGame.getCurrentLives() < previousLives) {
+        brain2Size -= 20; 
+    }
+    
+    if (displayDeadBrain && millis() - deadBrainDisplayStartTime >= deadBrainDisplayTime) { 
+        displayDeadBrain = false;
+    }
   }
 
   
