@@ -34,6 +34,7 @@ class GameMap{
   boolean placingTower = false;
   PImage selectedTowerImage;
   int selectedTowerCost = 0;
+  int timeOfLastPurchase = 0;
   
   void setup(){
     // Initialize grid
@@ -170,8 +171,8 @@ class GameMap{
       textSize(20);
       text("Range           ->    " + selectedTower.range, 310, (menuPosY+45));
       text("Damage       ->    " + selectedTower.damageCapability, 310, (menuPosY+65));
-      // text("Shots/sec   ->    " + selectedTower.shotsPerSec, 310, (menuPosY+85));
-      text("Protein         ->    " + selectedTower.getProjectileTypeAsString(), 310, (menuPosY+85));
+      text("Shots/sec   ->    " + selectedTower.shotsPerSec, 310, (menuPosY+85));
+      text("Protein         ->    " + selectedTower.getProjectileTypeAsString(), 310, (menuPosY+105));
       
       if (!placingTower){
         // Buy button
@@ -184,7 +185,10 @@ class GameMap{
         text("BUY", 670, (menuPosY+60));
         if (selectedTower.getCost() <= currentGame.getCoins()){ fill(#00FF00); } else { fill(#FF0000); }
         text("Cost: " + selectedTower.getCost(), 650, (menuPosY+90));  
-        if (mousePressed && buyButton.onButton()){ placingTower = true; }
+        if (mousePressed && buyButton.onButton()){ 
+          placingTower = true; 
+          timeOfLastPurchase = millis();
+        }
       } else {
         // Cancel buy button
         fill(0);
@@ -196,7 +200,7 @@ class GameMap{
         text("PLACE HERE", 640, (menuPosY+50));
         text("TO CANCEL", 645, (menuPosY+75));  
         text("PURCHASE", 650, (menuPosY+100));
-        if (mousePressed && cancelBuyButton.onButton()){ 
+        if (mousePressed && cancelBuyButton.onButton() && ((millis()-timeOfLastPurchase) > 1000)){ // Added a halt to stop autoclicking to cancelling purchase
             placingTower = false; 
             towerSelected = false;
         } 
@@ -209,7 +213,7 @@ class GameMap{
     } else {
        int towerX = (int)(lastClickedTower.getTowerX() * cellSize);
        int towerY = (int)(lastClickedTower.getTowerY() * cellSize);
-       float towerRange = ((lastClickedTower.range * cellSize) * 2) + 1; // twice the cell range + 1 to account for the cell the tower lives in and then everything its range away
+       float towerRange = ((lastClickedTower.range * cellSize) * 2) + cellSize; // twice the cell range + cellSize to account for the cell the tower lives in and then everything its range away
        noFill();
        stroke(255);
        circle(towerX+(cellSize/2), towerY+(cellSize/2), towerRange); // Draw a circle to respresent the range of the tower before placing
@@ -224,8 +228,8 @@ class GameMap{
        textSize(20);
        text("Range           ->    " + lastClickedTower.range, 310, (menuPosY+45));
        text("Damage       ->    " + lastClickedTower.damageCapability, 310, (menuPosY+65));
-       //text("Shots/sec  ->    " + lastClickedTower.shotsPerSec, 310, (menuPosY+85));
-       text("Protein         ->    " + lastClickedTower.getProjectileTypeAsString(), 310, (menuPosY+85));
+       text("Shots/sec  ->    " + lastClickedTower.shotsPerSec, 310, (menuPosY+85));
+       text("Protein         ->    " + lastClickedTower.getProjectileTypeAsString(), 310, (menuPosY+105));
        
        if (lastClickedTower.currentUpgradeLevel < 3){
           // Upgrade info & button
@@ -263,7 +267,6 @@ class GameMap{
        } 
     }
       
-  
     // Start Round/Round stats:
     if (currentRound == null || !currentRound.inProgress()){
         strokeWeight(8);
@@ -345,7 +348,7 @@ class GameMap{
   
   void placeTower(){   
     // Animation of moving tower when choosing location
-    float towerRange = ((selectedTower.range * cellSize) * 2) + 1; // twice the cell range + 1 to account for the cell the tower lives in and then everything its range away
+    float towerRange = ((selectedTower.range * cellSize) * 2) + cellSize; // twice the cell range + cellSize to account for the cell the tower lives in and then everything its range away
     imageMode(CENTER);
     image(selectedTowerImage, mouseX, mouseY);
     imageMode(CORNER); // Set back to corner because all other images are rendered in line w/CORNER mode

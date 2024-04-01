@@ -59,22 +59,19 @@ class Round {
   }
 
   void addGerm1(int count){
-    System.out.println("Adding " +count+ " Germ1s");
-    for (int i = 0; i <= count ; i++ ){
+    for (int i = 0; i < count ; i++ ){
       enemiesToDispatch.add(new Germ1());
     }
   }
 
    void addGerm2(int count){
-     System.out.println("Adding " +count+ " Germ2s");
-    for (int i = 0; i <= count ; i++ ){
+    for (int i = 0; i < count ; i++ ){
       enemiesToDispatch.add(new Germ2());
     }
   }
 
    void addGerm3(int count){
-     System.out.println("Adding " +count+ " Germ3s");
-    for (int i = 0; i <= count ; i++ ){
+    for (int i = 0; i < count ; i++ ){
       enemiesToDispatch.add(new Germ3());
     }
   }
@@ -128,14 +125,14 @@ class Round {
   }
 
   void fireShots(){
-   int currentTime = millis(); // Set current time so shoot() is called once every second
+   //int currentTime = millis(); // Set current time so shoot() is called once every second
   
-    if (currentTime - this.lastShotTime >= 1000){ // change to >= shootIntervalInMillisecs when projectiles implemented
+    //if (currentTime - this.lastShotTime >= 1000){ // change to >= shootIntervalInMillisecs when projectiles implemented
       for (DefenceTower t : AllTowers){
         t.shoot();
       }
-      this.lastShotTime = currentTime;
-    }
+     // this.lastShotTime = currentTime;
+   // }
   }
 
   void dispatchEnemies(){

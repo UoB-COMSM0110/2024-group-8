@@ -3,6 +3,7 @@ public abstract class DefenceTower {
   public int projectileType; // What level if projectile it fires
   public int damageCapability; // How much damage it deals
   public int cost; // Initial cost
+  public int shotsPerSec; 
   public int range; // Cell distance it can fire to over array
   public int currentUpgradeLevel; 
   public int positionX; // Position on the grid
@@ -29,7 +30,8 @@ public abstract class DefenceTower {
           currentGame.spendCoins(properties[0][this.currentUpgradeLevel]);
           this.projectileType = properties[1][this.currentUpgradeLevel];
           this.damageCapability = properties[2][this.currentUpgradeLevel];
-          this.range = properties[3][this.currentUpgradeLevel];
+          this.shotsPerSec = properties[3][this.currentUpgradeLevel];
+          this.range = properties[4][this.currentUpgradeLevel];
       }
     }
   }
@@ -72,7 +74,6 @@ public abstract class DefenceTower {
       return -1;
     }
   }
-
 
   void setTowerX(int x){
     this.positionX = x;

@@ -6,6 +6,7 @@ protected class TowerA extends ShootingTower {
       this.properties = new int[][] {{ 50, 100, 150, 200 }, // Cost from intial to Upgrade 3
                       { 0, 0, 0, 2 }, // Projectile type
                       { 1, 1, 3, 3 }, // Damage Capability
+                      { 1, 1, 1, 3 }, // Shots fired per second
                       { 2, 3, 3, 3 }  // Range
                 }; 
 
@@ -17,7 +18,8 @@ protected class TowerA extends ShootingTower {
       cost = properties[0][0];
       projectileType = properties[1][0];
       damageCapability = properties[2][0];
-      range = properties[3][0];
+      shotsPerSec = properties[3][0];
+      range = properties[4][0];
   }
   
   @Override
@@ -36,4 +38,5 @@ protected class TowerA extends ShootingTower {
     }
   }
 }
+    
     

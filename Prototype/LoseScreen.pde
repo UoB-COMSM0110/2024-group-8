@@ -16,7 +16,10 @@ class LoseScreen extends Display {
            loadImage("germ/germ2R.png"),
            loadImage("germ/germ3L.png"),
            loadImage("germ/germ3R.png"),
-           loadImage("germ/germ5.png"),
+           loadImage("germ/germ6L.png"),
+           loadImage("germ/germ6R.png"),
+           loadImage("germ/germ7L.png"),
+           loadImage("germ/germ7R.png")
      };
      
      System.out.println("Length of germs array = " + germs.length);
@@ -77,8 +80,6 @@ class LoseScreen extends Display {
     } else if (completedGameDifficulty == Difficulty.HARD){ difficultyString = "Biohazard Rampage"; } else { difficultyString = " "; } // Will never reach this else, but to silence compiler
     String roundAndMode = "You couldn't protect the body from " +difficultyString;
     text(roundAndMode , 50, HEIGHT*0.9 - 5);
-    
-    
     text("The germs have taken over!", 50, HEIGHT*0.95 - 5);
    
     // Try again button:
@@ -106,7 +107,6 @@ class LoseScreen extends Display {
     for (int i = 0; i < currentGerms.length; i++) {
        int germIndex = (int)random(0, (germs.length - 1));
        currentGerms[i] = germs[germIndex];
-       //currentGerms[i].resize(50,50);
     }  
   }
 }

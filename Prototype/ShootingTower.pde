@@ -1,27 +1,46 @@
 public class ShootingTower extends DefenceTower {
+  int lastShotTime;
 
     public ShootingTower(int x, int y, int sprite, String name){
         super(x, y, name);
         this.spriteIndex = sprite; // For image rendering
+        this.lastShotTime = 0;
     }
 
     public void shoot(){
+        float shotInterval = 1000.0f / this.shotsPerSec; // Find the interval at which the tower shoots
+        
         Germ target = findTarget();
-
-        // If there is a germ in range and the tower has the right projectile type to deal damage to it
-        if (target != null && this.projectileType >= target.getRequiredProjectile()){
+        if (target != null && ((millis() - this.lastShotTime) >= shotInterval)){ // If there is a valid target and its time to shoot
+          // If the tower has the right projectile type to deal damage to it
+          if (this.projectileType >= target.getRequiredProjectile()){
             PVector from = new PVector((this.positionX+0.5)*cellSize, (this.positionY+0.5)*cellSize);
             PVector to = new PVector(target.posX+0.5*cellSize, target.posY+0.5*cellSize);
             drawShooting(from, to, 4);
-            // When we introduce projectile visuals this will need to be changed
-            // So that a shot is fired at the rate of shotsPerSec/1
             target.decreaseHealth(this.damageCapability); 
+            this.lastShotTime = millis();
         
-            if (target.getHealth() <= 0){ // If the germ's health is fully deleted
-               AllGerms.remove(target); // It is killed
+            if (target.getHealth() <= 0){ // If the germ's health is fully depleted
+               killGerm(target);
             }
+          }
         }
     }  
+
+    void killGerm(Germ target){
+      int germIndex = AllGerms.indexOf(target);
+      if (target instanceof Germ3){ // If its a Germ3 replace it with a Germ2
+        Germ newGerm = new Germ2();
+        newGerm.setGermPosition(target.getGermX(), target.getGermY());
+        AllGerms.set(germIndex, newGerm);
+      } else if (target instanceof Germ2){ // If its a Germ2 replace it with a Germ1
+        Germ newGerm = new Germ1();
+        newGerm.setGermPosition(target.getGermX(), target.getGermY());
+        AllGerms.set(germIndex, newGerm);
+      } else {
+        AllGerms.remove(target); // If its a Germ1, it is killed
+      }
+    }
   
     Germ findTarget(){
        // Target germ = the germ furthest along the path, which is in range   .
@@ -29,9 +48,14 @@ public class ShootingTower extends DefenceTower {
     
        for (int x = 0; x < AllGerms.size(); x++){ // Search through each germ, starting with the furthest along the path
            Germ current = AllGerms.get(x);
+           
+           // Adapt the germ positions to match cell of the array
+           int germX = (int)(current.getGermX() / cellSize); 
+           int germY = (int)(current.getGermY() / cellSize);
         
-           double ac = Math.abs(current.getGermY() - this.positionY);
-           double cb = Math.abs(current.getGermX() - this.positionX);
+           // Calculate the distance between germ and tower
+           double ac = Math.abs(germY - this.positionY);
+           double cb = Math.abs(germX - this.positionX);
            double distance = Math.sqrt((ac*ac) + (cb*cb)); // Find the distance between the Tower and current germ
         
            if (distance <= this.range){ // If the current germ is within range,

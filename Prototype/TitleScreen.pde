@@ -26,10 +26,10 @@ class TitleScreen extends Display {
         titleTargetX = WIDTH/8 - 50;
         titleTargetY = HEIGHT/4;
         
-        germL = loadImage("germ/germ4L.png");
-        germL.resize(WIDTH/5, HEIGHT/5);
-        germR = loadImage("germ/germ4R.png");
-        germR.resize(WIDTH/5, HEIGHT/5);
+        // germL = loadImage("germ/germ4L.png");
+        // germL.resize(WIDTH/5, HEIGHT/5);
+        // germR = loadImage("germ/germ4R.png");
+        // germR.resize(WIDTH/5, HEIGHT/5);
     }
 
     void draw(){

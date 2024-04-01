@@ -60,16 +60,16 @@ class Germ {
   }
   
   int getGermX(){
-    return (int)(this.posX / cellSize);
+    return this.posX;
   }
   
   int getGermY(){
-    return (int)(this.posY / cellSize);
+    return this.posY;
   }
 
-  void setGermPosition(int positionX, int positionY){
-    this.posX = positionX;
-    this.posY = positionY;
+  void setGermPosition(int x, int y){
+    this.posX = x;
+    this.posY = y;
   }
 
   Germ(int sprite){
