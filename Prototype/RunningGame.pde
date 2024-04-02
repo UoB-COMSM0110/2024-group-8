@@ -34,11 +34,11 @@ class RunningGame{
 
     void selectRound(){  
         if (currentRound == null || this.roundCounter == 0){
-           currentRound = new Round(10, 10, millis(), 100, (roundCounter+1)); // The intial round just set as randomish values for now
+           currentRound = new Round(30, millis(), 50, (roundCounter+1)); // The intial round just set as randomish values for now
            currentRound.setInProgress(true);
            this.roundCounter++;
         } else if (!(currentRound.inProgress())) {
-           currentRound = new Round((currentRound.getDurationInSecs()+10), (currentRound.getNumberOfEnemies()*1.5), millis(), (currentRound.getEarningsForCompletion()+(roundCounter*30)), (roundCounter+1)); // Next round slightly harder than last
+           currentRound = new Round(30, millis(), (currentRound.getEarningsForCompletion()+(roundCounter*5)), (roundCounter+1)); // Next round slightly harder than last
            currentRound.setInProgress(true);
            this.roundCounter++;
         }

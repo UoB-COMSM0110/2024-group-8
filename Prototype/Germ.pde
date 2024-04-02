@@ -113,7 +113,53 @@ class Germ3 extends Germ {
   Germ3(){
     super(2);
     this.requiredProjectile = 1;
-    this.health = 8;
+    this.health = 10;
+    this.speed = 9;
+  }
+}
+
+class Germ4 extends Germ {
+  Germ4(){
+    super(3);
+    this.requiredProjectile = 1;
+    this.health = 12;
     this.speed = 12;
   }
 }
+
+class Germ5 extends Germ {
+  Germ5(){
+    super(4);
+    this.requiredProjectile = 1;
+    this.health = 15;
+    this.speed = 15;
+  }
+}
+
+class Germ6 extends Germ {
+  Germ6(){
+    super(5);
+    this.requiredProjectile = 2;
+    this.health = 20;
+    this.speed = 9;
+  }
+}
+
+class Germ7 extends Germ {
+  Germ7(){
+    super(6);
+    this.requiredProjectile = 2;
+    this.health = 30;
+    this.speed = 6;
+  }
+}
+
+class Germ8 extends Germ {
+  Germ8(){
+    super(7);
+    this.requiredProjectile = 3;
+    this.health = 25;
+    this.speed = 12;
+  }
+}
+

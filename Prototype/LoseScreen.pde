@@ -14,13 +14,17 @@ class LoseScreen extends Display {
            loadImage("germ/germ2R.png"),
            loadImage("germ/germ3L.png"),
            loadImage("germ/germ3R.png"),
+           loadImage("germ/germ4L.png"),
+           loadImage("germ/germ4R.png"),
+           loadImage("germ/germ5L.png"),
+           loadImage("germ/germ5R.png"),
            loadImage("germ/germ6L.png"),
            loadImage("germ/germ6R.png"),
            loadImage("germ/germ7L.png"),
-           loadImage("germ/germ7R.png")
+           loadImage("germ/germ7R.png"),
+           loadImage("germ/germ8L.png"),
+           loadImage("germ/germ8R.png")
      };
-     
-     System.out.println("Length of germs array = " + germs.length);
     
      completedGameDifficulty = currentGame.getGameDifficulty();
      completedGameRounds = currentGame.getTotalRounds(); // Store this values for the game stats window on win screen

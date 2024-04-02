@@ -59,21 +59,35 @@ class Projectile {
     }
 
     void killGerm(Germ target){
-      int germIndex = AllGerms.indexOf(target);
-      int germLane = target.getLaneIndex();
-      if (target instanceof Germ3){ // If its a Germ3 replace it with a Germ2
-        Germ newGerm = new Germ2();
-        newGerm.setGermPosition(target.getGermX(), target.getGermY());
-        newGerm.setDirection(germLane);
-        AllGerms.set(germIndex, newGerm);
-      } else if (target instanceof Germ2){ // If its a Germ2 replace it with a Germ1
-        Germ newGerm = new Germ1();
-        newGerm.setGermPosition(target.getGermX(), target.getGermY());
-        newGerm.setDirection(germLane);
-        AllGerms.set(germIndex, newGerm);
-      } else {
+      if (target instanceof Germ1){
         AllGerms.remove(target); // If its a Germ1, it is killed
         targetAlive = false;
+      } else {
+        int germIndex = AllGerms.indexOf(target);
+        int germLane = target.getLaneIndex();
+        
+        Germ newGerm; // Determine what target should be replaced with
+        if (target instanceof Germ7) {
+            newGerm = new Germ6();
+        } else if (target instanceof Germ6) {
+            newGerm = new Germ5();
+        } else if (target instanceof Germ5) {
+            newGerm = new Germ4();
+        } else if (target instanceof Germ4) {
+            newGerm = new Germ3();
+        } else if (target instanceof Germ3) {
+            newGerm = new Germ2();
+        } else if (target instanceof Germ2) {
+            newGerm = new Germ1();
+        } else {
+            newGerm = new Germ1();
+        }
+  
+        // Set the replacement germs position to the target germs' old position/lane/direction etc.
+        newGerm.setGermPosition(target.getGermX(), target.getGermY());
+        newGerm.setDirection(germLane);
+        // Replace target with the replacement in the germs array
+        AllGerms.set(germIndex, newGerm);
       }
     }
     

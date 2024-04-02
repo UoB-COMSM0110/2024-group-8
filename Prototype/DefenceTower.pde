@@ -107,12 +107,16 @@ public abstract class DefenceTower {
       // Load the correct image for the towers current projectile type
       if (this.projectileType == 1){ // Steel protein
         projectileImage = loadImage("projectile/steel.png");
+        projectileImage.resize(25,25);
       } else if (this.projectileType == 2){ // Flame protein
         projectileImage = loadImage("projectile/flame.png");
+        projectileImage.resize(35,35);
       } else if (this.projectileType == 3){  // Diamond protein
         projectileImage = loadImage("projectile/diamond.png");
+        projectileImage.resize(30,30);
       } else { // Basic protein
         projectileImage = loadImage("projectile/basic.png");
+        projectileImage.resize(15,15);
       }
   }
 }

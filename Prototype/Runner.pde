@@ -1,5 +1,6 @@
 /*
-    I have finished most of the skeleton of the code, but there's still lots to do:
+    To do list, delete when done :) 
+
       - GAME MAP:
           - Create a stylised background image and unique path for each organ
           - Implement twist logic for each map
@@ -14,26 +15,18 @@
       - GERMS:
           - Design and implement at least 3/4 more enemies
           - When a higher level germ is killed, should create a lower level germ in its place 
-            (see existing tower defence game if you're unsure what this means)
 
       - TOWERS: 
-          - Design and implement at least 3/4 more towers
-          GAME WINDOW: 
-          - Design and implement a game window which will display the stats of the last tower clicked, as well as a sell/delete button,
-            and an upgrade button which shows what the next possible upgrade is, i.e. UPGRADE: Faster Shots COST: 50 coins
+          - Design and implement at least 2 more towers
+          MUCUS DISPENSER - places mucus on the path which slows down the speed of trapped germs
+          ??? - some super strong tower which shoots the diamond projectiles, maybe the creepy spider antibody and it can move around the map?
 
       - ROUNDS:
           - Although I've implemented 'difficulty' its only currently increases number of rounds, and decresing lives and coins
           - To make it truly more difficult we need to make the rounds have a set type of enemies etc.
           - Currently the next round just builds on the last by making it slightly longer w/more enemies, but we need to make them actually harder
 
-      - PROJECTILES:
-          - Design and implement projectiles
-          - When doing so will need to alter the tower shots logic slightly so that it shots at correct intervals
-          
-      - BACK BUTTON:
-          - Either an onscreen button or just ESC to go back a screen, i.e. difficulty selection back to map selection
-          - Also for when you've clicked a tower but no longer want to place it
+
 */
 
 
@@ -72,9 +65,9 @@ enum GameState { // Different phases of the game, so program knows what to draw
 
 enum Difficulty { 
         // Defintion of each difficulty and what you start with
-        EASY(100, 5, 200),   // ( Start Lives ; Number of Rounds ; Start Coins)
-        MEDIUM(70, 10, 150),
-        HARD(40, 20, 100);
+        EASY(100, 10, 200),   // ( Start Lives ; Number of Rounds ; Start Coins)
+        MEDIUM(70, 20, 150),
+        HARD(40, 30, 75);
 
         private int numberOfRounds;
         private int numberOfLives;
@@ -165,8 +158,13 @@ void setup(){ // Creates & setups all objects needed for the game, calls their r
   
   GermSprites = new GermSprite[]{
     new GermSprite("germ1"),
+    new GermSprite("germ2"),
+    new GermSprite("germ3"),
+    new GermSprite("germ4"),
+    new GermSprite("germ5"),
     new GermSprite("germ6"),
-    new GermSprite("germ7")
+    new GermSprite("germ7"),
+    new GermSprite("germ8")
   };
 
   // Create maps
