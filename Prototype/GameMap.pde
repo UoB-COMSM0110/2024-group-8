@@ -16,7 +16,6 @@ class GameMap{
   PImage background;
   PImage path;
   PImage pathMask;
-
   PImage towerA;
   PImage towerB;
   
@@ -50,10 +49,6 @@ class GameMap{
       this.background.resize(WIDTH, HEIGHT);
       path = loadImage("whiteBG.png");
       path.resize(WIDTH, HEIGHT);
-      //pathMask = loadImage("route.png");
-      //pathMask.resize(WIDTH, HEIGHT);
-      //path.mask(pathMask);
-      
       towerA = TowerSprites[0];
       towerB = TowerSprites[1];
     } catch (Exception e) {
@@ -67,64 +62,23 @@ class GameMap{
     image(path, 0, 0, width, playWindowHeight);
     
     drawGameWindow();
-
-    // Assign winnings:
-    if (currentRound != null && !currentRound.inProgress()){ // If the round has finished and the player hasn't received their winnings yet, give winnings
-        if (!currentRound.getReceivedEarnings()){
-            currentGame.earnCoins(currentRound.getEarningsForCompletion());
-            currentRound.setReceivedEarnings(true);
-        }
-    }
+    currentGame.runGame(startRoundButton);
       
     // Draw all towers:
     for (DefenceTower tower : AllTowers){
       tower.drawTower();
     }
-
-    // Move germs and store those about to be deleted:
-    ArrayList<Germ> germsToLeak = new ArrayList<>(); // THIS IS NECESARRY TO AVOID CONCURRENT MODIFICATION EXCEPTION DO NOT DELETE
-
-    for (Germ germ : AllGerms){
-      germ.move();
-      if (germ.isLeaked()){
-        germsToLeak.add(germ);
-        currentGame.subtractLife();
-      }
-    }
-    
-    for (Germ germToLeak : germsToLeak){
-      AllGerms.remove(germToLeak);
-    }
    
+    // Handle towerPresses for Towerinfo/sale
     if (checkForSelectedTower()){ towerSelected = true; }
     if (placingTower){ placeTower(); }
-    
-    
-    // Handle towerPresses for Towerinfo/sale
     checkForPlacedTowerPresses();
 
-    // Run current round
-    if (currentRound != null && currentRound.inProgress()){ 
-      currentRound.run(); 
-    }
-
-    // Navigate to win screen if necessary
-    if (currentGame.getRoundCounter() == currentGame.getTotalRounds() && !(currentRound.inProgress()) && AllGerms.size() <= 0){ // If the final round is fully completed
-      winScreen.setup();
-      currentGameState = GameState.WON;
-    }
-      
-    // If you press start round, and no round is in progress it will start the round 
-    if (mousePressed && startRoundButton.onButton() && currentGame.getRoundCounter() < currentGame.getTotalRounds()){ // Change the roundCounter condition for RunningGame.getNumberOfRounds() later on
-      currentGame.selectRound();
-    }
-    
-    if (currentGame != null && currentGame.getCurrentLives() <= 0){
-      loseScreen.setup();
-      currentGameState = GameState.LOST;
+    if (currentGame != null){
+      checkGameWonOrLost();
     }
   }
-  
+
   void drawGameWindow(){
     // Game Window:
     strokeWeight(8);
@@ -314,7 +268,6 @@ class GameMap{
     }
   }
 
-  
   void initalisePath(){   
     Vector[] path = new Vector[]{
     new Vector(0,  5),
@@ -388,13 +341,27 @@ class GameMap{
       int x = (int)(mouseX/cellSize);
       int y = (int)(mouseY/cellSize);
       if (x < Grid.length && y < Grid[0].length){
-         for (DefenceTower t : AllTowers){
-             if (t.positionX == x && t.positionY == y){
-               lastClickedTower = t;
-               towerSelected = false;
-             } 
-         }
+          for (DefenceTower t : AllTowers){
+              if (t.positionX == x && t.positionY == y){
+                  lastClickedTower = t;
+                  towerSelected = false;
+              } 
+          }
       }
     }  
   } 
+
+  void checkGameWonOrLost(){
+    // Navigate to LOSE screen if necessary
+    if (currentGame.getCurrentLives() <= 0){
+        loseScreen.setup();
+        currentGameState = GameState.LOST;
+    }
+
+    // Navigate to WIN screen if necessary
+    if (currentGame != null && currentGame.getRoundCounter() == currentGame.getTotalRounds() && !(currentRound.inProgress()) && AllGerms.size() <= 0){ // If the final round is fully completed
+        winScreen.setup();
+        currentGameState = GameState.WON;
+    }
+  }
 }

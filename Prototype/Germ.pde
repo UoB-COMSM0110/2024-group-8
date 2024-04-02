@@ -53,11 +53,12 @@ class Germ {
     return (status == PathStatus.finished);
   }
 
-  void leak(Germ g){
-    AllGerms.remove(g);
-    // println("A germ has leaked");
-    currentGame.subtractLife();
-  }
+  // Logic moved to RunningGame class :)
+  // void leak(Germ g){
+  //   AllGerms.remove(g);
+  //   // println("A germ has leaked");
+  //   currentGame.subtractLife();
+  // }
   
   int getGermX(){
     return this.posX;
