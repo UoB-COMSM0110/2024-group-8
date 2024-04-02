@@ -136,6 +136,7 @@ Path mapPath; // Pathway followed by germs
 // Array lists for towers and enemies
 ArrayList<DefenceTower> AllTowers  = new ArrayList<DefenceTower>();
 ArrayList<Germ> AllGerms = new ArrayList<Germ>();
+ArrayList<Projectile> AllProjectiles = new ArrayList<Projectile>();
 
 // Stores all buttons which change the display, e.g., Play again = WinScreen -> MapSelection
 ArrayList<StateChangingButton> stateChangingButtons = new ArrayList<StateChangingButton>();

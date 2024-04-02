@@ -9,14 +9,16 @@ public abstract class DefenceTower {
   public int positionX; // Position on the grid
   public int positionY;
   public int[][] properties; // Stores the tower stats at different upgrade levels
+  PImage projectileImage;
   
   //public boolean lastClicked; // This boolean will be used to display tower stats in the game window when it is the las clicked
   public String name;
   
-  public DefenceTower(int x, int y, String towerName){
+  public DefenceTower(int x, int y, String towerName, int projectile){
     this.positionX = x; // Position on the grid is stored to allow us to calculate which is within range
     this.positionY = y;
     this.name = towerName;
+    this.projectileType = projectile;
   }
   
   public void drawTower(){
@@ -26,12 +28,18 @@ public abstract class DefenceTower {
   public void upgradeTower(){
     if (this.currentUpgradeLevel < 3){ // If there are more possible upgrades
       if (currentGame.getCoins() >= properties[0][this.currentUpgradeLevel+1]){ // If player can afford the upgrade
+          int oldProjectile = properties[1][this.currentUpgradeLevel];
           this.currentUpgradeLevel++;
           currentGame.spendCoins(properties[0][this.currentUpgradeLevel]);
           this.projectileType = properties[1][this.currentUpgradeLevel];
           this.damageCapability = properties[2][this.currentUpgradeLevel];
           this.shotsPerSec = properties[3][this.currentUpgradeLevel];
           this.range = properties[4][this.currentUpgradeLevel];
+          
+          if (this instanceof ShootingTower && (oldProjectile != properties[1][this.currentUpgradeLevel])){ 
+             // If its a tower that shoots load the new image for the new projectile
+             determineProjectileImage();
+          }
       }
     }
   }
@@ -94,4 +102,17 @@ public abstract class DefenceTower {
   }
   
   public abstract void shoot();
+  
+  void determineProjectileImage(){
+      // Load the correct image for the towers current projectile type
+      if (this.projectileType == 1){ // Steel protein
+        projectileImage = loadImage("projectile/steel.png");
+      } else if (this.projectileType == 2){ // Flame protein
+        projectileImage = loadImage("projectile/flame.png");
+      } else if (this.projectileType == 3){  // Diamond protein
+        projectileImage = loadImage("projectile/diamond.png");
+      } else { // Basic protein
+        projectileImage = loadImage("projectile/basic.png");
+      }
+  }
 }

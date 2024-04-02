@@ -21,7 +21,6 @@ class Kidney extends GameMap {
     //void draw(){
     //  super.draw();
     //  try { // Please add implementation of map animation within this to avoid null pointer exception after game is won/lost:)
-        
        
     //  } catch (Exception e) { System.out.println("Game is already won/lost"); }    
     //}
