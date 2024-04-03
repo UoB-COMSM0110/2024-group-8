@@ -9,9 +9,8 @@ class Heart extends GameMap {
         super.setup(); 
         
         try {
-            pathMask = loadImage("route2.png");  // Load new path mask image
-            pathMask.resize(WIDTH, HEIGHT); 
-            path.mask(pathMask); 
+            path = loadImage("routeHeart.png");  // Load new path mask image
+            path.resize(WIDTH, HEIGHT); 
         } catch (Exception e) {
             println("Error loading image: " + e.getMessage());
         }
@@ -29,14 +28,12 @@ class Heart extends GameMap {
     @Override                                      //load new vector for new path
     void initalisePath() {
       Vector[] path = new Vector[]{
-        new Vector(0, 1),
-        new Vector(17,  1),
-        new Vector(17,  4),
-        new Vector(2,  4),
-        new Vector(2,  7),
-        new Vector(17,  7),
+        new Vector(0, 3),
+        new Vector(17,  3),
         new Vector(17,  10),
-        new Vector(0,  10), 
+        new Vector(2,  10),
+        new Vector(2,  6),
+        new Vector(19,  6),
   
       
     };

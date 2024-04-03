@@ -162,4 +162,3 @@ class Germ8 extends Germ {
     this.speed = 12;
   }
 }
-
