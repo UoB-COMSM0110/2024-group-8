@@ -27,7 +27,9 @@ class Lung extends GameMap {
     }
     
 
-    
+    void twist() {
+      //tint(0xffffff);
+    }
     
   boolean displayDeadLung = false;
   int deadLungDisplayTime = 1000; 
@@ -45,6 +47,10 @@ class Lung extends GameMap {
            lung2Size += 20; 
            displayDeadLung = true; // Set the flag to display deadBrain
            deadLungDisplayStartTime = millis(); 
+        }
+
+        if (currentGame.getCurrentLives() < 100) {
+          twist();
         }
     
         // Check if it's time to display the deadBrain image

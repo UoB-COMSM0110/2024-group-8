@@ -1,4 +1,4 @@
-class GameMap{
+abstract class GameMap{
   /*
      Starting point for the GameMap class
      Still need to:
@@ -35,6 +35,8 @@ class GameMap{
   int selectedTowerCost = 0;
   int timeOfLastPurchase = 0;
   
+  void twist(){};
+
   void setup(){
     // Initialize grid
     for (int x = 0; x < Grid.length; x++){

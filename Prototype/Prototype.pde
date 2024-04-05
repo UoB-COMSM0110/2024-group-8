@@ -212,6 +212,7 @@ void draw(){
   
   if (currentGameState.isGameMap()){  
       if (currentGameState == GameState.BRAIN) {
+        currentGameMap = brainMap;
         if (difficultySelected){ 
           brainMap.setup();
           brainMap.draw();
@@ -222,6 +223,7 @@ void draw(){
       }
   
       if (currentGameState == GameState.LUNG) {
+        currentGameMap = lungMap;
          if (difficultySelected){ 
            lungMap.setup();
            lungMap.draw();
@@ -232,6 +234,7 @@ void draw(){
        }
   
       if (currentGameState == GameState.HEART){
+        currentGameMap = heartMap;
         if (difficultySelected){ 
           heartMap.setup();
           heartMap.draw();
@@ -242,6 +245,7 @@ void draw(){
       }
     
       if (currentGameState == GameState.KIDNEY){
+        currentGameMap = kidneyMap;
         if (difficultySelected){ 
           kidneyMap.setup();
           kidneyMap.draw();
