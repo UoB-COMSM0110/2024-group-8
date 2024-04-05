@@ -1,0 +1,57 @@
+At 110-150 wpm, this should be no more than 330-450 words total.
+
+Video to consist of:
+1)Into to the video, 
+2)Quick overview of how the game works - play along, video fo someone playing it.
+3) Who we are, our roles, challenges. 
+
+
+ // -Video of start screen:
+
+// Voice/0ver
+This is Immune System Defence:
+The human body is under attack. In every organ, every body part - foreign invaders are coming in to claim it as their own and take over. 
+But don't worry - because there is still time to fight back. As they travel through the body they set their sights on causing harm, but you can stop them before it's too late. 
+Set up your defences through the bloodstream.
+
+//Voice-Over Person #2
+This educational game for __________ will help children visualise the body's defences and help them understand ___________________.
+
+//Voice-over Person #3
+Our team are Group #8, We split ourselves into two different areas, the programmers and the researchers. One group, " , and " spent time developing concepts into programmable code and the other group " " researched topics, kept the team on track and developed the report. 
+
+
+In 'Immune System Defence', 3 challenges were presented to developers:
+The first was to build a simple physics engine to simulate projectile motion from the towers that shoot the invaders.
+The second 
+
+Building the game in processing was tough, but our development team were committed to ensuring seamless and engaging gameplay. 
+
+
+
+
+
+//Close with call to action
+
+//Voice-over person 3
+Doctor, we need your help. 
+Only you can fight back against the raging infection taking a hold of our patient's body.
+Raise defences, push back on illness and fight infection in "Immune System Defence", coming to all good online stores soon.
+
+
+-- End --
+
+
+
+CLIPS TO RECORD:
+- Someone sat at PC, playing the game - camera pans in over their shoulder and into the screen.
+- People surrounding person at computer, egging them on, suggesting where they should go next, pointing at screen, moving eratticly. (No audio).
+- Game comes to a close, zooms out from screen seeing people happy they have won.
+
+
+
+Screen Recordings:
+- Walk through from start, clicking on difficultly, selecting a tower, placing it and level starting.
+- Lots of sprites and towers firing at each other
+- A win screen.
+- clip showing the 4 different rounds and zooms in on one in swift, seamless motion to show its background and playing as the game runs.
