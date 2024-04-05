@@ -139,7 +139,7 @@ void settings(){
 }
 
 void setup(){ // Creates & setups all objects needed for the game, calls their relevant setup functions
-  font = createFont("Papyrus", 30);
+  font = createFont("DejaVu Serif Condensed", 30);
   currentGameState = GameState.TITLE;
 
   titleScreen = new TitleScreen();
