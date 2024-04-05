@@ -1,4 +1,10 @@
 class Lung extends GameMap {
+  PImage germ;
+  PImage lung2;
+  PImage deadLung;
+  float germSize = 100;
+  float lung2Size = 100;
+  
     Lung(PImage lung) {
         this.background = lung;
         
@@ -14,17 +20,63 @@ class Lung extends GameMap {
         } catch (Exception e) {
             println("Error loading image: " + e.getMessage());
         }
+        
+        germ = loadImage("germ/germ1R.png");
+        lung2 = loadImage("lung.png");
+        deadLung = loadImage("deadLung.png");
     }
     
-    //@Override
-    //void draw(){
-    //  super.draw();
-    //  try { // Please add implementation of map animation within this if statement to avoid null pointer exception after game is won/lost:)
-        
-       
-    //  } catch (Exception e) { System.out.println("Game is already won/lost"); }
-      
-    //}
+
+    
+    
+  boolean displayDeadLung = false;
+  int deadLungDisplayTime = 1000; 
+  int deadLungDisplayStartTime = 0;
+
+  @Override
+  void draw(){
+    super.draw();
+    
+    try {
+      int previousLives = currentGame.getCurrentLives();
+      super.draw();
+      image(lung2, 640, 5, lung2Size, lung2Size);
+        if (currentGame.getCurrentLives() < previousLives) { 
+           lung2Size += 20; 
+           displayDeadLung = true; // Set the flag to display deadBrain
+           deadLungDisplayStartTime = millis(); 
+        }
+    
+        // Check if it's time to display the deadBrain image
+        if (displayDeadLung && millis() - deadLungDisplayStartTime < deadLungDisplayTime) { 
+           image(deadLung, 640, 25, lung2Size, lung2Size);////
+        }
+  
+        if (currentRound != null && currentRound.inProgress() && currentRound.getTimeRemainingInSecs()>0){
+           germSize += 5; 
+           image(germ, -40 , 210 , germSize, germSize);
+    
+           if (frameCount % 2 == 0) {
+               germSize = 100;
+           }
+        } else {
+           image(germ, -40 , 210 , 100, 100);
+        }
+    
+        if (currentGame.getCurrentLives() < previousLives) {
+           lung2Size -= 20; 
+        }
+    
+        if (displayDeadLung && millis() - deadLungDisplayStartTime >= deadLungDisplayTime) { 
+            displayDeadLung = false;
+        }
+    } catch (Exception e) {
+      System.out.println("Game already won/lost");
+    }
+  }
+
+    
+    
     
     @Override                                      //load new vector for new path
     void initalisePath() {

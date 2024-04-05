@@ -25,20 +25,10 @@ class Kidney extends GameMap {
         deadKidney = loadImage("deadKidney.png");
     }
     
-    //@Override
-    //void draw(){
-    //  super.draw();
-    //  try { // Please add implementation of map animation within this to avoid null pointer exception after game is won/lost:)
-       
-    //  } catch (Exception e) { System.out.println("Game is already won/lost"); }    
-    //}
-    
     
     boolean displayDeadKidney = false;
     int deadKidneyDisplayTime = 1000;
-    int deadKidneyDisplayStartTime = 0;
-    
-    
+    int deadKidneyDisplayStartTime = 0;  
     
     @Override
   void draw(){
