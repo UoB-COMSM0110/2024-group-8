@@ -22,8 +22,9 @@ Our team are Group #8, We split ourselves into two different areas, the programm
 
 
 In 'Immune System Defence', 3 challenges were presented to developers:
-The first was to build a simple physics engine to simulate projectile motion from the towers that shoot the invaders.
-The second 
+The first was to build a simple physics engine to simulate projectile motion, from the towers that shoot the invaders.
+The second involved creating a life-cycle for our invader sprites, governing their behaviour - creating logic that governed their difficulty to kill, their outward appearance and behaviour dependant on a whole host of factors.
+The third challenge 
 
 Building the game in processing was tough, but our development team were committed to ensuring seamless and engaging gameplay. 
 
