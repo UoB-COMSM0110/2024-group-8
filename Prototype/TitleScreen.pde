@@ -23,7 +23,7 @@ class TitleScreen extends Display {
         // Set initial position for the title
         titleX = -500; // Offscreen initially
         titleY = HEIGHT/4;
-        titleTargetX = WIDTH/8 - 50;
+        titleTargetX = WIDTH/8 - 85;
         titleTargetY = HEIGHT/4;
         
         // germL = loadImage("germ/germ4L.png");
@@ -66,7 +66,7 @@ class TitleScreen extends Display {
     rect(WIDTH/2 - 100, HEIGHT/2, 200, 60);
     fill(255);
     textSize(40);
-    text("START", WIDTH/2 - 62 , HEIGHT/2 + 42);
+    text("START", WIDTH/2 - 62 , HEIGHT/2 + 44);
 
     // Draw how to play button 
     PressableButton howToPlayButton = new PressableButton(WIDTH/2 - 80, HEIGHT/2 +100, 160, 60);
@@ -80,7 +80,7 @@ class TitleScreen extends Display {
     rect(WIDTH/2 - 90, HEIGHT/2 +100, 180, 50);
     fill(255);
     textSize(30);
-    text("TUTORIAL", WIDTH/2 - 80 , HEIGHT/2 + 135);
+    text("TUTORIAL", WIDTH/2 - 75 , HEIGHT/2 + 135);
     if (mousePressed && howToPlayButton.onButton()){
         howToPlayScreen.setup(currentGameState);
         currentGameState = GameState.HOWTO;

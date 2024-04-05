@@ -49,7 +49,7 @@ class DifficultySelection extends Display {
         text("ASSAULT", 430 , 480);
         
         fill(#94221F);
-        text("BIOHAZARD", 180, 610);
+        text("BIOHAZARD", 180, 600);
         text("RAMPAGE" , 200, 660);
         
         //stroke(255);

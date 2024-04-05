@@ -109,7 +109,7 @@ class GameMap{
         
     fill(255);
     textSize(25);
-    text("Click placed towers to upgrade!", 10, 30);
+    text("Click placed towers to upgrade!", 5, 30);
     
     // GameStats:
     textSize(30);
@@ -126,15 +126,7 @@ class GameMap{
       textSize(30);
       text(selectedTower.name, 160, (menuPosY+30));
       
-      noFill();
-      stroke(255);
-      rect(300, (menuPosY+20), 250, 100);
-      //// Tower Stats
-      textSize(20);
-      text("Range           ->    " + selectedTower.range, 310, (menuPosY+45));
-      text("Damage       ->    " + selectedTower.damageCapability, 310, (menuPosY+65));
-      text("Shots/sec   ->    " + selectedTower.shotsPerSec, 310, (menuPosY+85));
-      text("Protein         ->    " + selectedTower.getProjectileTypeAsString(), 310, (menuPosY+105));
+      displayTowerStats(selectedTower);
       
       if (!placingTower){
         // Buy button
@@ -144,7 +136,7 @@ class GameMap{
         PressableButton buyButton = new PressableButton(620, (int)(menuPosY+30), 170, 75);
         fill(255);
         textSize(30);
-        text("BUY", 670, (menuPosY+60));
+        text("BUY", 672, (menuPosY+60));
         if (selectedTower.getCost() <= currentGame.getCoins()){ fill(#00FF00); } else { fill(#FF0000); }
         text("Cost: " + selectedTower.getCost(), 650, (menuPosY+90));  
         if (mousePressed && buyButton.onButton()){ 
@@ -187,12 +179,7 @@ class GameMap{
        textSize(30);
        text(lastClickedTower.name, 160, (menuPosY+30));
        
-       rect(300, (menuPosY+20), 250, 100);
-       textSize(20);
-       text("Range           ->    " + lastClickedTower.range, 310, (menuPosY+45));
-       text("Damage       ->    " + lastClickedTower.damageCapability, 310, (menuPosY+65));
-       text("Shots/sec  ->    " + lastClickedTower.shotsPerSec, 310, (menuPosY+85));
-       text("Protein         ->    " + lastClickedTower.getProjectileTypeAsString(), 310, (menuPosY+105));
+       displayTowerStats(lastClickedTower);
        
        if (lastClickedTower.currentUpgradeLevel < 3){
           // Upgrade info & button
@@ -266,6 +253,29 @@ class GameMap{
             text("... FOR NOW!", 850, (int)(menuPosY + 125));
         } 
     }
+  }
+  
+  void displayTowerStats(DefenceTower t){
+      noFill();
+      strokeWeight(4);
+      stroke(255);
+      rect(300, (menuPosY+20), 250, 100);
+      
+      strokeWeight(2);
+      line(300, (menuPosY+45), 550, (menuPosY+45));
+      line(300, (menuPosY+70), 550, (menuPosY+70));
+      line(300, (menuPosY+95), 550, (menuPosY+95));
+      line(420, (menuPosY+20), 420, (menuPosY+120));
+      
+      textSize(20);
+      text("RANGE", 305, (menuPosY+40));
+      text(t.range, 480, (menuPosY+40));
+      text("DAMAGE", 305, (menuPosY+65));
+      text(t.damageCapability, 480, (menuPosY+65));
+      text("SHOTS/sec", 305, (menuPosY+90));
+      text(t.shotsPerSec, 480, (menuPosY+90));
+      text("PROTEIN", 305, (menuPosY+115));
+      text(t.getProjectileTypeAsString(), 450, (menuPosY+115));
   }
 
   void initalisePath(){   

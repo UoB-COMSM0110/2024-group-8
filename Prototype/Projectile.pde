@@ -59,6 +59,7 @@ class Projectile {
     }
 
     void killGerm(Germ target){
+      currentGame.earnCoins(3);
       if (target instanceof Germ1){
         AllGerms.remove(target); // If its a Germ1, it is killed
         targetAlive = false;

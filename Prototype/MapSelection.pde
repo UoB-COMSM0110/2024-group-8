@@ -29,9 +29,9 @@ class MapSelection extends Display {
       background(startPageBackground);
       image(germ, germX, germY);
   
-      textSize(40);
+      textSize(50);
       fill(255);
-      text("Choose which organ to defend:", WIDTH/5, HEIGHT/4 - 25);
+      text("Choose which organ to defend:", WIDTH/8, HEIGHT/5);
   
       int outlineSize = imageSize + 20;
   
