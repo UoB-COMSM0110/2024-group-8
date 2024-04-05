@@ -4,27 +4,33 @@
       - GAME MAP:
           - Create a stylised background image and unique path for each organ
           - Implement twist logic for each map
-          FINAL BOSS:
-             - Design and implement a final boss germ for each map
+
+          HEART:
+                Twist = As you lose lives, blood gets thinner = all germs move faster
+                Final boss = blood clot
+             
+          LUNG:
+                Twist = as you lose lives, fog/smoke starts clouding the screen and visibility is decreased
+                Final Boss = pulmonary embolism
+             
+          BRAIN:
+                Twist = probability of a stroke increases = chance of stroke variable in top right
+                = In game logic, each time a new round is selected according to probability might be a stroke which ends the game there
+                Final boss = an aneurisym
+             
+          KIDNEY:
+                Twist = germ multiplication & temperature rise, as temperature rises the germs are more likely to multiply
+                Final boss = Kidney stone
 
       - HOW TO PLAY SCREEN:
           - Design and implement instructions screen
           - Should have a button top left on all displays (except win/lose screens),
             which you can press to bring up an instructions screen
 
-      - GERMS:
-          - Design and implement at least 3/4 more enemies
-          - When a higher level germ is killed, should create a lower level germ in its place 
-
       - TOWERS: 
           - Design and implement at least 2 more towers
           MUCUS DISPENSER - places mucus on the path which slows down the speed of trapped germs
           ??? - some super strong tower which shoots the diamond projectiles, maybe the creepy spider antibody and it can move around the map?
-
-      - ROUNDS:
-          - Although I've implemented 'difficulty' its only currently increases number of rounds, and decresing lives and coins
-          - To make it truly more difficult we need to make the rounds have a set type of enemies etc.
-          - Currently the next round just builds on the last by making it slightly longer w/more enemies, but we need to make them actually harder
 
 
 */
