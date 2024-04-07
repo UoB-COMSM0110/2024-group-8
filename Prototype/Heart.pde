@@ -4,6 +4,7 @@ class Heart extends GameMap {
   PImage deadHeart;
   float germSize = 100;
   float heart2Size = 90;
+  int bloodViscosity = 5;
   
     Heart(PImage heart) {
         this.background = heart;
@@ -15,7 +16,7 @@ class Heart extends GameMap {
         super.setup(); 
         
         try {
-            path = loadImage("routeHeart.png");  // Load new path mask image
+            path = loadImage("routeHeart.png"); 
             path.resize(WIDTH, HEIGHT); 
         } catch (Exception e) {
             println("Error loading image: " + e.getMessage());
@@ -29,7 +30,7 @@ class Heart extends GameMap {
     
  
   boolean displayDeadHeart = false;
-  int deadHeartDisplayTime = 1000; // 1000 milliseconds = 1 second
+  int deadHeartDisplayTime = 1000; 
   int deadHeartDisplayStartTime = 0;
 
   @Override
@@ -72,10 +73,17 @@ class Heart extends GameMap {
     } catch (Exception e) {
       System.out.println("Game already won/lost");
     }
+    
+    decreaseBloodViscosity();
+    textFont(font);
+    textSize(30);
+    fill(255);
+    text("Blood Viscosity: " + bloodViscosity + "cp" ,675, 110);
+    
   }
 
       
-    @Override                                      //load new vector for new path
+    @Override                            
     void initalisePath() {
       Vector[] path = new Vector[]{
         new Vector(0, 3),
@@ -89,4 +97,36 @@ class Heart extends GameMap {
     };
     mapPath = new Path(path);
   }
+  
+
+  void decreaseBloodViscosity(){
+    if (currentGame.getCurrentLives() == 70) { 
+      increaseGermSpeed();
+      bloodViscosity--;
+    }
+    if (currentGame.getCurrentLives() == 50) { 
+      increaseGermSpeed();
+      bloodViscosity--;
+    }
+    if (currentGame.getCurrentLives() == 30) { 
+      increaseGermSpeed();
+      bloodViscosity--;
+    }
+    if (currentGame.getCurrentLives() == 10) { 
+      increaseGermSpeed();
+      bloodViscosity--;
+    }
+  }
+  
+  
+  
+  int getGermSpeed(){ 
+    
+    return 0;
+  } 
+  
+  void increaseGermSpeed(){
+    
+  }
+
 }
