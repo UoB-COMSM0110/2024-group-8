@@ -5,6 +5,11 @@ class Heart extends GameMap {
   float germSize = 100;
   float heart2Size = 90;
   int bloodViscosity = 5;
+  boolean functionCalled95 = false;
+  boolean functionCalled70 = false;
+  boolean functionCalled50 = false;
+  boolean functionCalled20 = false;
+
   
     Heart(PImage heart) {
         this.background = heart;
@@ -74,6 +79,8 @@ class Heart extends GameMap {
       System.out.println("Game already won/lost");
     }
     
+    
+    //twist - if lives decease, germ speed increaseb
     decreaseBloodViscosity();
     textFont(font);
     textSize(30);
@@ -100,33 +107,79 @@ class Heart extends GameMap {
   
 
   void decreaseBloodViscosity(){
-    if (currentGame.getCurrentLives() == 70) { 
-      increaseGermSpeed();
-      bloodViscosity--;
-    }
-    if (currentGame.getCurrentLives() == 50) { 
-      increaseGermSpeed();
-      bloodViscosity--;
-    }
-    if (currentGame.getCurrentLives() == 30) { 
-      increaseGermSpeed();
-      bloodViscosity--;
-    }
-    if (currentGame.getCurrentLives() == 10) { 
-      increaseGermSpeed();
-      bloodViscosity--;
-    }
+
+    int currentLives = currentGame.getCurrentLives();
+    if (currentRound != null && currentRound.inProgress()){
+      
+
+    if (currentLives <= 95) {
+      if (!functionCalled95) {
+          bloodViscosity--;
+          increaseGermSpeed();
+          functionCalled95 = true;
+      }
+    } else if (currentLives <= 70) {
+      if (!functionCalled70) {
+          bloodViscosity--;
+          increaseGermSpeed();
+          functionCalled70 = true;
+      }
+  } else if (currentLives <= 50) {
+      if (!functionCalled50) {
+          bloodViscosity--;
+          increaseGermSpeed();
+          functionCalled50 = true;
+      }
+  } else if (currentLives <= 20) {
+      if (!functionCalled20) {
+          bloodViscosity--;
+          increaseGermSpeed();
+          functionCalled20 = true;
+      }
+  }
   }
   
-  
-  
-  int getGermSpeed(){ 
+  if (currentRound == null){
+    functionCalled95 = false;
+    functionCalled70 = false;
+    functionCalled50 = false;
+    functionCalled20 = false;
+  }
     
-    return 0;
-  } 
-  
-  void increaseGermSpeed(){
+   
     
   }
+  
+  void increaseGermSpeed() {
+    for (Germ germ : AllGerms) {
+        if (germ instanceof Germ1) {
+            Germ1 germ1 = (Germ1) germ;
+            germ1.speed *= 2; 
+        } else if (germ instanceof Germ2) {
+            Germ2 germ2 = (Germ2) germ;
+            germ2.speed *= 2; 
+        } else if (germ instanceof Germ3) {
+            Germ3 germ3 = (Germ3) germ;
+            germ3.speed *= 2;
+        } else if (germ instanceof Germ4) {
+            Germ4 germ4 = (Germ4) germ;
+            germ4.speed *= 2; 
+        } else if (germ instanceof Germ5) {
+            Germ5 germ5 = (Germ5) germ;
+            germ5.speed *= 2;
+        } else if (germ instanceof Germ6) {
+            Germ6 germ6 = (Germ6) germ;
+            germ6.speed *= 2;
+        } else if (germ instanceof Germ7) {
+            Germ7 germ7 = (Germ7) germ;
+            germ7.speed *= 2;
+        } else if (germ instanceof Germ8) {
+            Germ8 germ8 = (Germ8) germ;
+            germ8.speed *= 2; 
+        }
+    }
+  }
+
+
 
 }
