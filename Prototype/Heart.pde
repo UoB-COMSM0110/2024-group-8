@@ -2,18 +2,24 @@ class Heart extends GameMap {
   PImage germ;
   PImage heart2;
   PImage deadHeart;
-  float germSize = 100;
-  float heart2Size = 90;
-  int bloodViscosity = 5;
-  boolean functionCalled95 = false;
-  boolean functionCalled70 = false;
-  boolean functionCalled50 = false;
-  boolean functionCalled20 = false;
+  float germSize;
+  float heart2Size;
+  int bloodViscosity;
+  boolean functionCalled95;
+  boolean functionCalled70;
+  boolean functionCalled50;
+  boolean functionCalled20;
 
   
     Heart(PImage heart) {
         this.background = heart;
-        
+        this.germSize = 100;
+        this.heart2Size = 90;
+        this.bloodViscosity = 5;
+        this.functionCalled95 = false;
+        this.functionCalled70 = false;
+        this.functionCalled50 = false;
+        this.functionCalled20 = false;
     }
 
     @Override
@@ -80,7 +86,7 @@ class Heart extends GameMap {
     }
     
     
-    //twist - if lives decease, germ speed increaseb
+    //twist - if lives decease, germ speed increases
     decreaseBloodViscosity();
     textFont(font);
     textSize(30);
@@ -113,41 +119,55 @@ class Heart extends GameMap {
       
 
     if (currentLives <= 95) {
-      if (!functionCalled95) {
+      if (!functionCalled95 ) {
           bloodViscosity--;
           increaseGermSpeed();
           functionCalled95 = true;
       }
-    } else if (currentLives <= 70) {
-      if (!functionCalled70) {
+    } if (currentLives <= 92) {
+      if (!functionCalled70 ) {
           bloodViscosity--;
           increaseGermSpeed();
           functionCalled70 = true;
       }
-  } else if (currentLives <= 50) {
+  } if (currentLives <= 85) {
       if (!functionCalled50) {
           bloodViscosity--;
           increaseGermSpeed();
           functionCalled50 = true;
       }
-  } else if (currentLives <= 20) {
+  } if (currentLives <= 80) {
       if (!functionCalled20) {
           bloodViscosity--;
           increaseGermSpeed();
           functionCalled20 = true;
       }
-  }
+   }
   }
   
-  if (currentRound == null){
+  
+  /*
+  int Round = currentGame.getRoundCounter();
+  System.out.println("Round: "+ Round);
+  System.out.println("current Round: "+ currentGame.getCurrentRoundCounterAsString());
+
+  if (Round != currentGame.getCurrentRoundCounter){
     functionCalled95 = false;
     functionCalled70 = false;
     functionCalled50 = false;
     functionCalled20 = false;
-  }
-    
+   }  
+   */
    
-    
+   if(currentRound != null && !currentRound.inProgress()){
+     functionCalled95 = false;
+     functionCalled70 = false;
+     functionCalled50 = false;
+     functionCalled20 = false;
+   
+   }
+   
+   System.out.println(functionCalled95);
   }
   
   void increaseGermSpeed() {

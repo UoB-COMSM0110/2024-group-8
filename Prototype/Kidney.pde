@@ -2,11 +2,12 @@ class Kidney extends GameMap {
   PImage germ;
   PImage kidney2;
   PImage deadKidney;
-  float germSize = 100;
-  float kidney2Size = 90;
+  float germSize;
+  float kidney2Size;
     Kidney(PImage kidney) {
         this.background = kidney;
-        
+        this.germSize = 100;
+        this.kidney2Size = 90;
     }
 
     @Override
