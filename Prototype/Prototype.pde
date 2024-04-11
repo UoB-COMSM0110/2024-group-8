@@ -4,11 +4,11 @@
       - GAME MAP:
           - Implement twist logic & final boss for each map
 
-          HEART:
+          HEART:     **completed, but some have some bugs**
                 Twist = As you lose lives, blood gets thinner = all germs move faster
                 Final boss = blood clot
              
-          LUNG:
+          LUNG:        **Completed**
                 Twist = as you lose lives, fog/smoke starts clouding the screen and visibility is decreased
                 Final Boss = pulmonary embolism
              

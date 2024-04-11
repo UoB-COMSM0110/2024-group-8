@@ -2,6 +2,7 @@ class Lung extends GameMap {
   PImage germ;
   PImage lung2;
   PImage deadLung;
+  PImage whiteBG;
   float germSize;
   float lung2Size;
   
@@ -26,12 +27,9 @@ class Lung extends GameMap {
         germ = loadImage("germ/germ1R.png");
         lung2 = loadImage("lung.png");
         deadLung = loadImage("deadLung.png");
+        
     }
     
-
-    void twist() {
-      //tint(0xffffff);
-    }
     
   boolean displayDeadLung = false;
   int deadLungDisplayTime = 1000; 
@@ -43,6 +41,10 @@ class Lung extends GameMap {
     
     try {
       int previousLives = currentGame.getCurrentLives();
+      
+      //twist
+        tintScreen();
+                
       super.draw();
       image(lung2, 640, 5, lung2Size, lung2Size);
         if (currentGame.getCurrentLives() < previousLives) { 
@@ -82,9 +84,31 @@ class Lung extends GameMap {
       System.out.println("Game already won/lost");
     }
   }
+  
+  void tintScreen(){
+    whiteBG = loadImage("whiteBG.png");
+    whiteBG.resize(WIDTH, HEIGHT);
 
+    if (currentRound != null && currentGame.getCurrentLives() <=90){
+      image(whiteBG, 0, 0);
+      tint(255, 180);
+    }
+    if (currentRound != null &&currentGame.getCurrentLives() <=70){
+      image(whiteBG, 0, 0);
+      tint(255, 150);
+    }
+    if (currentRound != null &&currentGame.getCurrentLives() <=50){
+      image(whiteBG, 0, 0);
+      tint(255, 80);
+    }
+    if (currentRound != null &&currentGame.getCurrentLives() <=20){
+      image(whiteBG, 0, 0);
+      tint(255, 20);
+    }
     
+  }
     
+
     
     @Override                                      //load new vector for new path
     void initalisePath() {
