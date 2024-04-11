@@ -60,9 +60,7 @@ protected class TowerC extends DefenceTower {
             Mucus newMucus = new Mucus(nextCell.x, nextCell.y, toxicMucus);
             AllMucus.add(newMucus);
             this.lastDispenseTime = millis();
-        } catch (Exception e) {
-            System.out.println("No next available cell");
-        }  
+        } catch (Exception e) {}  
       }
     }
     

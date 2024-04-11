@@ -44,6 +44,13 @@ class LoseScreen extends Display {
      while (!AllGerms.isEmpty()) {
         AllGerms.remove(0); // Remove the germ at index 0
      }
+     
+     // Re-initialise a new grid
+     for (int x = 0; x < Grid.length; x++){
+       for (int y = 0; y < Grid[0].length; y++){
+          Grid[x][y] = new Cell(x, y);
+       }
+     }
   }
 
   void draw(){   

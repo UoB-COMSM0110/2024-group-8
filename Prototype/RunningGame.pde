@@ -38,7 +38,7 @@ class RunningGame{
            currentRound.setInProgress(true);
            this.roundCounter++;
         } else if (!(currentRound.inProgress())) {
-           currentRound = new Round(30, millis(), (currentRound.getEarningsForCompletion()+(roundCounter*5)), (roundCounter+1)); // Next round slightly harder than last
+           currentRound = new Round(30, millis(), (currentRound.getEarningsForCompletion()+(roundCounter*10)), (roundCounter+1)); // Next round slightly harder than last
            currentRound.setInProgress(true);
            this.roundCounter++;
         }
@@ -81,7 +81,7 @@ class RunningGame{
     }
     
     void killGerm(Germ target){
-      earnCoins(3);
+      earnCoins(5);
       if (target instanceof Germ1){
         AllGerms.remove(target); // If its a Germ1, it is killed
       } else {

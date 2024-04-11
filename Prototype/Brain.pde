@@ -14,6 +14,7 @@ class Brain extends GameMap {
   @Override
   void setup() {
     super.setup(); 
+    initalisePath();
 
     try {
       path = loadImage("routeBrain.png");

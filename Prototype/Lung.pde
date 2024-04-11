@@ -14,6 +14,7 @@ class Lung extends GameMap {
     @Override
     void setup() {
         super.setup(); 
+        initalisePath();
         
         try {
             path = loadImage("routeLung.png"); 

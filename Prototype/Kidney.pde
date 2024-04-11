@@ -13,6 +13,7 @@ class Kidney extends GameMap {
     @Override
     void setup() {
         super.setup(); 
+        initalisePath();
         
         try {
             path = loadImage("routeKidney.png");  // Load new path mask image

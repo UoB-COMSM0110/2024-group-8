@@ -71,7 +71,7 @@ enum GameState { // Different phases of the game, so program knows what to draw
 
 enum Difficulty { 
         // Defintion of each difficulty and what you start with
-        EASY(100, 10, 2000),   // ( Start Lives ; Number of Rounds ; Start Coins)
+        EASY(100, 10, 200),   // ( Start Lives ; Number of Rounds ; Start Coins)
         MEDIUM(70, 20, 150),
         HARD(40, 30, 75);
 
@@ -176,6 +176,13 @@ void setup(){ // Creates & setups all objects needed for the game, calls their r
     new GermSprite("germ7"),
     new GermSprite("germ8")
   };
+  
+   // Initialize grid
+    for (int x = 0; x < Grid.length; x++){
+       for (int y = 0; y < Grid[0].length; y++){
+          Grid[x][y] = new Cell(x, y);
+       }
+    }
 
   // Create maps
   brainMap = new Brain(brain);
@@ -195,13 +202,6 @@ void setup(){ // Creates & setups all objects needed for the game, calls their r
   kidneyDifficulty = new DifficultySelection(GameState.KIDNEY);
   
   gameWindow = new PressableButton(0, 650, WIDTH, 350); // Psuedo button over gameWindowin map so that the cells don't get outlined
-
-  // Initialize grid
-    for (int x = 0; x < Grid.length; x++){
-       for (int y = 0; y < Grid[0].length; y++){
-          Grid[x][y] = new Cell(x, y);
-       }
-    }
 }
 
 void draw(){
@@ -223,7 +223,7 @@ void draw(){
       if (currentGameState == GameState.BRAIN) {
         currentGameMap = brainMap;
         if (difficultySelected){ 
-          brainMap.setup();
+          //brainMap.setup();
           brainMap.draw();
           mouseCheck();
         } else {
@@ -234,7 +234,7 @@ void draw(){
       if (currentGameState == GameState.LUNG) {
         currentGameMap = lungMap;
          if (difficultySelected){ 
-           lungMap.setup();
+           //lungMap.setup();
            lungMap.draw();
            mouseCheck();
           } else {
@@ -245,7 +245,7 @@ void draw(){
       if (currentGameState == GameState.HEART){
         currentGameMap = heartMap;
         if (difficultySelected){ 
-          heartMap.setup();
+          //heartMap.setup();
           heartMap.draw();
           mouseCheck();
         } else {
@@ -256,7 +256,7 @@ void draw(){
       if (currentGameState == GameState.KIDNEY){
         currentGameMap = kidneyMap;
         if (difficultySelected){ 
-          kidneyMap.setup();
+          //kidneyMap.setup();
           kidneyMap.draw();
           mouseCheck();
         } else {
@@ -308,10 +308,12 @@ void mouseCheck(){ // Highlights cell outlines green or red depending on if they
 PressableButton placedTower;
 
 void clickTower(){
-    for (DefenceTower t : AllTowers){
-        placedTower = new PressableButton((int)(t.positionX*cellSize), (int)(t.positionY*cellSize), (int)cellSize, (int)cellSize);
-        if (placedTower.onButton()){
-          currentGameMap.setLastClickedTower(t);
-        }
+  int x = (int)(mouseX/cellSize);
+  int y = (int)(mouseY/cellSize);
+  
+  try {
+    if (!gameWindow.onButton()){ 
+      currentGameMap.setLastClickedTower(Grid[x][y].occupant);
     }
+  } catch (Exception e){}
 }

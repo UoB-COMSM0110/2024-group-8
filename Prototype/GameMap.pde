@@ -38,7 +38,7 @@ abstract class GameMap{
   void twist(){};
 
   void setup(){   
-    initalisePath();
+    //initalisePath();
     
     try {
       this.background.resize(WIDTH, HEIGHT);
@@ -274,29 +274,29 @@ abstract class GameMap{
   }
 
   void initalisePath(){   
-    Vector[] path = new Vector[]{
-    new Vector(0,  5),
-    new Vector(3,  5),
-    new Vector(3,  8),
-    new Vector(1,  8),
-    new Vector(1,  11),
-    new Vector(9,  11),
-    new Vector(9,  8),
-    new Vector(6,  8),
-    new Vector(6,  3),
-    new Vector(10,  3),
-    new Vector(10,  5),
-    new Vector(11,  5),
-    new Vector(11,  10),
-    new Vector(14,  10),
-    new Vector(14,  8),
-    new Vector(17,  8),
-    new Vector(17,  5),
-    new Vector(13,  5),
-    new Vector(13,  0),     
-    }; 
+    //Vector[] path = new Vector[]{
+    //new Vector(0,  5),
+    //new Vector(3,  5),
+    //new Vector(3,  8),
+    //new Vector(1,  8),
+    //new Vector(1,  11),
+    //new Vector(9,  11),
+    //new Vector(9,  8),
+    //new Vector(6,  8),
+    //new Vector(6,  3),
+    //new Vector(10,  3),
+    //new Vector(10,  5),
+    //new Vector(11,  5),
+    //new Vector(11,  10),
+    //new Vector(14,  10),
+    //new Vector(14,  8),
+    //new Vector(17,  8),
+    //new Vector(17,  5),
+    //new Vector(13,  5),
+    //new Vector(13,  0),     
+    //}; 
   
-    mapPath = new Path(path);
+    //mapPath = new Path(path);
 
   }
 
@@ -307,6 +307,7 @@ abstract class GameMap{
     image(selectedTowerImage, mouseX, mouseY);
     imageMode(CORNER); // Set back to corner because all other images are rendered in line w/CORNER mode
     noFill();
+    strokeWeight(4);
     stroke(255);
     circle(mouseX, mouseY, towerRange); // Draw a circle to respresent the range of the tower before placing
        
@@ -323,9 +324,7 @@ abstract class GameMap{
         towerSelected = false;
         placingTower = false;
       }
-    } catch (ArrayIndexOutOfBoundsException e) { // Necessary to handle pressing off grid when tower selected
-       System.out.println("Can't build there!");
-    } 
+    } catch (ArrayIndexOutOfBoundsException e) {} // Necessary to handle pressing off grid when tower selected
   }
   
   void checkGameWonOrLost(){

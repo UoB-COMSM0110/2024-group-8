@@ -27,13 +27,20 @@ class WinScreen extends Display {
      // Reset all the global variables so that its possible to play again:
      currentGame = null;
      currentRound = null;
-    //  towerManager = null;
      difficultySelected = false; 
      
      // Remove all the towers on the grid:
      while (!AllTowers.isEmpty()) {
         AllTowers.remove(0); // Remove the tower at index 0
      }
+     
+     // Re-initialise a new grid
+     for (int x = 0; x < Grid.length; x++){
+       for (int y = 0; y < Grid[0].length; y++){
+          Grid[x][y] = new Cell(x, y);
+       }
+     }
+
   }
 
   void draw(){   

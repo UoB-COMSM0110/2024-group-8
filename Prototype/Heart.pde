@@ -25,6 +25,7 @@ class Heart extends GameMap {
     @Override
     void setup() {
         super.setup(); 
+        initalisePath();
         
         try {
             path = loadImage("routeHeart.png"); 

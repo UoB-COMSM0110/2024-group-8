@@ -57,6 +57,7 @@ class MapSelection extends Display {
             mouseY >= y - 10 && mouseY <= y + outlineSize) {
             image(mapImage, x - 5, y - 5, outlineSize + 10, outlineSize + 10); // Scale up slightly
             if (mousePressed) {
+                map.setup();
                 currentGameState = state; // Change game state if the map is clicked
                 currentGameMap = map;
             }
