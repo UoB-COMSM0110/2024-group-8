@@ -2,8 +2,7 @@
     To do list, delete when done :) 
 
       - GAME MAP:
-          - Create a stylised background image and unique path for each organ
-          - Implement twist logic for each map
+          - Implement twist logic & final boss for each map
 
           HEART:
                 Twist = As you lose lives, blood gets thinner = all germs move faster
@@ -28,8 +27,7 @@
             which you can press to bring up an instructions screen
 
       - TOWERS: 
-          - Design and implement at least 2 more towers
-          MUCUS DISPENSER - places mucus on the path which slows down the speed of trapped germs
+          - Design 1 more tower
           ??? - some super strong tower which shoots the diamond projectiles, maybe the creepy spider antibody and it can move around the map?
 
 

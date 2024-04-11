@@ -11,8 +11,12 @@ class HowToPlayScreen extends Display {
     PImage body;
     PImage towerA;
     PImage towerB;
-
-
+    PImage towerC;
+    
+    PImage germ1;
+    PImage germ2;
+    PImage germ3;
+        
     HowToPlayScreen(){
         background = loadImage("startpage.png");
         background.resize(WIDTH, HEIGHT); // Resize the image to match window dimensions
@@ -22,6 +26,10 @@ class HowToPlayScreen extends Display {
         body = loadImage("body.png");
         towerA = loadImage("tower/antibody.png");
         towerB = loadImage("tower/towerB.png");
+        towerC = loadImage("tower/towerC.png");
+        germ1 = loadImage("germ/germ1L.png");
+        germ2 = loadImage("germ/germ6L.png");
+        germ3 = loadImage("germ/germ8R.png");       
     }
 
     void setup(GameState previous){
@@ -86,10 +94,10 @@ class HowToPlayScreen extends Display {
     }
     
     void drawPage0(){
-      image(body, 675, 150, 250, 250);
-      
       textSize(40);
       fill(255);
+      
+      image(body, 675, 150, 250, 250);
       text("Help! Infection is threatening", 155 , 230);
       text("the body! You must stop", 175 , 300);
       text("the germs from taking over", 165, 370);
@@ -102,23 +110,35 @@ class HowToPlayScreen extends Display {
     }
     
     void drawPage1(){
-      textSize(30);
+      textSize(40);
       fill(255);
-      text("----------------------------------------------------", 150 , 240);
-      text("----------------------------------------------------", 150 , 330);
-      text("----------------------------------------------------", 150, 420);
-      text("----------------------------------------------------", 150, 510 );
-      text("----------------------------------------------------", 150, 600);
+      
+      image(germ1, 675, 150, 250, 250);
+      text("Some germs are easy to kill,", 155 , 230);
+      text("they get destroyed by", 200 , 300);
+      text("basic proteins!", 270, 370);
+      
+      image(germ2, 100, 350, 150, 150);
+      image(germ3, 100, 480, 200, 200);
+      text("But be warned! Some require", 330, 480);
+      text("Steel, Flame, or Diamond proteins", 290, 550);
+      text("before they'll take damage!", 330, 620 );
     }
     
     void drawPage2(){
       textSize(30);
       fill(255);
-      text("----------------------------------------------------", 150 , 240);
-      text("----------------------------------------------------", 150 , 330);
-      text("----------------------------------------------------", 150, 420);
-      text("----------------------------------------------------", 150, 510 );
-      text("----------------------------------------------------", 150, 600);
+      image(towerA, 675, 150, 200, 200);
+      image(towerC, 600, 300, 100, 100);
+      text("Buy and upgrade towers to", 155 , 230);
+      text("defend against each wave of ", 200 , 300);
+      text("attacking germs!", 270, 370);
+      
+      //INSERT TOWER D IMAGE HERE //
+      image(towerB, 175, 520, 150, 150);
+      text("Be sure to plan ahead! Each round", 330, 480);
+      text("is harder than the last and the", 350, 550);
+      text("body gets weaker each life you lose!", 330, 620 );
     }
 
 
