@@ -121,45 +121,31 @@ class Heart extends GameMap {
 
     if (currentLives <= 95) {
       if (!functionCalled95 ) {
-          bloodViscosity--;
+          bloodViscosity=4;
           increaseGermSpeed();
           functionCalled95 = true;
       }
     } if (currentLives <= 92) {
       if (!functionCalled70 ) {
-          bloodViscosity--;
+          bloodViscosity=3;
           increaseGermSpeed();
           functionCalled70 = true;
       }
   } if (currentLives <= 85) {
       if (!functionCalled50) {
-          bloodViscosity--;
+          bloodViscosity=2;
           increaseGermSpeed();
           functionCalled50 = true;
       }
   } if (currentLives <= 80) {
       if (!functionCalled20) {
-          bloodViscosity--;
+          bloodViscosity=1;
           increaseGermSpeed();
           functionCalled20 = true;
       }
    }
   }
-  
-  
-  /*
-  int Round = currentGame.getRoundCounter();
-  System.out.println("Round: "+ Round);
-  System.out.println("current Round: "+ currentGame.getCurrentRoundCounterAsString());
-
-  if (Round != currentGame.getCurrentRoundCounter){
-    functionCalled95 = false;
-    functionCalled70 = false;
-    functionCalled50 = false;
-    functionCalled20 = false;
-   }  
-   */
-   
+ 
    if(currentRound != null && !currentRound.inProgress()){
      functionCalled95 = false;
      functionCalled70 = false;
@@ -168,35 +154,35 @@ class Heart extends GameMap {
    
    }
    
-   System.out.println(functionCalled95);
+   //System.out.println(functionCalled95);
   }
   
   void increaseGermSpeed() {
     for (Germ germ : AllGerms) {
         if (germ instanceof Germ1) {
             Germ1 germ1 = (Germ1) germ;
-            germ1.speed *= 2; 
+            germ1.normalSpeed *= 1.3; 
         } else if (germ instanceof Germ2) {
             Germ2 germ2 = (Germ2) germ;
-            germ2.speed *= 2; 
+            germ2.normalSpeed *= 1.3; 
         } else if (germ instanceof Germ3) {
             Germ3 germ3 = (Germ3) germ;
-            germ3.speed *= 2;
+            germ3.normalSpeed *= 1.3;
         } else if (germ instanceof Germ4) {
             Germ4 germ4 = (Germ4) germ;
-            germ4.speed *= 2; 
+            germ4.normalSpeed *= 1.3; 
         } else if (germ instanceof Germ5) {
             Germ5 germ5 = (Germ5) germ;
-            germ5.speed *= 2;
+            germ5.normalSpeed *= 1.3;
         } else if (germ instanceof Germ6) {
             Germ6 germ6 = (Germ6) germ;
-            germ6.speed *= 2;
+            germ6.normalSpeed *= 1.3;
         } else if (germ instanceof Germ7) {
             Germ7 germ7 = (Germ7) germ;
-            germ7.speed *= 2;
+            germ7.normalSpeed *= 1.3;
         } else if (germ instanceof Germ8) {
             Germ8 germ8 = (Germ8) germ;
-            germ8.speed *= 2; 
+            germ8.normalSpeed *= 1.3; 
         }
     }
   }
