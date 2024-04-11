@@ -4,6 +4,7 @@ public abstract class DefenceTower {
   public int damageCapability; // How much damage it deals
   public int cost; // Initial cost
   public int shotsPerSec; 
+  int mucusPerSec;
   public int range; // Cell distance it can fire to over array
   public int currentUpgradeLevel; 
   public int positionX; // Position on the grid
@@ -26,6 +27,14 @@ public abstract class DefenceTower {
   } 
   
   public void upgradeTower(){
+    if (this instanceof ShootingTower){
+      upgradeShooter();
+    } else {
+      upgradeDispenser();
+    }
+  }
+  
+  void upgradeShooter(){
     if (this.currentUpgradeLevel < 3){ // If there are more possible upgrades
       if (currentGame.getCoins() >= properties[0][this.currentUpgradeLevel+1]){ // If player can afford the upgrade
           int oldProjectile = properties[1][this.currentUpgradeLevel];
@@ -36,12 +45,26 @@ public abstract class DefenceTower {
           this.shotsPerSec = properties[3][this.currentUpgradeLevel];
           this.range = properties[4][this.currentUpgradeLevel];
           
-          if (this instanceof ShootingTower && (oldProjectile != properties[1][this.currentUpgradeLevel])){ 
+          if (oldProjectile != properties[1][this.currentUpgradeLevel]){ 
              // If its a tower that shoots load the new image for the new projectile
              determineProjectileImage();
           }
       }
-    }
+    } 
+  }
+  
+  void upgradeDispenser(){
+    if (this.currentUpgradeLevel < 3){ // If there are more possible upgrades
+      if (currentGame.getCoins() >= properties[0][this.currentUpgradeLevel+1]){ // If player can afford the upgrade
+          this.currentUpgradeLevel++;
+          currentGame.spendCoins(properties[0][this.currentUpgradeLevel]);
+          cost = properties[0][this.currentUpgradeLevel];
+          damageCapability = properties[1][this.currentUpgradeLevel];
+          shotsPerSec = properties[2][this.currentUpgradeLevel];
+          mucusPerSec = properties[2][this.currentUpgradeLevel];
+          range = properties[3][this.currentUpgradeLevel];
+      }
+    }  
   }
   
   public int getCost(){
@@ -101,7 +124,7 @@ public abstract class DefenceTower {
     
   }
   
-  public abstract void shoot();
+  public void shoot(){}
   
   void determineProjectileImage(){
       // Load the correct image for the towers current projectile type

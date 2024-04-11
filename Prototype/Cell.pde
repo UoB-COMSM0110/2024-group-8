@@ -4,6 +4,9 @@ class Cell{
   boolean isPath = false;
   boolean buildable = true;
   
+  boolean containsMucus = false;
+  boolean containsToxicMucus = false;
+  
    Cell(int x, int y){
     this.x = x;
     this.y = y;
@@ -56,6 +59,11 @@ class Cell{
 
   void setPath(Vector v){ // Set the pathway at the start of the round
     Grid[v.x][v.y].isPath = true;
+  }
+  
+  void setContainsMucus(boolean toxic, boolean contains){
+    this.containsToxicMucus = (toxic && contains);
+    this.containsMucus = contains;
   }
 
 }

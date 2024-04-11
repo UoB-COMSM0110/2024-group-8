@@ -71,7 +71,7 @@ enum GameState { // Different phases of the game, so program knows what to draw
 
 enum Difficulty { 
         // Defintion of each difficulty and what you start with
-        EASY(100, 10, 200),   // ( Start Lives ; Number of Rounds ; Start Coins)
+        EASY(100, 10, 2000),   // ( Start Lives ; Number of Rounds ; Start Coins)
         MEDIUM(70, 20, 150),
         HARD(40, 30, 75);
 
@@ -137,6 +137,7 @@ Path mapPath; // Pathway followed by germs
 ArrayList<DefenceTower> AllTowers  = new ArrayList<DefenceTower>();
 ArrayList<Germ> AllGerms = new ArrayList<Germ>();
 ArrayList<Projectile> AllProjectiles = new ArrayList<Projectile>();
+ArrayList<Mucus> AllMucus = new ArrayList<Mucus>();
 
 // Stores all buttons which change the display, e.g., Play again = WinScreen -> MapSelection
 ArrayList<StateChangingButton> stateChangingButtons = new ArrayList<StateChangingButton>();
@@ -161,7 +162,8 @@ void setup(){ // Creates & setups all objects needed for the game, calls their r
 
   TowerSprites = new PImage[]{ 
     loadImage("tower/antibody.png"),
-    loadImage("tower/towerB.png")
+    loadImage("tower/towerB.png"),
+    loadImage("tower/towerC.png")
   };
   
   GermSprites = new GermSprite[]{
@@ -177,22 +179,29 @@ void setup(){ // Creates & setups all objects needed for the game, calls their r
 
   // Create maps
   brainMap = new Brain(brain);
-  brainMap.setup();
+  //brainMap.setup();
   brainDifficulty = new DifficultySelection(GameState.BRAIN);
 
   lungMap = new Lung(lung);
-  lungMap.setup();
+  //lungMap.setup();
   lungDifficulty = new DifficultySelection(GameState.LUNG);
 
   heartMap = new Heart(heart);
-  heartMap.setup();
+  //heartMap.setup();
   heartDifficulty = new DifficultySelection(GameState.HEART);
 
   kidneyMap = new Kidney(kidney);
-  kidneyMap.setup();
+  //kidneyMap.setup();
   kidneyDifficulty = new DifficultySelection(GameState.KIDNEY);
   
-  gameWindow = new PressableButton(0, 650, WIDTH, 350); // Psuedo button over gameWindow in map so that the cells don't get outlined
+  gameWindow = new PressableButton(0, 650, WIDTH, 350); // Psuedo button over gameWindowin map so that the cells don't get outlined
+
+  // Initialize grid
+    for (int x = 0; x < Grid.length; x++){
+       for (int y = 0; y < Grid[0].length; y++){
+          Grid[x][y] = new Cell(x, y);
+       }
+    }
 }
 
 void draw(){
@@ -296,9 +305,11 @@ void mouseCheck(){ // Highlights cell outlines green or red depending on if they
   }
 }
 
+PressableButton placedTower;
+
 void clickTower(){
     for (DefenceTower t : AllTowers){
-        PressableButton placedTower = new PressableButton((int)(t.positionX*cellSize), (int)(t.positionY*cellSize), (int)cellSize, (int)cellSize);
+        placedTower = new PressableButton((int)(t.positionX*cellSize), (int)(t.positionY*cellSize), (int)cellSize, (int)cellSize);
         if (placedTower.onButton()){
           currentGameMap.setLastClickedTower(t);
         }

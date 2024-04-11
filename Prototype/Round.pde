@@ -66,9 +66,16 @@ class Round {
   void run(){
     this.elapsedTime =  millis() - this.startTime; // Initialize elapsed time
      
-    for (DefenceTower t : AllTowers){ t.shoot(); }
+    for (DefenceTower t : AllTowers){ 
+        t.shoot(); 
+    }
+    
     for (Projectile p : AllProjectiles){ // Draw all onScreen projectiles
       if (p.shouldDisplay()){ p.drawShooting(); } 
+    }
+    
+    for (Mucus m : AllMucus){
+      if (m.onScreen){ m.drawMucus(); }
     }
      
     if (this.moreEnemiesToDispatch){ // While the round duration has not passed 

@@ -1,7 +1,7 @@
 protected class TowerB extends ShootingTower { 
 
     protected TowerB(int x, int y, int sprite){
-        super(x, y, sprite, "Tower B", 1);
+        super(x, y, sprite, "Steel Defender", 1);
 
         // Array to hold the properties of an instance of TowerB, throught it's upgrade stages:
         this.properties = new int[][] {

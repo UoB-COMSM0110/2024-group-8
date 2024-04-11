@@ -8,6 +8,7 @@ public class ShootingTower extends DefenceTower {
         determineProjectileImage();
     }
 
+    @Override
     public void shoot(){
         float shotInterval = 1000.0f / this.shotsPerSec; // Find the interval at which the tower shoots
         

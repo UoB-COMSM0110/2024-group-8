@@ -47,50 +47,45 @@ class Projectile {
     }
 
     void damageGerm(){
-        target.decreaseHealth(this.damageCapability);
-        
-        if (target.getHealth() <= 0){ // If the germ's health is fully depleted
-            try { 
-              killGerm(target);
-            } catch (Exception e){
-              targetAlive = false;
-            }
-        }
+       try { 
+           target.decreaseHealth(this.damageCapability);
+       } catch (Exception e){
+           targetAlive = false;
+       }
     }
 
-    void killGerm(Germ target){
-      currentGame.earnCoins(3);
-      if (target instanceof Germ1){
-        AllGerms.remove(target); // If its a Germ1, it is killed
-        targetAlive = false;
-      } else {
-        int germIndex = AllGerms.indexOf(target);
-        int germLane = target.getLaneIndex();
+    //void killGerm(Germ target){
+    //  currentGame.earnCoins(3);
+    //  if (target instanceof Germ1){
+    //    AllGerms.remove(target); // If its a Germ1, it is killed
+    //  } else {
+    //    int germIndex = AllGerms.indexOf(target);
+    //    int germLane = target.getLaneIndex();
         
-        Germ newGerm; // Determine what target should be replaced with
-        if (target instanceof Germ7) {
-            newGerm = new Germ6();
-        } else if (target instanceof Germ6) {
-            newGerm = new Germ5();
-        } else if (target instanceof Germ5) {
-            newGerm = new Germ4();
-        } else if (target instanceof Germ4) {
-            newGerm = new Germ3();
-        } else if (target instanceof Germ3) {
-            newGerm = new Germ2();
-        } else if (target instanceof Germ2) {
-            newGerm = new Germ1();
-        } else {
-            newGerm = new Germ1();
-        }
+    //    Germ newGerm; // Determine what target should be replaced with
+    //    if (target instanceof Germ7) {
+    //        newGerm = new Germ6();
+    //    } else if (target instanceof Germ6) {
+    //        newGerm = new Germ5();
+    //    } else if (target instanceof Germ5) {
+    //        newGerm = new Germ4();
+    //    } else if (target instanceof Germ4) {
+    //        newGerm = new Germ3();
+    //    } else if (target instanceof Germ3) {
+    //        newGerm = new Germ2();
+    //    } else if (target instanceof Germ2) {
+    //        newGerm = new Germ1();
+    //    } else {
+    //        newGerm = new Germ1();
+    //    }
   
-        // Set the replacement germs position to the target germs' old position/lane/direction etc.
-        newGerm.setGermPosition(target.getGermX(), target.getGermY());
-        newGerm.setDirection(germLane);
-        // Replace target with the replacement in the germs array
-        AllGerms.set(germIndex, newGerm);
-      }
-    }
+    //    // Set the replacement germs position to the target germs' old position/lane/direction etc.
+    //    newGerm.setGermPosition(target.getGermX(), target.getGermY());
+    //    newGerm.setDirection(germLane);
+    //    // Replace target with the replacement in the germs array
+    //    AllGerms.set(germIndex, newGerm);
+    //  }
+    //}
     
     boolean shouldDisplay(){
       return (onScreen && targetAlive);

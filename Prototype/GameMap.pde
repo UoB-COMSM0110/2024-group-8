@@ -18,6 +18,7 @@ abstract class GameMap{
   PImage pathMask;
   PImage towerA;
   PImage towerB;
+  PImage towerC;
   
   PImage lastClickedTowerImage; // Stores whichever tower was last pressed
   DefenceTower lastClickedTower; // So you can see its stats/delete it in gameWindow
@@ -32,19 +33,11 @@ abstract class GameMap{
   boolean towerSelected = false;
   boolean placingTower = false;
   PImage selectedTowerImage;
-  int selectedTowerCost = 0;
   int timeOfLastPurchase = 0;
   
   void twist(){};
 
-  void setup(){
-    // Initialize grid
-    for (int x = 0; x < Grid.length; x++){
-       for (int y = 0; y < Grid[0].length; y++){
-          Grid[x][y] = new Cell(x, y);
-       }
-    }
-    
+  void setup(){   
     initalisePath();
     
     try {
@@ -53,6 +46,7 @@ abstract class GameMap{
       path.resize(WIDTH, HEIGHT);
       towerA = TowerSprites[0];
       towerB = TowerSprites[1];
+      towerC = TowerSprites[2];
     } catch (Exception e) {
       println("Error loading image: " + e.getMessage());
     }
@@ -71,10 +65,8 @@ abstract class GameMap{
       tower.drawTower();
     }
    
-    //// Handle towerPresses for Towerinfo/sale
-    //if (checkForSelectedTower()){ towerSelected = true; }
+    // Handle towerPresses for Towerinfo/sale
     if (placingTower){ placeTower(); }
-    //checkForPlacedTowerPresses();
 
     if (currentGame != null){
       checkGameWonOrLost();
@@ -92,21 +84,19 @@ abstract class GameMap{
        // Tower Buttons:
        rect(10, menuPosY, 70, 70);
        image(towerA, 20, (menuPosY+10), 50, 50);
-       //towerAButton = new TowerButton(10, (int)menuPosY, 70, 70, new TowerA(0,0,0)); 
        allTowerButtons.add(new TowerButton(10, (int)menuPosY, 70, 70, new TowerA(0,0,0)));
 
        rect(10, (menuPosY+68), 70, 70);
-       image(towerB, 20, (menuPosY+78), 50, 50);
-       //towerBButton = new PressableButton(20, (int)(menuPosY+78), 70, 70, new TowerB(0,0,1)); 
+       image(towerB, 20, (menuPosY+78), 50, 50); 
        allTowerButtons.add(new TowerButton(20, (int)(menuPosY+78), 70, 70, new TowerB(0,0,1)));
 
        rect(80, menuPosY, 70, 70);
-       // Tower C button
-       // allTowerButtons.add(new PressableButton(20, (int)(menuPosY+78), 70, 70, new TowerC(0,0,2)));
+       image(towerC, 90, (menuPosY+10), 50, 50);
+       allTowerButtons.add(new TowerButton(80, (int)(menuPosY), 70, 70, new TowerC(0,0,2)));
     
        rect(80, (menuPosY+68), 70, 70);
        // Tower D button
-       // allTowerButtons.add(new PressableButton(20, (int)(menuPosY+78), 70, 70, new TowerD(0,0,3)));
+       // allTowerButtons.add(new TowerButton(80, (int)(menuPosY+78), 70, 70, new TowerD(0,0,3)));
     
     // Tower upgrade instruction message
     fill(0, 128, 255);
@@ -310,19 +300,6 @@ abstract class GameMap{
 
   }
 
-  // public boolean checkForSelectedTower(){
-  //   if (mousePressed && towerAButton.onButton()){  
-  //       selectedTower = new TowerA(0,0,0);
-  //       return true;
-  //   }
-
-  //   if (mousePressed && towerBButton.onButton()){  
-  //       selectedTower = new TowerB(0,0,1);
-  //       return true;
-  //   }
-  //   return false;
-  // }
-  
   void placeTower(){   
     // Animation of moving tower when choosing location
     float towerRange = ((selectedTower.range * cellSize) * 2) + cellSize; // twice the cell range + cellSize to account for the cell the tower lives in and then everything its range away
@@ -342,7 +319,6 @@ abstract class GameMap{
         selectedTower.setTowerY(currentGridY);
         Grid[currentGridX][currentGridY].buildOn(selectedTower); 
         currentGame.spendCoins(selectedTower.getCost());
-        this.selectedTowerCost = 0;
         //selectedTower = null;
         towerSelected = false;
         placingTower = false;
@@ -352,21 +328,6 @@ abstract class GameMap{
     } 
   }
   
-  // public void checkForPlacedTowerPresses(){
-  //   if (mousePressed){
-  //     int x = (int)(mouseX/cellSize);
-  //     int y = (int)(mouseY/cellSize);
-  //     if (x < Grid.length && y < Grid[0].length){
-  //         for (DefenceTower t : AllTowers){
-  //             if (t.positionX == x && t.positionY == y){
-  //                 lastClickedTower = t;
-  //                 towerSelected = false;
-  //             } 
-  //         }
-  //     }
-  //   }  
-  // } 
-
   void checkGameWonOrLost(){
     // Navigate to LOSE screen if necessary
     if (currentGame.getCurrentLives() <= 0){

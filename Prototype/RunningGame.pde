@@ -47,25 +47,70 @@ class RunningGame{
     void moveAndLeakGerms(){
         // Move germs and store those about to be deleted:
         ArrayList<Germ> germsToLeak = new ArrayList<>(); // THIS IS NECESARRY TO AVOID CONCURRENT MODIFICATION EXCEPTION DO NOT DELETE
+        ArrayList<Germ> germsToKill = new ArrayList<>();
 
         for (Germ germ : AllGerms){
             germ.move();
             if (germ.isLeaked()){
                germsToLeak.add(germ);
                subtractLife(germ);
+            } else if (germ.isDead){
+              germsToKill.add(germ);
             }
         }
     
         for (Germ germToLeak : germsToLeak){
             AllGerms.remove(germToLeak);
         }
+        
+        for (Germ germToKill : germsToKill){
+            killGerm(germToKill);
+        }
     }
 
     void subtractLife(Germ leakedGerm){ 
         // Remove the appropriate amount of lives for each germ
-        if (leakedGerm instanceof Germ3){ currentLives = currentLives-3;
+        if (leakedGerm instanceof Germ8){ currentLives = currentLives-8;
+        } else if (leakedGerm instanceof Germ7){ currentLives = currentLives-7; 
+        } else if (leakedGerm instanceof Germ6){ currentLives = currentLives-6; 
+        } else if (leakedGerm instanceof Germ5){ currentLives = currentLives-5; 
+        } else if (leakedGerm instanceof Germ4){ currentLives = currentLives-4; 
+        } else if (leakedGerm instanceof Germ3){ currentLives = currentLives-3; 
         } else if (leakedGerm instanceof Germ2){ currentLives = currentLives-2; 
         } else { currentLives--; }
+    }
+    
+    void killGerm(Germ target){
+      earnCoins(3);
+      if (target instanceof Germ1){
+        AllGerms.remove(target); // If its a Germ1, it is killed
+      } else {
+        int germIndex = AllGerms.indexOf(target);
+        int germLane = target.getLaneIndex();
+        
+        Germ newGerm; // Determine what target should be replaced with
+        if (target instanceof Germ7) {
+            newGerm = new Germ6();
+        } else if (target instanceof Germ6) {
+            newGerm = new Germ5();
+        } else if (target instanceof Germ5) {
+            newGerm = new Germ4();
+        } else if (target instanceof Germ4) {
+            newGerm = new Germ3();
+        } else if (target instanceof Germ3) {
+            newGerm = new Germ2();
+        } else if (target instanceof Germ2) {
+            newGerm = new Germ1();
+        } else {
+            newGerm = new Germ1();
+        }
+  
+        // Set the replacement germs position to the target germs' old position/lane/direction etc.
+        newGerm.setGermPosition(target.getGermX(), target.getGermY());
+        newGerm.setDirection(germLane);
+        // Replace target with the replacement in the germs array
+        AllGerms.set(germIndex, newGerm);
+      }
     }
 
 
