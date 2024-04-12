@@ -1,12 +1,4 @@
 abstract class GameMap{
-  /*
-     Starting point for the GameMap class
-     Still need to:
-       - Make unique paths for each map that follow the background image nicely
-       - Implement final boss for each map
-       - Implement twist for each map
-  */
-  
   // Resizes the screen so that there is a play window and a menu bar below
   float playWindowHeight = WIDTH * 0.65;
   float cellSize = WIDTH / 20;
@@ -19,6 +11,7 @@ abstract class GameMap{
   PImage towerA;
   PImage towerB;
   PImage towerC;
+  PImage towerD;
   
   PImage lastClickedTowerImage; // Stores whichever tower was last pressed
   DefenceTower lastClickedTower; // So you can see its stats/delete it in gameWindow
@@ -47,6 +40,7 @@ abstract class GameMap{
       towerA = TowerSprites[0];
       towerB = TowerSprites[1];
       towerC = TowerSprites[2];
+      towerD = TowerSprites[3];
     } catch (Exception e) {
       println("Error loading image: " + e.getMessage());
     }
@@ -94,9 +88,10 @@ abstract class GameMap{
        image(towerC, 90, (menuPosY+10), 50, 50);
        allTowerButtons.add(new TowerButton(80, (int)(menuPosY), 70, 70, new TowerC(0,0,2)));
     
-       rect(80, (menuPosY+68), 70, 70);
        // Tower D button
-       // allTowerButtons.add(new TowerButton(80, (int)(menuPosY+78), 70, 70, new TowerD(0,0,3)));
+       rect(80, (menuPosY+68), 70, 70);
+       image(towerD, 90, (menuPosY+78), 50, 50);
+       allTowerButtons.add(new TowerButton(80, (int)(menuPosY+78), 70, 70, new TowerD(0,0,3)));
     
     // Tower upgrade instruction message
     fill(0, 128, 255);
@@ -127,14 +122,14 @@ abstract class GameMap{
         // Buy button
         fill(0, 128, 255);
         stroke(0, 128, 255);
-        rect(620, (menuPosY+30), 170, 75);
+        rect(615, (menuPosY+30), 180, 75);
         PressableButton buyButton = new PressableButton(620, (int)(menuPosY+30), 170, 75);
         fill(255);
         textSize(30);
-        text("BUY", 672, (menuPosY+60));
+        text("BUY", 680, (menuPosY+60));
         if (selectedTower.getCost() <= currentGame.getCoins()){ fill(#00FF00); } else { fill(#FF0000); }
-        text("Cost: " + selectedTower.getCost(), 650, (menuPosY+90));  
-        if (mousePressed && buyButton.onButton()){ 
+        text("Cost: " + selectedTower.getCost(), 630, (menuPosY+90));  
+        if (mousePressed && buyButton.onButton() && (selectedTower.getCost() <= currentGame.getCoins())){ 
           placingTower = true; 
           timeOfLastPurchase = millis();
         }
@@ -267,38 +262,13 @@ abstract class GameMap{
       text(t.range, 480, (menuPosY+40));
       text("DAMAGE", 305, (menuPosY+65));
       text(t.damageCapability, 480, (menuPosY+65));
-      text("SHOTS/sec", 305, (menuPosY+90));
-      text(t.shotsPerSec, 480, (menuPosY+90));
+      text("RATE", 305, (menuPosY+90));
+      text(t.shotsPerSec +"/s", 480, (menuPosY+90));
       text("PROTEIN", 305, (menuPosY+115));
       text(t.getProjectileTypeAsString(), 450, (menuPosY+115));
   }
 
-  void initalisePath(){   
-    //Vector[] path = new Vector[]{
-    //new Vector(0,  5),
-    //new Vector(3,  5),
-    //new Vector(3,  8),
-    //new Vector(1,  8),
-    //new Vector(1,  11),
-    //new Vector(9,  11),
-    //new Vector(9,  8),
-    //new Vector(6,  8),
-    //new Vector(6,  3),
-    //new Vector(10,  3),
-    //new Vector(10,  5),
-    //new Vector(11,  5),
-    //new Vector(11,  10),
-    //new Vector(14,  10),
-    //new Vector(14,  8),
-    //new Vector(17,  8),
-    //new Vector(17,  5),
-    //new Vector(13,  5),
-    //new Vector(13,  0),     
-    //}; 
-  
-    //mapPath = new Path(path);
-
-  }
+  void initalisePath(){}
 
   void placeTower(){   
     // Animation of moving tower when choosing location

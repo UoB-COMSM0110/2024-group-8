@@ -12,6 +12,7 @@ class HowToPlayScreen extends Display {
     PImage towerA;
     PImage towerB;
     PImage towerC;
+    PImage towerD;
     
     PImage germ1;
     PImage germ2;
@@ -27,6 +28,7 @@ class HowToPlayScreen extends Display {
         towerA = loadImage("tower/antibody.png");
         towerB = loadImage("tower/towerB.png");
         towerC = loadImage("tower/towerC.png");
+        towerD = loadImage("tower/towerD.png");
         germ1 = loadImage("germ/germ1L.png");
         germ2 = loadImage("germ/germ6L.png");
         germ3 = loadImage("germ/germ8R.png");       
@@ -134,7 +136,7 @@ class HowToPlayScreen extends Display {
       text("defend against each wave of ", 200 , 300);
       text("attacking germs!", 270, 370);
       
-      //INSERT TOWER D IMAGE HERE //
+      image(towerD, 100, 370, 150, 150);
       image(towerB, 175, 520, 150, 150);
       text("Be sure to plan ahead! Each round", 330, 480);
       text("is harder than the last and the", 350, 550);

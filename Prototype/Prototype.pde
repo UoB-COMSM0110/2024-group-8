@@ -3,6 +3,7 @@
 
       - GAME MAP:
           - Implement twist logic & final boss for each map
+          - Need to have a welcome screen to each organ which explains the twist of the map i think?
 
           HEART:     **completed, but some have some bugs**
                 Twist = As you lose lives, blood gets thinner = all germs move faster
@@ -21,10 +22,6 @@
                 Twist = germ multiplication & temperature rise, as temperature rises the germs are more likely to multiply
                 Final boss = Kidney stone
 
-      - HOW TO PLAY SCREEN:
-          - Design and implement instructions screen
-          - Should have a button top left on all displays (except win/lose screens),
-            which you can press to bring up an instructions screen
 
       - TOWERS: 
           - Design 1 more tower
@@ -155,7 +152,8 @@ void setup(){ // Creates & setups all objects needed for the game, calls their r
   TowerSprites = new PImage[]{ 
     loadImage("tower/antibody.png"),
     loadImage("tower/towerB.png"),
-    loadImage("tower/towerC.png")
+    loadImage("tower/towerC.png"),
+    loadImage("tower/towerD.png")
   };
   
   GermSprites = new GermSprite[]{

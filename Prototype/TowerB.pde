@@ -14,15 +14,6 @@ protected class TowerB extends ShootingTower {
         assignIntialProperties();
     }
 
-    public void assignIntialProperties(){
-      currentUpgradeLevel = 0;
-      cost = properties[0][0];
-      projectileType = properties[1][0];
-      damageCapability = properties[2][0];
-      shotsPerSec = properties[3][0];
-      range = properties[4][0];
-    }
-    
     @Override
     String getNextUpgradeAsString(){
       switch (currentUpgradeLevel) {
