@@ -27,7 +27,6 @@ class WinScreen extends Display {
      // Reset all the global variables so that its possible to play again:
      currentGame = null;
      currentRound = null;
-     difficultySelected = false; 
      
      // Remove all the towers on the grid:
      while (!AllTowers.isEmpty()) {

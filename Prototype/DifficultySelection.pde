@@ -8,15 +8,18 @@ class DifficultySelection extends Display {
 
     GameState currentMap;
 
-    DifficultySelection(GameState gameMapOrgan){
+    DifficultySelection(){
         this.background = loadImage("startpage.png");
         this.background.resize(WIDTH, HEIGHT);
-        this.currentMap = gameMapOrgan;
+    }
+    
+    void setup(GameState gameMapOrgan){
+      this.currentMap = gameMapOrgan;
     }
 
     void draw(){
         // sets the entry time for the first entrance to difficulty selection screen
-        if ((this.entryTime == 0) || (millis()-entryTime) > 1000000){  // If first entry, or entry to difficulty selection after a different game
+        if ((this.entryTime == 0) || (millis()-entryTime) > 100000){  // If first entry, or entry to difficulty selection after a different game
           entryTime = millis();
         } 
       
@@ -59,6 +62,10 @@ class DifficultySelection extends Display {
         //rect(160, 535, 680, 150); // uncomment if you want to visualise the buttons as 
         
         // Draw and animate the buttons
+        
+        PressableButton easyButton = new PressableButton(160, 160, 680, 150);
+        PressableButton mediumButton = new PressableButton(160, 350, 680, 150);
+        PressableButton hardButton = new PressableButton(160, 535, 680, 150);
         handleButton(this.easyEmblem, 630, 120, imageSize, 680, 150);
         handleButton(this.mediumEmblem, 120, 300, imageSize, 680, 150);
         handleButton(this.hardEmblem, 630, 480, imageSize, 680, 150);
@@ -66,17 +73,12 @@ class DifficultySelection extends Display {
         int timeOnScreen = (millis() - this.entryTime);
 
         if (timeOnScreen > 1000){ // Set the difficulty and start the game
-           if (mousePressed){
-                PressableButton easyButton = new PressableButton(160, 160, 680, 150);
-                PressableButton mediumButton = new PressableButton(160, 350, 680, 150);
-                PressableButton hardButton = new PressableButton(160, 535, 680, 150);
-                
+           if (mousePressed){           
                 // New game object is created based on difficulty
                 if (easyButton.onButton()){ currentGame = new RunningGame(Difficulty.EASY); }
                 if (mediumButton.onButton()){ currentGame = new RunningGame(Difficulty.MEDIUM); }
                 if (hardButton.onButton()){ currentGame = new RunningGame(Difficulty.HARD); }
 
-                difficultySelected = true;
                 currentGameState = this.currentMap; // Navigates to previously selected map
            }
         }

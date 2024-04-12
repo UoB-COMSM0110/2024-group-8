@@ -50,20 +50,20 @@ PImage lung;
 PImage backButton;
 PFont font;
 
-
 enum GameState { // Different phases of the game, so program knows what to draw
     TITLE,
     MAP,
     WON,
     LOST, 
     HOWTO, 
+    DIFFICULTY,
     BRAIN,
     LUNG,
     HEART,
     KIDNEY; 
     
     public boolean isGameMap(){ 
-      return this == BRAIN || this == LUNG || this == HEART || this == KIDNEY;
+      return (this == BRAIN || this == LUNG || this == HEART || this == KIDNEY);
     }
 }
 
@@ -110,17 +110,10 @@ Heart heartMap;
 Kidney kidneyMap;
 
 GameMap currentGameMap;
-
-// Not sure if there's a better way of doing this, but I create one instance per map so it knows which map to navigate to post difficulty selection
-DifficultySelection brainDifficulty;
-DifficultySelection lungDifficulty;
-DifficultySelection heartDifficulty;
-DifficultySelection kidneyDifficulty;
-
 GameState currentGameState; // Tracks which display to present
 RunningGame currentGame; // Holds all game stats of current Game
 Round currentRound; // Holds all stats of current round
-boolean difficultySelected; // Defines whether to draw difficult selection screen or game map, necessary as otherwise it doesn't know which map to navigate to
+
 PressableButton gameWindow; // Stops the gameWindow from having cell outlines in mouseCheck()
 
 // Define variables for the germ cursor character
@@ -154,6 +147,7 @@ void setup(){ // Creates & setups all objects needed for the game, calls their r
   winScreen = new WinScreen();
   loseScreen = new LoseScreen();
   howToPlayScreen = new HowToPlayScreen();
+  difficultySelection = new DifficultySelection();
   
   titleScreen.setup();
   mapSelection.setup();
@@ -181,24 +175,13 @@ void setup(){ // Creates & setups all objects needed for the game, calls their r
           Grid[x][y] = new Cell(x, y);
        }
     }
-
+    
   // Create maps
   brainMap = new Brain(brain);
-  //brainMap.setup();
-  brainDifficulty = new DifficultySelection(GameState.BRAIN);
-
   lungMap = new Lung(lung);
-  //lungMap.setup();
-  lungDifficulty = new DifficultySelection(GameState.LUNG);
-
   heartMap = new Heart(heart);
-  //heartMap.setup();
-  heartDifficulty = new DifficultySelection(GameState.HEART);
-
   kidneyMap = new Kidney(kidney);
-  //kidneyMap.setup();
-  kidneyDifficulty = new DifficultySelection(GameState.KIDNEY);
-  
+
   gameWindow = new PressableButton(0, 650, WIDTH, 350); // Psuedo button over gameWindowin map so that the cells don't get outlined
 }
 
@@ -217,49 +200,33 @@ void draw(){
     mapSelection.draw();
   }
   
+  if (currentGameState == GameState.DIFFICULTY){
+    difficultySelection.draw();
+  }
+  
   if (currentGameState.isGameMap()){  
       if (currentGameState == GameState.BRAIN) {
-        currentGameMap = brainMap;
-        if (difficultySelected){ 
-          //brainMap.setup();
+          currentGameMap = brainMap;
           brainMap.draw();
           mouseCheck();
-        } else {
-          brainDifficulty.draw();
-        }
       }
   
       if (currentGameState == GameState.LUNG) {
-        currentGameMap = lungMap;
-         if (difficultySelected){ 
-           //lungMap.setup();
+           currentGameMap = lungMap;
            lungMap.draw();
            mouseCheck();
-          } else {
-           lungDifficulty.draw();
-          }
-       }
+      }
   
       if (currentGameState == GameState.HEART){
-        currentGameMap = heartMap;
-        if (difficultySelected){ 
-          //heartMap.setup();
+          currentGameMap = heartMap;
           heartMap.draw();
           mouseCheck();
-        } else {
-          heartDifficulty.draw();
-        }
       }
     
       if (currentGameState == GameState.KIDNEY){
-        currentGameMap = kidneyMap;
-        if (difficultySelected){ 
-          //kidneyMap.setup();
+          currentGameMap = kidneyMap;
           kidneyMap.draw();
           mouseCheck();
-        } else {
-          kidneyDifficulty.draw();
-        }
       }
    }
    
