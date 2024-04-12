@@ -150,16 +150,16 @@ class Round {
           numberOfEnemies = 36;
           break;
       case 10:
-          // if (currentGame.getTotalRounds() == 10){ 
-          //    determineFinalBoss();
-          //    numberOfEnemies = 1;
-          // } else {
-          addGerm1(10);
-          addGerm2(15);
-          addGerm3(10);
-          addGerm4(5);
-          numberOfEnemies = 40;
-          // }
+           if (currentGame.getTotalRounds() == 10){ 
+              determineFinalBoss(Difficulty.EASY);
+              numberOfEnemies = 1;
+           } else {
+           addGerm1(10);
+           addGerm2(15);
+           addGerm3(10);
+           addGerm4(5);
+           numberOfEnemies = 40;
+           }
           break;
       case 11:
           addGerm1(10);
@@ -227,7 +227,7 @@ class Round {
           numberOfEnemies = 60;
           break;
       case 20:
-          // if (currentGame.getTotalRounds() == 20){ // if medium mode end here w/final round boss
+          // if (currentGame.getTotalRounds(Difficulty.MEDIUM) == 20){ // if medium mode end here w/final round boss
           //    determineFinalBoss();
           //    numberOfEnemies = 1;
           // } else {
@@ -308,12 +308,25 @@ class Round {
           addGerm8(50);
           numberOfEnemies = 200;
           break;
-          // Change for final boss when implemented
-          // determineFinalBoss();
+          // determineFinalBoss(Difficulty.HARD);
           // numberOfEnemies = 1;
     }
 
     this.dispatchInterval = (durationInSecs * 1000) / numberOfEnemies; // Calculate dispatch interval
+  }
+  
+  void determineFinalBoss(Difficulty difficulty){
+    if (currentGameMap instanceof Kidney){
+      enemiesToDispatch.add(new FinalBoss(8, difficulty));
+    } // else if (currentGameMap instanceof Lung){
+    //  enemiesToDispatch.add(new FinalBoss(9, difficulty));
+    //} else if (currentGameMap instanceof Heart){
+    //  enemiesToDispatch.add(new FinalBoss(10, difficulty));
+    //} else {
+        //enemiesToDispatch.add(new FinalBoss(11, difficulty)); // Brain Map boss
+      
+    //}
+    
   }
 
 

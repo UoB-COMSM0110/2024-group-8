@@ -22,12 +22,6 @@
                 Twist = germ multiplication & temperature rise, as temperature rises the germs are more likely to multiply
                 Final boss = Kidney stone
 
-
-      - TOWERS: 
-          - Design 1 more tower
-          ??? - some super strong tower which shoots the diamond projectiles, maybe the creepy spider antibody and it can move around the map?
-
-
 */
 
 
@@ -164,7 +158,8 @@ void setup(){ // Creates & setups all objects needed for the game, calls their r
     new GermSprite("germ5"),
     new GermSprite("germ6"),
     new GermSprite("germ7"),
-    new GermSprite("germ8")
+    new GermSprite("germ8"),
+    new GermSprite("kidneyStone")
   };
   
    // Initialize grid

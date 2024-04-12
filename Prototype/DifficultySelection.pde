@@ -75,11 +75,16 @@ class DifficultySelection extends Display {
         if (timeOnScreen > 1000){ // Set the difficulty and start the game
            if (mousePressed){           
                 // New game object is created based on difficulty
-                if (easyButton.onButton()){ currentGame = new RunningGame(Difficulty.EASY); }
-                if (mediumButton.onButton()){ currentGame = new RunningGame(Difficulty.MEDIUM); }
-                if (hardButton.onButton()){ currentGame = new RunningGame(Difficulty.HARD); }
-
-                currentGameState = this.currentMap; // Navigates to previously selected map
+                if (easyButton.onButton()){ 
+                    currentGame = new RunningGame(Difficulty.EASY);
+                    currentGameState = this.currentMap; 
+                } else if (mediumButton.onButton()){ 
+                  currentGame = new RunningGame(Difficulty.MEDIUM); 
+                  currentGameState = this.currentMap; 
+                } else if (hardButton.onButton()){ 
+                  currentGame = new RunningGame(Difficulty.HARD);
+                  currentGameState = this.currentMap; 
+                }         
            }
         }
 

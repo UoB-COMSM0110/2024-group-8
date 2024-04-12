@@ -70,7 +70,8 @@ class RunningGame{
 
     void subtractLife(Germ leakedGerm){ 
         // Remove the appropriate amount of lives for each germ
-        if (leakedGerm instanceof Germ8){ currentLives = currentLives-8;
+        if (leakedGerm instanceof FinalBoss){ currentLives = 0;
+        } else if (leakedGerm instanceof Germ8){ currentLives = currentLives-8;
         } else if (leakedGerm instanceof Germ7){ currentLives = currentLives-7; 
         } else if (leakedGerm instanceof Germ6){ currentLives = currentLives-6; 
         } else if (leakedGerm instanceof Germ5){ currentLives = currentLives-5; 
@@ -82,7 +83,9 @@ class RunningGame{
     
     void killGerm(Germ target){
       earnCoins(5);
-      if (target instanceof Germ1){
+      if (target instanceof FinalBoss){
+        killFinalBoss(target);
+      } else if (target instanceof Germ1){
         AllGerms.remove(target); // If its a Germ1, it is killed
       } else {
         int germIndex = AllGerms.indexOf(target);
@@ -111,6 +114,29 @@ class RunningGame{
         // Replace target with the replacement in the germs array
         AllGerms.set(germIndex, newGerm);
       }
+    }
+    
+    void killFinalBoss(Germ target){
+        addNewGerm(target, new Germ4());
+        addNewGerm(target, new Germ3());
+        addNewGerm(target, new Germ2());
+        addNewGerm(target, new Germ1());
+      
+        if (gameDifficulty == Difficulty.MEDIUM || gameDifficulty == Difficulty.HARD){
+          addNewGerm(target, new Germ6());
+          addNewGerm(target, new Germ5());
+          if (gameDifficulty == Difficulty.HARD){
+            addNewGerm(target, new Germ8());
+            addNewGerm(target, new Germ7());
+          }
+        }  
+      AllGerms.remove(target);
+    }
+    
+    void addNewGerm(Germ target, Germ newGerm){
+       newGerm.setGermPosition(target.getGermX(), target.getGermY());
+       newGerm.setDirection(target.getLaneIndex());
+       AllGerms.add(newGerm);
     }
 
 

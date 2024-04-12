@@ -48,7 +48,15 @@ public class Germ {
     else if (dir == Direction.down){ posY+= speed; }
     else if (dir == Direction.left){ posX -=speed; }
     else { posX += speed; }
-    image(GermSprites[spriteIndex].getImage(dir, anim),posX, posY, cellSize, cellSize);
+    
+    if (this instanceof FinalBoss){
+      imageMode(CENTER);
+      image(GermSprites[spriteIndex].getImage(dir, anim), posX + 25, posY + 25, cellSize*3, cellSize*3);
+      imageMode(CORNER);
+    
+    } else {
+      image(GermSprites[spriteIndex].getImage(dir, anim),posX, posY, cellSize, cellSize);
+    }
     
     animTimer++;
     
