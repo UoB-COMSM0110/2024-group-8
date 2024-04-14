@@ -2,13 +2,11 @@ class Brain extends GameMap {
   PImage germ;
   PImage brain2;
   PImage deadBrain;
-  float germSize;
-  float brain2Size;
+  float germSize = 100;
+  float brain2Size = 90;
   
   Brain(PImage brain) {
     this.background = brain;
-    this.germSize = 100;
-    this.brain2Size = 90;
   }
 
   @Override

@@ -2,12 +2,18 @@ class Kidney extends GameMap {
   PImage germ;
   PImage kidney2;
   PImage deadKidney;
-  float germSize;
-  float kidney2Size;
+  float germSize = 100;
+  float kidney2Size = 90;
+  int temperature = 36;
+  boolean calledStage1 = false;
+  boolean calledStage2= false;
+  boolean calledStage3= false;
+  boolean calledStage4= false;
+  boolean calledStage5= false;
+  
+  
     Kidney(PImage kidney) {
         this.background = kidney;
-        this.germSize = 100;
-        this.kidney2Size = 90;
     }
 
     @Override
@@ -72,6 +78,15 @@ class Kidney extends GameMap {
     } catch (Exception e) {
       System.out.println("Game already won/lost");
     }
+    
+    //twist
+    increaseNumOfGerm();
+    textFont(font);
+    textSize(30);
+    fill(255);
+    text("Temperature: " + temperature + "°C" ,710, 110);
+    
+    
   }
     
     
@@ -94,4 +109,59 @@ class Kidney extends GameMap {
     };
     mapPath = new Path(path);
   }
+  
+  void increaseNumOfGerm(){
+    if ( currentRound != null && calledStage1 == false){
+      if (currentGame.getCurrentLives() == 99){
+        currentRound = new Round(10, 0, 0, 1);
+        temperature = 37;
+        calledStage1 = true;
+        
+      }
+    }
+    if (currentRound != null && calledStage2 == false){
+     if (currentGame.getCurrentLives() == 80){
+       currentRound = new Round(25, 0, 0, currentRound.roundIndex);
+       temperature = 38;
+       calledStage2 = true;
+     }
+    }
+    if (currentRound != null && calledStage3 == false){
+     if (currentGame.getCurrentLives() == 80){
+       currentRound = new Round(25, 0, 0, currentRound.roundIndex);
+       temperature = 39;
+       calledStage3 = true;
+     }
+    }
+    if (currentRound != null && calledStage4 == false){
+     if (currentGame.getCurrentLives() == 80){
+       currentRound = new Round(25, 0, 0, currentRound.roundIndex);
+       temperature = 40;
+       calledStage4 = true;
+     }
+    }
+    if (currentRound != null && calledStage5 == false){
+     if (currentGame.getCurrentLives() == 80){
+       currentRound = new Round(25, 0, 0, currentRound.roundIndex);
+       temperature = 41;
+       calledStage2 = true;
+     }
+    }    
+    
+    if ( currentRound != null && currentRound.inProgress() && calledStage1 == true ){
+      text("TEMPEATURE INCREASED!!!", 710, 500);
+      text("EXTRA GERMS ADDED!!!", 720, 550);
+    }
+
+    
+    if (currentRound != null && !currentRound.inProgress()){
+      calledStage1 = false;
+      calledStage2 = false;
+      calledStage3 = false;
+      calledStage4 = false;
+      calledStage5 = false;
+      
+    }
+  }
+   
 }

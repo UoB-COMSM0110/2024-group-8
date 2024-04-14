@@ -2,24 +2,17 @@ class Heart extends GameMap {
   PImage germ;
   PImage heart2;
   PImage deadHeart;
-  float germSize;
-  float heart2Size;
-  int bloodViscosity;
-  boolean functionCalled95;
-  boolean functionCalled70;
-  boolean functionCalled50;
-  boolean functionCalled20;
+  float germSize = 100;
+  float heart2Size = 90;
+  int bloodViscosity = 5;
+  boolean functionCalled95= false;
+  boolean functionCalled70= false;
+  boolean functionCalled50= false;
+  boolean functionCalled20= false;
 
   
     Heart(PImage heart) {
         this.background = heart;
-        this.germSize = 100;
-        this.heart2Size = 90;
-        this.bloodViscosity = 5;
-        this.functionCalled95 = false;
-        this.functionCalled70 = false;
-        this.functionCalled50 = false;
-        this.functionCalled20 = false;
     }
 
     @Override

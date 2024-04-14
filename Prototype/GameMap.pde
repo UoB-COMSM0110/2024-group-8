@@ -154,7 +154,7 @@ abstract class GameMap{
     } else if (lastClickedTower == null){
       textSize(30);
       text("<--- Select a tower to buy", 170, (menuPosY+50));
-      text("Click to start the next round --->", 350, (menuPosY+100));
+      text("Click to start the next round --->", 300, (menuPosY+100));
     } else {
        int towerX = (int)(lastClickedTower.getTowerX() * cellSize);
        int towerY = (int)(lastClickedTower.getTowerY() * cellSize);

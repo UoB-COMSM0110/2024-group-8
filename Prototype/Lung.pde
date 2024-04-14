@@ -3,14 +3,12 @@ class Lung extends GameMap {
   PImage lung2;
   PImage deadLung;
   PImage whiteBG;
-  float germSize;
-  float lung2Size;
+  float germSize = 100;
+  float lung2Size = 100;
   
     Lung(PImage lung) {
         this.background = lung;
-        this.germSize = 100;
-        this.lung2Size = 100;       
-    }
+      }
 
     @Override
     void setup() {
