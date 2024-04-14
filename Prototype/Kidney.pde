@@ -41,6 +41,8 @@ class Kidney extends GameMap {
     @Override
   void draw(){
     super.draw();
+
+    
     
     try {
       int previousLives = currentGame.getCurrentLives();
@@ -112,45 +114,53 @@ class Kidney extends GameMap {
   
   void increaseNumOfGerm(){
     if ( currentRound != null && calledStage1 == false){
-      if (currentGame.getCurrentLives() == 99){
-        currentRound = new Round(10, 0, 0, 1);
+      if (currentGame.getCurrentLives() == 75){
+        currentRound = new Round(15, 0, 0, currentRound.roundIndex);
         temperature = 37;
         calledStage1 = true;
         
       }
     }
     if (currentRound != null && calledStage2 == false){
-     if (currentGame.getCurrentLives() == 80){
-       currentRound = new Round(25, 0, 0, currentRound.roundIndex);
+     if (currentGame.getCurrentLives() == 55){
+       currentRound = new Round(15, 0, 0, currentRound.roundIndex);
        temperature = 38;
        calledStage2 = true;
      }
     }
     if (currentRound != null && calledStage3 == false){
-     if (currentGame.getCurrentLives() == 80){
-       currentRound = new Round(25, 0, 0, currentRound.roundIndex);
+     if (currentGame.getCurrentLives() == 35){
+       currentRound = new Round(15, 0, 0, currentRound.roundIndex);
        temperature = 39;
        calledStage3 = true;
      }
     }
     if (currentRound != null && calledStage4 == false){
-     if (currentGame.getCurrentLives() == 80){
-       currentRound = new Round(25, 0, 0, currentRound.roundIndex);
+     if (currentGame.getCurrentLives() == 20){
+       currentRound = new Round(15, 0, 0, currentRound.roundIndex);
        temperature = 40;
        calledStage4 = true;
      }
     }
     if (currentRound != null && calledStage5 == false){
-     if (currentGame.getCurrentLives() == 80){
-       currentRound = new Round(25, 0, 0, currentRound.roundIndex);
+     if (currentGame.getCurrentLives() == 5){
+       currentRound = new Round(15, 0, 0, currentRound.roundIndex);
        temperature = 41;
        calledStage2 = true;
      }
     }    
     
-    if ( currentRound != null && currentRound.inProgress() && calledStage1 == true ){
-      text("TEMPEATURE INCREASED!!!", 710, 500);
-      text("EXTRA GERMS ADDED!!!", 720, 550);
+    if ( currentRound != null && currentRound.inProgress() && 
+    (calledStage1 == true || calledStage2 == true || calledStage3 == true ||calledStage4 == true ||calledStage5 == true )){
+      fill(255, 0, 0); 
+      rect(800, 650, 200, 140);
+      fill(255);
+      textSize(20);
+      text("TEMPEATURE", 837, 682);
+      text("INCREASED!!!" , 837, 705);
+      text("EXTRA GERMS", 833, 747);
+      text("ADDED!!!", 860, 772);
+      
     }
 
     

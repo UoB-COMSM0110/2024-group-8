@@ -19,7 +19,7 @@
                 Final boss = an aneurisym
              
           KIDNEY:
-                Twist = germ multiplication & temperature rise, as temperature rises the germs are more likely to multiply
+                Twist = germ multiplication & temperature rise, as temperature rises the germs are more likely to multiply (double current round's germs)
                 Final boss = Kidney stone
 
 */
