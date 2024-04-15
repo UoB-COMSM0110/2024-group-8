@@ -1,3 +1,5 @@
+import processing.javafx.*;
+
 /*
     To do list, delete when done :) 
 
@@ -126,7 +128,7 @@ ArrayList<StateChangingButton> stateChangingButtons = new ArrayList<StateChangin
 ArrayList<TowerButton> allTowerButtons = new ArrayList<>();
 
 void settings(){
-  size(WIDTH, HEIGHT);
+  size(WIDTH, HEIGHT,FX2D);
 }
 
 void setup(){ // Creates & setups all objects needed for the game, calls their relevant setup functions

@@ -89,19 +89,7 @@ class Lung extends GameMap {
 
     if (currentRound != null && currentGame.getCurrentLives() <=90){
       image(whiteBG, 0, 0);
-      tint(255, 180);
-    }
-    if (currentRound != null &&currentGame.getCurrentLives() <=70){
-      image(whiteBG, 0, 0);
-      tint(255, 150);
-    }
-    if (currentRound != null &&currentGame.getCurrentLives() <=50){
-      image(whiteBG, 0, 0);
-      tint(255, 80);
-    }
-    if (currentRound != null &&currentGame.getCurrentLives() <=20){
-      image(whiteBG, 0, 0);
-      tint(255, 20);
+      tint(255, currentGame.currentLives*1.5);
     }
     
   }
