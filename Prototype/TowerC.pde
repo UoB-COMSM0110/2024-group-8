@@ -29,6 +29,22 @@ protected class TowerC extends DefenceTower {
     }
     
     @Override
+    void upgradeTower(){
+      if (this.currentUpgradeLevel < 3){ // If there are more possible upgrades
+        if (currentGame.getCoins() >= properties[0][this.currentUpgradeLevel+1]){ // If player can afford the upgrade
+          this.currentUpgradeLevel++;
+          currentGame.spendCoins(properties[0][this.currentUpgradeLevel]);
+          cost = properties[0][this.currentUpgradeLevel];
+          damageCapability = properties[1][this.currentUpgradeLevel];
+          shotsPerSec = properties[2][this.currentUpgradeLevel];
+          mucusPerSec = properties[2][this.currentUpgradeLevel];
+          range = properties[3][this.currentUpgradeLevel];
+          findPathCellsInRange();
+       }
+      }  
+    }
+    
+    @Override
     String getNextUpgradeAsString(){
       switch (currentUpgradeLevel) {
         case 0: 
@@ -49,8 +65,6 @@ protected class TowerC extends DefenceTower {
       if (pathCellsInRange.isEmpty()){ findPathCellsInRange(); } 
       
       float dispenseInterval = 1000.0f / this.mucusPerSec; // Find the interval at which the tower dispenses mucus
-      //float dispenseInterval = 3000;
-      
       
       if (currentUpgradeLevel >= 3){ toxicMucus = true; }
       
@@ -68,7 +82,9 @@ protected class TowerC extends DefenceTower {
       for (int i = Math.max(0, positionX - range); i <= Math.min(Grid.length - 1, positionX + range); i++){
            for (int j = Math.max(0, positionY - range); j <= Math.min(Grid[i].length - 1, positionY + range); j++){
                 if (Grid[i][j].isPath){ // Find the all path cells in range 
-                  pathCellsInRange.add(Grid[i][j]);
+                  if (!pathCellsInRange.contains(Grid[i][j])){
+                    pathCellsInRange.add(Grid[i][j]);
+                  }
                 }
            } 
        }  

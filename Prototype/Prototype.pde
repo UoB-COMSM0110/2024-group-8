@@ -62,7 +62,7 @@ enum GameState { // Different phases of the game, so program knows what to draw
 
 enum Difficulty { 
         // Defintion of each difficulty and what you start with
-        EASY(100, 10, 200),   // ( Start Lives ; Number of Rounds ; Start Coins)
+        EASY(100, 10, 2000),   // ( Start Lives ; Number of Rounds ; Start Coins)
         MEDIUM(70, 20, 150),
         HARD(40, 30, 75);
 
@@ -273,6 +273,7 @@ void clickTower(){
   
   try {
     if (!gameWindow.onButton()){ 
+      currentGameMap.towerSelected = false;
       currentGameMap.setLastClickedTower(Grid[x][y].occupant);
     }
   } catch (Exception e){}

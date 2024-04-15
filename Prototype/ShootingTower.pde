@@ -16,7 +16,27 @@ public class ShootingTower extends DefenceTower {
       shotsPerSec = properties[3][0];
       range = properties[4][0];
     }
-
+    
+    @Override
+    void upgradeTower(){
+      if (this.currentUpgradeLevel < 3){ // If there are more possible upgrades
+        if (currentGame.getCoins() >= properties[0][this.currentUpgradeLevel+1]){ // If player can afford the upgrade
+            int oldProjectile = properties[1][this.currentUpgradeLevel];
+            this.currentUpgradeLevel++;
+            currentGame.spendCoins(properties[0][this.currentUpgradeLevel]);
+            this.projectileType = properties[1][this.currentUpgradeLevel];
+            this.damageCapability = properties[2][this.currentUpgradeLevel];
+            this.shotsPerSec = properties[3][this.currentUpgradeLevel];
+            this.range = properties[4][this.currentUpgradeLevel];
+          
+            if (oldProjectile != properties[1][this.currentUpgradeLevel]){ 
+               // If its a tower that shoots load the new image for the new projectile
+               determineProjectileImage();
+            }
+         }
+      } 
+   }
+ 
     @Override
     public void shoot(){
         float shotInterval = 1000.0f / this.shotsPerSec; // Find the interval at which the tower shoots
