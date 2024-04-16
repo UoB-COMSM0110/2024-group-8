@@ -65,6 +65,10 @@ abstract class GameMap{
     if (currentGame != null){
       checkGameWonOrLost();
     }
+    
+    if (currentGameState != GameState.LUNG){
+      noTint();
+    }
   }
 
   void drawGameWindow(){
