@@ -1,7 +1,7 @@
 class Projectile {
     float posX;
     float posY;
-    int speed = 30;
+    int speed;
     PImage image;
     int damageCapability;
     Germ target;
@@ -10,12 +10,24 @@ class Projectile {
 
     float targetRadius = 25; // Half of the width/height of the target germ (50/2)
 
-    Projectile(PImage projectileImage, int damage, Germ germ, float startX, float startY){
+    Projectile(PImage projectileImage, int damage, Germ germ, float startX, float startY, int type){
         this.posX = startX;
         this.posY = startY;
         this.image = projectileImage;
         this.damageCapability = damage;
         this.target = germ;
+        switch (type) {
+          case 0:
+              speed = 15;
+          case 1:
+              speed = 10;
+          case 2:
+              speed = 20;
+          case 3: 
+              speed = 30;
+          default:
+              speed = 20;
+        }             
     }
 
     void drawShooting(){      
@@ -31,7 +43,7 @@ class Projectile {
         translate(posX, posY);
         rotate(angle); // Rotate based on angle
         imageMode(CENTER);
-        image(image, 0, 0, 20, 20);
+        image(image, 0, 0, 25, 25);
         imageMode(CORNER); // reset to default so other images aren't messed up
         // Reset transformation
         popMatrix();
@@ -53,39 +65,6 @@ class Projectile {
            targetAlive = false;
        }
     }
-
-    //void killGerm(Germ target){
-    //  currentGame.earnCoins(3);
-    //  if (target instanceof Germ1){
-    //    AllGerms.remove(target); // If its a Germ1, it is killed
-    //  } else {
-    //    int germIndex = AllGerms.indexOf(target);
-    //    int germLane = target.getLaneIndex();
-        
-    //    Germ newGerm; // Determine what target should be replaced with
-    //    if (target instanceof Germ7) {
-    //        newGerm = new Germ6();
-    //    } else if (target instanceof Germ6) {
-    //        newGerm = new Germ5();
-    //    } else if (target instanceof Germ5) {
-    //        newGerm = new Germ4();
-    //    } else if (target instanceof Germ4) {
-    //        newGerm = new Germ3();
-    //    } else if (target instanceof Germ3) {
-    //        newGerm = new Germ2();
-    //    } else if (target instanceof Germ2) {
-    //        newGerm = new Germ1();
-    //    } else {
-    //        newGerm = new Germ1();
-    //    }
-  
-    //    // Set the replacement germs position to the target germs' old position/lane/direction etc.
-    //    newGerm.setGermPosition(target.getGermX(), target.getGermY());
-    //    newGerm.setDirection(germLane);
-    //    // Replace target with the replacement in the germs array
-    //    AllGerms.set(germIndex, newGerm);
-    //  }
-    //}
     
     boolean shouldDisplay(){
       return (onScreen && targetAlive);

@@ -14,12 +14,14 @@ class Cell{
   
   DefenceTower occupant;
   
-  void buildOn(DefenceTower t){
+  boolean buildOn(DefenceTower t){
     if (buildable() && !gameWindow.onButton()){
       this.occupant = t;
       AllTowers.add(occupant); 
       this.buildable = false;
+      return true;
     }
+    return false;
   }
   
   boolean buildable(){

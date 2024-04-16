@@ -23,6 +23,12 @@ import processing.javafx.*;
           KIDNEY:
                 Twist = germ multiplication & temperature rise, as temperature rises the germs are more likely to multiply (double current round's germs)
                 Final boss = Kidney stone
+                
+                
+    KNOWN GLITCHES:
+    
+    - Button presses on placed towers not working
+    - Buying towers takes money w/o placing tower
 
 */
 

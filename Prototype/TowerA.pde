@@ -5,7 +5,7 @@ protected class TowerA extends ShootingTower {
     // Array to hold the properties of an instance of TowerA, throught it's upgrade stages:
     this.properties = new int[][] {{ 75, 125, 200, 450 }, // Cost from intial to Upgrade 3
                       { 0, 0, 0, 2 }, // Projectile type
-                      { 1, 1, 3, 3 }, // Damage Capability
+                      { 2, 2, 5, 7 }, // Damage Capability
                       { 1, 1, 1, 3 }, // Shots fired per second
                       { 2, 3, 3, 3 }  // Range
                 }; 

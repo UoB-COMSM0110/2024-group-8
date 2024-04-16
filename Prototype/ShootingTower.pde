@@ -45,7 +45,7 @@ public class ShootingTower extends DefenceTower {
         if (target != null && ((millis() - this.lastShotTime) >= shotInterval)){ // If there is a valid target and its time to shoot
           // If the tower has the right projectile type to deal damage to it
           if (this.projectileType >= target.getRequiredProjectile()){
-            Projectile p = new Projectile(projectileImage, this.damageCapability, target, ((this.positionX+0.5)*cellSize), ((this.positionY+0.5)*cellSize));
+            Projectile p = new Projectile(projectileImage, this.damageCapability, target, ((this.positionX+0.5)*cellSize), ((this.positionY+0.5)*cellSize), this.projectileType);
             p.drawShooting();
             AllProjectiles.add(p);
             this.lastShotTime = millis();

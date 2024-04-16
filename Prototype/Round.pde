@@ -313,6 +313,20 @@ class Round {
     }
 
     this.dispatchInterval = (durationInSecs * 1000) / numberOfEnemies; // Calculate dispatch interval
+    
+    //if (this.isTwistRound){
+    //  if (this.roundIndex == currentGame.getTotalRounds()){
+    //    enemiesToDispatch.remove(0);
+    //    addGerm5(roundIndex*2);
+    //    addGerm6(roundIndex);
+    //    addGerm7((int)(roundIndex/2)); 
+    //  } else {numberOfEnemies = (int)(numberOfEnemies * 0.25);
+    //       int enemiesToRemove = enemiesToDispatch.size() - numberOfEnemies;
+    //       for (int i = enemiesToDispatch.size()-1; i >= 0; i--){
+    //            enemiesToDispatch.remove(i);
+    //       }
+    //  }      
+    //}
   }
   
   void determineFinalBoss(Difficulty difficulty){

@@ -288,9 +288,9 @@ abstract class GameMap{
       if (mousePressed && Grid[currentGridX][currentGridY].buildable()){
         selectedTower.setTowerX(currentGridX);
         selectedTower.setTowerY(currentGridY);
-        Grid[currentGridX][currentGridY].buildOn(selectedTower); 
-        currentGame.spendCoins(selectedTower.getCost());
-        //selectedTower = null;
+        if (Grid[currentGridX][currentGridY].buildOn(selectedTower)){ // Only spend coins if tower is successfully built
+          currentGame.spendCoins(selectedTower.getCost());
+        }
         towerSelected = false;
         placingTower = false;
       }

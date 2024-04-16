@@ -5,7 +5,7 @@ class TitleScreen extends Display {
     float titleY; // Y position of the title for animation
     float titleTargetX; // Target X position of the title for animation
     float titleTargetY; // Target Y position of the title for animation
-    float titleSpeed = 5; // Speed of title animation (increased)
+    float titleSpeed = 3; // Speed of title animation (increased)
     PImage germL;
     PImage germR;
 
@@ -25,11 +25,6 @@ class TitleScreen extends Display {
         titleY = HEIGHT/4;
         titleTargetX = WIDTH/8 - 85;
         titleTargetY = HEIGHT/4;
-        
-        // germL = loadImage("germ/germ4L.png");
-        // germL.resize(WIDTH/5, HEIGHT/5);
-        // germR = loadImage("germ/germ4R.png");
-        // germR.resize(WIDTH/5, HEIGHT/5);
     }
 
     void draw(){
@@ -56,10 +51,8 @@ class TitleScreen extends Display {
     //Draw start button with animation
     if (startButton.onButton()) {
         fill(173, 224, 255); // Lighter color when hovered over
-        //image(germR, WIDTH/2 - 350, HEIGHT/2);
     } else {
         fill(153, 204, 255);
-        //image(germL, WIDTH/2 - 350, HEIGHT/2);
     }
     strokeWeight(8);
     strokeJoin(ROUND);

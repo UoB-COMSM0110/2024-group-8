@@ -7,7 +7,7 @@ class FinalBoss extends Germ {
     gameDifficulty = difficulty;
     this.requiredProjectile = 3;
     this.health = 100;
-    this.normalSpeed = 6;
-    this.mucusSpeed = 3;
+    this.normalSpeed = 2;
+    this.mucusSpeed = 1;
   }  
 }
