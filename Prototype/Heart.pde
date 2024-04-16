@@ -22,7 +22,7 @@ class Heart extends GameMap {
         
         try {
             path = loadImage("routeHeart.png"); 
-            path.resize(WIDTH, HEIGHT); 
+            path.resize(width, height); 
         } catch (Exception e) {
             println("Error loading image: " + e.getMessage());
         }

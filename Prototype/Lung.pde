@@ -17,7 +17,7 @@ class Lung extends GameMap {
         
         try {
             path = loadImage("routeLung.png"); 
-            path.resize(WIDTH, HEIGHT); 
+            path.resize(width, height); 
         } catch (Exception e) {
             println("Error loading image: " + e.getMessage());
         }
@@ -85,7 +85,7 @@ class Lung extends GameMap {
   
   void tintScreen(){
     whiteBG = loadImage("whiteBG.png");
-    whiteBG.resize(WIDTH, HEIGHT);
+    whiteBG.resize(width, height);
 
     if (currentRound != null && currentGame.getCurrentLives() <=90){
       image(whiteBG, 0, 0);

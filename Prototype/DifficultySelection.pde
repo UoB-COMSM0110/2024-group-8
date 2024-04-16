@@ -10,7 +10,7 @@ class DifficultySelection extends Display {
 
     DifficultySelection(){
         this.background = loadImage("startpage.png");
-        this.background.resize(WIDTH, HEIGHT);
+        this.background.resize(width, height);
     }
     
     void setup(GameState gameMapOrgan){

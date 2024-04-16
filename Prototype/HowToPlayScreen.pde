@@ -20,7 +20,7 @@ class HowToPlayScreen extends Display {
         
     HowToPlayScreen(){
         background = loadImage("startpage.png");
-        background.resize(WIDTH, HEIGHT); // Resize the image to match window dimensions
+        background.resize(width, height); // Resize the image to match window dimensions
         exit = loadImage("exit.png");
         previousPage = loadImage("previousPage.png");
         nextPage = loadImage("nextPage.png");

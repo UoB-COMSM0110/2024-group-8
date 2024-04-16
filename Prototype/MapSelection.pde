@@ -4,7 +4,7 @@ class MapSelection extends Display {
 
     void setup(){
         startPageBackground = loadImage("startpage.png");
-        startPageBackground.resize(WIDTH, HEIGHT); // Resize the image to match window dimensions
+        startPageBackground.resize(width, height); // Resize the image to match window dimensions
 
         // Load and resize organ images
         brain = loadImage("brain.png");

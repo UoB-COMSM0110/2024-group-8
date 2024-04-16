@@ -122,8 +122,8 @@ class Germ1 extends Germ {
     super(0);
     this.requiredProjectile = 0;
     this.health = 3;
-    this.normalSpeed = 6;
-    this.mucusSpeed = 3;
+    this.normalSpeed = 3;
+    this.mucusSpeed = 1;
   }
 }
 
@@ -132,8 +132,8 @@ class Germ2 extends Germ {
     super(1);
     this.requiredProjectile = 0;
     this.health = 5;
-    this.normalSpeed = 9;
-    this.mucusSpeed = 4;
+    this.normalSpeed = 5;
+    this.mucusSpeed = 2;
   }
 }
 
@@ -142,8 +142,8 @@ class Germ3 extends Germ {
     super(2);
     this.requiredProjectile = 1;
     this.health = 10;
-    this.normalSpeed = 9;
-    this.mucusSpeed = 4;
+    this.normalSpeed = 7;
+    this.mucusSpeed = 3;
   }
 }
 
@@ -152,8 +152,8 @@ class Germ4 extends Germ {
     super(3);
     this.requiredProjectile = 1;
     this.health = 12;
-    this.normalSpeed = 12;
-    this.mucusSpeed = 6;
+    this.normalSpeed = 10;
+    this.mucusSpeed = 5;
   }
 }
 
@@ -162,8 +162,8 @@ class Germ5 extends Germ {
     super(4);
     this.requiredProjectile = 1;
     this.health = 15;
-    this.normalSpeed = 15;
-    this.mucusSpeed = 8;
+    this.normalSpeed = 12;
+    this.mucusSpeed = 6;
   }
 }
 
@@ -172,8 +172,8 @@ class Germ6 extends Germ {
     super(5);
     this.requiredProjectile = 2;
     this.health = 20;
-    this.normalSpeed = 9;
-    this.mucusSpeed = 4;
+    this.normalSpeed = 6;
+    this.mucusSpeed = 3;
   }
 }
 
@@ -182,8 +182,8 @@ class Germ7 extends Germ {
     super(6);
     this.requiredProjectile = 2;
     this.health = 30;
-    this.normalSpeed = 6;
-    this.mucusSpeed = 3;
+    this.normalSpeed = 3;
+    this.mucusSpeed = 1;
   }
 }
 
@@ -192,7 +192,7 @@ class Germ8 extends Germ {
     super(7);
     this.requiredProjectile = 3;
     this.health = 25;
-    this.normalSpeed = 12;
-    this.mucusSpeed = 6;
+    this.normalSpeed = 9;
+    this.mucusSpeed = 4;
   }
 }

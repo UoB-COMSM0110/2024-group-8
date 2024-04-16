@@ -23,7 +23,7 @@ class Kidney extends GameMap {
         
         try {
             path = loadImage("routeKidney.png");  // Load new path mask image
-            path.resize(WIDTH, HEIGHT); 
+            path.resize(width, height); 
         } catch (Exception e) {
             println("Error loading image: " + e.getMessage());
         }

@@ -11,7 +11,7 @@ class TitleScreen extends Display {
 
     void setup(){
         startPageBackground = loadImage("startpage.png");
-        startPageBackground.resize(WIDTH, HEIGHT); // Resize the image to match window dimensions
+        startPageBackground.resize(width, height); // Resize the image to match window dimensions
 
         // Load germ image
         germ = loadImage("germ.png");
@@ -34,6 +34,7 @@ class TitleScreen extends Display {
 
     void draw(){
     background(startPageBackground);
+    //background(255);
     image(germ, germX, germY);
     textFont(font);
     textSize(80);

@@ -34,9 +34,9 @@ abstract class GameMap{
     //initalisePath();
     
     try {
-      this.background.resize(WIDTH, HEIGHT);
+      this.background.resize(width, height);
       path = loadImage("whiteBG.png");
-      path.resize(WIDTH, HEIGHT);
+      path.resize(width, height);
       towerA = TowerSprites[0];
       towerB = TowerSprites[1];
       towerC = TowerSprites[2];
