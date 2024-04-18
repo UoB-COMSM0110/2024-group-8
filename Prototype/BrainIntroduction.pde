@@ -1,6 +1,7 @@
 class BrainIntroduction extends Display {
     PImage background;
     PImage frame;
+    PImage brainintro;
 //    PImage understoodButton;
     
     int entryTime;
@@ -15,8 +16,11 @@ class BrainIntroduction extends Display {
     BrainIntroduction(){
         this.background = loadImage("brainintro.png");
         this.background.resize(width, height);
-        this.frame = loadImage("brainframe.png");
-        this.frame.resize(650, 650);
+       // this.frame = loadImage("brainframe.png");
+       // this.frame.resize(850, 850);
+        this.brainintro = loadImage("brainintroo.png");
+        this.brainintro.resize(700, 700);
+
 
        // this.understoodButton = loadImage("understood.png");
       //  this.understoodButton.resize(buttonWidth, buttonHeight); // Resize the button image
@@ -28,12 +32,17 @@ class BrainIntroduction extends Display {
         if ((this.entryTime == 0) || (millis()-entryTime) > 100000) {
             entryTime = millis();
         }
-        
+       
         background(background);
-        image(frame, 160, 100); 
+        image(brainintro, 120, 40);
+        //image(frame, 100, 0.5); 
         fill(255);
+        //textSize(20);
+        //text("Enter the cerebral battlefield, where the stakes are high and time is ticking. ", 200, 220);
+        //textSize(20);
+        //text("The brain faces imminent danger from an aneurysm, and only your strategic prowess can save it.", 200, 320);
         textSize(40);
-        text("Press S to start", 350, 420);
+        //text("Press S to start", 350, 620);
 
         
         // Draw the button
