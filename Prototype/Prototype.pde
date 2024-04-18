@@ -49,6 +49,9 @@ PImage lung;
 PImage backButton;
 PFont font;
 
+boolean brainIntroductionCompleted = false;
+
+
 enum GameState { // Different phases of the game, so program knows what to draw
     TITLE,
     MAP,
@@ -102,6 +105,7 @@ MapSelection mapSelection;
 DifficultySelection difficultySelection;
 WinScreen winScreen;
 LoseScreen loseScreen;
+BrainIntroduction brainIntroduction;
 
 Brain brainMap;
 Lung lungMap;
@@ -147,6 +151,7 @@ void setup(){ // Creates & setups all objects needed for the game, calls their r
   loseScreen = new LoseScreen();
   howToPlayScreen = new HowToPlayScreen();
   difficultySelection = new DifficultySelection();
+  brainIntroduction = new BrainIntroduction();
   
   titleScreen.setup();
   mapSelection.setup();
@@ -186,6 +191,7 @@ void setup(){ // Creates & setups all objects needed for the game, calls their r
   gameWindow = new PressableButton(0, 650, WIDTH, 350); // Psuedo button over gameWindowin map so that the cells don't get outlined
 }
 
+
 void draw(){
   // Draws the output based on the current gameState variable
   
@@ -205,13 +211,10 @@ void draw(){
     difficultySelection.draw();
   }
   
-  if (currentGameState.isGameMap()){  
-      if (currentGameState == GameState.BRAIN) {
-          currentGameMap = brainMap;
-          brainMap.draw();
-          mouseCheck();
-      }
-  
+if (currentGameState == GameState.BRAIN) {
+    brainIntroduction.draw();
+}
+
       if (currentGameState == GameState.LUNG) {
            currentGameMap = lungMap;
            lungMap.draw();
@@ -229,7 +232,6 @@ void draw(){
           kidneyMap.draw();
           mouseCheck();
       }
-   }
    
     if (currentGameState == GameState.WON){
       winScreen.draw();
