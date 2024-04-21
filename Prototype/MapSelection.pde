@@ -41,10 +41,10 @@ class MapSelection extends Display {
       noFill();
   
       // Display map images and make them pressable buttons
-      handleMapSelection(brain, WIDTH/6, HEIGHT/5 + 50, outlineSize, GameState.BRAIN, brainMap);
+      handleMapSelection(brain, WIDTH/6, HEIGHT/5 + 50, outlineSize, GameState.BRAIN_INTRO, brainMap);
       handleMapSelection(lung, WIDTH/3 + 250, HEIGHT/5 + 50, outlineSize, GameState.LUNG, lungMap);
       handleMapSelection(heart, WIDTH/6, HEIGHT/5 + 350, outlineSize, GameState.HEART, heartMap);
-      handleMapSelection(kidney, WIDTH/3 + 250, HEIGHT/5 + 350, outlineSize, GameState.KIDNEY, kidneyMap);
+      handleMapSelection(kidney, WIDTH/3 + 250, HEIGHT/5 + 350, outlineSize, GameState.KIDNEY_INTRO, kidneyMap);
       
       BackButton(backButton, WIDTH/50, HEIGHT/50, 100, GameState.TITLE);
   }
