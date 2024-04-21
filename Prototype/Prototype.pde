@@ -64,7 +64,9 @@ enum GameState { // Different phases of the game, so program knows what to draw
     HEART,
     KIDNEY,
     BRAIN_INTRO,
-    KIDNEY_INTRO;
+    KIDNEY_INTRO,
+    HEART_INTRO,
+    LUNGS_INTRO;
     
     public boolean isGameMap(){ 
       return (this == BRAIN || this == LUNG || this == HEART || this == KIDNEY);
@@ -109,6 +111,9 @@ WinScreen winScreen;
 LoseScreen loseScreen;
 BrainIntroduction brainIntroduction;
 KidneyIntroduction kidneyIntroduction;
+HeartIntroduction heartIntroduction;
+LungsIntroduction lungsIntroduction;
+
 
 Brain brainMap;
 Lung lungMap;
@@ -156,6 +161,9 @@ void setup(){ // Creates & setups all objects needed for the game, calls their r
   difficultySelection = new DifficultySelection();
   brainIntroduction = new BrainIntroduction();
   kidneyIntroduction = new KidneyIntroduction();
+  heartIntroduction = new HeartIntroduction();
+  lungsIntroduction = new LungsIntroduction();
+
 
   
   titleScreen.setup();
@@ -222,12 +230,18 @@ void draw(){
   if (currentGameState == GameState.KIDNEY_INTRO) {
     kidneyIntroduction.draw();
 }
+  if (currentGameState == GameState.HEART_INTRO){
+    heartIntroduction.draw();
+  }
+  if (currentGameState == GameState.LUNGS_INTRO){
+    lungsIntroduction.draw();
+  }
   
-if (currentGameState == GameState.BRAIN) {
-currentGameMap = brainMap;
-brainMap.draw();
-mouseCheck();
-}
+      if (currentGameState == GameState.BRAIN) {
+           currentGameMap = brainMap;
+           brainMap.draw();
+           mouseCheck();
+      }
 
       if (currentGameState == GameState.LUNG) {
            currentGameMap = lungMap;

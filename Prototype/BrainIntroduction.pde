@@ -1,22 +1,16 @@
 class BrainIntroduction extends Display {
     PImage background;
-   // PImage brainintro;
 
     int entryTime = 0;
-    boolean buttonPressed = false; // Track whether the button has been pressed
 
     BrainIntroduction() {
         this.background = loadImage("brainintro.png");
-        this.background.resize(width, height);  // Ensure 'width' and 'height' are defined or accessible
-       // this.brainintro = loadImage("brainintroo.png");
-       // this.brainintro.resize(700, 700);
+        this.background.resize(width, height); 
     }
 
     void draw() {
-        // Check for game state in the main game loop, not here, unless this is a method call
         if (currentGameState == GameState.BRAIN_INTRO) {
             background(background);
-           // image(brainintro, 120, 40);
             fill(255);
 
             // Manage the introduction timing
@@ -28,8 +22,8 @@ class BrainIntroduction extends Display {
 
             // Change the state on key press after 1 second on screen
             if (timeOnScreen > 1000) {
-                if (keyPressed && (key == 's' || key == 'S')) {  // Parentheses added for clarity
-                    currentGameState = GameState.BRAIN;  // Ensure this state change is handled appropriately in your game loop
+                if (keyPressed && (key == 's' || key == 'S')) {  
+                    currentGameState = GameState.BRAIN;  
                 }
             }
         }

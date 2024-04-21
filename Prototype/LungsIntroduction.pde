@@ -1,15 +1,15 @@
-class KidneyIntroduction extends Display {
+class LungsIntroduction extends Display {
     PImage background;
 
     int entryTime = 0;
 
-    KidneyIntroduction() {
-        this.background = loadImage("kidneyintro.png");
-        this.background.resize(width, height);  
+    LungsIntroduction() {
+        this.background = loadImage("lungsintro.png");
+       this.background.resize(width, height);  
     }
 
     void draw() {
-        if (currentGameState == GameState.KIDNEY_INTRO) {
+        if (currentGameState == GameState.LUNGS_INTRO) {
             background(background);
             fill(255);
 
@@ -23,7 +23,7 @@ class KidneyIntroduction extends Display {
             // Change the state on key press after 1 second on screen
             if (timeOnScreen > 1000) {
                 if (keyPressed && (key == 's' || key == 'S')) {  
-                    currentGameState = GameState.KIDNEY;  
+                    currentGameState = GameState.LUNG;  
                 }
             }
         }
