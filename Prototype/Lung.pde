@@ -84,7 +84,8 @@ class Lung extends GameMap {
     whiteBG.resize(width, height);
     if (currentRound != null){
       image(whiteBG, 0, 0);
-      int tintPara = 255 - (currentGame.getTotalLives() - currentGame.currentLives)*10;
+      int livesLost = currentGame.getTotalLives() - currentGame.currentLives;
+      int tintPara = 255 - livesLost*10;
       if(tintPara <= 0) {tintPara=0;}
       tint(255, tintPara);
     }

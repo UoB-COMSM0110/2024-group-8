@@ -32,7 +32,15 @@ class RunningGame{
         }
     }
 
-    void selectRound(){  
+    void selectRound(){
+        if(currentGameState == GameState.BRAIN) {
+            int randomFactor = (int)(Math.random() * 100);
+            double currentProbability = brainMap.currentProbability;
+            if (randomFactor < currentProbability*100 || currentProbability*100 >= 100) {
+                this.roundCounter+=5;
+            }
+        }
+
         if (currentRound == null || this.roundCounter == 0){
            currentRound = new Round(15, millis(), 50, (roundCounter+1)); // The intial round just set as randomish values for now
            currentRound.setInProgress(true);

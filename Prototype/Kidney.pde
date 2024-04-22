@@ -87,8 +87,6 @@ class Kidney extends GameMap {
     textSize(30);
     fill(255);
     text("Temperature: " + temperature + "°C" ,710, 110);
-    
-    
   }
     
     

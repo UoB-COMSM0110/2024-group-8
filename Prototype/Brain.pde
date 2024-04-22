@@ -4,6 +4,7 @@ class Brain extends GameMap {
   PImage deadBrain;
   float germSize = 100;
   float brain2Size = 90;
+  double currentProbability = 0;
   
   Brain(PImage brain) {
     this.background = brain;
@@ -68,10 +69,22 @@ class Brain extends GameMap {
         if (displayDeadBrain && millis() - deadBrainDisplayStartTime >= deadBrainDisplayTime) { 
             displayDeadBrain = false;
         }
+
+        //twist
+        double probabilityThreshold = 0;
+        int livesLost = currentGame.getTotalLives() - currentGame.currentLives;
+        currentProbability = Math.min(1.0, probabilityThreshold + 0.05 * livesLost);
+
+        textFont(font);
+        textSize(30);
+        fill(255);
+        text("STROKE RISK: " + String.format("%.1f%%", currentProbability * 100), 690, 110);
     } catch (Exception e) {
       System.out.println("Game already won/lost");
     }
   }
+
+
 
   
   @Override
@@ -93,4 +106,5 @@ class Brain extends GameMap {
     };
     mapPath = new Path(path);
   }
+
 }
