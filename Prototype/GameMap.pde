@@ -27,8 +27,6 @@ abstract class GameMap{
   boolean placingTower = false;
   PImage selectedTowerImage;
   int timeOfLastPurchase = 0;
-  
-  void twist(){};
 
   void setup(){   
     //initalisePath();

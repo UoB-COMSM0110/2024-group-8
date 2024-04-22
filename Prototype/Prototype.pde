@@ -79,9 +79,9 @@ enum Difficulty {
         MEDIUM(70, 20, 150),
         HARD(40, 30, 75);
 
-        private int numberOfRounds;
-        private int numberOfLives;
-        private int numberOfCoins;
+        int numberOfRounds;
+        int numberOfLives;
+        int numberOfCoins;
 
         Difficulty(int numberOfLives, int numberOfRounds, int numberOfCoins) {
            this.numberOfLives = numberOfLives;

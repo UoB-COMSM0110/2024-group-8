@@ -50,10 +50,6 @@ class Lung extends GameMap {
            displayDeadLung = true; // Set the flag to display deadBrain
            deadLungDisplayStartTime = millis(); 
         }
-
-        if (currentGame.getCurrentLives() < 100) {
-          twist();
-        }
     
         // Check if it's time to display the deadBrain image
         if (displayDeadLung && millis() - deadLungDisplayStartTime < deadLungDisplayTime) { 
@@ -86,10 +82,11 @@ class Lung extends GameMap {
   void tintScreen(){
     whiteBG = loadImage("whiteBG.png");
     whiteBG.resize(width, height);
-
-    if (currentRound != null && currentGame.getCurrentLives() <=90){
+    if (currentRound != null){
       image(whiteBG, 0, 0);
-      tint(255, currentGame.currentLives*1.5);
+      int tintPara = 255 - (currentGame.getTotalLives() - currentGame.currentLives)*10;
+      if(tintPara <= 0) {tintPara=0;}
+      tint(255, tintPara);
     }
     
   }
