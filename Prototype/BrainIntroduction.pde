@@ -19,13 +19,24 @@ class BrainIntroduction extends Display {
             }
 
             int timeOnScreen = millis() - entryTime;
-
-            // Change the state on key press after 1 second on screen
-            if (timeOnScreen > 1000) {
-                if (keyPressed && (key == 's' || key == 'S')) {  
-                    currentGameState = GameState.BRAIN;  
-                }
+            
+            fill(#ffcccc);
+            stroke(#bf5654);
+            rect(200, 615, 600, 100);
+            PressableButton button = new PressableButton(200, 615, 600, 100);
+            
+            if (button.onButton()){
+              rect(190, 605, 620, 120);
+              if (timeOnScreen > 1000 && mousePressed) {
+                currentGameState = GameState.BRAIN; 
+              }
             }
+            
+            textSize(60);
+            fill(255);
+            text("PRESS TO START", 250, 685);
+
+
         }
     }
 }
