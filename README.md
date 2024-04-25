@@ -105,6 +105,7 @@ Extended:
 
 <img width="1199" alt="use-case" src="https://github.com/UoB-COMSM0110/2024-group-8/assets/150365540/20e3a851-e34f-4282-8676-5f56ff0f7fb1">
 ![Use-Case diagram][use-case-diagram](https://github.com/UoB-COMSM0110/2024-group-8/assets/92212723/5534a0f3-b995-4565-bd1c-9d5be82535ad)
+![Use-case Diagram 2](https://github.com/UoB-COMSM0110/2024-group-8/blob/main/images/use-case-diagram.jpeg?raw=true)
 
 
 - Player start the games
