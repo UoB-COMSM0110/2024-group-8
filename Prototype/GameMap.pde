@@ -247,27 +247,33 @@ abstract class GameMap{
     }
   }
   
-  void displayTowerStats(DefenceTower t){
-      noFill();
-      strokeWeight(4);
-      stroke(255);
-      rect(300, (menuPosY+20), 250, 100);
-      
-      strokeWeight(2);
-      line(300, (menuPosY+45), 550, (menuPosY+45));
-      line(300, (menuPosY+70), 550, (menuPosY+70));
-      line(300, (menuPosY+95), 550, (menuPosY+95));
-      line(420, (menuPosY+20), 420, (menuPosY+120));
-      
+  void displayTowerStats(DefenceTower t){     
       textSize(20);
-      text("RANGE", 305, (menuPosY+40));
-      text(t.range, 480, (menuPosY+40));
-      text("DAMAGE", 305, (menuPosY+65));
-      text(t.damageCapability, 480, (menuPosY+65));
-      text("RATE", 305, (menuPosY+90));
-      text(t.shotsPerSec +"/s", 480, (menuPosY+90));
-      text("PROTEIN", 305, (menuPosY+115));
-      text(t.getProjectileTypeAsString(), 450, (menuPosY+115));
+      if (t instanceof TowerA){
+        text("Shoots " + t.getProjectileTypeAsString() + " proteins at a rate of " +t.shotsPerSec +"/s", 250, (menuPosY+55));
+        text("Upgrades:", 250 , (menuPosY+80));
+        textSize(20);
+        text("> Wider Range  > More Damage ", 250, (menuPosY+105));
+        text("> Flame Protein", 250, (menuPosY+125));
+      } else if (t instanceof TowerB){
+        text("Shoots " + t.getProjectileTypeAsString() + " proteins at a rate of " +t.shotsPerSec +"/s", 250, (menuPosY+55));
+        text("Upgrades:", 250 , (menuPosY+80));
+        textSize(20);
+        text("> Wider Range  > More Shots ", 250, (menuPosY+105));
+        text("> More Damage", 250, (menuPosY+125));
+      } else if (t instanceof TowerC){
+        text("Dispenses mucus to slow down germs", 250, (menuPosY+55));
+        text("Upgrades:", 250 , (menuPosY+80));
+        textSize(20);
+        text("> Wider Range  > More Mucus ", 250, (menuPosY+105));
+        text("> Toxic Mucus", 250, (menuPosY+125));
+      } else {
+        text("Shoots " + t.getProjectileTypeAsString() + " proteins at a rate of " +t.shotsPerSec +"/s", 250, (menuPosY+55));
+        text("Upgrades:", 250 , (menuPosY+80));
+        textSize(20);
+        text("> Wider Range  > More Damage ", 250, (menuPosY+105));
+        text("> Infinite Range", 250, (menuPosY+125));
+      } 
   }
 
   void initalisePath(){}
