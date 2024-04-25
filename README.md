@@ -14,6 +14,34 @@ The novel aspects of this game are the ways in which interventions - either clin
 
 
 Prototype Video: https://github.com/UoB-COMSM0110/2024-group-8/blob/main/Paper_Prototyping/Idea_1_Paper_Prototyping.mp4
+
+# Immune System Defence
+<table>
+  <tr>
+    <td>
+      <!-- Your first block of text and image -->
+      <strong>Select the map and the difficulty!</strong><br>
+      <img src="https://github.com/UoB-COMSM0110/2024-group-8/blob/main/images/map&difficulty.gif?raw=true" width="300" />
+    </td>
+    <td>
+      <!-- Your second block of text and image -->
+      <strong>Explore the different towers and their properties!</strong><br>
+      <img src="https://github.com/UoB-COMSM0110/2024-group-8/blob/main/images/towers.gif?raw=true" width="600" />
+    </td>
+  </tr>
+</table>
+
+<!-- Center-aligned table with borders in GitHub Markdown -->
+<div align="center">
+
+| Place them strategically to defeat the enemies! |
+|:-----------------------------------------------:|
+| <img src="https://github.com/UoB-COMSM0110/2024-group-8/blob/main/images/defeatenemies.gif?raw=true" width="300" /> |
+
+</div>
+
+
+
 ## Design Options:
 
 1. **Human Body:** 
