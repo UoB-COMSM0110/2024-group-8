@@ -131,7 +131,8 @@ Extended:
 # Design
 The system architecture of a game developed by software engineers encompasses various components and layers that work together to deliver a cohesive and engaging gaming experience. It specifies the internal components that make up a computer system and describes how these are interconnected, how they interact with each other, and how they are managed. Ada computer science. (n.d.). Ada Computer Science. Class diagrams and behavioural diagrams play essential roles in specifying and visualising the system architecture of a game developed by software engineers.
 
-![Class Diagram][classdiagram](https://github.com/UoB-COMSM0110/2024-group-8/assets/92212723/d006ca6b-2d8a-4aec-bcaa-10e4dcf9160b)
+![Class Diagram]([/images/classdiagram.jpg](https://github.com/UoB-COMSM0110/2024-group-8/blob/main/images/classdiagram.jpg?raw=true
+))
 
 Our first line of action, before beginning to code any of the software, was to think about what exactly we wanted the base of our game to be; what objects, players, scenarios we wanted. For this, we began sketching a class diagram of our soon-to-be game. The class diagram served as a visual representation of these elements, illustrating their relationships, attributes, and behaviours. Each class in the diagram encapsulated specific functionalities and characteristics, defining the building blocks of our game's architecture.  Our class diagram meticulously outlined the key game entities essential for "Human Body Tower Defence," including Towers, Enemies, and Maps, among others. Each class encapsulated specific functionalities and attributes crucial for their respective roles within the game. For instance, the Towers class served as a base class from which different tower types were inherited. These tower types, such as Tower A or Tower B, inherited common functionalities while introducing unique characteristics.
 
