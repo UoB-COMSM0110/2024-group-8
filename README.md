@@ -71,7 +71,7 @@ introduces a behaviour that fundamentally alters the physics.
 - Relationship between those elements, how the additional physics items are implemented and designed.
 
 
-# Requirement:
+# Requirements:
 ## Stakeholder:
 - Developer
 - Project Manager
@@ -91,19 +91,21 @@ Extended:
 - IP Holder (if using specific assets or images/themes)
 
 ## User Stories:
-- As the developer, I want to make an educational game that is popular among students, so that my game could have more exposure to the younger generation and I could earn more reputation in game industry.
+> As the developer, I want to make an educational game that is popular among students, so that my game could have more exposure to the younger generation and I could earn more reputation in game industry.
 
-- As the player, I want to play a tower defence game with another user, so that I can have a competition with my friends and have some fun.
+> As the player, I want to play a tower defence game with another user, so that I can have a competition with my friends and have some fun.
 
-- As the investor, I want to invest in the game development industry by developing an innovative game to attract more players, so that I can start earning money from that game.
+> As the investor, I want to invest in the game development industry by developing an innovative game to attract more players, so that I can start earning money from that game.
 
-- As the teachers, I want to influence my students to play an educational game, so that the student can learn more about the effect of germs on different organ on a human, 
+> As the teachers, I want to influence my students to play an educational game, so that the student can learn more about the effect of germs on different organ on a human, 
 
-- As the project manager, I want to ensure the game developed is meeting all the requirements, so that the project can be successful.
+> As the project manager, I want to ensure the game developed is meeting all the requirements, so that the project can be successful.
 
 ## Use-case (player):
 
 <img width="1199" alt="use-case" src="https://github.com/UoB-COMSM0110/2024-group-8/assets/150365540/20e3a851-e34f-4282-8676-5f56ff0f7fb1">
+![Use-Case diagram][use-case-diagram](https://github.com/UoB-COMSM0110/2024-group-8/assets/92212723/5534a0f3-b995-4565-bd1c-9d5be82535ad)
+
 
 - Player start the games
 - Player choose which map to play
@@ -126,7 +128,14 @@ Extended:
 - System presents high score to user.
 - System exits
 
+# Design
+The system architecture of a game developed by software engineers encompasses various components and layers that work together to deliver a cohesive and engaging gaming experience. It specifies the internal components that make up a computer system and describes how these are interconnected, how they interact with each other, and how they are managed. Ada computer science. (n.d.). Ada Computer Science. Class diagrams and behavioural diagrams play essential roles in specifying and visualising the system architecture of a game developed by software engineers.
 
+![Class Diagram][classdiagram](https://github.com/UoB-COMSM0110/2024-group-8/assets/92212723/d006ca6b-2d8a-4aec-bcaa-10e4dcf9160b)
+
+Our first line of action, before beginning to code any of the software, was to think about what exactly we wanted the base of our game to be; what objects, players, scenarios we wanted. For this, we began sketching a class diagram of our soon-to-be game. The class diagram served as a visual representation of these elements, illustrating their relationships, attributes, and behaviours. Each class in the diagram encapsulated specific functionalities and characteristics, defining the building blocks of our game's architecture.  Our class diagram meticulously outlined the key game entities essential for "Human Body Tower Defence," including Towers, Enemies, and Maps, among others. Each class encapsulated specific functionalities and attributes crucial for their respective roles within the game. For instance, the Towers class served as a base class from which different tower types were inherited. These tower types, such as Tower A or Tower B, inherited common functionalities while introducing unique characteristics.
+
+Attributes of the Towers class included cost, damage, projectile type, and attack range, defining their behaviour and effectiveness in combat. Similarly, the Enemies class encompassed various enemy types, each with distinct behaviours and attributes tailored to challenge players in different scenarios. For example, enemies in the Heart level might exhibit varying speeds to simulate blood flow, with faster enemies representing thinner blood towards the end of the level, providing an additional challenge as players progress. Additionally, our class diagram accounted for the dynamic nature of game environments by including Maps as a fundamental component. Maps encapsulated terrain features, obstacles, and environmental effects that influenced gameplay dynamics and strategic decisions. For instance, in the Lung level, a unique twist was introduced where the screen gradually darkened to simulate the invasion of fog into the lungs, adding an extra layer of challenge and immersion for players.
 
 # Heuristic Evaluation
 <img width="583" alt="Screenshot 2024-03-11 at 10 33 24" src="https://github.com/UoB-COMSM0110/2024-group-8/assets/150365540/66edb8c0-d064-4447-a1e7-f6150c74d147">
