@@ -1,4 +1,6 @@
-# Group 8:
+
+![image](https://github.com/UoB-COMSM0110/2024-group-8/blob/main/images/banner.png?raw=true)
+
 ![image](https://github.com/UoB-COMSM0110/2024-group-8/assets/117166891/c84a4952-3bef-4fa6-9d88-e8a353425535)
 We are Group 8: Arielle, Julia, Isaac, Vincent and Alex.
 
@@ -119,7 +121,9 @@ Within the development process of "Human Body Tower Defence," the use case diagr
 This iterative cycle continues until the level's objectives are met or the player's lives are expended. These user interactions and system responses, as depicted in the use case diagram, are essential in understanding the flow of gameplay and ensuring that the game development aligns with stakeholder objectives and user expectations. Through the incorporation of user stories from various perspectives, such as the developer's aim for educational impact and the player's responses, we ensure that our game design remains focused on delivering a compelling and engaging experience that meets the needs of our target audience.
 
 <img width="1199" alt="use-case" src="https://github.com/UoB-COMSM0110/2024-group-8/assets/150365540/20e3a851-e34f-4282-8676-5f56ff0f7fb1">
-![Use-case-diagram 2](https://github.com/UoB-COMSM0110/2024-group-8/blob/main/images/use-case-diagram.jpeg?raw=true)
+
+![image](https://github.com/UoB-COMSM0110/2024-group-8/blob/main/images/use-case-diagram.jpeg?raw=true)
+
 
 - Player start the games
 - Player choose which map to play
