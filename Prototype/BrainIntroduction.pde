@@ -4,7 +4,7 @@ class BrainIntroduction extends Display {
     int entryTime = 0;
 
     BrainIntroduction() {
-        this.background = loadImage("brainintro.png");
+        this.background = loadImage("brainintrod.png");
         this.background.resize(width, height); 
     }
 
