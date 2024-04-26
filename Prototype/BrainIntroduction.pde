@@ -29,6 +29,8 @@ class BrainIntroduction extends Display {
               rect(190, 605, 620, 120);
               if (timeOnScreen > 1000 && mousePressed) {
                 currentGameState = GameState.BRAIN; 
+                gamestarts.play();
+
               }
             }
             

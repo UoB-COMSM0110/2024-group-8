@@ -26,6 +26,7 @@ public class Germ {
     
     if (this.health <= 0){ // If the germ's health is fully depleted
         isDead = true;
+        deathsound.play();
     }
   }
   
