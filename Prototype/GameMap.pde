@@ -132,6 +132,7 @@ abstract class GameMap{
         if (selectedTower.getCost() <= currentGame.getCoins()){ fill(#00FF00); } else { fill(#FF0000); }
         text("Cost: " + selectedTower.getCost(), 630, (menuPosY+90));  
         if (mousePressed && buyButton.onButton() && (selectedTower.getCost() <= currentGame.getCoins())){ 
+          purchasesound.play();
           placingTower = true; 
           timeOfLastPurchase = millis();
         }

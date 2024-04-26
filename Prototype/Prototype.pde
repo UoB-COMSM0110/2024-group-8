@@ -2,6 +2,8 @@ import processing.javafx.*;
 import processing.sound.*;
 SoundFile deathsound;
 SoundFile gamestarts;
+SoundFile purchasesound;
+
 
 /*
     To do list, delete when done :) 
@@ -169,6 +171,7 @@ void setup(){ // Creates & setups all objects needed for the game, calls their r
 
   deathsound = new SoundFile(this, "data/germdies.mp3");
   gamestarts = new SoundFile(this, "data/gamestarts.mp3");
+  purchasesound = new SoundFile(this, "data/purchasesound.mp3");
 
   titleScreen.setup();
   mapSelection.setup();
