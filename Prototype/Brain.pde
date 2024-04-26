@@ -86,10 +86,7 @@ class Brain extends GameMap {
           rect(800, 650, 200, 140);
           fill(255);
           textSize(20);
-          text("BRAINSTROKE!", 837, 682);
-          text("ROUNDS" , 837, 705);
-          text("ARE", 833, 747);
-          text("SKIPPED!", 860, 772);
+          text("BRAINSTROKE!\nROUNDS\nHAVE BEEN\nSKIPPED!", 837, 682);
         }
     } catch (Exception e) {
       System.out.println("Game already won/lost");
