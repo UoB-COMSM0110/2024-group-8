@@ -33,10 +33,12 @@ class RunningGame{
     }
 
     void selectRound(){
+        // God flip the coin for brainstroke
         if(currentGameState == GameState.BRAIN) {
             int randomFactor = (int)(Math.random() * 100);
             double currentProbability = brainMap.currentProbability;
-            if (randomFactor < currentProbability*100 || currentProbability*100 >= 100) {
+            if (randomFactor < currentProbability*100 || currentProbability>= 1) {
+                brainMap.strokeFlag = true;
                 this.roundCounter+=5;
             }
         }
