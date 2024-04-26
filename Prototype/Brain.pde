@@ -5,6 +5,7 @@ class Brain extends GameMap {
   float germSize = 100;
   float brain2Size = 90;
   double currentProbability = 0;
+  boolean strokeFlag = false;
   
   Brain(PImage brain) {
     this.background = brain;
@@ -79,6 +80,14 @@ class Brain extends GameMap {
         textSize(30);
         fill(255);
         text("STROKE RISK: " + String.format("%.1f%%", currentProbability * 100), 690, 110);
+        
+        if (currentRound != null && currentRound.inProgress() && strokeFlag == true) {
+          fill(255, 0, 0); 
+          rect(800, 650, 200, 140);
+          fill(255);
+          textSize(20);
+          text("BRAINSTROKE!\nROUNDS\nHAVE BEEN\nSKIPPED!", 837, 682);
+        }
     } catch (Exception e) {
       System.out.println("Game already won/lost");
     }
