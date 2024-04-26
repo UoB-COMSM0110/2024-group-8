@@ -4,7 +4,7 @@ class KidneyIntroduction extends Display {
     int entryTime = 0;
 
     KidneyIntroduction() {
-        this.background = loadImage("kidneyintro.png");
+        this.background = loadImage("kidneyintrod.png");
         this.background.resize(width, height);  
     }
 

@@ -5,7 +5,7 @@ class HeartIntroduction extends Display {
 
 
     HeartIntroduction() {
-        this.background = loadImage("heartintro.png");
+        this.background = loadImage("heartintrod.png");
         this.background.resize(width, height);  
     }
 

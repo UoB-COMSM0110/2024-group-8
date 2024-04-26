@@ -4,7 +4,7 @@ class LungsIntroduction extends Display {
     int entryTime = 0;
 
     LungsIntroduction() {
-        this.background = loadImage("lungsintro.png");
+        this.background = loadImage("lungsintrod.png");
        this.background.resize(width, height);  
     }
 
