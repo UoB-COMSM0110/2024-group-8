@@ -9,6 +9,20 @@ Immune System Defense is a fun and engaging game for children aged 9-14 - access
 
 
 ## Table of Contents
+- [Team](#team)
+- [Introduction](#introduction)
+- [Kanban Board | Photo Album](#kanban-board--photo-album)
+- [Immune System Defence](#immune-system-defence)
+- [Requirements:](#requirements)
+  - [Stakeholder:](#stakeholder)
+  - [User Stories:](#user-stories)
+  - [Use-case (player):](#use-case-player)
+- [Design](#design)
+- [Implementation](#implementation)
+- [Evaluation](#evaluation)
+- [Process](#process)
+- [Conclusion](#conclusion)
+- [Acknowledgements](#acknowledgements)
 
 
 # Team
@@ -46,7 +60,7 @@ From the winding pathways of the circulatory system to the confined spaces in th
 
 
 
-# Human Body Tower Defence.
+ Human Body Tower Defence.
 This game builds upon the widely popular Tower Defence style of game - where the aim is to protect a () from invaders. 
 Using the human body as a thematic device, the game aims to provide some educational value in reinforcing the understanding of the body's mechanism to fight infection - whilst being fun and engaging for all ages. 
 
@@ -166,7 +180,36 @@ Our first line of action, before beginning to code any of the software, was to t
 
 Attributes of the Towers class included cost, damage, projectile type, and attack range, defining their behaviour and effectiveness in combat. Similarly, the Enemies class encompassed various enemy types, each with distinct behaviours and attributes tailored to challenge players in different scenarios. For example, enemies in the Heart level might exhibit varying speeds to simulate blood flow, with faster enemies representing thinner blood towards the end of the level, providing an additional challenge as players progress. Additionally, our class diagram accounted for the dynamic nature of game environments by including Maps as a fundamental component. Maps encapsulated terrain features, obstacles, and environmental effects that influenced gameplay dynamics and strategic decisions. For instance, in the Lung level, a unique twist was introduced where the screen gradually darkened to simulate the invasion of fog into the lungs, adding an extra layer of challenge and immersion for players.
 
-# Heuristic Evaluation
+# Implementation
+
+
+# Evaluation
+# Process
+# Conclusion
+# Acknowledgements
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///////////
+Heuristic Evaluation
 <img width="583" alt="Screenshot 2024-03-11 at 10 33 24" src="https://github.com/UoB-COMSM0110/2024-group-8/assets/150365540/66edb8c0-d064-4447-a1e7-f6150c74d147">
 
 We received feedback from participants who took part in playing the game we had and recorded their suggestions and issues they encountered.
@@ -176,7 +219,9 @@ We received feedback from participants who took part in playing the game we had 
 3. Some suggests that we can use towers to block germs' path;
 
 
-# System Usability Scale (SUS) Analysis
+
+
+System Usability Scale (SUS) Analysis
 
 | Person | Level 1 | Level 2 |
 | ------ | ------- | ------- |
