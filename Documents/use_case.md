@@ -25,4 +25,4 @@
 - System presents high score to user.
 - System exits
 
-[Return to Main Report](https://github.com/UoB-COMSM0110/2024-group-8?tab=readme-ov-file#user-stories)
+[Return to Main Report](https://github.com/UoB-COMSM0110/2024-group-8?tab=readme-ov-file#use-cases)

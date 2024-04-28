@@ -14,6 +14,7 @@ Immune System Defense is a fun and engaging game for children aged 9-14 - access
 - [Requirements](#requirements)
     - [User Stories](#user-stories)
       - [A selection of user stories:](#a-selection-of-user-stories)
+      - [Use-cases](#use-cases)
 - [Kanban Board | Photo Album](#kanban-board--photo-album)
 - [Immune System Defence](#immune-system-defence)
 - [Design](#design)
@@ -28,7 +29,39 @@ Immune System Defense is a fun and engaging game for children aged 9-14 - access
 
 //TODO: ADD NAMES TO IMAGE. Ask Julia for website that font was made on.
 ![image](https://github.com/UoB-COMSM0110/2024-group-8/assets/117166891/c84a4952-3bef-4fa6-9d88-e8a353425535)
-We are Group 8: Arielle, Julia, Isaac, Vincent and Alex.
+<br> [ Figure X: Group 8 Photo ]
+
+
+<table align="center">
+  <thead>
+    <tr>
+      <th style="text-align:center">Name</th>
+      <th style="text-align:center">Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:center">Arielle Thijssen</td>
+      <td style="text-align:center"><a href="mailto:cc20357@bristol.ac.uk">cc20357@bristol.ac.uk</a></td>
+    </tr>
+    <tr>
+      <td style="text-align:center">Julia Alvarado Rubio</td>
+      <td style="text-align:center"><a href="mailto:if19426@bristol.ac.uk">if19426@bristol.ac.uk</a></td>
+    </tr>
+    <tr>
+      <td style="text-align:center">Kai Chun Cheung</td>
+      <td style="text-align:center"><a href="mailto:xz23031@bristol.ac.uk">xz23031@bristol.ac.uk</a></td>
+    </tr>
+    <tr>
+      <td style="text-align:center">Vincent Yaoyang Xu</td>
+      <td style="text-align:center"><a href="mailto:uv23869@bristol.ac.uk">uv23869@bristol.ac.uk</a></td>
+    </tr>
+    <tr>
+      <td style="text-align:center">Alexander Robinson</td>
+      <td style="text-align:center"><a href="mailto:xk23756@bristol.ac.uk">xk23756@bristol.ac.uk</a></td>
+    </tr>
+  </tbody>
+</table>
 
 # Introduction
 
@@ -44,10 +77,11 @@ Each environment (the brain, heart, lungs and kidney) features a different map a
 The player takes the opposing side: their goal is to kill the invaders before they make it to the end of their route (and therefore ‘enter’ into the rest of the body). By purchasing towers and placing them in optimal locations, a defensive map is built up. Provided with a limited amount of money (which only increases when enemies are killed), the player needs to form a strategy and optimise their approach for the best results. 
 
 <img src="https://github.com/UoB-COMSM0110/2024-group-8/blob/main/images/towers.gif?raw=true" width="600" />
-<br>[ Figure X: Overview of 'Tower' variants ]
+[ Figure X: Overview of 'Tower' variants ]<br><br>
+
 
 Do they buy more towers for greater coverage of the map, upgrade existing ones for greater attributes, or save up to buy something even more powerful in the next round?
-From the winding pathways of the circulatory system to the confined spaces in the lungs - each scenario presents a different gameplay and as such requires strategic adaptation, becoming more and more of a challenge as the game progresses. Adapting to follow feedback during development, we feel the game is pitched at the right level for most participants - winning is possible but only with proper thought and consideration. 
+From the winding pathways of the circulatory system to the confined spaces in the lungs - each scenario presents a different gameplay and as such requires strategic adaptation, becoming more and more of a challenge as the game progresses. Adapting to follow feedback during development, we feel the game is pitched at the right level for most of our target audience - winning is achievable with proper thought and consideration. 
 
 
 # Requirements
@@ -64,7 +98,7 @@ As outlined in detail in our [DesignOptions](Documents/DesignOptions.md) documen
 
     
 <img src="https://github.com/UoB-COMSM0110/2024-group-8/blob/main/images/Paper_Prototyping_with_overlay.gif?raw=true" width="600" /><br>
-[Figure X - Protype 1]<br><br>
+[ Figure X - Protype 1 "Human Body Defense" ]<br><br>
 
 We took time to think about the direction we wanted to explore. Ultimately, after discussing our ideas and having our peers simulate ‘playing’ the paper-prototypes, we decided as a team to develop a tower defence game centred around the human body. The idea was further refined to align with our goals and the needs of our stakeholders, until we arrived at our final concept for ‘Immune System Defense’.
 The educational objective of the game is to explain the overarching concepts of the [Germ Theory of Disease](https://en.wikipedia.org/wiki/Germ_theory_of_disease#:~:text=The%20germ%20theory%20of%20disease,animals%2C%20and%20other%20living%20hosts). <br><br>
@@ -91,6 +125,8 @@ Whilst exploring our prototype game, we asked a number of participants to think 
 
 Many of these stories are interconnected. The developer's goal of creating an educational game aligns with the teacher's objective of influencing students to engage with educational content, while the investor's desire for innovative gameplay ties into the player's interest in competitive multiplayer experiences. 
 
+#### Use-cases
+
 ![image](https://github.com/UoB-COMSM0110/2024-group-8/blob/14eae6550508dfedece6832377551c383a4d2dd4/images/use_case_diagram_b%26w.png)<br>
 [Figure X - An example Use-case Diagram created at the start of development]<br><br>
 
@@ -99,7 +135,7 @@ Use-case diagrams provide a visual framework for understanding the player's jour
 Each level progresses dynamically as the system generates new challenges, with enemies spawning and traversing the screen. The player strategically places defensive units to attack the enemy, with the objective of maximising damage with minimal expenditure. 
 
 Throughout this process, the system presents options for tower types and locations, guided by the player's decisions and resource management mechanics. 
-This iterative cycle continues until the level's objectives are met or the player's lives are expended. These user interactions and system responses (FIgure X) are essential in understanding the flow of gameplay and ensuring that the game development aligns with stakeholder objectives and user expectations.
+This iterative cycle continues until the level's objectives are met or the player's lives are expended. These user interactions and system responses (Figure X) are essential in understanding the flow of gameplay and ensuring that the game development aligns with stakeholder objectives and user expectations.
 
 ++ Do we need to add "Functional Requirements"?
 
@@ -154,26 +190,6 @@ https://github.com/UoB-COMSM0110/2024-group-8/blob/main/Paper_Prototyping/Idea_1
 ![image](https://github.com/UoB-COMSM0110/2024-group-8/blob/main/images/use-case-diagram.jpeg?raw=true)
 
 
-- Player start the games
-- Player choose which map to play
-
- In level #?
-- System generates new level
-- User waits for ‘enemies’ to spawn and move throughout screen
-- User places units to protect towers. 
-- System uses enemy sprites to attack players towers. Randomised attacks within set limits dependant on progress through game. 
-- System presents options of tower to user and highlights areas where the towers can be places
-- User selects type of towers and locations to place in.
-- System decrements (money??) total i.e. reduces amount of towers that can be placed.
-- User limited by this feature.
-
- ..Repeats until user lives are expended or no enemies left..
-
-- Player reaches end of level and game ends
-- System asks player for Name
-- System checks database for existing name and if unique, stores score in database
-- System presents high score to user.
-- System exits
 
 # Design
 The system architecture of a game developed by software engineers encompasses various components and layers that work together to deliver a cohesive and engaging gaming experience. It specifies the internal components that make up a computer system and describes how these are interconnected, how they interact with each other, and how they are managed. Ada computer science. (n.d.). Ada Computer Science. Class diagrams and behavioural diagrams play essential roles in specifying and visualising the system architecture of a game developed by software engineers.
