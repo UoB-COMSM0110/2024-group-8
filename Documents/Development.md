@@ -61,6 +61,10 @@ introduces a behaviour that fundamentally alters the physics.
 
 
 # Requirement:
+
+In the early stages of designing "Human Body Tower Defence," our team started an extensive ideation process to determine the game's direction and features. We began by brainstorming ideas based on our collective interests and educational objectives. Through meetings, discussions and online research, we came up with the idea to incorporate educational themes of human anatomy with classic games of tower defence to create not only an entertaining game, but also educational.To further refine our ideas, we analysed competitor games, and asked for feedback from potential users. This process allowed us to evaluate the feasibility and potential impact of various concepts and make informed decisions about the game's direction. Ultimately, we decided as a team to develop a tower defence game centred around the human body, therefore creating an innovative and educational gaming experience that would resonate with our target audience of students, educators, and gamers alike. Through ongoing collaboration and feedback, we continue to refine and evolve our game concept, ensuring that it aligns with our goals and meets the needs of our stakeholders.
+In crafting the early stages design for "Human Body Tower Defence," we utilised a comprehensive approach that incorporated use case diagrams and user stories to guide our ideation process.
+
 ## Stakeholder:
 - Developer
 - Project Manager
@@ -80,6 +84,13 @@ Extended:
 - IP Holder (if using specific assets or images/themes)
 
 ## User Stories:
+
+User stories play a crucial role in the game development process as they serve as a bridge between stakeholders' needs and the implementation of game features. They provide a concise yet comprehensive description of the desired functionality from various perspectives, guiding the development team in understanding and prioritising requirements. In the context of our "Human Body Tower Defence" game, user stories like wanting to create an educational game popular among students, desiring competitive multiplayer functionality, aiming for innovative gameplay to attract players, influencing students to learn about the effects of germs on human organs, and ensuring all project requirements are met are invaluable. These user stories offer specific insights into the motivations and objectives of different stakeholders, allowing the team to tailor the game experience to meet their needs effectively. 
+
+For this, we asked for different participants to try our then not-finished game and asked them to express their thoughts while playing our game. Simultaneously, we wrote down the key feedback ideas we were getting to further develop our game. For instance, the developer's goal of creating an educational game aligns with the teacher's objective of influencing students to engage with educational content, while the investor's desire for innovative gameplay ties into the player's interest in competitive multiplayer experiences.
+
+By incorporating these user stories into our development process, we ensure that our game not only meets stakeholder expectations but also delivers a compelling and meaningful experience to our target audience.
+
 - As the developer, I want to make an educational game that is popular among students, so that my game could have more exposure to the younger generation and I could earn more reputation in game industry.
 
 - As the player, I want to play a tower defence game with another user, so that I can have a competition with my friends and have some fun.
@@ -93,6 +104,11 @@ Extended:
 ## Use-case (player):
 
 <img width="1199" alt="use-case" src="https://github.com/UoB-COMSM0110/2024-group-8/assets/150365540/20e3a851-e34f-4282-8676-5f56ff0f7fb1">
+
+Within the development process of "Human Body Tower Defence," the use case diagram provides a visual framework for understanding the player's journey through the game. The gameplay sequence begins with the player starting the game and selecting a map, crucial decisions that set the stage for their experience.The four different maps we decided to develop were journeys through the brain, lungs, heart, and kidneys. These parts of the human body are not only crucial for our functioning but also offer various aspects that we could include in our game, such as depicting smoke emanating from the lungs. Each level progresses dynamically as the system generates new challenges, with enemies spawning and traversing the screen. The player strategically places defensive units to protect towers, facing randomized attacks orchestrated by the system. Throughout this process, the system presents options for tower types and locations, guided by the player's decisions and resource management mechanics. 
+
+This iterative cycle continues until the level's objectives are met or the player's lives are expended. These user interactions and system responses, as depicted in the use case diagram, are essential in understanding the flow of gameplay and ensuring that the game development aligns with stakeholder objectives and user expectations. Through the incorporation of user stories from various perspectives, such as the developer's aim for educational impact and the player's responses, we ensure that our game design remains focused on delivering a compelling and engaging experience that meets the needs of our target audience.
+
 
 - Player start the games
 - Player choose which map to play

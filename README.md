@@ -8,7 +8,7 @@ Immune System Defense is a fun and engaging game for children aged 9-14 - access
 [Click here to watch Immune System Defense: The Trailer.](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 
 
-## Table of Contents
+### Contents
 - [Team](#team)
 - [Introduction](#introduction)
 - [Requirements](#requirements)
@@ -16,10 +16,6 @@ Immune System Defense is a fun and engaging game for children aged 9-14 - access
       - [A selection of user stories:](#a-selection-of-user-stories)
 - [Kanban Board | Photo Album](#kanban-board--photo-album)
 - [Immune System Defence](#immune-system-defence)
-- [Requirements:](#requirements-1)
-  - [Stakeholder:](#stakeholder)
-  - [User Stories:](#user-stories-1)
-  - [Use-case (player):](#use-case-player)
 - [Design](#design)
 - [Implementation](#implementation)
 - [Evaluation](#evaluation)
@@ -38,16 +34,12 @@ We are Group 8: Arielle, Julia, Isaac, Vincent and Alex.
 
 Immune System Defense builds upon the classic style of Tower-Defense games, combining invader-germs with the quirks of the human body and its complex defence mechanisms that fight infection. As a team, we enjoyed exploring the parallels that could be drawn between the two and developed the game as a concept which is semi-educational, being somewhat informative about germ theory whilst remaining fun and fresh to the player.
 
-///GIF OF GAMEPLAY///
+///TO DO: GIF OF GAMEPLAY///
 
 
 Each environment (the brain, heart, lungs and kidney) features a different map and different environmental conditions. For example, within the heart the blood viscosity is varied from high to low as the game progresses, increasing the speed at which the viruses travel - making them much more difficult to kill. In the brain, the threat of an aneurysm leaves the player exposed to an explosive end to gameplay .
 
-///confirm if correct////.
-
-
-//Image of 4x4 each gameplay//
-
+///TO DO: Image of 4x4 each map of gameplay///
 
 The player takes the opposing side: their goal is to kill the invaders before they make it to the end of their route (and therefore ‘enter’ into the rest of the body). By purchasing towers and placing them in optimal locations, a defensive map is built up. Provided with a limited amount of money (which only increases when enemies are killed), the player needs to form a strategy and optimise their approach for the best results. 
 
@@ -106,6 +98,8 @@ Each level progresses dynamically as the system generates new challenges, with e
 Throughout this process, the system presents options for tower types and locations, guided by the player's decisions and resource management mechanics. 
 This iterative cycle continues until the level's objectives are met or the player's lives are expended. These user interactions and system responses (FIgure X) are essential in understanding the flow of gameplay and ensuring that the game development aligns with stakeholder objectives and user expectations.
 
+++ Do we need to add "Functional Requirements"?
+
 
 # [Kanban Board](https://dramatic-clutch-d0e.notion.site/Group-8-Agile-Project-Management-bb06c2d090f543f9b2f2d0bc953f3d08) | [Photo Album](https://photos.app.goo.gl/bzxtsnzj8zHpwrJ6A)
 
@@ -151,44 +145,6 @@ https://github.com/UoB-COMSM0110/2024-group-8/blob/main/Paper_Prototyping/Idea_1
 
 </div>
 
-# Requirements:
-
-In the early stages of designing "Human Body Tower Defence," our team started an extensive ideation process to determine the game's direction and features. We began by brainstorming ideas based on our collective interests and educational objectives. Through meetings, discussions and online research, we came up with the idea to incorporate educational themes of human anatomy with classic games of tower defence to create not only an entertaining game, but also educational.To further refine our ideas, we analysed competitor games, and asked for feedback from potential users. This process allowed us to evaluate the feasibility and potential impact of various concepts and make informed decisions about the game's direction. Ultimately, we decided as a team to develop a tower defence game centred around the human body, therefore creating an innovative and educational gaming experience that would resonate with our target audience of students, educators, and gamers alike. Through ongoing collaboration and feedback, we continue to refine and evolve our game concept, ensuring that it aligns with our goals and meets the needs of our stakeholders.
-In crafting the early stages design for "Human Body Tower Defence," we utilised a comprehensive approach that incorporated use case diagrams and user stories to guide our ideation process.
-
-## Stakeholder:
-- Developer
-- Project Manager
-- Player (child, teen, young adult, casual user…)
-- Investor - institutional/ individual
-- Teachers ( of user)
-- Assessors/ Teaching staff
-
-Extended:
-- Educational Authorities 
-- Government (inc. EU for GD-PR etc.)
-- Regulator
-- Advertiser (if relevant)
-- Publisher
-- Distributor
-- Retailer
-- IP Holder (if using specific assets or images/themes)
-
-## User Stories:
-
-User stories play a crucial role in the game development process as they serve as a bridge between stakeholders' needs and the implementation of game features. They provide a concise yet comprehensive description of the desired functionality from various perspectives, guiding the development team in understanding and prioritising requirements. In the context of our "Human Body Tower Defence" game, user stories like wanting to create an educational game popular among students, desiring competitive multiplayer functionality, aiming for innovative gameplay to attract players, influencing students to learn about the effects of germs on human organs, and ensuring all project requirements are met are invaluable. These user stories offer specific insights into the motivations and objectives of different stakeholders, allowing the team to tailor the game experience to meet their needs effectively. 
-
-For this, we asked for different participants to try our then not-finished game and asked them to express their thoughts while playing our game. Simultaneously, we wrote down the key feedback ideas we were getting to further develop our game. For instance, the developer's goal of creating an educational game aligns with the teacher's objective of influencing students to engage with educational content, while the investor's desire for innovative gameplay ties into the player's interest in competitive multiplayer experiences.
-
-
-
-By incorporating these user stories into our development process, we ensure that our game not only meets stakeholder expectations but also delivers a compelling and meaningful experience to our target audience.
-
-## Use-case (player):
-
-Within the development process of "Human Body Tower Defence," the use case diagram provides a visual framework for understanding the player's journey through the game. The gameplay sequence begins with the player starting the game and selecting a map, crucial decisions that set the stage for their experience.The four different maps we decided to develop were journeys through the brain, lungs, heart, and kidneys. These parts of the human body are not only crucial for our functioning but also offer various aspects that we could include in our game, such as depicting smoke emanating from the lungs. Each level progresses dynamically as the system generates new challenges, with enemies spawning and traversing the screen. The player strategically places defensive units to protect towers, facing randomized attacks orchestrated by the system. Throughout this process, the system presents options for tower types and locations, guided by the player's decisions and resource management mechanics. 
-
-This iterative cycle continues until the level's objectives are met or the player's lives are expended. These user interactions and system responses, as depicted in the use case diagram, are essential in understanding the flow of gameplay and ensuring that the game development aligns with stakeholder objectives and user expectations. Through the incorporation of user stories from various perspectives, such as the developer's aim for educational impact and the player's responses, we ensure that our game design remains focused on delivering a compelling and engaging experience that meets the needs of our target audience.
 
 <img width="1199" alt="use-case" src="https://github.com/UoB-COMSM0110/2024-group-8/assets/150365540/20e3a851-e34f-4282-8676-5f56ff0f7fb1">
 
