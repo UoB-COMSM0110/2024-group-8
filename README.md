@@ -1,6 +1,11 @@
 
 ![image](https://github.com/UoB-COMSM0110/2024-group-8/blob/main/images/banner.png?raw=true)
 
+### <i>Doctor! We need YOUR help! Protect the body’s immune system from invaders by placing and upgrading towers to fight back against infection. Use your intuition and skill to race against the clock and protect the host. It’s up to YOU to save our patient… time is ticking…</i>
+
+Immune System Defense is a fun and engaging game for children aged 9-14 - accessible to beginners but also providing a challenge for those more experienced. Based upon the classic style of Tower-Defense games, it combines strategy and action with  a link to the human body and some of its defence mechanisms. Players buy and place towers which attempt to attack, or slow down invaders. Make it to the end of the rounds without losing all your lives to win.
+
+
 ![image](https://github.com/UoB-COMSM0110/2024-group-8/assets/117166891/c84a4952-3bef-4fa6-9d88-e8a353425535)
 We are Group 8: Arielle, Julia, Isaac, Vincent and Alex.
 
@@ -34,8 +39,8 @@ Prototype Video: https://github.com/UoB-COMSM0110/2024-group-8/blob/main/Paper_P
 <!-- Center-aligned table with borders in GitHub Markdown -->
 <div align="center">
 
-| Place them strategically to defeat the enemies! |
-|:-----------------------------------------------:|
+|                                   Place them strategically to defeat the enemies!                                   |
+| :-----------------------------------------------------------------------------------------------------------------: |
 | <img src="https://github.com/UoB-COMSM0110/2024-group-8/blob/main/images/defeatenemies.gif?raw=true" width="300" /> |
 
 </div>
@@ -195,18 +200,18 @@ We received feedback from participants who took part in playing the game we had 
 
 # System Usability Scale (SUS) Analysis
 
-| Person  | Level 1 | Level 2 | 
-| ------- | ------- | ------- |
-|    1    |    70   |   76    |
-|    2    |    85   |   81    |
-|    3    |   72.5  |   70    |
-|    4    |    85   |   81    |
-|    5    |    67   |   69    |
-|    6    |    85   |  85.5   |
-|    7    |    90   |  92.5   |
-|    8    |    75   |   72    |
-|    9    |    76   |   74    |
-|    10   |    71   |   71    |
+| Person | Level 1 | Level 2 |
+| ------ | ------- | ------- |
+| 1      | 70      | 76      |
+| 2      | 85      | 81      |
+| 3      | 72.5    | 70      |
+| 4      | 85      | 81      |
+| 5      | 67      | 69      |
+| 6      | 85      | 85.5    |
+| 7      | 90      | 92.5    |
+| 8      | 75      | 72      |
+| 9      | 76      | 74      |
+| 10     | 71      | 71      |
 
 
 
