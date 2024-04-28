@@ -53,7 +53,11 @@ Using the human body as a thematic device, the game aims to provide some educati
 The novel aspects of this game are the ways in which interventions - either clinical or otherwise allow the user to influence in-game physics - from dieuretic tablets that increase the flow of invaders through the kidney, to smoke inhalation which weakens the health of enemies in the lungs.  
 
 
+
+
 Prototype Video: https://github.com/UoB-COMSM0110/2024-group-8/blob/main/Paper_Prototyping/Idea_1_Paper_Prototyping.mp4
+
+<img src="https://github.com/UoB-COMSM0110/2024-group-8/blob/main/images/Paper_Prototyping_with_overlay.gif?raw=true" width="400" />
 
 # Immune System Defence
 <table>
