@@ -5,11 +5,46 @@
 
 Immune System Defense is a fun and engaging game for children aged 9-14 - accessible to beginners but also providing a challenge for those more experienced. Based upon the classic style of Tower-Defense games, it combines strategy and action with  a link to the human body and some of its defence mechanisms. Players buy and place towers which attempt to attack, or slow down invaders. Make it to the end of the rounds without losing all your lives to win.
 
+[Click here to watch Immune System Defense: The Trailer.](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 
+
+## Table of Contents
+
+
+# Team
+
+//TODO: ADD NAMES TO IMAGE. Ask Julia for website that font was made on.
 ![image](https://github.com/UoB-COMSM0110/2024-group-8/assets/117166891/c84a4952-3bef-4fa6-9d88-e8a353425535)
 We are Group 8: Arielle, Julia, Isaac, Vincent and Alex.
 
+# Introduction
+
+Immune System Defense builds upon the classic style of Tower-Defense games, combining invader-germs with the quirks of the human body and its complex defence mechanisms that fight infection. As a team, we enjoyed exploring the parallels that could be drawn between the two and developed the game as a concept which is semi-educational, being somewhat informative about germ theory whilst remaining fun and fresh to the player.
+
+///GIF OF GAMEPLAY///
+
+
+Each environment (the brain, heart, lungs and kidney) features a different map and different environmental conditions. For example, within the heart the blood viscosity is varied from high to low as the game progresses, increasing the speed at which the viruses travel - making them much more difficult to kill. In the brain, the threat of an aneurysm leaves the player exposed to an explosive end to gameplay .
+
+///confirm if correct////.
+
+
+//Image of 4x4 each gameplay//
+
+
+The player takes the opposing side: their goal is to kill the invaders before they make it to the end of their route (and therefore ‘enter’ into the rest of the body). By purchasing towers and placing them in optimal locations, a defensive map is built up. Provided with a limited amount of money (which only increases when enemies are killed), the player needs to form a strategy and optimise their approach for the best results. 
+
+Do they buy more towers for greater coverage of the map, upgrade existing ones for greater attributes, or save up to buy something even more powerful in the next round?
+From the winding pathways of the circulatory system to the confined spaces in the lungs - each scenario presents a different gameplay and as such requires strategic adaptation, becoming more and more of a challenge as the game progresses. Adapting to follow feedback during development, we feel the game is pitched at the right level for most participants - winning is possible but only with proper thought and consideration. 
+
+
+
+
+
 # [Kanban Board](https://dramatic-clutch-d0e.notion.site/Group-8-Agile-Project-Management-bb06c2d090f543f9b2f2d0bc953f3d08) | [Photo Album](https://photos.app.goo.gl/bzxtsnzj8zHpwrJ6A)
+
+
+
 
 # Human Body Tower Defence.
 This game builds upon the widely popular Tower Defence style of game - where the aim is to protect a () from invaders. 
@@ -218,4 +253,5 @@ We received feedback from participants who took part in playing the game we had 
 W test statistic = 5.5;
 Number of non-tied pairs (n) = 7;
 
+<i>In our project, we've chosen to use the spelling 'defense' rather than the traditional British-English spelling of 'defence'. As the original 'bloons' game originated in the US and subsequent releases have kept this spelling, we felt it was best to use the americanised version, to stay in-keeping with the theme. </i>
 
