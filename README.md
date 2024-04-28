@@ -11,11 +11,14 @@ Immune System Defense is a fun and engaging game for children aged 9-14 - access
 ## Table of Contents
 - [Team](#team)
 - [Introduction](#introduction)
+- [Requirements](#requirements)
+    - [User Stories](#user-stories)
+      - [A selection of user stories:](#a-selection-of-user-stories)
 - [Kanban Board | Photo Album](#kanban-board--photo-album)
 - [Immune System Defence](#immune-system-defence)
-- [Requirements:](#requirements)
+- [Requirements:](#requirements-1)
   - [Stakeholder:](#stakeholder)
-  - [User Stories:](#user-stories)
+  - [User Stories:](#user-stories-1)
   - [Use-case (player):](#use-case-player)
 - [Design](#design)
 - [Implementation](#implementation)
@@ -52,7 +55,56 @@ Do they buy more towers for greater coverage of the map, upgrade existing ones f
 From the winding pathways of the circulatory system to the confined spaces in the lungs - each scenario presents a different gameplay and as such requires strategic adaptation, becoming more and more of a challenge as the game progresses. Adapting to follow feedback during development, we feel the game is pitched at the right level for most participants - winning is possible but only with proper thought and consideration. 
 
 
+# Requirements
 
+In the early stages of “Immune System Defense”, the group spent time researching what already exists (and playing a good number of different games). We became interested in developing a game with an educational concept - one that could be light-hearted, but still inform and help children develop understanding of important concepts.
+
+As outlined in detail in our [DesignOptions](Documents/DesignOptions.md) document, we created two proposals with a prototype of each game.
+
+1) A Tower Defense game (in the style of Bloons <LINK>) where the player journeys through the Human Body and protects it from invading germs.
+   [Prototype 1](https://github.com/UoB-COMSM0110/2024-group-8/blob/515eef5207a725f6a846677a536173a56bfc6542/Paper_Prototyping/Idea_1_Paper_Prototyping.mp4)
+   
+2) An Arcade side-scroller where the player travels through time from the dawn of humanity to the modern day. [Prototype 2](https://github.com/UoB-COMSM0110/2024-group-8/blob/515eef5207a725f6a846677a536173a56bfc6542/Paper_Prototyping/idea2.mp4) </br></br>
+  
+
+    
+<img src="https://github.com/UoB-COMSM0110/2024-group-8/blob/main/images/Paper_Prototyping_with_overlay.gif?raw=true" width="400" /><br>
+[Figure X - Protype 1]<br><br>
+
+We took time to think about the direction we wanted to explore. Ultimately, after discussing our ideas and having our peers simulate ‘playing’ the paper-prototypes, we decided as a team to develop a tower defence game centred around the human body. The idea was further refined to align with our goals and the needs of our stakeholders, until we arrived at our final concept for ‘Immune System Defense’.
+The educational objective of the game is to explain the overarching concepts of the [Germ Theory of Disease](https://en.wikipedia.org/wiki/Germ_theory_of_disease#:~:text=The%20germ%20theory%20of%20disease,animals%2C%20and%20other%20living%20hosts). <br><br>
+By modelling infectious diseases as ‘germs’ who are independant life-forms that invade the body, we are teaching the notion that pathogens are agents of disease - and not going into too much detail so as to spoil the fun aspects of the game.
+### User Stories
+In crafting the early stages design for "Human Body Tower Defence," we utilised a comprehensive approach that incorporated use case diagrams and user stories to guide our ideation process.<br><br>
+User stories play a crucial role in the game development process. They act as a bridge between stakeholders' needs and the implementation of game features. In the context of our game, user stories helped us to develop with a wide range of stakeholders in mind. As we chose to develop our game for children aged 9-14, reminding ourselves to regularly think as though we were those stakeholders helped to inform our game design.<br><br>
+If the game is to be effective, it will need to be popular among school-age children. It will need to strike the right balance between *educational, but boring* and *fun, but without the opportunity to learn*.
+
+Whilst exploring our prototype game, we asked a number of participants to think in the minds of their younger-selves and speak aloud their thoughts. Several useful comments have helped shape the functionality of the game, changing our approach.<br>
+
+#### A selection of user stories:
+> As the developer, I want to make an educational game that is popular among students, so that my game could have more exposure to the younger generation and I could earn more reputation in game industry.
+
+> As the player, I want to play a tower defence game with another user, so that I can have a competition with my friends and have some fun.
+
+> As the investor, I want to invest in the game development industry by developing an innovative game to attract more players, so that I can start earning money from that game.
+
+> As the teachers, I want to influence my students to play an educational game, so that the student can learn more about the effect of germs on different organ on a human, 
+
+> As the project manager, I want to ensure the game developed is meeting all the requirements, so that the project can be successful.
+
+
+
+Many of these stories are interconnected. The developer's goal of creating an educational game aligns with the teacher's objective of influencing students to engage with educational content, while the investor's desire for innovative gameplay ties into the player's interest in competitive multiplayer experiences. 
+
+![image](https://github.com/UoB-COMSM0110/2024-group-8/blob/14eae6550508dfedece6832377551c383a4d2dd4/images/use_case_diagram_b%26w.png)<br>
+[Figure X - An example Use-case Diagram created at the start of development]<br><br>
+
+Use-case diagrams provide a visual framework for understanding the player's journey through the game. In Figure X, the gameplay sequence begins with the player starting the game and selecting a map, a choice which will alter many features of the game-play (e.g. environmental conditions, type of enemy and general look and feel). Four different maps are available to choose: journeys through the brain, lungs, heart, and kidneys. These parts of the human body are not only crucial for our functioning but also offer various aspects that we could include in our game, such as depicting smoke emanating from the lungs. 
+
+Each level progresses dynamically as the system generates new challenges, with enemies spawning and traversing the screen. The player strategically places defensive units to attack the enemy, with the objective of maximising damage with minimal expenditure. 
+
+Throughout this process, the system presents options for tower types and locations, guided by the player's decisions and resource management mechanics. 
+This iterative cycle continues until the level's objectives are met or the player's lives are expended. These user interactions and system responses (FIgure X) are essential in understanding the flow of gameplay and ensuring that the game development aligns with stakeholder objectives and user expectations.
 
 
 # [Kanban Board](https://dramatic-clutch-d0e.notion.site/Group-8-Agile-Project-Management-bb06c2d090f543f9b2f2d0bc953f3d08) | [Photo Album](https://photos.app.goo.gl/bzxtsnzj8zHpwrJ6A)
@@ -71,7 +123,8 @@ The novel aspects of this game are the ways in which interventions - either clin
 
 Prototype Video: https://github.com/UoB-COMSM0110/2024-group-8/blob/main/Paper_Prototyping/Idea_1_Paper_Prototyping.mp4
 
-<img src="https://github.com/UoB-COMSM0110/2024-group-8/blob/main/images/Paper_Prototyping_with_overlay.gif?raw=true" width="400" />
+https://github.com/UoB-COMSM0110/2024-group-8/blob/main/Paper_Prototyping/Idea_1_Paper_Prototyping.mp4
+
 
 # Immune System Defence
 <table>
@@ -127,15 +180,7 @@ User stories play a crucial role in the game development process as they serve a
 
 For this, we asked for different participants to try our then not-finished game and asked them to express their thoughts while playing our game. Simultaneously, we wrote down the key feedback ideas we were getting to further develop our game. For instance, the developer's goal of creating an educational game aligns with the teacher's objective of influencing students to engage with educational content, while the investor's desire for innovative gameplay ties into the player's interest in competitive multiplayer experiences.
 
-> As the developer, I want to make an educational game that is popular among students, so that my game could have more exposure to the younger generation and I could earn more reputation in game industry.
 
-> As the player, I want to play a tower defence game with another user, so that I can have a competition with my friends and have some fun.
-
-> As the investor, I want to invest in the game development industry by developing an innovative game to attract more players, so that I can start earning money from that game.
-
-> As the teachers, I want to influence my students to play an educational game, so that the student can learn more about the effect of germs on different organ on a human, 
-
-> As the project manager, I want to ensure the game developed is meeting all the requirements, so that the project can be successful.
 
 By incorporating these user stories into our development process, we ensure that our game not only meets stakeholder expectations but also delivers a compelling and meaningful experience to our target audience.
 
