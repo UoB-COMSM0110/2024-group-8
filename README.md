@@ -18,7 +18,6 @@ Immune System Defense is a fun and engaging game for children aged 9-14 - access
 - [Design](#design)
 - [Kanban Board | Photo Album](#kanban-board--photo-album)
 - [Immune System Defence](#immune-system-defence)
-- [Design](#design-1)
 - [Implementation](#implementation)
 - [Evaluation](#evaluation)
 - [Process](#process)
@@ -159,6 +158,9 @@ Similarly, the Enemies class encompassed various enemy types, each with distinct
 
 Additionally, our class diagram accounted for the dynamic nature of game environments by including Maps as a fundamental component. Maps encapsulated terrain features, obstacles, and environmental effects that influenced gameplay dynamics and strategic decisions. For instance, in the Lung level, a unique twist was introduced where the screen gradually darkened to simulate the invasion of fog into the lungs, adding an extra layer of challenge and immersion for players.
 
+<img src="https://raw.githubusercontent.com/UoB-COMSM0110/2024-group-8/main/images/classdiagram.jpg" width="600" />
+[ Figure X : Class Diagram, showing a simplified overview of the program structure. ]<br><br>
+
 <strong>Important classes and methods</strong>
 
 <strong>[GameMap](https://github.com/UoB-COMSM0110/2024-group-8/blob/85e3e4c7fc3b75109118b1c7180e39c246f5fe5e/Prototype/GameMap.pde) class</strong>    
@@ -231,17 +233,6 @@ https://github.com/UoB-COMSM0110/2024-group-8/blob/main/Paper_Prototyping/Idea_1
 <img width="1199" alt="use-case" src="https://github.com/UoB-COMSM0110/2024-group-8/assets/150365540/20e3a851-e34f-4282-8676-5f56ff0f7fb1">
 
 ![image](https://github.com/UoB-COMSM0110/2024-group-8/blob/main/images/use-case-diagram.jpeg?raw=true)
-
-
-
-# Design
-The system architecture of a game developed by software engineers encompasses various components and layers that work together to deliver a cohesive and engaging gaming experience. It specifies the internal components that make up a computer system and describes how these are interconnected, how they interact with each other, and how they are managed. Ada computer science. (n.d.). Ada Computer Science. Class diagrams and behavioural diagrams play essential roles in specifying and visualising the system architecture of a game developed by software engineers.
-
-![Class Diagram](https://github.com/UoB-COMSM0110/2024-group-8/blob/main/images/classdiagram.jpg?raw=true)
-
-Our first line of action, before beginning to code any of the software, was to think about what exactly we wanted the base of our game to be; what objects, players, scenarios we wanted. For this, we began sketching a class diagram of our soon-to-be game. The class diagram served as a visual representation of these elements, illustrating their relationships, attributes, and behaviours. Each class in the diagram encapsulated specific functionalities and characteristics, defining the building blocks of our game's architecture.  Our class diagram meticulously outlined the key game entities essential for "Human Body Tower Defence," including Towers, Enemies, and Maps, among others. Each class encapsulated specific functionalities and attributes crucial for their respective roles within the game. For instance, the Towers class served as a base class from which different tower types were inherited. These tower types, such as Tower A or Tower B, inherited common functionalities while introducing unique characteristics.
-
-Attributes of the Towers class included cost, damage, projectile type, and attack range, defining their behaviour and effectiveness in combat. Similarly, the Enemies class encompassed various enemy types, each with distinct behaviours and attributes tailored to challenge players in different scenarios. For example, enemies in the Heart level might exhibit varying speeds to simulate blood flow, with faster enemies representing thinner blood towards the end of the level, providing an additional challenge as players progress. Additionally, our class diagram accounted for the dynamic nature of game environments by including Maps as a fundamental component. Maps encapsulated terrain features, obstacles, and environmental effects that influenced gameplay dynamics and strategic decisions. For instance, in the Lung level, a unique twist was introduced where the screen gradually darkened to simulate the invasion of fog into the lungs, adding an extra layer of challenge and immersion for players.
 
 # Implementation
 
