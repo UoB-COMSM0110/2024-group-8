@@ -17,11 +17,11 @@ Immune System Defense is a fun and engaging game for children aged 9-14 - access
       - [Use-cases](#use-cases)
 - [Design](#design)
     - [Visual Design](#visual-design)
-- [Kanban Board | Photo Album](#kanban-board--photo-album)
-- [Immune System Defence](#immune-system-defence)
 - [Implementation](#implementation)
 - [Evaluation](#evaluation)
 - [Process](#process)
+- [Kanban Board | Photo Album](#kanban-board--photo-album)
+- [Immune System Defence](#immune-system-defence)
 - [Conclusion](#conclusion)
 - [Acknowledgements](#acknowledgements)
 
@@ -222,7 +222,25 @@ Some modelling is required for the projectile motion - both the sprite it is tar
 In <strong>[Heart](https://github.com/UoB-COMSM0110/2024-group-8/blob/dedbc5b92a19e8bddd87b5666a1e49cc7c7376d7/Prototype/Heart.pde) class</strong>, method <strong>decreaseBloodViscosity()</strong> is a good example of how using inherited classes for each of the levels allows specific physical properties to be substantially altered without disrupting the normal function of the parent class. There are similar adaptations across the other levels.
 
 ### Visual Design
-Assets have come from a wide variety of places - some are retrieved from internet searches, others created by the team.
+Assets have come from a wide variety of places - some are retrieved from internet searches, others created by the team.  ////////TO DO: Slightly more text needed here/////
+
+# Implementation  
+
+# Evaluation  
+
+# Process  
+(Process: Currently 390/750 words)
+
+The process to develop the game was fairly intuitive. At the outset, all members of the group came together to brainstorm and think carefully about our ideas. We discussed a whole range of project ideas that the team welcomed and encouraged. Working with interested and passionate people was great - the project was propelled along as exciting ideas were discussed and then attempts were made to implement quickly after.   <br><br> 
+Whilst roles were not initially formally assigned, they developed as we all followed a path-of-least-resistance. Kai Chun got the group up and running with an underlying structure for the base-code. Once this had been established, Arielle and Vincent joined him in developing the code structure and creating the start of a working prototype. Julia and Alex took on roles as researchers and in creating documentation. Julia added start pages and audio to the game, Alex developed the video portion and both developed the overall report.<br><br>
+As a structure, this worked well although the work-load was not always even distributed. It was found that once one person had started working on the code development, it was difficult to share this out without creating more complexities than were required. We found that these clearly delineated roles worked out best and allowed us each to take an element of the project as our own.<br><br>
+If repeating this project with the knowledge that we now have, it might be wise to establish right from the beginning these roles - rather than from a few weeks in. Now that we have the understanding of each others’ talents and abilities, processes could be better run concurrently. 
+
+<img src="https://github.com/UoB-COMSM0110/2024-group-8/blob/d762340a11e16ad27b0533fd30b93b436d8ccb9a/images/kanban_march.png" width="600" />
+
+Figure X: Our KanBan board in March, during the development process.<br><br>
+The kanban board (Figure X) was useful. It was great for establishing the initial ideas and concepts of the game. However, our development process meant that new ideas were often thought up and developed in a single motion - meaning that on occasion, a proposal was made and coded without being added to the board. If it wasn’t possible to develop into a neat solution, this addition was discarded. Additional items on the kanban board could have been useful here, but for our development process this wasn’t the case. If undertaken again, with better understanding of the Processing/Java development process, greater optimisation could be achieved using the board to its full potential. 
+
 
 
 <br><br><br><br><br><br><br><br>
@@ -277,11 +295,7 @@ https://github.com/UoB-COMSM0110/2024-group-8/blob/main/Paper_Prototyping/Idea_1
 
 ![image](https://github.com/UoB-COMSM0110/2024-group-8/blob/main/images/use-case-diagram.jpeg?raw=true)
 
-# Implementation
 
-
-# Evaluation
-# Process
 # Conclusion
 # Acknowledgements
 
