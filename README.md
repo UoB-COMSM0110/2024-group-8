@@ -64,6 +64,31 @@ Immune System Defense is a fun and engaging game for children aged 9-14 - access
   </tbody>
 </table>
 
+# Immune System Defence
+<table>
+  <tr>
+    <td>
+      <!-- Your first block of text and image -->
+      <strong>Select the map and the difficulty!</strong><br>
+      <img src="https://github.com/UoB-COMSM0110/2024-group-8/blob/main/images/map&difficulty.gif?raw=true" width="300" />
+    </td>
+    <td>
+      <!-- Your second block of text and image -->
+      <strong>Explore the different towers and their properties!</strong><br>
+      <img src="https://github.com/UoB-COMSM0110/2024-group-8/blob/main/images/towers.gif?raw=true" width="600" />
+    </td>
+  </tr>
+</table>
+
+<!-- Center-aligned table with borders in GitHub Markdown -->
+<div align="center">
+
+|                                   Place them strategically to defeat the enemies!                                   |
+| :-----------------------------------------------------------------------------------------------------------------: |
+| <img src="https://github.com/UoB-COMSM0110/2024-group-8/blob/main/images/defeatenemies.gif?raw=true" width="300" /> |
+
+</div>
+
 # Introduction
 
 Immune System Defense builds upon the classic style of Tower-Defense games, combining invader-germs with the quirks of the human body and its complex defence mechanisms that fight infection. As a team, we enjoyed exploring the parallels that could be drawn between the two and developed the game as a concept which is semi-educational, being somewhat informative about germ theory whilst remaining fun and fresh to the player.
@@ -258,33 +283,6 @@ Using the human body as a thematic device, the game aims to provide some educati
 
 The novel aspects of this game are the ways in which interventions - either clinical or otherwise allow the user to influence in-game physics - from dieuretic tablets that increase the flow of invaders through the kidney, to smoke inhalation which weakens the health of enemies in the lungs.  
 
-
-
-
-# Immune System Defence
-<table>
-  <tr>
-    <td>
-      <!-- Your first block of text and image -->
-      <strong>Select the map and the difficulty!</strong><br>
-      <img src="https://github.com/UoB-COMSM0110/2024-group-8/blob/main/images/map&difficulty.gif?raw=true" width="300" />
-    </td>
-    <td>
-      <!-- Your second block of text and image -->
-      <strong>Explore the different towers and their properties!</strong><br>
-      <img src="https://github.com/UoB-COMSM0110/2024-group-8/blob/main/images/towers.gif?raw=true" width="600" />
-    </td>
-  </tr>
-</table>
-
-<!-- Center-aligned table with borders in GitHub Markdown -->
-<div align="center">
-
-|                                   Place them strategically to defeat the enemies!                                   |
-| :-----------------------------------------------------------------------------------------------------------------: |
-| <img src="https://github.com/UoB-COMSM0110/2024-group-8/blob/main/images/defeatenemies.gif?raw=true" width="300" /> |
-
-</div>
 
 # Conclusion
 # Acknowledgements
