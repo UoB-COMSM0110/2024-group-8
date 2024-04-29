@@ -202,7 +202,9 @@ Additionally, our class diagram accounted for the dynamic nature of game environ
 
 Upon starting the coding part of a game, we also developed a comunication diagram that would help us visualize the interactions between objects and the different classes we may could want to develop later on.
 By mapping these interactions, we were able to understand what type of actions each element, such as towers and enemies, needed.
+
 <img src="https://github.com/UoB-COMSM0110/2024-group-8/blob/main/images/communicationdiagram.png?raw=true" />
+[ Figure X : Communication Diagram, showing a different classes and methods we wanted to implement. ]<br><br>
 
 <strong>Important classes and methods</strong>
 
