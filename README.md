@@ -15,9 +15,10 @@ Immune System Defense is a fun and engaging game for children aged 9-14 - access
     - [User Stories](#user-stories)
       - [A selection of user stories:](#a-selection-of-user-stories)
       - [Use-cases](#use-cases)
+- [Design](#design)
 - [Kanban Board | Photo Album](#kanban-board--photo-album)
 - [Immune System Defence](#immune-system-defence)
-- [Design](#design)
+- [Design](#design-1)
 - [Implementation](#implementation)
 - [Evaluation](#evaluation)
 - [Process](#process)
@@ -130,14 +131,56 @@ Many of these stories are interconnected. The developer's goal of creating an ed
 ![image](https://github.com/UoB-COMSM0110/2024-group-8/blob/14eae6550508dfedece6832377551c383a4d2dd4/images/use_case_diagram_b%26w.png)<br>
 [Figure X - An example Use-case Diagram created at the start of development]<br><br>
 
-Use-case diagrams provide a visual framework for understanding the player's journey through the game. In Figure X, the gameplay sequence begins with the player starting the game and selecting a map, a choice which will alter many features of the game-play (e.g. environmental conditions, type of enemy and general look and feel). Four different maps are available to choose: journeys through the brain, lungs, heart, and kidneys. These parts of the human body are not only crucial for our functioning but also offer various aspects that we could include in our game, such as depicting smoke emanating from the lungs. 
+Use-case diagrams provide a visual framework for understanding the player's journey through the game. In Figure X, the gameplay sequence begins with the player starting the game and selecting a map, a choice which will alter many features of the game-play (e.g. environmental conditions, type of enemy and general look and feel). Four different maps are available to choose: journeys through the brain, lungs, heart, and kidneys. These parts of the human body are not only crucial for our functioning but also offer various aspects that we could include in our game, such as depicting smoke emanating from the lungs. [Read about this Use-case in more depth.](https://github.com/UoB-COMSM0110/2024-group-8/blob/4455d5cc72482ded24f00e5d92964fe2df8ef78e/Documents/use_case.md)
 
 Each level progresses dynamically as the system generates new challenges, with enemies spawning and traversing the screen. The player strategically places defensive units to attack the enemy, with the objective of maximising damage with minimal expenditure. 
+
+![image](https://github.com/UoB-COMSM0110/2024-group-8/blob/85e3e4c7fc3b75109118b1c7180e39c246f5fe5e/images/use-case-diagram.jpeg)<br>
+[Figure X - A use-case diagram showing UML with include and extend relationships]<br><br>
 
 Throughout this process, the system presents options for tower types and locations, guided by the player's decisions and resource management mechanics. 
 This iterative cycle continues until the level's objectives are met or the player's lives are expended. These user interactions and system responses (Figure X) are essential in understanding the flow of gameplay and ensuring that the game development aligns with stakeholder objectives and user expectations.
 
 ++ Do we need to add "Functional Requirements"?
+
+# Design
+System architecture describes how we use our software to achieve our goal of a playable game. In this section we discuss the underlying base code of our game and provide detail on several important classes and methods, along with their specific uses.
+
+Our design process was primarily collaborative. Through discussion, we created an initial class diagram on paper, which then took over a near-by whiteboard. It was useful to talk though this process as a team - creating a visual representation of these elements, and discussing/debating how relationships, attributes, and behaviours should be interrelated.
+
+![image](https://github.com/UoB-COMSM0110/2024-group-8/blob/85e3e4c7fc3b75109118b1c7180e39c246f5fe5e/images/developing_class_diagram_whiteboard.png)<br>
+[ Figure X : Initial class diagram. Developing our game structure collaboratively ]<br><br>
+
+The class diagram in Figure X outlines the key classes and entities required in “Immune System Defense”, including Towers, Enemies, and Maps, among others. Each class encapsulated specific functionalities and attributes crucial for their respective roles within the game. 
+
+For instance, the Towers class served as a base class from which different tower types were inherited. These tower types, such as Tower A or Tower B, inherited common functionalities while introducing unique characteristics. Attributes of the Towers class included cost, damage, projectile type, and attack range, defining their behaviour and effectiveness in combat. 
+
+Similarly, the Enemies class encompassed various enemy types, each with distinct behaviours and attributes tailored to challenge players in different scenarios. For example, enemies in the Heart level exhibit varying speeds to simulate blood flow, with enemies travelling faster through thinner blood as the body becomes weaker - providing an additional challenge as players progress. 
+
+Additionally, our class diagram accounted for the dynamic nature of game environments by including Maps as a fundamental component. Maps encapsulated terrain features, obstacles, and environmental effects that influenced gameplay dynamics and strategic decisions. For instance, in the Lung level, a unique twist was introduced where the screen gradually darkened to simulate the invasion of fog into the lungs, adding an extra layer of challenge and immersion for players.
+
+<strong>Important classes and methods</strong>
+
+<strong>[GameMap](https://github.com/UoB-COMSM0110/2024-group-8/blob/85e3e4c7fc3b75109118b1c7180e39c246f5fe5e/Prototype/GameMap.pde) class</strong>    
+GameMap initialises and provides the ‘map’, the specific path on which the sprites will travel. 
+
+<strong>[Round](https://github.com/UoB-COMSM0110/2024-group-8/blob/85e3e4c7fc3b75109118b1c7180e39c246f5fe5e/Prototype/Round.pde) class</strong> with <strong>[RunningGame](https://github.com/UoB-COMSM0110/2024-group-8/blob/85e3e4c7fc3b75109118b1c7180e39c246f5fe5e/Prototype/RunningGame.pde) class</strong><br>
+These govern the ‘running’ of the specific level and the overall game. Between the two, a number of instance-specific variables govern how the round will run. <strong>RunningGame</strong> sits above Round, which combined with Round, keeps track of the user’s success (and failure) through the entire process.
+
+in MapSelection, <strong>[handleMapSelection](https://github.com/UoB-COMSM0110/2024-group-8/blob/85e3e4c7fc3b75109118b1c7180e39c246f5fe5e/Prototype/MapSelection.pde) (PImage mapImage, int x, int y, int outlineSize, GameState state, GameMap map){ … </strong><br>
+This command illustrates how the program passes information back and forth between classes. [GameState and GameMap](https://github.com/UoB-COMSM0110/2024-group-8/blob/85e3e4c7fc3b75109118b1c7180e39c246f5fe5e/Prototype/Prototype.pde) are enumerated types, passing just the information of what "type" the selection is, not the entire data.
+
+<strong>[Heart](https://github.com/UoB-COMSM0110/2024-group-8/blob/85e3e4c7fc3b75109118b1c7180e39c246f5fe5e/Prototype/Heart.pde)</strong>, <strong>[Lung](https://github.com/UoB-COMSM0110/2024-group-8/blob/85e3e4c7fc3b75109118b1c7180e39c246f5fe5e/Prototype/Lung.pde)</strong>, <strong>[Kidney](https://github.com/UoB-COMSM0110/2024-group-8/blob/85e3e4c7fc3b75109118b1c7180e39c246f5fe5e/Prototype/Kidney.pde)... class</strong> extends GameMap.  
+Specifics for each map are contained within child classes of GameMap. This avoids any kind of ‘config’ file that would be separate to the program. All initial game-state data is saved within Processing classes.
+
+<strong>[Germ](https://github.com/UoB-COMSM0110/2024-group-8/blob/85e3e4c7fc3b75109118b1c7180e39c246f5fe5e/Prototype/Germ.pde) class</strong> with <strong>[GermSprite](https://github.com/UoB-COMSM0110/2024-group-8/blob/85e3e4c7fc3b75109118b1c7180e39c246f5fe5e/Prototype/GermSprite.pde) class</strong>   
+This is the parent class for all instances of pathogen invader. Its constructor method is the superclass called when they are instantiated. GermSprite contains the image-handling logic for displaying the correct picture and its orientation for each instance.
+
+
+
+
+
+<br><br><br><br><br><br><br><br>
 
 
 # [Kanban Board](https://dramatic-clutch-d0e.notion.site/Group-8-Agile-Project-Management-bb06c2d090f543f9b2f2d0bc953f3d08) | [Photo Album](https://photos.app.goo.gl/bzxtsnzj8zHpwrJ6A)
