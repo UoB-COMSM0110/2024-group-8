@@ -243,7 +243,8 @@ The kanban board (Figure X) was useful. It was great for establishing the initia
 
 
 
-<br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+*remainder of report to be finished*
 
 
 # [Kanban Board](https://dramatic-clutch-d0e.notion.site/Group-8-Agile-Project-Management-bb06c2d090f543f9b2f2d0bc953f3d08) | [Photo Album](https://photos.app.goo.gl/bzxtsnzj8zHpwrJ6A)
@@ -258,11 +259,6 @@ Using the human body as a thematic device, the game aims to provide some educati
 The novel aspects of this game are the ways in which interventions - either clinical or otherwise allow the user to influence in-game physics - from dieuretic tablets that increase the flow of invaders through the kidney, to smoke inhalation which weakens the health of enemies in the lungs.  
 
 
-
-
-Prototype Video: https://github.com/UoB-COMSM0110/2024-group-8/blob/main/Paper_Prototyping/Idea_1_Paper_Prototyping.mp4
-
-https://github.com/UoB-COMSM0110/2024-group-8/blob/main/Paper_Prototyping/Idea_1_Paper_Prototyping.mp4
 
 
 # Immune System Defence
@@ -289,12 +285,6 @@ https://github.com/UoB-COMSM0110/2024-group-8/blob/main/Paper_Prototyping/Idea_1
 | <img src="https://github.com/UoB-COMSM0110/2024-group-8/blob/main/images/defeatenemies.gif?raw=true" width="300" /> |
 
 </div>
-
-
-<img width="1199" alt="use-case" src="https://github.com/UoB-COMSM0110/2024-group-8/assets/150365540/20e3a851-e34f-4282-8676-5f56ff0f7fb1">
-
-![image](https://github.com/UoB-COMSM0110/2024-group-8/blob/main/images/use-case-diagram.jpeg?raw=true)
-
 
 # Conclusion
 # Acknowledgements
