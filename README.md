@@ -16,6 +16,7 @@ Immune System Defense is a fun and engaging game for children aged 9-14 - access
       - [A selection of user stories:](#a-selection-of-user-stories)
       - [Use-cases](#use-cases)
 - [Design](#design)
+    - [Visual Design](#visual-design)
 - [Kanban Board | Photo Album](#kanban-board--photo-album)
 - [Immune System Defence](#immune-system-defence)
 - [Implementation](#implementation)
@@ -178,8 +179,50 @@ Specifics for each map are contained within child classes of GameMap. This avoid
 <strong>[Germ](https://github.com/UoB-COMSM0110/2024-group-8/blob/85e3e4c7fc3b75109118b1c7180e39c246f5fe5e/Prototype/Germ.pde) class</strong> with <strong>[GermSprite](https://github.com/UoB-COMSM0110/2024-group-8/blob/85e3e4c7fc3b75109118b1c7180e39c246f5fe5e/Prototype/GermSprite.pde) class</strong>   
 This is the parent class for all instances of pathogen invader. Its constructor method is the superclass called when they are instantiated. GermSprite contains the image-handling logic for displaying the correct picture and its orientation for each instance.
 
+<strong>[Cell](https://github.com/UoB-COMSM0110/2024-group-8/blob/dedbc5b92a19e8bddd87b5666a1e49cc7c7376d7/Prototype/Cell.pde) class</strong>  
+With attribute ‘isPath’ and ‘buildable’. The cells divide the playable screen into a grid - which the user can select to place towers on. Its constructor method assigns it cartesian coordinates (x,y).
 
+<strong>[DefenceTower](https://github.com/UoB-COMSM0110/2024-group-8/blob/dedbc5b92a19e8bddd87b5666a1e49cc7c7376d7/Prototype/DefenceTower.pde) abstract class</strong>  
+The parent class for all of the towers. This provides the underlying functionality that can be extended for the specific cases.  
 
+<strong>[TowerA](https://github.com/UoB-COMSM0110/2024-group-8/blob/dedbc5b92a19e8bddd87b5666a1e49cc7c7376d7/Prototype/TowerA.pde) extends [ShootingTower](https://github.com/UoB-COMSM0110/2024-group-8/blob/dedbc5b92a19e8bddd87b5666a1e49cc7c7376d7/Prototype/ShootingTower.pde)</strong>  
+Here is an example of how inheritance of classes has helped the flexibility of the program.
+
+```processing
+protected TowerA(int x, int y, int sprite){
+    super(x, y, sprite, "Basic Antibody", 0);
+    // Array to hold the properties of an instance of TowerA, throught it's upgrade stages:
+    this.properties = new int[][] {{ 75, 125, 200, 450 }, // Cost from intial to Upgrade 3
+                      { 0, 0, 0, 2 }, // Projectile type
+                      { 2, 2, 5, 7 }, // Damage Capability
+                      { 1, 1, 1, 3 }, // Shots fired per second
+                      { 2, 3, 3, 3 }  // Range
+                }; 
+      assignIntialProperties();
+  } 
+
+```
+A generic tower DefenceTower is extended to form different objects for the user to place. One of these ‘ShootingTower’ emits projectiles which are aimed towards the enemies. Each projectile is a seperate instance of the <Strong>[Projectile](https://github.com/UoB-COMSM0110/2024-group-8/blob/dedbc5b92a19e8bddd87b5666a1e49cc7c7376d7/Prototype/Projectile.pde) class</strong>.
+
+```processing
+Class Projectile {
+  float posX;
+  float posY;
+  int speed;
+  PImage image;
+  int damageCapability;
+  Germ target;
+  boolean onScreen = true;
+  boolean targetAlive = true;
+  ...
+
+```
+Some modelling is required for the projectile motion - both the sprite it is targeting and the projectile are moving - so their collision needs to be realistic, timely and accurate if it is to positively affect the game play. 
+
+In <strong>[Heart](https://github.com/UoB-COMSM0110/2024-group-8/blob/dedbc5b92a19e8bddd87b5666a1e49cc7c7376d7/Prototype/Heart.pde) class</strong>, method <strong>decreaseBloodViscosity()</strong> is a good example of how using inherited classes for each of the levels allows specific physical properties to be substantially altered without disrupting the normal function of the parent class. There are similar adaptations across the other levels.
+
+### Visual Design
+Assets have come from a wide variety of places - some are retrieved from internet searches, others created by the team.
 
 
 <br><br><br><br><br><br><br><br>
