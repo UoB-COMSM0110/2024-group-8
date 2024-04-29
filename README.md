@@ -198,6 +198,12 @@ Additionally, our class diagram accounted for the dynamic nature of game environ
 <img src="https://raw.githubusercontent.com/UoB-COMSM0110/2024-group-8/main/images/classdiagram.jpg" width="600" />
 [ Figure X : Class Diagram, showing a simplified overview of the program structure. ]<br><br>
 
+### Communication Diagram
+
+Upon starting the coding part of a game, we also developed a comunication diagram that would help us visualize the interactions between objects and the different classes we may could want to develop later on.
+By mapping these interactions, we were able to understand what type of actions each element, such as towers and enemies, needed.
+<img src="https://github.com/UoB-COMSM0110/2024-group-8/blob/main/images/communicationdiagram.png?raw=true" />
+
 <strong>Important classes and methods</strong>
 
 <strong>[GameMap](https://github.com/UoB-COMSM0110/2024-group-8/blob/85e3e4c7fc3b75109118b1c7180e39c246f5fe5e/Prototype/GameMap.pde) class</strong>    
