@@ -1,5 +1,5 @@
 
-System Usability Scale (SUS) Analysis
+## System Usability Scale (SUS) Analysis
 
 | Person | Level 1 | Level 2 |
 | ------ | ------- | ------- |
@@ -16,3 +16,9 @@ System Usability Scale (SUS) Analysis
 
 W test statistic = 3;
 Number of non-tied pairs (n) = 10;
+
+[Reference](https://www.statology.org/wilcoxon-signed-rank-test-calculator/)
+
+<img width="400" alt="Graph" src="https://github.com/UoB-COMSM0110/2024-group-8/blob/b4e88766d9316618132e7051be17ee6065ec861f/images/SystemUsabilityScale.png">
+
+[Return to Main Report](https://github.com/UoB-COMSM0110/2024-group-8/tree/main?tab=readme-ov-file#evaluation)
