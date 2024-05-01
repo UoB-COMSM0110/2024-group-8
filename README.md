@@ -94,8 +94,6 @@ Immune System Defense builds upon the classic style of Tower-Defense games, comb
 
 Each environment (the brain, heart, lungs and kidney) features a different map and different environmental conditions. For example, within the heart the blood viscosity is varied from high to low as the game progresses, increasing the speed at which the viruses travel - making them much more difficult to kill. In the brain, the threat of an aneurysm leaves the player exposed to an explosive end to gameplay .
 
-https://github.com/UoB-COMSM0110/2024-group-8/blob/12b1fd20d1e6cc3cff6c8f697038c620ddd60c98/images/4_levels.png
-
 The player takes the opposing side: their goal is to kill the invaders before they make it to the end of their route (and therefore ‘enter’ into the rest of the body). By purchasing towers and placing them in optimal locations, a defensive map is built up. Provided with a limited amount of money (which only increases when enemies are killed), the player needs to form a strategy and optimise their approach for the best results. 
 
 ![image](https://github.com/UoB-COMSM0110/2024-group-8/blob/12b1fd20d1e6cc3cff6c8f697038c620ddd60c98/images/4_levels.png)<br>
@@ -115,10 +113,8 @@ As outlined in detail in our [DesignOptions](Documents/DesignOptions.md) documen
    [Prototype 1](https://github.com/UoB-COMSM0110/2024-group-8/blob/515eef5207a725f6a846677a536173a56bfc6542/Paper_Prototyping/Idea_1_Paper_Prototyping.mp4)
    
 2) An Arcade side-scroller where the player travels through time from the dawn of humanity to the modern day. [Prototype 2](https://github.com/UoB-COMSM0110/2024-group-8/blob/515eef5207a725f6a846677a536173a56bfc6542/Paper_Prototyping/idea2.mp4) </br></br>
-  
-
     
-<img src="https://github.com/UoB-COMSM0110/2024-group-8/blob/main/images/Paper_Prototyping_with_overlay.gif?raw=true" width="600" /><br>
+![image](https://github.com/UoB-COMSM0110/2024-group-8/blob/main/images/Paper_Prototyping_with_overlay.gif?raw=true)<br>
 [ Figure X - Protype 1 "Human Body Defense" ]<br><br>
 
 We took time to think about the direction we wanted to explore. Ultimately, after discussing our ideas and having our peers simulate ‘playing’ the paper-prototypes, we decided as a team to develop a tower defence game centred around the human body. The idea was further refined to align with our goals and the needs of our stakeholders, until we arrived at our final concept for ‘Immune System Defense’.
