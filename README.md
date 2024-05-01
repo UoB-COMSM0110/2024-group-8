@@ -145,19 +145,17 @@ Many of these stories are interconnected. The developer's goal of creating an ed
 #### Use-cases
 
 ![image](https://github.com/UoB-COMSM0110/2024-group-8/blob/14eae6550508dfedece6832377551c383a4d2dd4/images/use_case_diagram_b%26w.png)<br>
-[Figure X - An example Use-case Diagram created at the start of development]<br><br>
+[ Figure X - An example Use-case Diagram created at the start of development ]<br><br>
 
 Use-case diagrams provide a visual framework for understanding the player's journey through the game. In Figure X, the gameplay sequence begins with the player starting the game and selecting a map, a choice which will alter many features of the game-play (e.g. environmental conditions, type of enemy and general look and feel). Four different maps are available to choose: journeys through the brain, lungs, heart, and kidneys. These parts of the human body are not only crucial for our functioning but also offer various aspects that we could include in our game, such as depicting smoke emanating from the lungs. [Read about this Use-case in more depth.](https://github.com/UoB-COMSM0110/2024-group-8/blob/4455d5cc72482ded24f00e5d92964fe2df8ef78e/Documents/use_case.md)
 
 Each level progresses dynamically as the system generates new challenges, with enemies spawning and traversing the screen. The player strategically places defensive units to attack the enemy, with the objective of maximising damage with minimal expenditure. 
 
 ![image](https://github.com/UoB-COMSM0110/2024-group-8/blob/85e3e4c7fc3b75109118b1c7180e39c246f5fe5e/images/use-case-diagram.jpeg)<br>
-[Figure X - A use-case diagram showing UML with include and extend relationships]<br><br>
+[ Figure X - A use-case diagram showing UML with include and extend relationships ]<br><br>
 
 Throughout this process, the system presents options for tower types and locations, guided by the player's decisions and resource management mechanics. 
 This iterative cycle continues until the level's objectives are met or the player's lives are expended. These user interactions and system responses (Figure X) are essential in understanding the flow of gameplay and ensuring that the game development aligns with stakeholder objectives and user expectations.
-
-++ Do we need to add "Functional Requirements"?
 
 # Design
 System architecture describes how we use our software to achieve our goal of a playable game. In this section we discuss the underlying base code of our game and provide detail on several important classes and methods, along with their specific uses.
@@ -165,7 +163,7 @@ System architecture describes how we use our software to achieve our goal of a p
 Our design process was primarily collaborative. Through discussion, we created an initial class diagram on paper, which then took over a near-by whiteboard. It was useful to talk though this process as a team - creating a visual representation of these elements, and discussing/debating how relationships, attributes, and behaviours should be interrelated.
 
 ![image](https://github.com/UoB-COMSM0110/2024-group-8/blob/85e3e4c7fc3b75109118b1c7180e39c246f5fe5e/images/developing_class_diagram_whiteboard.png)<br>
-[ Figure X : Initial class diagram. Developing our game structure collaboratively ]<br><br>
+[ Figure X : Initial class diagram. Developing our game structure collaboratively ]<br>
 
 The class diagram in Figure X outlines the key classes and entities required in “Immune System Defense”, including Towers, Enemies, and Maps, among others. Each class encapsulated specific functionalities and attributes crucial for their respective roles within the game. 
 
@@ -250,12 +248,12 @@ Assets have come from a wide variety of places - some are retrieved from interne
 
 # Implementation 
 
-Developing the logic of "Human Body Tower Defence" presented several challenges, particularly in integrating the rules of tower defense games with educational elements related to human anatomy and defense mechanisms.
-Once we had an idea, we started developing the game. We were encouraged to use **Processing**, which is a very good tool for designing a visual program where coders can develop things that would appear on screen. However, Processing uses a version of the Java language, something we were not that familiar when we started with this project.
+Developing the logic of "Human Body Tower Defence" presented several challenges, particularly in integrating the rules of tower defense games with educational elements related to human anatomy and defense mechanisms.<br>
+Once we had an idea, we started developing the game. We were encouraged to use **Processing**, which is a very good tool for designing a visual program where coders can develop things that would appear on screen. However, Processing uses a version of the Java language, something we were not that familiar when we started with this project.<br><br>
 One of the primary hurdles was making ourselves comfortable with the Processing environment and its unique syntax. Transitioning to a new programming language and development environment required adapting our coding style and acquiring familiarity with Processing's syntax conventions. This involved grasping concepts such as defining classes, manipulating variables and functions, and discovering and using built-in libraries for graphical rendering and user interaction, all while simultaneously learning Java from scratch.
 Furthermore, integrating complex functionalities like button animation, screen transitions, and dynamic element rendering introduced additional challenges. Despite these obstacles, we navigated the learning curve and very often revisited our previous code to make changes.
 
-One of the first challenges we were presented with was deciding **what parts of the human body presented enough interesting aspects that we could incorporate into our game later on as twists**. For example, by incorporating the lung map we realised we could develop a teaching element about the concerns of smoking. We thought that the twist could be that the screen would be filled with smoke, making it harder to see the maps and the germs coming in. Besides implementing twists, we also had to consider which organs had suitable environmental conditions we could enhance in our maps to maintain the user's interest. Another example concerns the viscosity of blood, which we could adjust by slowing down the movement of germs.
+One of the first challenges we were presented with was deciding **what parts of the human body presented enough interesting aspects that we could incorporate into our game later on as twists**. For example, by incorporating the lung map we realised we could develop a teaching element about the concerns of smoking. We thought that the twist could be that the screen would be filled with smoke, making it harder to see the maps and the germs coming in. <br><br>Besides implementing twists, we also had to consider which organs had suitable environmental conditions we could enhance in our maps to maintain the user's interest. Another example concerns the viscosity of blood, which we could adjust by slowing down the movement of germs.
 After a day or so of thinking and each of us developing ideas; we ended up reuniting and choosing which four core organs would be interesting to implement and have an organ-related twist. These four were the heart; with a blood clot, the brain; with a brain stroke, the kidneys; with the kidney stone, and the lungs, with smoke filling up the lungs. 
 
 One of the challenges we encountered was **developing the collision detection system**. We aimed for it to simulate reality, rather than merely having static towers firing projectiles in a predetermined direction. Our development team then were faced with the task of enabling towers to track the direction of germs, thereby adjusting the firing direction of the towers accordingly.
@@ -267,7 +265,7 @@ The solution we arrived at involved assigning each tower a specific range. Upon 
 
 Moreover, **designing different types of enemies** was another challenging task to think about. We aimed to avoid repetitive enemy encounters throughout the game, as we believed it would lessen player engagement. We thought about a variety of enemy characters, each requiring distinct towers for defeat. In our design approach, we aimed to offer players a wide range of enemies throughout their gaming experience. This not only kept the gameplay fresh but also encouraged players to use their money wisely and strategize continuously so they could defeat the strongest enemies.
 
-Another important aspect of our game was the **visual and auditory elements** around it. We recognized the critical role these elements play in immersing players in the gaming experience. With the goal of designing a visually aesthetic and captivating map, we spent considerable time designing organ maps and their corresponding paths for the germs, programming the placement parameters for towers (and making sure it was clear and easy to understand), and designing map-specific introduction and tutorial screens to guide players through the game mechanics. Furthermore, as the game progressed in development, we decided to add auditory elements to enrich the player’s experience. We strategically incorporated sound effects to evoke feelings of achievement, such as the sound of a germ being defeated or the satisfying ring when purchasing a tower. These auditory cues were instrumental in heightening player engagement and cultivating a sense of accomplishment throughout the game.
+Another important aspect of our game was the **visual and auditory elements** of it. We recognized the critical role these elements play in immersing players in the gaming experience. With the goal of designing a visually aesthetic and captivating map, we spent considerable time designing organ maps and their corresponding paths for the germs, programming the placement parameters for towers (and making sure it was clear and easy to understand), and designing map-specific introduction and tutorial screens to guide players through the game mechanics. Furthermore, as the game progressed in development, we decided to add auditory elements to enrich the player’s experience. We strategically incorporated sound effects to evoke feelings of achievement, such as the sound of a germ being defeated or the satisfying ring when purchasing a tower. These auditory cues were instrumental in heightening player engagement and cultivating a sense of accomplishment throughout the game.
 
 
 # Evaluation  
@@ -288,7 +286,7 @@ Through these discussions, we recorded observations including:
 
 #### Heuristic Evaluation
 
-Click here to see Table X, a summary of the output from an Heuristic Evaluation.<br>
+[Click here](https://github.com/UoB-COMSM0110/2024-group-8/blob/f63903dfe317e8de8c604450e2999d6f6530bf14/images/heuristic.png) to see a summary of the output from our Heuristic Evaluation.<br>
 #### Response to Qualitative Evaluations:
 The Qualitative Evaluations provided a number of easily-identifiable fixes that we explored as a team before attempting to tackle. We found it really interesting as a number of comments came up across the board that we hadn’t considered. 
 As a response to qualitative evaluations, we:<br>
@@ -309,7 +307,7 @@ Whilst conducting quantitative evaluations, we used a Microsoft Form to capture 
 
 We undertook a Wilcoxon signed-rank test on the SUS data, showing clear significance. 
 For a set of 10 participants, a W test statistic of 3 was calculated. Using the chart of known values, this shows that a significance level of 0.01 was achieved, or 99% certainty that there is a real difference between the ‘easy’ and ‘hard’ selections.
-<br><br> 
+<br>
 This is helpful to us to see that there is a clear difference between the two modes - when looking at the mean of the values (Easy: 66.75, Hard: 78.6), we can see the jump between the two, but are provided with no statistical information about how reliable the data is. 
 
 ### Continuous testing
@@ -327,11 +325,7 @@ A number of our testers have told us they want to keep playing and have pulled t
 
 
 
-
-
-
 # Process  
-(Process: Currently 654/750 words)
 
 The process to develop the game was fairly intuitive. At the outset, all members of the group came together to brainstorm and think carefully about our ideas. We discussed a whole range of project ideas that the team welcomed and encouraged. Working with interested and passionate people was great - the project was propelled along as exciting ideas were discussed and then attempts were made to implement quickly after.   <br><br> 
 Whilst roles were not initially formally assigned, they developed as we all followed a path-of-least-resistance. Kai Chun got the group up and running with an underlying structure for the base-code. Once this had been established, Arielle and Vincent joined him in developing the code structure and creating the start of a working prototype. Julia and Alex took on roles as researchers and in creating documentation. Julia added start pages and audio to the game, as well as editing and finalizing the tutorial page, Alex developed the video portion and both developed the overall report.<br><br>
@@ -343,27 +337,9 @@ If repeating this project with the knowledge that we now have, it might be wise 
 Figure X: Our KanBan board in March, during the development process.<br><br>
 The kanban board (Figure X) was useful. It was great for establishing the initial ideas and concepts of the game. However, our development process meant that new ideas were often thought up and developed in a single motion - meaning that on occasion, a proposal was made and coded without being added to the board. If it wasn’t possible to develop into a neat solution, this addition was discarded. Additional items on the kanban board could have been useful here, but for our development process this wasn’t the case. If undertaken again, with better understanding of the Processing/Java development process, greater optimisation could be achieved using the board to its full potential. 
 
-In our project development, we primarily utilized Processing as our coding platform, which provided robust tools for visual rendering and interaction design. However, we encountered challenges with Processing, particularly in the initial weeks of our project, as we familiarized ourselves with its syntax, libraries, and debugging processes. Nonetheless, as we gained proficiency, Processing became indispensable for implementing game mechanics and visual elements. For visual design, Adobe Photoshop served as our main tool, offering a versatile platform for creating characters, environments, and user interface elements with precision and detail. We sourced audio resources from royalty-free websites to enhance the immersive experience of the game, selecting sound effects.Through an iterative development process, we continuously refined and optimised our code, visual assets, and audio elements based on feedback and testing results. Detailed documentation of coding practices, visual design guidelines, and audio specifications ensured consistency and facilitated knowledge sharing among team members. 
-Initially, we decided on meetings a couple of times a week during the early stages of our project. As our project progressed, we continued to meet regularly as a team, even further into the later stages of development. However, we also found that we maintained high levels of productivity when working independently at times. This approach allowed us to accommodate everyone's unique schedules and preferences while ensuring progress on the project. Our team's adeptness at balancing collaborative meetings with individual work sessions relied heavily on our exceptional communication skills.
+In our project development, we primarily utilized Processing as our coding platform, which provided robust tools for visual rendering and interaction design. However, we encountered challenges with Processing, particularly in the initial weeks of our project, as we familiarized ourselves with its syntax, libraries, and debugging processes. Nonetheless, as we gained proficiency, Processing became indispensable for implementing game mechanics and visual elements. For visual design, Adobe Photoshop served as our main tool, offering a versatile platform for creating characters, environments, and user interface elements with precision and detail. We sourced audio resources from royalty-free websites to enhance the immersive experience of the game, selecting sound effects.<br>Through an iterative development process, we continuously refined and optimised our code, visual assets, and audio elements based on feedback and testing results. Detailed documentation of coding practices, visual design guidelines, and audio specifications ensured consistency and facilitated knowledge sharing among team members. 
+Initially, we decided on meetings a couple of times a week during the early stages of our project. As our project progressed, we continued to meet regularly as a team, even further into the later stages of development. However, we also found that we maintained high levels of productivity when working independently at times. This approach allowed us to accommodate everyone's unique schedules and preferences while ensuring progress on the project. Our team's adeptness at balancing collaborative meetings with individual work sessions relied heavily on our exceptional communication skills.<br>
 Overall, our balanced blend of collaborative meetings and individual work sessions, supported by strong communication, contributed to the success and efficiency of our project development process.
-
-
-
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-*remainder of report to be finished*
-
-
-# [Kanban Board](https://dramatic-clutch-d0e.notion.site/Group-8-Agile-Project-Management-bb06c2d090f543f9b2f2d0bc953f3d08) | [Photo Album](https://photos.app.goo.gl/bzxtsnzj8zHpwrJ6A)
-
-
-
-
- Human Body Tower Defence.
-This game builds upon the widely popular Tower Defence style of game - where the aim is to protect a () from invaders. 
-Using the human body as a thematic device, the game aims to provide some educational value in reinforcing the understanding of the body's mechanism to fight infection - whilst being fun and engaging for all ages. 
-
-The novel aspects of this game are the ways in which interventions - either clinical or otherwise allow the user to influence in-game physics - from dieuretic tablets that increase the flow of invaders through the kidney, to smoke inhalation which weakens the health of enemies in the lungs.  
-
 
 # Conclusion
 In reflecting on the entirety of our project, "Immune System Defense," we definitely feel proud of achieving something that we initially thought would be unattainable. When we were first presented with the task of developing a game, we all thought we were going to really struggle not only in developing the coding mechanics of it, but also in coming up with an idea that even we would like to play in our free time.
@@ -379,25 +355,27 @@ The challenges we were presented with - learning new software, the development p
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ///////////
+
+*to be discarded*
+
+
+# [Kanban Board](https://dramatic-clutch-d0e.notion.site/Group-8-Agile-Project-Management-bb06c2d090f543f9b2f2d0bc953f3d08) | [Photo Album](https://photos.app.goo.gl/bzxtsnzj8zHpwrJ6A)
+
+
+
+
+ Human Body Tower Defence.
+This game builds upon the widely popular Tower Defence style of game - where the aim is to protect a () from invaders. 
+Using the human body as a thematic device, the game aims to provide some educational value in reinforcing the understanding of the body's mechanism to fight infection - whilst being fun and engaging for all ages. 
+
+The novel aspects of this game are the ways in which interventions - either clinical or otherwise allow the user to influence in-game physics - from dieuretic tablets that increase the flow of invaders through the kidney, to smoke inhalation which weakens the health of enemies in the lungs.  
+
+
+
+
+
+
 Heuristic Evaluation
 <img width="583" alt="Screenshot 2024-03-11 at 10 33 24" src="https://github.com/UoB-COMSM0110/2024-group-8/assets/150365540/66edb8c0-d064-4447-a1e7-f6150c74d147">
 
