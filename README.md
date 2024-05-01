@@ -290,7 +290,7 @@ Another important aspect of our game was the **visual and auditory elements** ar
 # Evaluation  
 
 # Process  
-(Process: Currently 390/750 words)
+(Process: Currently 539/750 words)
 
 The process to develop the game was fairly intuitive. At the outset, all members of the group came together to brainstorm and think carefully about our ideas. We discussed a whole range of project ideas that the team welcomed and encouraged. Working with interested and passionate people was great - the project was propelled along as exciting ideas were discussed and then attempts were made to implement quickly after.   <br><br> 
 Whilst roles were not initially formally assigned, they developed as we all followed a path-of-least-resistance. Kai Chun got the group up and running with an underlying structure for the base-code. Once this had been established, Arielle and Vincent joined him in developing the code structure and creating the start of a working prototype. Julia and Alex took on roles as researchers and in creating documentation. Julia added start pages and audio to the game, as well as editing and finalizing the tutorial page, Alex developed the video portion and both developed the overall report.<br><br>
@@ -301,6 +301,8 @@ If repeating this project with the knowledge that we now have, it might be wise 
 
 Figure X: Our KanBan board in March, during the development process.<br><br>
 The kanban board (Figure X) was useful. It was great for establishing the initial ideas and concepts of the game. However, our development process meant that new ideas were often thought up and developed in a single motion - meaning that on occasion, a proposal was made and coded without being added to the board. If it wasn’t possible to develop into a neat solution, this addition was discarded. Additional items on the kanban board could have been useful here, but for our development process this wasn’t the case. If undertaken again, with better understanding of the Processing/Java development process, greater optimisation could be achieved using the board to its full potential. 
+
+In our project development, we primarily utilized Processing as our coding platform, which provided robust tools for visual rendering and interaction design. However, we encountered challenges with Processing, particularly in the initial weeks of our project, as we familiarized ourselves with its syntax, libraries, and debugging processes. Nonetheless, as we gained proficiency, Processing became indispensable for implementing game mechanics and visual elements. For visual design, Adobe Photoshop served as our main tool, offering a versatile platform for creating characters, environments, and user interface elements with precision and detail. We sourced audio resources from royalty-free websites to enhance the immersive experience of the game, selecting sound effects.Through an iterative development process, we continuously refined and optimised our code, visual assets, and audio elements based on feedback and testing results. Detailed documentation of coding practices, visual design guidelines, and audio specifications ensured consistency and facilitated knowledge sharing among team members. 
 
 
 
