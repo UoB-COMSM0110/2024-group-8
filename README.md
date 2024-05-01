@@ -352,7 +352,7 @@ In our project development, we primarily utilized Processing as our coding platf
 Initially, we decided on meetings a couple of times a week during the early stages of our project. As our project progressed, we continued to meet regularly as a team, even further into the later stages of development. However, we also found that we maintained high levels of productivity when working independently at times. This approach allowed us to accommodate everyone's unique schedules and preferences while ensuring progress on the project. Our team's adeptness at balancing collaborative meetings with individual work sessions relied heavily on our exceptional communication skills.<br><br>
 Overall, our balanced blend of collaborative meetings and individual work sessions, supported by strong communication, contributed to the success and efficiency of our project development process.
 
-##Contribution to Development Process
+### Contribution to Development Process
 
 <table align="center">
   <thead>
