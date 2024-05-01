@@ -29,7 +29,7 @@ Immune System Defense is a fun and engaging game for children aged 9-14 - access
 # Team
 
 ![image](https://github.com/UoB-COMSM0110/2024-group-8/blob/fe754f5cd4ad7a374d523477d3c814aea10b6834/images/team_8_with_names_2.png)<br>
-[ Figure X: Group 8 Photo ]<br><br>
+[ Figure 1: Group 8 Photo ]<br><br>
 
 
 <table align="center">
@@ -79,6 +79,7 @@ Immune System Defense is a fun and engaging game for children aged 9-14 - access
   </tr>
 </table>
 
+
 <!-- Center-aligned table with borders in GitHub Markdown -->
 <div align="center">
 
@@ -87,6 +88,7 @@ Immune System Defense is a fun and engaging game for children aged 9-14 - access
 | <img src="https://github.com/UoB-COMSM0110/2024-group-8/blob/main/images/towers.gif?raw=true" width="600" /> |
 
 </div>
+[ Figures 2, 3 & 4: Overview of basic gameplay. ]
 
 # Introduction
 
@@ -97,7 +99,7 @@ Each environment (the brain, heart, lungs and kidney) features a different map a
 The player takes the opposing side: their goal is to kill the invaders before they make it to the end of their route (and therefore ‘enter’ into the rest of the body). By purchasing towers and placing them in optimal locations, a defensive map is built up. Provided with a limited amount of money (which only increases when enemies are killed), the player needs to form a strategy and optimise their approach for the best results. 
 
 ![image](https://github.com/UoB-COMSM0110/2024-group-8/blob/12b1fd20d1e6cc3cff6c8f697038c620ddd60c98/images/4_levels.png)<br>
-[ Figure X: Overview of 'Tower' variants ]<br><br>
+[ Figure 5: Overview of map variants ]<br><br>
 
 Do they buy more towers for greater coverage of the map, upgrade existing ones for greater attributes, or save up to buy something even more powerful in the next round?
 From the winding pathways of the circulatory system to the confined spaces in the lungs - each scenario presents a different gameplay and as such requires strategic adaptation, becoming more and more of a challenge as the game progresses. Adapting to follow feedback during development, we feel the game is pitched at the right level for most of our target audience - winning is achievable with proper thought and consideration. 
@@ -115,7 +117,7 @@ As outlined in detail in our [DesignOptions](Documents/DesignOptions.md) documen
 2) An Arcade side-scroller where the player travels through time from the dawn of humanity to the modern day. [Prototype 2](https://github.com/UoB-COMSM0110/2024-group-8/blob/515eef5207a725f6a846677a536173a56bfc6542/Paper_Prototyping/idea2.mp4) </br></br>
     
 ![image](https://github.com/UoB-COMSM0110/2024-group-8/blob/main/images/Paper_Prototyping_with_overlay.gif?raw=true)<br>
-[ Figure X - Protype 1 "Human Body Defense" ]<br><br>
+[ Figure 6 - Protype 1 "Human Body Defense" ]<br><br>
 
 We took time to think about the direction we wanted to explore. Ultimately, after discussing our ideas and having our peers simulate ‘playing’ the paper-prototypes, we decided as a team to develop a tower defence game centred around the human body. The idea was further refined to align with our goals and the needs of our stakeholders, until we arrived at our final concept for ‘Immune System Defense’.
 The educational objective of the game is to explain the overarching concepts of the [Germ Theory of Disease](https://en.wikipedia.org/wiki/Germ_theory_of_disease#:~:text=The%20germ%20theory%20of%20disease,animals%2C%20and%20other%20living%20hosts). <br><br>
@@ -145,17 +147,17 @@ Many of these stories are interconnected. The developer's goal of creating an ed
 #### Use-cases
 
 ![image](https://github.com/UoB-COMSM0110/2024-group-8/blob/14eae6550508dfedece6832377551c383a4d2dd4/images/use_case_diagram_b%26w.png)<br>
-[ Figure X - An example Use-case Diagram created at the start of development ]<br><br>
+[ Figure 7 - An example Use-case Diagram created at the start of development ]<br><br>
 
-Use-case diagrams provide a visual framework for understanding the player's journey through the game. In Figure X, the gameplay sequence begins with the player starting the game and selecting a map, a choice which will alter many features of the game-play (e.g. environmental conditions, type of enemy and general look and feel). Four different maps are available to choose: journeys through the brain, lungs, heart, and kidneys. These parts of the human body are not only crucial for our functioning but also offer various aspects that we could include in our game, such as depicting smoke emanating from the lungs. [Read about this Use-case in more depth.](https://github.com/UoB-COMSM0110/2024-group-8/blob/4455d5cc72482ded24f00e5d92964fe2df8ef78e/Documents/use_case.md)
+Use-case diagrams provide a visual framework for understanding the player's journey through the game. In Figure 7, the gameplay sequence begins with the player starting the game and selecting a map, a choice which will alter many features of the game-play (e.g. environmental conditions, type of enemy and general look and feel). Four different maps are available to choose: journeys through the brain, lungs, heart, and kidneys. These parts of the human body are not only crucial for our functioning but also offer various aspects that we could include in our game, such as depicting smoke emanating from the lungs. [Read about this Use-case in more depth.](https://github.com/UoB-COMSM0110/2024-group-8/blob/4455d5cc72482ded24f00e5d92964fe2df8ef78e/Documents/use_case.md)
 
 Each level progresses dynamically as the system generates new challenges, with enemies spawning and traversing the screen. The player strategically places defensive units to attack the enemy, with the objective of maximising damage with minimal expenditure. 
 
 ![image](https://github.com/UoB-COMSM0110/2024-group-8/blob/85e3e4c7fc3b75109118b1c7180e39c246f5fe5e/images/use-case-diagram.jpeg)<br>
-[ Figure X - A use-case diagram showing UML with include and extend relationships ]<br><br>
+[ Figure 8 - A use-case diagram showing UML with include and extend relationships ]<br><br>
 
 Throughout this process, the system presents options for tower types and locations, guided by the player's decisions and resource management mechanics. 
-This iterative cycle continues until the level's objectives are met or the player's lives are expended. These user interactions and system responses (Figure X) are essential in understanding the flow of gameplay and ensuring that the game development aligns with stakeholder objectives and user expectations.
+This iterative cycle continues until the level's objectives are met or the player's lives are expended. These user interactions and system responses (Figure 8) are essential in understanding the flow of gameplay and ensuring that the game development aligns with stakeholder objectives and user expectations.
 
 # Design
 System architecture describes how we use our software to achieve our goal of a playable game. In this section we discuss the underlying base code of our game and provide detail on several important classes and methods, along with their specific uses.
@@ -163,9 +165,9 @@ System architecture describes how we use our software to achieve our goal of a p
 Our design process was primarily collaborative. Through discussion, we created an initial class diagram on paper, which then took over a near-by whiteboard. It was useful to talk though this process as a team - creating a visual representation of these elements, and discussing/debating how relationships, attributes, and behaviours should be interrelated.
 
 ![image](https://github.com/UoB-COMSM0110/2024-group-8/blob/85e3e4c7fc3b75109118b1c7180e39c246f5fe5e/images/developing_class_diagram_whiteboard.png)<br>
-[ Figure X : Initial class diagram. Developing our game structure collaboratively ]<br>
+[ Figure 9 : Initial class diagram. Developing our game structure collaboratively ]<br>
 
-The class diagram in Figure X outlines the key classes and entities required in “Immune System Defense”, including Towers, Enemies, and Maps, among others. Each class encapsulated specific functionalities and attributes crucial for their respective roles within the game. 
+The class diagram in Figure 9 outlines the key classes and entities required in “Immune System Defense”, including Towers, Enemies, and Maps, among others. Each class encapsulated specific functionalities and attributes crucial for their respective roles within the game. 
 
 For instance, the Towers class served as a base class from which different tower types were inherited. These tower types, such as Tower A or Tower B, inherited common functionalities while introducing unique characteristics. Attributes of the Towers class included cost, damage, projectile type, and attack range, defining their behaviour and effectiveness in combat. 
 
@@ -174,7 +176,7 @@ Similarly, the Enemies class encompassed various enemy types, each with distinct
 Additionally, our class diagram accounted for the dynamic nature of game environments by including Maps as a fundamental component. Maps encapsulated terrain features, obstacles, and environmental effects that influenced gameplay dynamics and strategic decisions. For instance, in the Lung level, a unique twist was introduced where the screen gradually darkened to simulate the invasion of fog into the lungs, adding an extra layer of challenge and immersion for players.
 
 <img src="https://raw.githubusercontent.com/UoB-COMSM0110/2024-group-8/main/images/classdiagram.jpg" width="600" />
-[ Figure X : Class Diagram, showing a simplified overview of the program structure. ]<br><br>
+[ Figure 10 : Class Diagram, showing a simplified overview of the program structure. ]<br><br>
 
 ### Communication Diagram
 
@@ -182,7 +184,7 @@ Upon starting the coding part of a game, we also developed a comunication diagra
 By mapping these interactions, we were able to understand what type of actions each element, such as towers and enemies, needed.
 
 <img src="https://github.com/UoB-COMSM0110/2024-group-8/blob/main/images/communicationdiagram.png?raw=true" />
-[ Figure X : Communication Diagram, showing a different classes and methods we wanted to implement. ]<br><br>
+[ Figure 11 : Communication Diagram, showing a different classes and methods we wanted to implement. ]<br><br>
 
 <strong>Important classes and methods</strong>
 
@@ -262,7 +264,7 @@ The solution we arrived at involved assigning each tower a specific range. Upon 
 <p align="center">
   <img src="https://github.com/UoB-COMSM0110/2024-group-8/blob/main/images/projectiledirection.gif?raw=true" alt="Changing direction of projectile firing">
 </p>
-[ Figure X : Collisions between moving enemies and projectiles. ]
+[ Figure 12 : Collisions between moving enemies and projectiles. ]<br>
 
 Moreover, **designing different types of enemies** was another challenging task to think about. We aimed to avoid repetitive enemy encounters throughout the game, as we believed it would lessen player engagement. We thought about a variety of enemy characters, each requiring distinct towers for defeat. In our design approach, we aimed to offer players a wide range of enemies throughout their gaming experience. This not only kept the gameplay fresh but also encouraged players to use their money wisely and strategize continuously so they could defeat the strongest enemies.
 
@@ -280,10 +282,11 @@ Through these discussions, we recorded observations including:
  - “This is really fun!”
  - On some occasions, button presses are not always registered - or register with one aspect of the game and not the other (e.g. taking money to buy a tower, but not producing one to place on the board). Users get very frustrated when this happens.
  - After selecting difficulty, the game progresses straight into gameplay. A buffer would be preferred.
+ - Some participants didn't realise that they needed to press 'BUY' before they could place a tower.
 
  ![image](https://github.com/UoB-COMSM0110/2024-group-8/blob/ed656e777c438fc46b1eddd22f5fcd895ce16ebd/images/ali_think_aloud.jpg)<br>
 
- [ Image X: One of our participants completing a Think Aloud Evaluation ]
+ [ Image 13: One of our participants completing a Think Aloud Evaluation ]
 
 #### Heuristic Evaluation
 
@@ -293,7 +296,8 @@ The Qualitative Evaluations provided a number of easily-identifiable fixes that 
 As a response to qualitative evaluations, we:<br>
  - Added the JavaFX library -> to make the gameplay smoother and less glitch-y
  - Added holding screens before each level -> providing more context to the game the user is about to play.
- - Enabled placing and upgrading towers during gameplay -> to reduce the amount of time the user is waiting. <br><br>
+ - Enabled placing and upgrading towers during gameplay -> to reduce the amount of time the user is waiting. 
+ - Updated tutorial page -> explicitly telling users that they need to press BUY every time they purchase a tower.<br><br>
 We found, generally, that users are happy to wait for an action in game, when they know that something is happening in the background - but become very frustrated when it is not clear how long they need to wait - optimising the visibility of system status was an important outcome from this process.
 
 ### Quantitative Evaluation
@@ -304,7 +308,7 @@ Whilst conducting quantitative evaluations, we used a Microsoft Form to capture 
 
 ![image](https://github.com/UoB-COMSM0110/2024-group-8/blob/ed656e777c438fc46b1eddd22f5fcd895ce16ebd/images/SystemUsabilityScale.png)<br>
 
-[ Figure X: SUS test undertaken on two game modes. ]
+[ Figure 14: SUS test undertaken on two game modes. ]
 
 We undertook a Wilcoxon signed-rank test on the SUS data, showing clear significance. [Click here](https://github.com/UoB-COMSM0110/2024-group-8/blob/650cf9ba97493ddc45fcb91911e0dda87754c9d5/Documents/sus.md) to see the raw data.<br>
 For a set of 10 participants, a W test statistic of 3 was calculated. Using the chart of known values, this shows that a significance level of 0.01 was achieved, or 99% certainty that there is a real difference between the ‘easy’ and ‘hard’ selections.
@@ -333,16 +337,16 @@ Whilst roles were not initially formally assigned, they developed as we all foll
 
 <img src="https://github.com/UoB-COMSM0110/2024-group-8/blob/08bd43413c982de981d6cae2d4c0377b22cc71ba/images/kanban_original.jpeg" width="600" />
 
-[ Figure X: Developing our KanBan board in the lab. ]<br><br>
+[ Figure 15: Developing our KanBan board in the lab. ]<br><br>
 
 As a structure, this worked well although the work-load was not always even distributed. It was found that once one person had started working on the code development, it was difficult to share this out without creating more complexities than were required. We found that these clearly delineated roles worked out best and allowed us each to take an element of the project as our own.<br><br>
 If repeating this project with the knowledge that we now have, it might be wise to establish right from the beginning these roles - rather than from a few weeks in. Now that we have the understanding of each others’ talents and abilities, processes could be better run concurrently. <br>
 
-The kanban board (Figure X) was useful. It was great for establishing the initial ideas and concepts of the game. However, our development process meant that new ideas were often thought up and developed in a single motion - meaning that on occasion, a proposal was made and coded without being added to the board. If it wasn’t possible to develop into a neat solution, this addition was discarded. Additional items on the kanban board could have been useful here, but for our development process this wasn’t the case. If undertaken again, with better understanding of the Processing/Java development process, greater optimisation could be achieved using the board to its full potential.
+The kanban board (Figure 16) was useful. It was great for establishing the initial ideas and concepts of the game. However, our development process meant that new ideas were often thought up and developed in a single motion - meaning that on occasion, a proposal was made and coded without being added to the board. If it wasn’t possible to develop into a neat solution, this addition was discarded. Additional items on the kanban board could have been useful here, but for our development process this wasn’t the case. If undertaken again, with better understanding of the Processing/Java development process, greater optimisation could be achieved using the board to its full potential.
 
 <img src="https://github.com/UoB-COMSM0110/2024-group-8/blob/d762340a11e16ad27b0533fd30b93b436d8ccb9a/images/kanban_march.png" width="600" />
 
-[ Figure X: Our KanBan board in March, during the development process. ]<br><br>
+[ Figure 16: Our KanBan board in March, during the development process. ]<br><br>
 
 In our project development, we primarily utilized Processing as our coding platform, which provided robust tools for visual rendering and interaction design. However, we encountered challenges with Processing, particularly in the initial weeks of our project, as we familiarized ourselves with its syntax, libraries, and debugging processes. Nonetheless, as we gained proficiency, Processing became indispensable for implementing game mechanics and visual elements. For visual design, Adobe Photoshop served as our main tool, offering a versatile platform for creating characters, environments, and user interface elements with precision and detail. We sourced audio resources from royalty-free websites to enhance the immersive experience of the game, selecting sound effects.<br><br>Through an iterative development process, we continuously refined and optimised our code, visual assets, and audio elements based on feedback and testing results. Detailed documentation of coding practices, visual design guidelines, and audio specifications ensured consistency and facilitated knowledge sharing among team members. 
 Initially, we decided on meetings a couple of times a week during the early stages of our project. As our project progressed, we continued to meet regularly as a team, even further into the later stages of development. However, we also found that we maintained high levels of productivity when working independently at times. This approach allowed us to accommodate everyone's unique schedules and preferences while ensuring progress on the project. Our team's adeptness at balancing collaborative meetings with individual work sessions relied heavily on our exceptional communication skills.<br><br>
