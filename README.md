@@ -268,7 +268,25 @@ In <strong>[Heart](https://github.com/UoB-COMSM0110/2024-group-8/blob/dedbc5b92a
 ### Visual Design
 Assets have come from a wide variety of places - some are retrieved from internet searches, others created by the team.  ////////TO DO: Slightly more text needed here/////
 
-# Implementation  
+# Implementation 
+
+Developing the logic of "Human Body Tower Defence" presented several challenges, particularly in integrating the rules of tower defense games with educational elements related to human anatomy and defense mechanisms.
+Once we had an idea, we started developing the game. We were encouraged to use **Processing**, which is a very good tool for designing a visual program where coders can develop things that would appear on screen. However, Processing uses a version of the Java language, something we were not that familiar when we started with this project.
+One of the primary hurdles was making ourselves comfortable with the Processing environment and its unique syntax. Transitioning to a new programming language and development environment required adapting our coding style and acquiring familiarity with Processing's syntax conventions. This involved grasping concepts such as defining classes, manipulating variables and functions, and discovering and using built-in libraries for graphical rendering and user interaction, all while simultaneously learning Java from scratch.
+Furthermore, integrating complex functionalities like button animation, screen transitions, and dynamic element rendering introduced additional challenges. Despite these obstacles, we navigated the learning curve and very often revisited our previous code to make changes.
+
+One of the first challenges we were presented with was deciding **what parts of the human body presented enough interesting aspects that we could incorporate into our game later on as twists**. For example, by incorporating the lung map we realised we could develop a teaching element about the concerns of smoking. We thought that the twist could be that the screen would be filled with smoke, making it harder to see the maps and the germs coming in. Besides implementing twists, we also had to consider which organs had suitable environmental conditions we could enhance in our maps to maintain the user's interest. Another example concerns the viscosity of blood, which we could adjust by slowing down the movement of germs.
+After a day or so of thinking and each of us developing ideas; we ended up reuniting and choosing which four core organs would be interesting to implement and have an organ-related twist. These four were the heart; with a blood clot, the brain; with a brain stroke, the kidneys; with the kidney stone, and the lungs, with smoke filling up the lungs. 
+
+One of the challenges we encountered was **developing the collision detection system**. We aimed for it to simulate reality, rather than merely having static towers firing projectiles in a predetermined direction. Our development team then were faced with the task of enabling towers to track the direction of germs, thereby adjusting the firing direction of the towers accordingly.
+The solution we arrived at involved assigning each tower a specific range. Upon detecting nearby germs, the tower adjusts its firing direction to intersect with the approaching enemy, thus implementing collision detection effectively.
+
+INSERT GIF OF COLLISION DETECTION
+
+Moreover, **designing different types of enemies** was another challenging task to think about. We aimed to avoid repetitive enemy encounters throughout the game, as we believed it would lessen player engagement. We thought about a variety of enemy characters, each requiring distinct towers for defeat. In our design approach, we aimed to offer players a wide range of enemies throughout their gaming experience. This not only kept the gameplay fresh but also encouraged players to use their money wisely and strategize continuously so they could defeat the strongest enemies.
+
+Another important aspect of our game was the **visual and auditory elements** around it. We recognized the critical role these elements play in immersing players in the gaming experience. With the goal of designing a visually aesthetic and captivating map, we spent considerable time designing organ maps and their corresponding paths for the germs, programming the placement parameters for towers (and making sure it was clear and easy to understand), and designing map-specific introduction and tutorial screens to guide players through the game mechanics. Furthermore, as the game progressed in development, we decided to add auditory elements to enrich the player’s experience. We strategically incorporated sound effects to evoke feelings of achievement, such as the sound of a germ being defeated or the satisfying ring when purchasing a tower. These auditory cues were instrumental in heightening player engagement and cultivating a sense of accomplishment throughout the game.
+
 
 # Evaluation  
 
