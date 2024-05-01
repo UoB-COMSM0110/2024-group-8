@@ -264,7 +264,7 @@ The solution we arrived at involved assigning each tower a specific range. Upon 
 <p align="center">
   <img src="https://github.com/UoB-COMSM0110/2024-group-8/blob/main/images/projectiledirection.gif?raw=true" alt="Changing direction of projectile firing">
 </p>
-[ Figure 12 : Collisions between moving enemies and projectiles. ]<br>
+[ Figure 12 : Collisions between moving enemies and projectiles. ]<br><br>
 
 Moreover, **designing different types of enemies** was another challenging task to think about. We aimed to avoid repetitive enemy encounters throughout the game, as we believed it would lessen player engagement. We thought about a variety of enemy characters, each requiring distinct towers for defeat. In our design approach, we aimed to offer players a wide range of enemies throughout their gaming experience. This not only kept the gameplay fresh but also encouraged players to use their money wisely and strategize continuously so they could defeat the strongest enemies.
 
@@ -286,7 +286,7 @@ Through these discussions, we recorded observations including:
 
  ![image](https://github.com/UoB-COMSM0110/2024-group-8/blob/ed656e777c438fc46b1eddd22f5fcd895ce16ebd/images/ali_think_aloud.jpg)<br>
 
- [ Image 13: One of our participants completing a Think Aloud Evaluation ]
+ [ Figure 13: One of our participants completing a Think Aloud Evaluation ]
 
 #### Heuristic Evaluation
 
