@@ -94,24 +94,12 @@ Immune System Defense builds upon the classic style of Tower-Defense games, comb
 
 Each environment (the brain, heart, lungs and kidney) features a different map and different environmental conditions. For example, within the heart the blood viscosity is varied from high to low as the game progresses, increasing the speed at which the viruses travel - making them much more difficult to kill. In the brain, the threat of an aneurysm leaves the player exposed to an explosive end to gameplay .
 
-<table>
-  <tr>
-    <td><img src="https://github.com/UoB-COMSM0110/2024-group-8/blob/main/images/brainmap.png?raw=true" alt="Image 1"></td>
-    <td><img src="https://github.com/UoB-COMSM0110/2024-group-8/blob/main/images/heartmap.png?raw=true" alt="Image 2"></td>
-  </tr>
-</table>
-<table>
-  <tr>
-    <td><img src="https://github.com/UoB-COMSM0110/2024-group-8/blob/main/images/kidneymap.png?raw=true" alt="Image 1"></td>
-    <td><img src="https://github.com/UoB-COMSM0110/2024-group-8/blob/main/images/lungsmap.png?raw=true" alt="Image 2"></td>
-  </tr>
-</table>
+https://github.com/UoB-COMSM0110/2024-group-8/blob/12b1fd20d1e6cc3cff6c8f697038c620ddd60c98/images/4_levels.png
 
 The player takes the opposing side: their goal is to kill the invaders before they make it to the end of their route (and therefore ‘enter’ into the rest of the body). By purchasing towers and placing them in optimal locations, a defensive map is built up. Provided with a limited amount of money (which only increases when enemies are killed), the player needs to form a strategy and optimise their approach for the best results. 
 
-<img src="https://github.com/UoB-COMSM0110/2024-group-8/blob/main/images/towers.gif?raw=true" width="600" />
+![image](https://github.com/UoB-COMSM0110/2024-group-8/blob/12b1fd20d1e6cc3cff6c8f697038c620ddd60c98/images/4_levels.png)<br>
 [ Figure X: Overview of 'Tower' variants ]<br><br>
-
 
 Do they buy more towers for greater coverage of the map, upgrade existing ones for greater attributes, or save up to buy something even more powerful in the next round?
 From the winding pathways of the circulatory system to the confined spaces in the lungs - each scenario presents a different gameplay and as such requires strategic adaptation, becoming more and more of a challenge as the game progresses. Adapting to follow feedback during development, we feel the game is pitched at the right level for most of our target audience - winning is achievable with proper thought and consideration. 
