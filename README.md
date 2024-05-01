@@ -27,7 +27,10 @@ Immune System Defense is a fun and engaging game for children aged 9-14 - access
 
 
 # Team
-<img src="https://github.com/UoB-COMSM0110/2024-group-8/blob/220b75c5d388dc2bd0439f8ea2c552d8882b3e9f/images/team_8_with_names.png" width="600" />
+
+https://github.com/UoB-COMSM0110/2024-group-8/blob/fe754f5cd4ad7a374d523477d3c814aea10b6834/images/team_8_with_names_2.png
+
+![image](https://github.com/UoB-COMSM0110/2024-group-8/blob/fe754f5cd4ad7a374d523477d3c814aea10b6834/images/team_8_with_names_2.png)<br>
 [ Figure X: Group 8 Photo ]<br><br>
 
 
