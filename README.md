@@ -352,6 +352,38 @@ In our project development, we primarily utilized Processing as our coding platf
 Initially, we decided on meetings a couple of times a week during the early stages of our project. As our project progressed, we continued to meet regularly as a team, even further into the later stages of development. However, we also found that we maintained high levels of productivity when working independently at times. This approach allowed us to accommodate everyone's unique schedules and preferences while ensuring progress on the project. Our team's adeptness at balancing collaborative meetings with individual work sessions relied heavily on our exceptional communication skills.<br><br>
 Overall, our balanced blend of collaborative meetings and individual work sessions, supported by strong communication, contributed to the success and efficiency of our project development process.
 
+<table align="center">
+  <thead>
+    <tr>
+      <th style="text-align:center">Name</th>
+      <th style="text-align:center">Contribution Weighting</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:center">Arielle Thijssen</td>
+      <td style="text-align:center"><1.0</td>
+    </tr>
+    <tr>
+      <td style="text-align:center">Julia Alvarado Rubio</td>
+      <td style="text-align:center">1.0</td>
+    </tr>
+    <tr>
+      <td style="text-align:center">Kai Chun Cheung</td>
+      <td style="text-align:center">1.0</td>
+    </tr>
+    <tr>
+      <td style="text-align:center">Vincent Yaoyang Xu</td>
+      <td style="text-align:center">1.0</td>
+    </tr>
+    <tr>
+      <td style="text-align:center">Alexander Robinson</td>
+      <td style="text-align:center">1.0</td>
+    </tr>
+  </tbody>
+</table>
+
+
 # Conclusion
 In reflecting on the entirety of our project, "Immune System Defense," we definitely feel proud of achieving something that we initially thought would be unattainable. When we were first presented with the task of developing a game, we all thought we were going to really struggle not only in developing the coding mechanics of it, but also in coming up with an idea that even we would like to play in our free time.
 
