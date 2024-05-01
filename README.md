@@ -281,7 +281,9 @@ After a day or so of thinking and each of us developing ideas; we ended up reuni
 One of the challenges we encountered was **developing the collision detection system**. We aimed for it to simulate reality, rather than merely having static towers firing projectiles in a predetermined direction. Our development team then were faced with the task of enabling towers to track the direction of germs, thereby adjusting the firing direction of the towers accordingly.
 The solution we arrived at involved assigning each tower a specific range. Upon detecting nearby germs, the tower adjusts its firing direction to intersect with the approaching enemy, thus implementing collision detection effectively.
 
-INSERT GIF OF COLLISION DETECTION
+<p align="center">
+  <img src="https://github.com/UoB-COMSM0110/2024-group-8/blob/main/images/projectiledirection.gif?raw=true" alt="Changing direction of projectile firing">
+</p>
 
 Moreover, **designing different types of enemies** was another challenging task to think about. We aimed to avoid repetitive enemy encounters throughout the game, as we believed it would lessen player engagement. We thought about a variety of enemy characters, each requiring distinct towers for defeat. In our design approach, we aimed to offer players a wide range of enemies throughout their gaming experience. This not only kept the gameplay fresh but also encouraged players to use their money wisely and strategize continuously so they could defeat the strongest enemies.
 
