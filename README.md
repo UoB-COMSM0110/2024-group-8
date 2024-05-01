@@ -10,6 +10,7 @@ Immune System Defense is a fun and engaging game for children aged 9-14 - access
 
 ### Contents
 - [Team](#team)
+- [Immune System Defence](#immune-system-defence)
 - [Introduction](#introduction)
 - [Requirements](#requirements)
     - [User Stories](#user-stories)
@@ -21,7 +22,6 @@ Immune System Defense is a fun and engaging game for children aged 9-14 - access
 - [Evaluation](#evaluation)
 - [Process](#process)
 - [Kanban Board | Photo Album](#kanban-board--photo-album)
-- [Immune System Defence](#immune-system-defence)
 - [Conclusion](#conclusion)
 - [Acknowledgements](#acknowledgements)
 
