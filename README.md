@@ -324,6 +324,15 @@ The novel aspects of this game are the ways in which interventions - either clin
 
 
 # Conclusion
+In reflecting on the entirety of our project, "Immune System Defense," we definitely feel proud of achieving something that we initially thought would be unattainable. When we were first presented with the task of developing a game, we all thought we were going to really struggle not only in developing the coding mechanics of it, but also in coming up with an idea that even we would like to play in our free time.
+
+Furthermore, delving into the theory behind agile project development enabled us to simulate a real-life scenario we may encounter in the near future: collaborative teamwork. This practical experience added depth to our learning journey and made us see first-hand how software developers work day to day.
+
+We acknowledge that we were fortunate enough that our team got along well from the very beginning, and that gave us a big advantage. We were easygoing and open to knowing each other’s ideas and suggestions. A comfortable environment and workspace undoubtedly contributed to making the entire process more enjoyable and fulfilling.
+
+As we progressed, we encountered adjustments in our game structure, as some initial ideas proved to be overly ambitious given our time constraints. This realization prompted us to adopt a more realistic approach to scheduling and game development, highlighting an area for improvement in future projects.
+
+The challenges we were presented with - learning new software, the development process of our game - offered valuable insights into our growth and development as a team. If additional time and resources were available for further game development, we would like to implement a multiplayer mode. This would allow players to collaborate or compete with each other in defending the human body against invading germs. We would also be interested in developing a mobile version of the game, so that more people would be able to play where and when they wanted to.
 # Acknowledgements
 
 
