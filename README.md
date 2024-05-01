@@ -73,8 +73,8 @@ Immune System Defense is a fun and engaging game for children aged 9-14 - access
     </td>
     <td>
       <!-- Your second block of text and image -->
-      <strong>Explore the different towers and their properties!</strong><br>
-      <img src="https://github.com/UoB-COMSM0110/2024-group-8/blob/main/images/towers.gif?raw=true" width="600" />
+      <strong>Place them strategically to defeat the enemies!</strong><br>
+      <img src="https://github.com/UoB-COMSM0110/2024-group-8/blob/main/images/defeatenemies.gif?raw=true" width="300" />
     </td>
   </tr>
 </table>
@@ -82,9 +82,9 @@ Immune System Defense is a fun and engaging game for children aged 9-14 - access
 <!-- Center-aligned table with borders in GitHub Markdown -->
 <div align="center">
 
-|                                   Place them strategically to defeat the enemies!                                   |
+|                                    Explore the different towers and their properties!                                   |
 | :-----------------------------------------------------------------------------------------------------------------: |
-| <img src="https://github.com/UoB-COMSM0110/2024-group-8/blob/main/images/defeatenemies.gif?raw=true" width="300" /> |
+| <img src="https://github.com/UoB-COMSM0110/2024-group-8/blob/main/images/towers.gif?raw=true" width="600" /> |
 
 </div>
 
