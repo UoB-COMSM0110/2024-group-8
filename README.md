@@ -27,10 +27,8 @@ Immune System Defense is a fun and engaging game for children aged 9-14 - access
 
 
 # Team
-
-//TODO: ADD NAMES TO IMAGE. Ask Julia for website that font was made on.
-![image](https://github.com/UoB-COMSM0110/2024-group-8/assets/117166891/c84a4952-3bef-4fa6-9d88-e8a353425535)
-<br> [ Figure X: Group 8 Photo ]
+<img src="https://github.com/UoB-COMSM0110/2024-group-8/blob/220b75c5d388dc2bd0439f8ea2c552d8882b3e9f/images/team_8_with_names.png" width="600" />
+[ Figure X: Group 8 Photo ]<br><br>
 
 
 <table align="center">
