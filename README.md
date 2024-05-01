@@ -272,6 +272,64 @@ Another important aspect of our game was the **visual and auditory elements** ar
 
 # Evaluation  
 
+### Qualitative Evaluation
+
+#### Think Aloud 
+The ‘think aloud’ test was great in that users were not restrained in answering only what we wanted to ask them. Initial plans for the game included an idea for multiplayer - where perhaps one player fought for, and another against, the body. However, when presenting this idea to testers during their gameplay, it became clear that this was unnecessary and could even reduce their enjoyment. Our participants made it clear to us that they would prefer to see more developed levels with complex challenges than a multiplayer concept. <br><br>
+Through these discussions, we recorded observations including: 
+ - “Why can’t towers be used to block germs by placing on their path?”
+ - “This is really fun!”
+ - On some occasions, button presses are not always registered - or register with one aspect of the game and not the other (e.g. taking money to buy a tower, but not producing one to place on the board). Users get very frustrated when this happens.
+ - After selecting difficulty, the game progresses straight into gameplay. A buffer would be preferred.
+
+ ![image](https://github.com/UoB-COMSM0110/2024-group-8/blob/ed656e777c438fc46b1eddd22f5fcd895ce16ebd/images/ali_think_aloud.jpg)<br>
+
+ [ Image X: One of our participants completing a Think Aloud Evaluation ]
+
+#### Heuristic Evaluation
+
+Click here to see Table X, a summary of the output from an Heuristic Evaluation.<br>
+#### Response to Qualitative Evaluations:
+The Qualitative Evaluations provided a number of easily-identifiable fixes that we explored as a team before attempting to tackle. We found it really interesting as a number of comments came up across the board that we hadn’t considered. 
+As a response to qualitative evaluations, we:<br>
+ - Added the JavaFX library -> to make the gameplay smoother and less glitch-y
+ - Added holding screens before each level -> providing more context to the game the user is about to play.
+ - Enabled placing and upgrading towers during gameplay -> to reduce the amount of time the user is waiting. <br><br>
+We found, generally, that users are happy to wait for an action in game, when they know that something is happening in the background - but become very frustrated when it is not clear how long they need to wait - optimising the visibility of system status was an important outcome from this process.
+
+### Quantitative Evaluation
+
+Whilst conducting quantitative evaluations, we used a Microsoft Form to capture information digitally - enabling participant scores to be automatically collated. 
+
+#### System Usability Scale (SUS) Analysis
+
+![image](https://github.com/UoB-COMSM0110/2024-group-8/blob/ed656e777c438fc46b1eddd22f5fcd895ce16ebd/images/SystemUsabilityScale.png)<br>
+
+[ Figure X: SUS test undertaken on two game modes. ]
+
+We undertook a Wilcoxon signed-rank test on the SUS data, showing clear significance. 
+For a set of 10 participants, a W test statistic of 3 was calculated. Using the chart of known values, this shows that a significance level of 0.01 was achieved, or 99% certainty that there is a real difference between the ‘easy’ and ‘hard’ selections.
+<br><br> 
+This is helpful to us to see that there is a clear difference between the two modes - when looking at the mean of the values (Easy: 66.75, Hard: 78.6), we can see the jump between the two, but are provided with no statistical information about how reliable the data is. 
+
+### Continuous testing
+
+Development of the game was largely informed by testing. As the basic structure of the game came together quite rapidly, it was playable from an early stage and therefore could be tested even throughout the beginning stages. <br><br>
+We undertook two forms of testing: 
+ - Player-led, where the game model is tested until normal (and some unusual) game play causes a terminal error message, or unexpected outcome.
+ - Developer-led, where white- and black-box testing is undertaken to confirm that functions behave as expected and exceptions/ errors are avoided throughout.
+   - This involved creating a number of ‘partitions’ where we varied input data to floor/ceiling values and checked for erroneous responses.  
+<br><br>
+We used a plugin to run Processing within the IDE IntelliJ, in order to create J-Unit tests which we were able to use in testing the robustness of our code. As issues emerged, the codebase was updated and refined - we have managed to avoid any serious issues and now only minor bugs remain that we have rebranded as ‘features’.<br>
+
+### Evaluation Summary
+A number of our testers have told us they want to keep playing and have pulled the software from the repo themselves to play in their own time. We are pleased with the reception our game has had from testers as the responses have been overwhelmingly positive. The feedback that we have received has helped clear up a few areas and added value to the program.
+
+
+
+
+
+
 # Process  
 (Process: Currently 654/750 words)
 
