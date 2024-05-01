@@ -243,8 +243,8 @@ Some modelling is required for the projectile motion - both the sprite it is tar
 
 In <strong>[Heart](https://github.com/UoB-COMSM0110/2024-group-8/blob/dedbc5b92a19e8bddd87b5666a1e49cc7c7376d7/Prototype/Heart.pde) class</strong>, method <strong>decreaseBloodViscosity()</strong> is a good example of how using inherited classes for each of the levels allows specific physical properties to be substantially altered without disrupting the normal function of the parent class. There are similar adaptations across the other levels.
 
-### Visual Design
-Assets have come from a wide variety of places - some are retrieved from internet searches, others created by the team.  ////////TO DO: Slightly more text needed here/////
+##### Visual Design
+Assets have come from a wide variety of places - some are retrieved from internet searches, others created by the team.
 
 # Implementation 
 
@@ -262,6 +262,7 @@ The solution we arrived at involved assigning each tower a specific range. Upon 
 <p align="center">
   <img src="https://github.com/UoB-COMSM0110/2024-group-8/blob/main/images/projectiledirection.gif?raw=true" alt="Changing direction of projectile firing">
 </p>
+[ Figure X : Collisions between moving enemies and projectiles. ]
 
 Moreover, **designing different types of enemies** was another challenging task to think about. We aimed to avoid repetitive enemy encounters throughout the game, as we believed it would lessen player engagement. We thought about a variety of enemy characters, each requiring distinct towers for defeat. In our design approach, we aimed to offer players a wide range of enemies throughout their gaming experience. This not only kept the gameplay fresh but also encouraged players to use their money wisely and strategize continuously so they could defeat the strongest enemies.
 
@@ -317,7 +318,7 @@ We undertook two forms of testing:
  - Player-led, where the game model is tested until normal (and some unusual) game play causes a terminal error message, or unexpected outcome.
  - Developer-led, where white- and black-box testing is undertaken to confirm that functions behave as expected and exceptions/ errors are avoided throughout.
    - This involved creating a number of ‘partitions’ where we varied input data to floor/ceiling values and checked for erroneous responses.  
-<br><br>
+<br>
 We used a plugin to run Processing within the IDE IntelliJ, in order to create J-Unit tests which we were able to use in testing the robustness of our code. As issues emerged, the codebase was updated and refined - we have managed to avoid any serious issues and now only minor bugs remain that we have rebranded as ‘features’.<br>
 
 ### Evaluation Summary
@@ -334,7 +335,7 @@ If repeating this project with the knowledge that we now have, it might be wise 
 
 <img src="https://github.com/UoB-COMSM0110/2024-group-8/blob/d762340a11e16ad27b0533fd30b93b436d8ccb9a/images/kanban_march.png" width="600" />
 
-Figure X: Our KanBan board in March, during the development process.<br><br>
+[ Figure X: Our KanBan board in March, during the development process. ]<br><br>
 The kanban board (Figure X) was useful. It was great for establishing the initial ideas and concepts of the game. However, our development process meant that new ideas were often thought up and developed in a single motion - meaning that on occasion, a proposal was made and coded without being added to the board. If it wasn’t possible to develop into a neat solution, this addition was discarded. Additional items on the kanban board could have been useful here, but for our development process this wasn’t the case. If undertaken again, with better understanding of the Processing/Java development process, greater optimisation could be achieved using the board to its full potential. 
 
 In our project development, we primarily utilized Processing as our coding platform, which provided robust tools for visual rendering and interaction design. However, we encountered challenges with Processing, particularly in the initial weeks of our project, as we familiarized ourselves with its syntax, libraries, and debugging processes. Nonetheless, as we gained proficiency, Processing became indispensable for implementing game mechanics and visual elements. For visual design, Adobe Photoshop served as our main tool, offering a versatile platform for creating characters, environments, and user interface elements with precision and detail. We sourced audio resources from royalty-free websites to enhance the immersive experience of the game, selecting sound effects.<br><br>Through an iterative development process, we continuously refined and optimised our code, visual assets, and audio elements based on feedback and testing results. Detailed documentation of coding practices, visual design guidelines, and audio specifications ensured consistency and facilitated knowledge sharing among team members. 
@@ -351,62 +352,8 @@ We acknowledge that we were fortunate enough that our team got along well from t
 As we progressed, we encountered adjustments in our game structure, as some initial ideas proved to be overly ambitious given our time constraints. This realization prompted us to adopt a more realistic approach to scheduling and game development, highlighting an area for improvement in future projects.
 
 The challenges we were presented with - learning new software, the development process of our game - offered valuable insights into our growth and development as a team. If additional time and resources were available for further game development, we would like to implement a multiplayer mode. This would allow players to collaborate or compete with each other in defending the human body against invading germs. We would also be interested in developing a mobile version of the game, so that more people would be able to play where and when they wanted to.
-# Acknowledgements
-
-
-
-///////////
-
-*to be discarded*
-
-
-# [Kanban Board](https://dramatic-clutch-d0e.notion.site/Group-8-Agile-Project-Management-bb06c2d090f543f9b2f2d0bc953f3d08) | [Photo Album](https://photos.app.goo.gl/bzxtsnzj8zHpwrJ6A)
 
 
 
 
- Human Body Tower Defence.
-This game builds upon the widely popular Tower Defence style of game - where the aim is to protect a () from invaders. 
-Using the human body as a thematic device, the game aims to provide some educational value in reinforcing the understanding of the body's mechanism to fight infection - whilst being fun and engaging for all ages. 
-
-The novel aspects of this game are the ways in which interventions - either clinical or otherwise allow the user to influence in-game physics - from dieuretic tablets that increase the flow of invaders through the kidney, to smoke inhalation which weakens the health of enemies in the lungs.  
-
-
-
-
-
-
-Heuristic Evaluation
-<img width="583" alt="Screenshot 2024-03-11 at 10 33 24" src="https://github.com/UoB-COMSM0110/2024-group-8/assets/150365540/66edb8c0-d064-4447-a1e7-f6150c74d147">
-
-We received feedback from participants who took part in playing the game we had and recorded their suggestions and issues they encountered.
-
-1. Player should be able to place towers whilst a round is in progress;
-2. Interesting twist: random shortcuts will appear for germs to pass;
-3. Some suggests that we can use towers to block germs' path;
-
-
-
-
-System Usability Scale (SUS) Analysis
-
-| Person | Level 1 | Level 2 |
-| ------ | ------- | ------- |
-| 1      | 70      | 76      |
-| 2      | 85      | 81      |
-| 3      | 72.5    | 70      |
-| 4      | 85      | 81      |
-| 5      | 67      | 69      |
-| 6      | 85      | 85.5    |
-| 7      | 90      | 92.5    |
-| 8      | 75      | 72      |
-| 9      | 76      | 74      |
-| 10     | 71      | 71      |
-
-
-
-W test statistic = 5.5;
-Number of non-tied pairs (n) = 7;
-
-<i>In our project, we've chosen to use the spelling 'defense' rather than the traditional British-English spelling of 'defence'. As the original 'bloons' game originated in the US and subsequent releases have kept this spelling, we felt it was best to use the americanised version, to stay in-keeping with the theme. </i>
 
